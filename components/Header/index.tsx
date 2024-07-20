@@ -87,11 +87,13 @@ const Header = () => {
             </Link>
           ))}
         </div>
-        <img
-          src="/logo.png"
-          alt="UTXO Global"
+        <Link
+          href="/"
           className="w-[100px] md:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        />
+        >
+          <img src="/logo.png" alt="UTXO Global" />
+        </Link>
+
         <div className="flex items-center gap-2">
           {/* <Button kind="secondary">Launch Multi-Sig Wallet</Button> */}
           <Button className="hidden lg:flex">
