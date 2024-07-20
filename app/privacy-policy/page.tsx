@@ -5,7 +5,6 @@ import { CONTACT_MAIL } from "@/configs/common";
 import Link from "next/link";
 
 export default function PrivacyPolicy() {
-  const siteUrl = window.location.origin;
   return (
     <main className="py-[60px] relative overflow-hidden">
       <img
@@ -28,7 +27,7 @@ export default function PrivacyPolicy() {
               disclose information about you when you use our Website,
               accessible at `}</span>
               <Link href="/" className="text-orange-100 underline font-medium">
-                {siteUrl}
+                utxo.global
               </Link>{" "}
               <span>{`("Website"), and the UTXO Global Wallet
               application ("Application").`}</span>

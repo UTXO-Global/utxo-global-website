@@ -5,7 +5,6 @@ import { CONTACT_MAIL } from "@/configs/common";
 import Link from "next/link";
 
 export default function TermsAndConditions() {
-  const siteUrl = window.location.origin;
   return (
     <main className="py-[60px] relative overflow-hidden">
       <img
@@ -25,7 +24,7 @@ export default function TermsAndConditions() {
             <p className="mt-3">
               <span>{`Welcome to UTXO Global. These Terms and Conditions ("Terms") govern your use of our website, accessible at `}</span>
               <Link href="/" className="text-orange-100 underline font-medium">
-                {siteUrl}
+                utxo.global
               </Link>{" "}
               <span>{`("Website") and the UTXO Global Wallet application ("Application"). By accessing or using our Website and Application, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Website or Application.`}</span>
             </p>
