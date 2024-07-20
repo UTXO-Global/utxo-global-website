@@ -13,7 +13,7 @@ export default function PrivacyPolicy() {
         alt="utxo global"
         className="w-[400px] max-w-[unset] md:w-[60%] rotate-[35deg] absolute bottom-[200px] -left-[50px] md:left-0"
       />
-      <div className="utxo-global-container text-base">
+      <div className="utxo-global-container text-base relative">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
           Privacy Policy
         </h3>
