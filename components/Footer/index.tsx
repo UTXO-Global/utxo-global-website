@@ -11,7 +11,7 @@ const Footer = () => {
   return (
     <footer className="pt-[40px] md:pt-[60px] lg:pt-[120px]">
       <div className="utxo-global-container py-10 flex md:flex-row flex-col-reverse justify-between items-center md:items-start relative gap-10 md:gap-0">
-        <div className="md:max-w-[280px] lg:max-w-[370px] xl:max-w-[441px]">
+        <div className="md:max-w-[240px] lg:max-w-[370px] xl:max-w-[441px]">
           <p className="text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] text-grey-300 font-medium text-center md:text-left">
             <span className="font-bold text-dark-100">UTXO Global</span> is a
             revolutionary wallet for the CKB ecosystem. It delivers the robust
@@ -36,21 +36,21 @@ const Footer = () => {
           alt="utxo global"
           className="md:absolute w-[100px] lg:w-[150px] md:left-1/2 md:-translate-x-1/2 md:top-10"
         />
-        <div className="flex gap-10 lg:gap-20">
-          <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start">
+        <div className="flex flex-row md:flex-col lg:flex-row gap-10 lg:gap-20">
+          <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start justify-items-start md:justify-items-end lg:justify-items-start">
             <p className=" text-dark-100">Support</p>
-            <Link href="" className="text-grey-200">
+            <Link href="/privacy-policy" className="text-grey-200">
               Privacy Policy
             </Link>
-            <Link href="" className="text-grey-200">
-              Terms
+            <Link href="/terms-and-conditions" className="text-grey-200">
+              Terms and Conditions
             </Link>
             <Link href="" className="text-grey-200">
               Meida Kit
             </Link>
           </div>
 
-          <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start">
+          <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start justify-items-start md:justify-items-end lg:justify-items-start">
             <p className=" text-dark-100">Link</p>
             <Link href="" className="text-grey-200">
               Docs
