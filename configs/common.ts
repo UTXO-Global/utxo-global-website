@@ -3,6 +3,7 @@ export const SITE_DESCRIPTION = "Where UTXO Technology Meets Global Innovation";
 export const SITE_URL = "https://utxo.global";
 export const SITE_IMAGE_URL =
   "https://config.utxo.global/images/preview-site.png";
+export const CONTACT_MAIL = "utxoglobal.contact@gmail.com";
 
 export const NAVIGATIONS = [
   {
