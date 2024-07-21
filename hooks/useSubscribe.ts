@@ -26,7 +26,7 @@ const useSubscribe = () => {
         options
       );
       cb?.();
-      toast.success("subscribed");
+      toast.success("Subscribed");
     } catch (e) {
       console.error(e);
     } finally {

@@ -1,6 +1,8 @@
 /* eslint-disable @next/next/no-img-element */
 import Button from "@/components/Common/Button";
 
+import { comingSoonMsg } from "@/utils/helpers";
+
 const AboutUs = () => {
   return (
     <section id="about-us">
@@ -16,7 +18,7 @@ const AboutUs = () => {
             </p>
           </h1>
           <div className="flex justify-center md:justify-start">
-            <Button className="mt-6">
+            <Button className="mt-6" onClick={comingSoonMsg}>
               <div className="flex gap-2 items-center">
                 <img
                   src="/images/chrome.png"
