@@ -28,7 +28,7 @@ const config: Config = {
           400: "#BDBDBD",
         },
         success: {
-          100: "#09C183",
+          100: "#09C148",
         },
         info: {
           100: "#004CE8",

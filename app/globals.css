@@ -2,6 +2,10 @@
 @tailwind components;
 @tailwind utilities;
 
+:root {
+  --toastify-font-family: inherit !important;
+}
+
 @font-face {
   font-family: "Satoshi";
   src: url("/fonts/satoshi/Satoshi-Variable.woff2") format("woff2"),
@@ -127,4 +131,108 @@ body {
   100% {
     transform: rotateY(0deg) rotateZ(0);
   }
+}
+
+/* Toastify */
+.Toastify__toast-container {
+  max-width: 100% !important;
+  width: 400px !important;
+  z-index: 10000 !important;
+}
+
+@media (max-width: 768px) {
+  .Toastify__toast-container {
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    top: 12px !important;
+  }
+}
+
+.Toastify__toast {
+  background: #f4f4f4 !important;
+  border-radius: 8px;
+  padding: 6px 10px !important;
+}
+
+.Toastify__toast--success .Toastify__toast-body::before {
+  content: "Success";
+  font-size: 24px;
+  font-weight: 500;
+  color: #09c148;
+}
+
+.Toastify__toast--error .Toastify__toast-body::before {
+  content: "Error";
+  font-size: 24px;
+  font-weight: 500;
+  color: #ff3333;
+}
+
+.Toastify__toast--info .Toastify__toast-body::before {
+  content: "Info";
+  font-size: 24px;
+  font-weight: 500;
+  color: #004ce8;
+}
+
+.Toastify__toast--warning .Toastify__toast-body::before {
+  content: "Warning";
+  font-size: 24px;
+  font-weight: 500;
+  color: #f2b137;
+}
+
+.Toastify__toast-body {
+  display: grid !important;
+  grid-gap: 4px;
+  padding: 0 0 0 51px !important;
+  color: #0d0d0d;
+  font-size: 16px;
+  position: relative;
+}
+
+.Toastify__toast-icon {
+  position: absolute;
+  left: 0;
+  top: 7.75px !important;
+}
+
+.Toastify__toast-icon > svg {
+  display: none;
+}
+
+.Toastify__toast--success .Toastify__toast-icon {
+  content: "";
+  width: 31px !important;
+  height: 31px !important;
+  background-image: url("/icons/icn-success.svg");
+  background-size: cover;
+}
+
+.Toastify__toast--error .Toastify__toast-icon {
+  content: "";
+  width: 31px !important;
+  height: 31px !important;
+  background-image: url("/icons/icn-error.svg");
+  background-size: cover;
+}
+
+.Toastify__toast--info .Toastify__toast-icon {
+  content: "";
+  width: 31px !important;
+  height: 31px !important;
+  background-image: url("/icons/icn-info.svg");
+  background-size: cover;
+}
+
+.Toastify__toast--warning .Toastify__toast-icon {
+  content: "";
+  width: 31px !important;
+  height: 31px !important;
+  background-image: url("/icons/icn-warning.svg");
+  background-size: cover;
+}
+
+.Toastify__close-button {
+  color: #0D0D0D !important;
 }
