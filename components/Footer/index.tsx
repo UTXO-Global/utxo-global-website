@@ -48,7 +48,7 @@ const Footer = () => {
               Terms and Conditions
             </Link>
             <Link href="" className="text-grey-200">
-              Meida Kit
+              Media Kit
             </Link>
           </div>
 
