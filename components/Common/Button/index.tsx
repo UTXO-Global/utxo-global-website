@@ -38,7 +38,7 @@ const Button: React.FC<ButtonProps> = ({
         {
           "font-medium px-6 py-[11px] text-base": size === "medium",
           "font-medium px-3 py-[5px] text-base": size === "small",
-          "bg-dark-100 border-dark-100 text-white hover:enabled:text-white hover:enabled:bg-dark-200 hover:enabled:border-dark-200":
+          "bg-dark-100 border-dark-100 text-white hover:enabled:text-white hover:enabled:bg-dark-300 hover:enabled:border-dark-300":
             kind === "primary",
           "bg-transparent border-dark-100 text-dark-100 hover:enabled:text-white hover:enabled:bg-dark-100 hover:enabled:border-dark-100":
             kind === "secondary",

@@ -17,6 +17,7 @@ const config: Config = {
         dark: {
           100: "#0D0D0D",
           200: "#141414",
+          300: "#2C2C2C"
         },
         light: {
           100: "#FFFFFF",
