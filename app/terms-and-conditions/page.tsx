@@ -177,7 +177,7 @@ export default function TermsAndConditions() {
             </h6>
             <div className="mt-3">
               <p>
-                f you have any questions about these Terms, please contact us at{" "}
+                If you have any questions about these Terms, please contact us at{" "}
                 <a
                   href={`mailto:${CONTACT_MAIL}`}
                   className="text-orange-100 font-medium underline"
