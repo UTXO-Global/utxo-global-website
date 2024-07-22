@@ -8,7 +8,7 @@ import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
 
 const Community = () => {
   return (
-    <section className="pb-[60px] pt-[100px]" id="contact">
+    <section className="pb-[60px] pt-[100px] overflow-hidden" id="contact">
       <div className="utxo-global-container">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
           Be Part Of Us

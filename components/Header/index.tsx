@@ -33,7 +33,9 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
           className={cn(
             `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
             {
-              "text-dark-100": localHash === z.href,
+              "text-dark-100":
+                localHash === z.href ||
+                (z.href === "/#about-us" ? localHash === "/" : false),
             }
           )}
         >
@@ -80,7 +82,9 @@ const Header = () => {
               className={cn(
                 `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
                 {
-                  "text-dark-100": localHash === z.href,
+                  "text-dark-100":
+                    localHash === z.href ||
+                    (z.href === "/#about-us" ? localHash === "/" : false),
                 }
               )}
             >

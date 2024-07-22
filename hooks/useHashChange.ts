@@ -40,12 +40,12 @@ const useHashChange = () => {
     setLocationHash(`/${window.location.hash}`);
   }, [params]);
 
-  useEffect(() => {
-    window.addEventListener("scroll", updateHashOnScroll);
-    return () => {
-      window.removeEventListener("scroll", updateHashOnScroll);
-    };
-  }, [pathname]);
+  // useEffect(() => {
+  //   window.addEventListener("scroll", updateHashOnScroll);
+  //   return () => {
+  //     window.removeEventListener("scroll", updateHashOnScroll);
+  //   };
+  // }, [pathname]);
 
   return locationHash;
 };
