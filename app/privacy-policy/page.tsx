@@ -74,7 +74,7 @@ export default function PrivacyPolicy() {
                   alerts, and support messages.
                 </li>
                 <li>
-                  <span className="font-meidum">
+                  <span className="font-medium">
                     To Comply with Legal Obligations:
                   </span>{" "}
                   We may use your information to comply with applicable laws and
