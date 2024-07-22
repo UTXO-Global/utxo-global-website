@@ -28,11 +28,6 @@ const BACKERS = [
         icon: <IcnTelegram className="w-3 md:w-6" />,
         link: "https://t.me/ckb_community",
       },
-      {
-        name: "discord",
-        icon: <IcnDiscord className="w-3 md:w-6" />,
-        link: "https://discord.com/invite/FKh8Zzvwqa",
-      },
     ],
   },
 ];

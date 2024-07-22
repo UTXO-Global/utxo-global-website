@@ -44,7 +44,7 @@ const Subscribe = () => {
             onSubmit={subscribe}
             className="mt-6 md:mt-10 flex justify-center items-center gap-2"
           >
-            <div className="w-[250px] sm:w-[300px] lg:w-[500px] border-[0.5px] border-[#BDBDBD] rounded-[8px] px-4 py-2 flex gap-2 items-center">
+            <div className="w-[230px] sm:w-[300px] lg:w-[500px] border-[0.5px] border-[#BDBDBD] rounded-[8px] px-4 py-2 flex gap-2 items-center">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="24"

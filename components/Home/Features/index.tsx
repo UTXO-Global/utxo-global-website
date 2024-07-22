@@ -44,7 +44,7 @@ const Features = () => {
               </div>
             </div>
           </div>
-          <div className="py-[30px] lg:py-[50px] xl:py-[68px] pr-[34px] pl-6 lg:w-[40%] xl:w-1/3">
+          <div className="py-[30px] lg:py-[82px] xl:py-[100px] pr-[34px] pl-6 lg:w-[40%] xl:w-1/3">
             <div className="flex items-center gap-2">
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -71,28 +71,7 @@ const Features = () => {
               Easily view and manage your UTXOs directly within an intuitive
               dashboard.
             </p>
-            <div className="flex gap-2 mt-4">
-              <Link href={TWITTER_LINK} target="_blank">
-                <Button className="!px-6">
-                  <div className="flex gap-2 items-center">
-                    <IcnTwitter className="w-6" />
-                    <span className="text-base text-light-100 font-medium">
-                      Twitter
-                    </span>
-                  </div>
-                </Button>
-              </Link>
-              <Link href={TELEGRAM_LINK} target="_blank">
-                <Button className="!px-6">
-                  <div className="flex gap-2 items-center">
-                    <IcnTelegram className="w-6" />
-                    <span className="text-base text-light-100 font-medium">
-                      Telegram
-                    </span>
-                  </div>
-                </Button>
-              </Link>
-            </div>
+          
           </div>
         </div>
         <div className="mt-4 md:mt-[60px] grid grid-cols-1 md:grid-cols-2 gap-4">
