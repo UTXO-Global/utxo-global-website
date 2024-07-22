@@ -30,6 +30,7 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
         <Link
           key={i}
           href={z.href === "/#about-us" ? "/" : z.href}
+          target={z.isExternal ? "_blank" : "_self"}
           className={cn(
             `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
             {
@@ -79,6 +80,7 @@ const Header = () => {
             <Link
               key={i}
               href={z.href === "/#about-us" ? "/" : z.href}
+              target={z.isExternal ? "_blank" : "_self"}
               className={cn(
                 `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
                 {
@@ -94,7 +96,7 @@ const Header = () => {
         </div>
         <Link
           href="/"
-          className="w-[100px] md:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          className="w-[100px] md:w-[120px] lg:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <img src="/logo.png" alt="UTXO Global" />
         </Link>
@@ -108,7 +110,7 @@ const Header = () => {
             </div>
           </Button>
           <Button
-            className="flex lg:hidden !px-1 sm:px-3"
+            className="flex lg:hidden !px-2 sm:px-3"
             size="small"
             onClick={comingSoonMsg}
           >
