@@ -1,4 +1,4 @@
-"use client"
+"use client";
 
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
@@ -6,6 +6,7 @@ import Link from "next/link";
 import IcnTwitter from "@/public/icons/icn-twitter.svg";
 import IcnTelegram from "@/public/icons/icn-telegram.svg";
 
+import { MEDIA_KIT_GITHUB, SUBSTACK_LINK } from "@/configs/common";
 import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
 import { comingSoonMsg } from "@/utils/helpers";
 
@@ -38,7 +39,7 @@ const Footer = () => {
           alt="utxo global"
           className="md:absolute w-[100px] lg:w-[150px] md:left-1/2 md:-translate-x-1/2 md:top-10"
         />
-        <div className="flex flex-row md:flex-col lg:flex-row gap-10 lg:gap-20">
+        <div className="flex flex-row md:flex-col lg:flex-row gap-10 lg:gap-20 w-full justify-between md:justify-center md:w-[unset]">
           <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start justify-items-start md:justify-items-end lg:justify-items-start">
             <p className=" text-dark-100">Support</p>
             <Link href="/privacy-policy" className="text-grey-200">
@@ -47,18 +48,29 @@ const Footer = () => {
             <Link href="/terms-and-conditions" className="text-grey-200">
               Terms and Conditions
             </Link>
-            <Link href="" className="text-grey-200">
+            <Link
+              href={MEDIA_KIT_GITHUB}
+              target="_blank"
+              className="text-grey-200"
+            >
               Media Kit
             </Link>
           </div>
 
           <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start justify-items-start md:justify-items-end lg:justify-items-start">
             <p className=" text-dark-100">Link</p>
-            {/* TODO: docs link */}
-            <Link href="" className="text-grey-200">
+            <Link
+              href={SUBSTACK_LINK}
+              target="_blank"
+              className="text-grey-200"
+            >
               Docs
             </Link>
-            <Link href="https://www.nervos.org/" target="_blank" className="text-grey-200">
+            <Link
+              href="https://www.nervos.org/"
+              target="_blank"
+              className="text-grey-200"
+            >
               Nervos
             </Link>
             <p className="text-grey-200 cursor-pointer" onClick={comingSoonMsg}>
