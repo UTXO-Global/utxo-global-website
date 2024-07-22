@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Script from "next/script";
 import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
@@ -12,6 +13,7 @@ import {
   SITE_TITLE,
   SITE_URL,
   SITE_IMAGE_URL,
+  GA_TRACKING_ID,
 } from "@/configs/common";
 
 export const metadata: Metadata = {
@@ -39,6 +41,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+       <Script
+        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
+      />
+      <Script id="google-analytics">
+        {`
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+ 
+          gtag('config', '${GA_TRACKING_ID}');
+        `}
+      </Script>
       <body>
         <ConfigProvider
           theme={{
