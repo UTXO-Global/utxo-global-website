@@ -9,6 +9,8 @@ export const EXTENTSION_GITHUB =
 export const MEDIA_KIT_GITHUB =
   "https://github.com/UTXO-Global/utxo-global-media-kit";
 export const SUBSTACK_LINK = "https://utxoglobal.substack.com/";
+export const CHROME_EXTENSION_LINK =
+  "https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle";
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACIKING_ID;
 
 export const NAVIGATIONS = [
