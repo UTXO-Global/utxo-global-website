@@ -6,9 +6,8 @@ import Link from "next/link";
 import IcnTwitter from "@/public/icons/icn-twitter.svg";
 import IcnTelegram from "@/public/icons/icn-telegram.svg";
 
-import { MEDIA_KIT_GITHUB, SUBSTACK_LINK } from "@/configs/common";
+import { CHROME_EXTENSION_LINK, MEDIA_KIT_GITHUB, SUBSTACK_LINK } from "@/configs/common";
 import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
-import { comingSoonMsg } from "@/utils/helpers";
 
 const Footer = () => {
   return (
@@ -73,9 +72,13 @@ const Footer = () => {
             >
               Nervos
             </Link>
-            <p className="text-grey-200 cursor-pointer" onClick={comingSoonMsg}>
+            <Link
+              href={CHROME_EXTENSION_LINK}
+              target="_blank"
+              className="text-grey-200"
+            >
               Download
-            </p>
+            </Link>
           </div>
         </div>
       </div>
