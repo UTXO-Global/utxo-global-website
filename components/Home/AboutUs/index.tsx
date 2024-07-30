@@ -1,7 +1,9 @@
 /* eslint-disable @next/next/no-img-element */
+import Link from "next/link";
+
 import Button from "@/components/Common/Button";
 
-import { comingSoonMsg } from "@/utils/helpers";
+import { CHROME_EXTENSION_LINK } from "@/configs/common";
 
 const AboutUs = () => {
   return (
@@ -18,16 +20,18 @@ const AboutUs = () => {
             </p>
           </h1>
           <div className="flex justify-center md:justify-start">
-            <Button className="mt-6" onClick={comingSoonMsg}>
-              <div className="flex gap-2 items-center">
-                <img
-                  src="/images/chrome.png"
-                  alt="chrome"
-                  className="w-[24px]"
-                />
-                <span>Download for Chrome</span>
-              </div>
-            </Button>
+            <Link href={CHROME_EXTENSION_LINK} target="_blank" className="mt-6">
+              <Button>
+                <div className="flex gap-2 items-center">
+                  <img
+                    src="/images/chrome.png"
+                    alt="chrome"
+                    className="w-[24px]"
+                  />
+                  <span>Download for Chrome</span>
+                </div>
+              </Button>
+            </Link>
           </div>
         </div>
         <div className="relative md:w-[53%] mt-10 md:mt-0">

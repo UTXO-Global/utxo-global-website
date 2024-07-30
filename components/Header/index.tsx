@@ -6,12 +6,11 @@ import Link from "next/link";
 import { Popover } from "antd";
 
 import cn from "@/utils/cn";
-import { NAVIGATIONS } from "@/configs/common";
+import { NAVIGATIONS, CHROME_EXTENSION_LINK } from "@/configs/common";
 import IcnAlignLeft from "@/public/icons/icn-align-left.svg";
 import Button from "../Common/Button";
 
 import useHashChange from "@/hooks/useHashChange";
-import { comingSoonMsg } from "@/utils/helpers";
 
 const MenuMobile = ({ localHash }: { localHash: string }) => {
   const [open, setOpen] = useState(false);
@@ -103,22 +102,42 @@ const Header = () => {
 
         <div className="flex items-center gap-2">
           {/* <Button kind="secondary">Launch Multi-Sig Wallet</Button> */}
-          <Button className="hidden lg:flex" onClick={comingSoonMsg}>
-            <div className="flex gap-2 items-center">
-              <img src="/images/chrome.png" alt="chrome" className="w-[24px]" />
-              <span>Download for Chrome</span>
-            </div>
-          </Button>
-          <Button
-            className="flex lg:hidden !px-2 sm:px-3"
-            size="small"
-            onClick={comingSoonMsg}
+          <Link
+            href={CHROME_EXTENSION_LINK}
+            target="_blank"
+            className="hidden lg:flex"
           >
-            <div className="flex gap-2 items-center">
-              <img src="/images/chrome.png" alt="chrome" className="w-[24px]" />
-              <span className="hidden sm:block">Download for Chrome</span>
-            </div>
-          </Button>
+            <Button>
+              <div className="flex gap-2 items-center">
+                <img
+                  src="/images/chrome.png"
+                  alt="chrome"
+                  className="w-[24px]"
+                />
+                <span>Download for Chrome</span>
+              </div>
+            </Button>
+          </Link>
+
+          <Link
+            href={CHROME_EXTENSION_LINK}
+            target="_blank"
+            className="flex lg:hidden "
+          >
+            <Button
+              className="!px-2 sm:px-3"
+              size="small"
+            >
+              <div className="flex gap-2 items-center">
+                <img
+                  src="/images/chrome.png"
+                  alt="chrome"
+                  className="w-[24px]"
+                />
+                <span className="hidden sm:block">Download for Chrome</span>
+              </div>
+            </Button>
+          </Link>
         </div>
       </div>
     </header>
