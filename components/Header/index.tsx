@@ -106,10 +106,10 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-2">
-          <Link href={MULTI_SIG_LINK} className="hidden xl:flex">
+          <Link href={MULTI_SIG_LINK} target="_blank" className="hidden xl:flex">
             <Button kind="secondary">Launch Multi-Sig Wallet</Button>
           </Link>
-          <Link href={MULTI_SIG_LINK} className="flex xl:hidden">
+          <Link href={MULTI_SIG_LINK} target="_blank" className="flex xl:hidden">
             <Button kind="secondary" className="!px-2 sm:px-3" size="small">
               <IcnMultiSig className="w-6" />
             </Button>
