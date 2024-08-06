@@ -12,6 +12,7 @@ export const SUBSTACK_LINK = "https://utxoglobal.substack.com/";
 export const CHROME_EXTENSION_LINK =
   "https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle";
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACIKING_ID;
+export const MULTI_SIG_LINK = process.env.NEXT_PUBLIC_MULTI_SIG_LINK || "";
 
 export const NAVIGATIONS = [
   {
