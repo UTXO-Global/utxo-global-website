@@ -6,8 +6,13 @@ import Link from "next/link";
 import { Popover } from "antd";
 
 import cn from "@/utils/cn";
-import { NAVIGATIONS, CHROME_EXTENSION_LINK } from "@/configs/common";
+import {
+  NAVIGATIONS,
+  CHROME_EXTENSION_LINK,
+  MULTI_SIG_LINK,
+} from "@/configs/common";
 import IcnAlignLeft from "@/public/icons/icn-align-left.svg";
+import IcnMultiSig from "@/public/icons/icn-multi-sig.svg";
 import Button from "../Common/Button";
 
 import useHashChange from "@/hooks/useHashChange";
@@ -101,11 +106,19 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-2">
-          {/* <Button kind="secondary">Launch Multi-Sig Wallet</Button> */}
+          <Link href={MULTI_SIG_LINK} className="hidden xl:flex">
+            <Button kind="secondary">Launch Multi-Sig Wallet</Button>
+          </Link>
+          <Link href={MULTI_SIG_LINK} className="flex xl:hidden">
+            <Button kind="secondary" className="!px-2 sm:px-3" size="small">
+              <IcnMultiSig className="w-6" />
+            </Button>
+          </Link>
+
           <Link
             href={CHROME_EXTENSION_LINK}
             target="_blank"
-            className="hidden lg:flex"
+            className="hidden xl:flex"
           >
             <Button>
               <div className="flex gap-2 items-center">
@@ -122,19 +135,15 @@ const Header = () => {
           <Link
             href={CHROME_EXTENSION_LINK}
             target="_blank"
-            className="flex lg:hidden "
+            className="flex xl:hidden "
           >
-            <Button
-              className="!px-2 sm:px-3"
-              size="small"
-            >
+            <Button className="!px-2 sm:px-3" size="small">
               <div className="flex gap-2 items-center">
                 <img
                   src="/images/chrome.png"
                   alt="chrome"
                   className="w-[24px]"
                 />
-                <span className="hidden sm:block">Download for Chrome</span>
               </div>
             </Button>
           </Link>
