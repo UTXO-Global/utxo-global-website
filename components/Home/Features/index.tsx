@@ -1,15 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { useTranslation } from "next-export-i18n";
 
 import Button from "@/components/Common/Button";
 import { MULTI_SIG_LINK } from "@/configs/common";
 
 const Features = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="pt-[100px] pb-[60px]" id="features">
       <div className="utxo-global-container">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
-          Explore our <span className="text-orange-100">Features</span>
+          {t("feature.title01")}{" "}
+          <span className="text-orange-100">{t("feature.title02")}</span>
         </h3>
         <div className="mt-10 md:mt-20 rounded-[16px] bg-grey-100 overflow-hidden flex flex-col lg:flex-row">
           <div className="flex-1 relative px-[65px] flex justify-between items-end pt-10 md:pt-20 lg:pt-0 overflow-hidden">
@@ -60,14 +64,15 @@ const Features = () => {
                   fill="#FF7201"
                 />
               </svg>
-              <p className="text-base text-dark-100 font-medium">Extension</p>
+              <p className="text-base text-dark-100 font-medium">
+                {t("feature.portfolio.extension")}
+              </p>
             </div>
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] text-dark-100 font-medium mt-[20px]">
-              Portfolio Management
+              {t("feature.portfolio.title")}
             </h6>
             <p className="mt-2 text-grey-200 text-base">
-              Easily view and manage your UTXOs directly within an intuitive
-              dashboard.
+              {t("feature.portfolio.description")}
             </p>
           </div>
         </div>
@@ -79,16 +84,18 @@ const Features = () => {
         >
           <div className="flex-1">
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] font-medium text-orange-100">
-              Multi-Signature <span className="text-dark-100">Access</span>
+              {t("feature.multiSig.title01")}{" "}
+              <span className="text-dark-100">
+                {t("feature.multiSig.title02")}
+              </span>
             </h6>
             <p className="text-base text-grey-200 mt-2 mb-6 md:mb-10">
-              Safeguard your UTXO assets with multiple private keys, adding
-              extra layers of security.
+              {t("feature.multiSig.description")}
             </p>
             <Link href={MULTI_SIG_LINK} target="_blank" className="">
               <Button>
                 <div className="flex items-center gap-2">
-                  <span>Get Started</span>
+                  <span>{t("feature.multiSig.getStarted")}</span>
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     width="16"
@@ -105,16 +112,19 @@ const Features = () => {
               </Button>
             </Link>
           </div>
-          <img src="/images/multi-sig.png" alt="multi sig" className="w-[400px] lg:w-[500px] xl:w-[690px] mt-6 md:mt-0" />
+          <img
+            src="/images/multi-sig.png"
+            alt="multi sig"
+            className="w-[400px] lg:w-[500px] xl:w-[690px] mt-6 md:mt-0"
+          />
         </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-grey-100 rounded-[16px] overflow-hidden pt-6 px-6">
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] font-medium text-orange-100 text-center">
-              Send & Receive
+              {t("feature.send&Receive.title")}
             </h6>
             <p className="text-base text-grey-200 max-w-[398px] mx-auto mt-2 text-center">
-              Experience a smooth and secure way to send, receive, and manage
-              your assets.
+              {t("feature.send&Receive.description")}
             </p>
             <div className="mt-[22px] flex justify-center">
               <img
@@ -134,11 +144,10 @@ const Features = () => {
           </div>
           <div className="bg-grey-100 rounded-[16px] overflow-hidden pt-6 px-6">
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] font-medium text-orange-100 text-center">
-              Explore
+              {t("feature.explore.title")}
             </h6>
             <p className="text-base text-grey-200 max-w-[398px] mx-auto mt-2 text-center">
-              Dive into a curated selection of DApps to revolutionize the way
-              you manage your assets.
+              {t("feature.explore.description")}
             </p>
             <div className="mt-[22px] flex justify-center">
               <img

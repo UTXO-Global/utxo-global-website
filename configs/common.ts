@@ -17,25 +17,25 @@ export const MULTI_SIG_LINK = process.env.NEXT_PUBLIC_MULTI_SIG_LINK || "";
 export const NAVIGATIONS = [
   {
     id: "about-us",
-    label: "About Us",
+    label: "header.aboutUs",
     href: "/#about-us",
     isExternal: false,
   },
   {
     id: "features",
-    label: "Features",
+    label: "header.features",
     href: "/#features",
     isExternal: false,
   },
   {
     id: "contact",
-    label: "Contact",
+    label: "header.contact",
     href: "/#contact",
     isExternal: false,
   },
   {
     id: "github",
-    label: "GitHub",
+    label: "header.github",
     href: EXTENTSION_GITHUB,
     isExternal: true,
   },

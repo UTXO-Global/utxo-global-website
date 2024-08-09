@@ -1,21 +1,24 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { useTranslation } from "next-export-i18n";
 
 import Button from "@/components/Common/Button";
 
 import { CHROME_EXTENSION_LINK } from "@/configs/common";
 
 const AboutUs = () => {
+  const { t } = useTranslation();
+
   return (
     <section id="about-us">
       <div className="utxo-global-container pt-10 lg:pt-20 mb-[20%] md:mb-[4%] lg:mb-[12%] xl:mb-[16%] flex flex-col md:flex-row gap-10">
         <div className="flex-1">
           <h1 className="text-[36px] leading-[28px] md:text-[50px] md:leading-[40px] lg:text-[64px] lg:leading-[52px] font-medium text-dark-100 text-center md:text-left">
-            UTXO Global{" "}
+            {t("aboutUs.title01")}{" "}
             <p className="mt-3 lg:mt-6">
-              Wallet -{" "}
+              {t("aboutUs.title02")} -{" "}
               <span className="text-[20px] leading-[28px] md:text-[28px] md:leading-[40px] lg:text-[40px] lg:leading-[52px] text-orange-100">
-                Where UTXO Technology Meets Global Innovation
+                {t("aboutUs.description")}
               </span>
             </p>
           </h1>
@@ -28,7 +31,7 @@ const AboutUs = () => {
                     alt="chrome"
                     className="w-[24px]"
                   />
-                  <span>Download for Chrome</span>
+                  <span> {t("aboutUs.chromeStore")}</span>
                 </div>
               </Button>
             </Link>

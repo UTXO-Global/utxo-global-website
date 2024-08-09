@@ -1,0 +1,71 @@
+{
+  "header": {
+    "aboutUs": "关于我们",
+    "features": "特征",
+    "contact": "接触",
+    "github": "GitHub",
+
+    "multiSig": "启动多重签名钱包",
+    "chromeStore": "下载 Chrome 版本"
+  },
+  "aboutUs": {
+    "title01": "UTXO Global",
+    "title02": "钱包",
+    "description": "UTXO 技术与全球创新的交汇",
+    "chromeStore": "下载 Chrome 版本"
+  },
+  "feature": {
+    "title01": "Explore our",
+    "title02": "Features",
+    "portfolio": {
+      "extension": "Extension",
+      "title": "Portfolio Management",
+      "description": "Easily view and manage your UTXOs directly within an intuitive dashboard."
+    },
+    "multiSig": {
+      "title01": "Multi-Signature",
+      "title02": "Access",
+      "description": "Safeguard your UTXO assets with multiple private keys, adding extra layers of security.",
+      "getStarted": "Get Started"
+    },
+    "send&Receive": {
+      "title": "Send & Receive",
+      "description": "Experience a smooth and secure way to send, receive, and manage your assets."
+    },
+    "explore": {
+      "title": "Explore",
+      "description": "Dive into a curated selection of DApps to revolutionize the way you manage your assets."
+    }
+  },
+  "backedBy": "Backed By",
+  "community": {
+    "title": "Be Part Of Us",
+    "description01": "Join our vibrant community, interact with fellow",
+    "description02": "UTXO Global",
+    "description03": "and get latest updates",
+    "twitter": "Twitter",
+    "followTwitter": "Follow us on X",
+    "telegram": "Telegram",
+    "joinTelegram": "Join the Telegram community"
+  },
+  "subscribe": {
+    "title01": "Subscribe to",
+    "title02": "UTXO Global",
+    "description01": "Don’t miss out on the latest",
+    "description02": "UTXO Global",
+    "description03": "news and product updates!",
+    "signUp": "Sign up"
+  },
+  "footer": {
+    "utxoGlobal": "UTXO Global",
+    "description": "is a revolutionary wallet for the CKB ecosystem. It delivers the robust security guarantees of the UTXO model while addressing its limitations in scalability and interoperability.",
+    "support": "Support",
+    "privacyPolicy": "Privacy Policy",
+    "terms": "Terms and Conditions",
+    "mediaKit": "Media Kit",
+    "link": "Link",
+    "docs": "Docs",
+    "nervos": "Nervos",
+    "download": "Download"
+  }
+}
