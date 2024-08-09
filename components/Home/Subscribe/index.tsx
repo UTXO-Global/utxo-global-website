@@ -1,12 +1,14 @@
 "use client";
 
 import { useState } from "react";
+import { useTranslation } from "next-export-i18n";
 
 import Button from "@/components/Common/Button";
 
 import useSubscribe from "@/hooks/useSubscribe";
 
 const Subscribe = () => {
+  const { t } = useTranslation();
   const { isLoading, subscribe: _subscribe } = useSubscribe();
   const [emailInput, setEmailInput] = useState<string>("");
 
@@ -33,12 +35,15 @@ const Subscribe = () => {
       >
         <div className="utxo-global-container">
           <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-light-100 font-medium text-center">
-            Subscribe to <span className="text-orange-100">UTXO Global</span>
+            {t("subscribe.title01")}{" "}
+            <span className="text-orange-100">{t("subscribe.title02")}</span>
           </h3>
           <p className="mt-6 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] text-grey-300 text-center font-medium">
-            Don’t miss out on the latest{" "}
-            <span className="text-light-100 font-bold">UTXO Global</span> news
-            and product updates!
+            {t("subscribe.description01")}{" "}
+            <span className="text-light-100 font-bold">
+              {t("subscribe.description02")}
+            </span>{" "}
+            {t("subscribe.description03")}
           </p>
           <form
             onSubmit={subscribe}
@@ -77,7 +82,7 @@ const Subscribe = () => {
               loading={isLoading}
               disabled={isLoading}
             >
-              Sign up
+              {t("subscribe.signUp")}
             </Button>
           </form>
         </div>

@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
+import { useTranslation } from "next-export-i18n";
 
 import IcnTwitter from "@/public/icons/icn-twitter.svg";
 import IcnTelegram from "@/public/icons/icn-telegram.svg";
@@ -33,11 +34,13 @@ const BACKERS = [
 ];
 
 const Backer = () => {
+  const {t} = useTranslation()
+
   return (
     <section className="pt-[60px] pb-[20px]">
       <div className="utxo-global-container">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
-          Backed by
+          {t("backedBy")}
         </h3>
         <div className="flex justify-center gap-4 mt-4 md:mt-10">
           {BACKERS.map((z, i) => (
