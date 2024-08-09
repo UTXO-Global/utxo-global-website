@@ -4,6 +4,7 @@ import "./globals.css";
 import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import { ConfigProvider } from "antd";
+import { Suspense } from "react";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
@@ -41,7 +42,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-       <Script
+      <Script
         src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
       />
       <Script id="google-analytics">
@@ -61,9 +62,12 @@ export default function RootLayout({
             },
           }}
         >
-          <Header />
-          {children}
-          <Footer />
+          <Suspense>
+            <Header />
+            {children}
+            <Footer />
+          </Suspense>
+
           <ToastContainer
             autoClose={5000}
             closeOnClick

@@ -10,62 +10,62 @@
   },
   "aboutUs": {
     "title01": "UTXO Global",
-    "title02": "钱包",
+    "title02": "Wallet",
     "description": "UTXO 技术与全球创新的交汇",
     "chromeStore": "下载 Chrome 版本"
   },
   "feature": {
-    "title01": "Explore our",
-    "title02": "Features",
+    "title01": "探索我们的",
+    "title02": "特征",
     "portfolio": {
-      "extension": "Extension",
-      "title": "Portfolio Management",
-      "description": "Easily view and manage your UTXOs directly within an intuitive dashboard."
+      "extension": "扩大",
+      "title": "投资组合管理",
+      "description": "直接在直观的仪表板内轻松查看和管理您的 UTXOs."
     },
     "multiSig": {
       "title01": "Multi-Signature",
-      "title02": "Access",
-      "description": "Safeguard your UTXO assets with multiple private keys, adding extra layers of security.",
-      "getStarted": "Get Started"
+      "title02": "使用权",
+      "description": "使用多个私钥保护您的 UTXO 资产，增加额外的安全层.",
+      "getStarted": "立即开始"
     },
     "send&Receive": {
-      "title": "Send & Receive",
-      "description": "Experience a smooth and secure way to send, receive, and manage your assets."
+      "title": "发送和接收",
+      "description": "体验顺畅且安全的方式来发送、接收和管理您的资产."
     },
     "explore": {
-      "title": "Explore",
-      "description": "Dive into a curated selection of DApps to revolutionize the way you manage your assets."
+      "title": "探索",
+      "description": "深入了解精选的 DApps，彻底改变你管理资产的方式."
     }
   },
-  "backedBy": "Backed By",
+  "backedBy": "支持",
   "community": {
-    "title": "Be Part Of Us",
-    "description01": "Join our vibrant community, interact with fellow",
+    "title": "成为我们的一部分",
+    "description01": "加入我们充满活力的社区，与其他朋友互动",
     "description02": "UTXO Global",
-    "description03": "and get latest updates",
+    "description03": "并获取最新更新.",
     "twitter": "Twitter",
-    "followTwitter": "Follow us on X",
+    "followTwitter": "在 X 上关注我们",
     "telegram": "Telegram",
-    "joinTelegram": "Join the Telegram community"
+    "joinTelegram": "加入 Telegram 社区"
   },
   "subscribe": {
-    "title01": "Subscribe to",
+    "title01": "订阅",
     "title02": "UTXO Global",
-    "description01": "Don’t miss out on the latest",
+    "description01": "不要错过最新",
     "description02": "UTXO Global",
-    "description03": "news and product updates!",
-    "signUp": "Sign up"
+    "description03": "新闻和产品更新！",
+    "signUp": "报名"
   },
   "footer": {
     "utxoGlobal": "UTXO Global",
-    "description": "is a revolutionary wallet for the CKB ecosystem. It delivers the robust security guarantees of the UTXO model while addressing its limitations in scalability and interoperability.",
-    "support": "Support",
-    "privacyPolicy": "Privacy Policy",
-    "terms": "Terms and Conditions",
-    "mediaKit": "Media Kit",
-    "link": "Link",
-    "docs": "Docs",
+    "description": "是 CKB 生态系统的革命性钱包。它提供 UTXO 模型的强大安全性保证，同时解决其在可扩展性和互操作性方面的限制.",
+    "support": "支持",
+    "privacyPolicy": "隐私政策",
+    "terms": "条款和条件",
+    "mediaKit": "媒体工具包",
+    "link": "关联",
+    "docs": "文档",
     "nervos": "Nervos",
-    "download": "Download"
+    "download": "下载"
   }
 }
