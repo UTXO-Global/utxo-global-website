@@ -1,10 +1,14 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
+import { useTranslation } from "next-export-i18n";
+
 import { CONTACT_MAIL } from "@/configs/common";
 import Link from "next/link";
 
 export default function TermsAndConditions() {
+  const { t } = useTranslation();
+
   return (
     <main className="py-[60px] relative overflow-hidden">
       <img
@@ -14,46 +18,44 @@ export default function TermsAndConditions() {
       />
       <div className="utxo-global-container text-base relative">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
-          Terms and Conditions
+          {t("terms.title")}
         </h3>
         <div className="mt-10 grid gap-4">
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Introduction
+              {t("terms.introduction.title")}
             </h6>
             <p className="mt-3">
-              <span>{`Welcome to UTXO Global. These Terms and Conditions ("Terms") govern your use of our website, accessible at `}</span>
+              <span>{t("terms.introduction.content01")}</span>
               <Link href="/" className="text-orange-100 underline font-medium">
                 utxo.global
               </Link>{" "}
-              <span>{`("Website") and the UTXO Global Wallet application ("Application"). By accessing or using our Website and Application, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Website or Application.`}</span>
+              <span>{t("terms.introduction.content02")}</span>
             </p>
           </div>
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Use of Our Services
+              {t("terms.useOfOur.title")}
             </h6>
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">Eligibility:</span> You must be
-                  at least 18 years old to use our services. By using our
-                  services, you represent and warrant that you meet this age
-                  requirement.
+                  <span className="font-medium">
+                    {t("terms.useOfOur.content01_01")}:
+                  </span>{" "}
+                  {t("terms.useOfOur.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">Account Registration:</span> To
-                  access certain features of our Application, you may be
-                  required to create an account. You agree to provide accurate
-                  and complete information during the registration process and
-                  to update such information to keep it accurate and complete.
+                  <span className="font-medium">
+                    {t("terms.useOfOur.content02_01")}:
+                  </span>{" "}
+                  {t("terms.useOfOur.content02_02")}
                 </li>
                 <li>
-                  <span className="font-medium">Account Security:</span> You are
-                  responsible for maintaining the confidentiality of your
-                  account credentials and for all activities that occur under
-                  your account. You agree to notify us immediately of any
-                  unauthorized use of your account.
+                  <span className="font-medium">
+                    {t("terms.useOfOur.content03_01")}:
+                  </span>{" "}
+                  {t("terms.useOfOur.content03_02")}
                 </li>
               </ul>
             </div>
@@ -61,21 +63,21 @@ export default function TermsAndConditions() {
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              User Conduct
+              {t("terms.userConduct.title")}
             </h6>
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">Prohibited Activities:</span>{" "}
-                  You agree not to engage in any activity that interferes with
-                  or disrupts our services, including but not limited to
-                  transmitting any viruses or harmful code, or attempting to
-                  gain unauthorized access to our systems.
+                  <span className="font-medium">
+                    {t("terms.userConduct.content01_01")}:
+                  </span>{" "}
+                  {t("terms.userConduct.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">Compliance with Laws:</span> You
-                  agree to comply with all applicable laws and regulations in
-                  connection with your use of our services.
+                  <span className="font-medium">
+                    {t("terms.userConduct.content02_01")}:
+                  </span>{" "}
+                  {t("terms.userConduct.content02_02")}
                 </li>
               </ul>
             </div>
@@ -83,22 +85,21 @@ export default function TermsAndConditions() {
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Intellectual Property
+              {t("terms.intellectualProperty.title")}
             </h6>
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">Ownership:</span> All content
-                  and materials on our Website and Application, including but
-                  not limited to text, graphics, logos, and software, are the
-                  property of UTXO Global or its licensors and are protected by
-                  intellectual property laws.
+                  <span className="font-medium">
+                    {t("terms.intellectualProperty.content01_01")}:
+                  </span>{" "}
+                  {t("terms.intellectualProperty.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">License:</span> Subject to these
-                  Terms, we grant you a limited, non-exclusive,
-                  non-transferable, and revocable license to access and use our
-                  services for personal, non-commercial purposes.
+                  <span className="font-medium">
+                    {t("terms.intellectualProperty.content02_01")}:
+                  </span>{" "}
+                  {t("terms.intellectualProperty.content02_02")}
                 </li>
               </ul>
             </div>
@@ -106,24 +107,21 @@ export default function TermsAndConditions() {
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Disclaimers
+              {t("terms.disclaimers.title")}
             </h6>
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">No Warranty:</span>{" "}
-                  {`Our services
-                  are provided on an "as-is" and "as-available" basis. We make
-                  no warranties or representations about the accuracy or
-                  completeness of our services or the content on our Website or
-                  Application.`}
+                  <span className="font-medium">
+                    {t("terms.disclaimers.content01_01")}:
+                  </span>{" "}
+                  {t("terms.disclaimers.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">Limitation of Liability:</span>{" "}
-                  To the fullest extent permitted by law, UTXO Global shall not
-                  be liable for any indirect, incidental, special, or
-                  consequential damages arising out of or in connection with
-                  your use of our services.
+                  <span className="font-medium">
+                    {t("terms.disclaimers.content02_01")}:
+                  </span>{" "}
+                  {t("terms.disclaimers.content02_02")}
                 </li>
               </ul>
             </div>
@@ -131,59 +129,45 @@ export default function TermsAndConditions() {
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Termination
+              {t("terms.termination.title")}
             </h6>
             <div className="mt-3">
-              <p>
-                We may terminate or suspend your access to our services at any
-                time, without prior notice or liability, for any reason
-                whatsoever, including if you breach these Terms.
-              </p>
+              <p>{t("terms.termination.content")}</p>
             </div>
           </div>
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Governing Law
+              {t("terms.governingLaw.title")}
             </h6>
             <div className="mt-3">
-              <p>
-                These Terms shall be governed by and construed in accordance
-                with the laws of the jurisdiction in which UTXO Global is based,
-                without regard to its conflict of law principles.
-              </p>
+              <p>{t("terms.governingLaw.content")}</p>
             </div>
           </div>
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Changes to These Terms
+              {t("terms.changesToThese.title")}
             </h6>
             <div className="mt-3">
-              <p>
-                We reserve the right to modify these Terms at any time. If we
-                make material changes to these Terms, we will notify you by
-                updating the date at the top of these Terms and by providing
-                notice on our Website or Application. Your continued use of our
-                services after any such changes constitutes your acceptance of
-                the new Terms.
-              </p>
+              <p>{t("terms.changesToThese.content")}</p>
             </div>
           </div>
 
           <div>
             <h6 className="text-[18px] leading-[26px] md:text-[24px] md:leading-[32px] lg:text-[32px] lg:leading-[40px] text-dark-100 font-medium">
-              Contact Us
+              {t("terms.contactUs.title")}
             </h6>
             <div className="mt-3">
               <p>
-                If you have any questions about these Terms, please contact us at{" "}
+                {t("terms.contactUs.content01")}{" "}
                 <a
                   href={`mailto:${CONTACT_MAIL}`}
                   className="text-orange-100 font-medium underline"
                 >
                   {CONTACT_MAIL}
                 </a>
+                {t("terms.contactUs.content02")}
               </p>
             </div>
           </div>

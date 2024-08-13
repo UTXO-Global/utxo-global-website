@@ -68,7 +68,7 @@ const LangSwitcher = () => {
     >
       <div className="flex gap-1 items-center cursor-pointer">
         <div className="uppercase text-base font-medium text-[#BDBDBD] w-6">
-          {currentLang}
+          {currentLang || "en"}
         </div>
         <svg
           xmlns="http://www.w3.org/2000/svg"

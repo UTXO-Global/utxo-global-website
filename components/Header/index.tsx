@@ -82,6 +82,8 @@ const Header = () => {
       <div className="utxo-global-container flex justify-between items-center relative">
         <div className="flex gap-4 md:hidden items-center">
           <MenuMobile localHash={localHash} />
+
+          <LangSwitcher />
         </div>
         <div className="hidden md:flex items-center gap-4 lg:gap-10">
           {NAVIGATIONS.map((z, i) => (
@@ -115,7 +117,9 @@ const Header = () => {
             target="_blank"
             className="hidden xl:flex"
           >
-            <Button kind="secondary" size="small">{t("header.multiSig")}</Button>
+            <Button kind="secondary" size="small">
+              {t("header.multiSig")}
+            </Button>
           </Link>
           <Link
             href={MULTI_SIG_LINK}
@@ -159,7 +163,7 @@ const Header = () => {
               </div>
             </Button>
           </Link>
-          <div className="ml-4">
+          <div className="ml-4 hidden md:block">
             <LangSwitcher />
           </div>
         </div>
