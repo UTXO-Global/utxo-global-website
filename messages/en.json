@@ -53,7 +53,9 @@
     "description01": "Don’t miss out on the latest",
     "description02": "UTXO Global",
     "description03": "news and product updates!",
-    "signUp": "Sign up"
+    "signUp": "Sign up",
+    "emailIsNotValid": "Email is not valid.",
+    "subscribed": "Subscribed"
   },
   "footer": {
     "utxoGlobal": "UTXO Global",
@@ -66,5 +68,111 @@
     "docs": "Docs",
     "nervos": "Nervos",
     "download": "Download"
+  },
+  "privacyPolicy": {
+    "title": "Privacy Policy",
+    "introduction": {
+      "title": "Introduction",
+      "content01": "UTXO Global (\"we\", \"our\", \"us\") is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and disclose information about you when you use our Website, accessible at ",
+      "content02": "(\"Website\"), and the UTXO Global Wallet application (\"Application\")."
+    },
+    "information": {
+      "title": "Information We Collect",
+      "content01_01": "Personal Information",
+      "content01_02": "When you create an account or use our services, we may collect personal information such as your name, email address, and any other information you provide.",
+      "content02_01": "Usage Data",
+      "content02_02": "We may collect information about how you use our services, including your IP address, browser type, operating system, and other usage information."
+    },
+    "howWeUse": {
+      "title": "How We Use Your Information",
+      "content01_01": "To Provide and Improve Our Services",
+      "content01_02": "We use your information to operate, maintain, and improve our services.",
+      "content02_01": "To Communicate with You",
+      "content02_02": "We may use your information to send you updates, security alerts, and support messages.",
+      "content03_01": "To Comply with Legal Obligations",
+      "content03_02": "We may use your information to comply with applicable laws and regulations."
+    },
+    "sharing": {
+      "title": "Sharing Your Information",
+      "content01_01": "Service Providers",
+      "content01_02": "We may share your information with third-party service providers who perform services on our behalf.",
+      "content02_01": "Legal Requirements",
+      "content02_02": "We may disclose your information if required to do so by law or in response to valid requests by public authorities."
+    },
+    "security": {
+      "title": "Security",
+      "content": "We take reasonable measures to protect your information from unauthorized access, use, or disclosure. However, no internet or email transmission is ever fully secure or error-free."
+    },
+    "yourChoices": {
+      "title": "Your Choices",
+      "content01_01": "Account Information",
+      "content01_02": "You may update or delete your account information at any time by logging into your account.",
+      "content02_01": "Cookies",
+      "content02_02": "You can set your browser to refuse all or some browser cookies or to alert you when cookies are being sent."
+    },
+    "changesToThis": {
+      "title": "Changes to This Privacy Policy",
+      "content": "We may update this Privacy Policy from time to time. If we make material changes to this Privacy Policy, we will notify you by updating the date at the top of this Privacy Policy and by providing notice on our Website or Application."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "content01": "If you have any questions about this Privacy Policy, please contact us at",
+      "content02": "."
+    }
+  },
+  "terms": {
+    "title": "Terms and Conditions",
+    "introduction": {
+      "title": "Introduction",
+      "content01": "Welcome to UTXO Global. These Terms and Conditions (\"Terms\") govern your use of our website, accessible at ",
+      "content02": "(\"Website\") and the UTXO Global Wallet application (\"Application\"). By accessing or using our Website and Application, you agree to be bound by these Terms. If you do not agree to these Terms, please do not use our Website or Application."
+    },
+    "useOfOur": {
+      "title": "Use of Our Services",
+      "content01_01": "Eligibility",
+      "content01_02": "You must be at least 18 years old to use our services. By using our services, you represent and warrant that you meet this age requirement.",
+      "content02_01": "Account Registration",
+      "content02_02": "To access certain features of our Application, you may be required to create an account. You agree to provide accurate and complete information during the registration process and to update such information to keep it accurate and complete.",
+      "content03_01": "Account Security",
+      "content03_02": "You are responsible for maintaining the confidentiality of your account credentials and for all activities that occur under your account. You agree to notify us immediately of any unauthorized use of your account."
+    },
+    "userConduct": {
+      "title": "User Conduct",
+      "content01_01": "Prohibited Activities",
+      "content01_02": "You agree not to engage in any activity that interferes with or disrupts our services, including but not limited to transmitting any viruses or harmful code, or attempting to gain unauthorized access to our systems.",
+      "content02_01": "Compliance with Laws",
+      "content02_02": "You agree to comply with all applicable laws and regulations in connection with your use of our services."
+    },
+    "intellectualProperty": {
+      "title": "Intellectual Property",
+      "content01_01": "Ownership",
+      "content01_02": "All content and materials on our Website and Application, including but not limited to text, graphics, logos, and software, are the property of UTXO Global or its licensors and are protected by intellectual property laws.",
+      "content02_01": "License",
+      "content02_02": "Subject to these Terms, we grant you a limited, non-exclusive, non-transferable, and revocable license to access and use our services for personal, non-commercial purposes."
+    },
+    "disclaimers": {
+      "title": "Disclaimers",
+      "content01_01": "No Warranty",
+      "content01_02": "Our services are provided on an \"as-is\" and \"as-available\" basis. We make no warranties or representations about the accuracy or completeness of our services or the content on our Website or Application.",
+      "content02_01": "Limitation of Liability",
+      "content02_02": "To the fullest extent permitted by law, UTXO Global shall not be liable for any indirect, incidental, special, or consequential damages arising out of or in connection with your use of our services."
+    },
+    "termination": {
+      "title": "Termination",
+      "content": "We may terminate or suspend your access to our services at any time, without prior notice or liability, for any reason whatsoever, including if you breach these Terms."
+    },
+    "governingLaw": {
+      "title": "Governing Law",
+      "content": "These Terms shall be governed by and construed in accordance with the laws of the jurisdiction in which UTXO Global is based, without regard to its conflict of law principles."
+    },
+    "changesToThese": {
+      "title": "Changes to These Terms",
+      "content": "We reserve the right to modify these Terms at any time. If we make material changes to these Terms, we will notify you by updating the date at the top of these Terms and by providing notice on our Website or Application. Your continued use of our services after any such changes constitutes your acceptance of the new Terms."
+    },
+    "contactUs": {
+      "title": "Contact Us",
+      "content01": "If you have any questions about these Terms, please contact us at",
+      "content02": "."
+    }
   }
 }

@@ -1,15 +1,18 @@
 import { useState } from "react";
+import { useTranslation } from "next-export-i18n";
 
 import { isValidEmail } from "@/utils/helpers";
 import { toast } from "react-toastify";
 
 const useSubscribe = () => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+  const { t } = useTranslation();
 
   const subscribe = async (email: string, cb?: () => void) => {
     setIsLoading(true);
     try {
-      if (!isValidEmail(email)) return toast.info("Email is not valid.");
+      if (!isValidEmail(email))
+        return toast.info(t("subscribe.emailIsNotValid"));
 
       const form = new FormData();
       form.append("email", email);
@@ -26,7 +29,7 @@ const useSubscribe = () => {
         options
       );
       cb?.();
-      toast.success("Subscribed");
+      toast.success(t("subscribe.subscribed"));
     } catch (e) {
       console.error(e);
     } finally {
