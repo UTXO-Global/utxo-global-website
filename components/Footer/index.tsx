@@ -6,7 +6,12 @@ import Link from "next/link";
 import IcnTwitter from "@/public/icons/icn-twitter.svg";
 import IcnTelegram from "@/public/icons/icn-telegram.svg";
 
-import { CHROME_EXTENSION_LINK, MEDIA_KIT_GITHUB, SUBSTACK_LINK } from "@/configs/common";
+import {
+  CHROME_EXTENSION_LINK,
+  DOC_LINK,
+  MEDIA_KIT_GITHUB,
+  SUBSTACK_LINK,
+} from "@/configs/common";
 import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
 
 const Footer = () => {
@@ -58,11 +63,7 @@ const Footer = () => {
 
           <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start justify-items-start md:justify-items-end lg:justify-items-start">
             <p className=" text-dark-100">Link</p>
-            <Link
-              href={SUBSTACK_LINK}
-              target="_blank"
-              className="text-grey-200"
-            >
+            <Link href={DOC_LINK} target="_blank" className="text-grey-200">
               Docs
             </Link>
             <Link
