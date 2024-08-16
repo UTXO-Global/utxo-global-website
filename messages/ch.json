@@ -1,0 +1,179 @@
+{
+  "header": {
+    "aboutUs": "关于我们",
+    "features": "特征",
+    "contact": "接触",
+    "github": "GitHub",
+
+    "multiSig": "启动多重签名钱包",
+    "chromeStore": "下载 Chrome 版本"
+  },
+  "aboutUs": {
+    "title01": "UTXO Global",
+    "title02": "Wallet",
+    "description": "UTXO 技术与全球创新的交汇",
+    "chromeStore": "下载 Chrome 版本"
+  },
+  "feature": {
+    "title01": "探索我们的",
+    "title02": "特征",
+    "portfolio": {
+      "extension": "扩大",
+      "title": "投资组合管理",
+      "description": "直接在直观的仪表板内轻松查看和管理您的 UTXOs。"
+    },
+    "multiSig": {
+      "title01": "Multi-Signature",
+      "title02": "使用权",
+      "description": "使用多个私钥保护您的 UTXO 资产，增加额外的安全层。",
+      "getStarted": "立即开始"
+    },
+    "send&Receive": {
+      "title": "发送和接收",
+      "description": "体验顺畅且安全的方式来发送、接收和管理您的资产。"
+    },
+    "explore": {
+      "title": "探索",
+      "description": "深入了解精选的 DApps，彻底改变你管理资产的方式。"
+    }
+  },
+  "backedBy": "支持",
+  "community": {
+    "title": "成为我们的一部分",
+    "description01": "加入我们充满活力的社区，与其他朋友互动",
+    "description02": "UTXO Global",
+    "description03": "并获取最新更新.",
+    "twitter": "Twitter",
+    "followTwitter": "在 X 上关注我们",
+    "telegram": "Telegram",
+    "joinTelegram": "加入 Telegram 社区"
+  },
+  "subscribe": {
+    "title01": "订阅",
+    "title02": "UTXO Global",
+    "description01": "不要错过最新",
+    "description02": "UTXO Global",
+    "description03": "新闻和产品更新！",
+    "signUp": "报名",
+    "emailIsNotValid": "电子邮件无效。",
+    "subscribed": "已订阅"
+  },
+  "footer": {
+    "utxoGlobal": "UTXO Global",
+    "description": "是 CKB 生态系统的革命性钱包。它提供 UTXO 模型的强大安全性保证，同时解决其在可扩展性和互操作性方面的限制。",
+    "support": "支持",
+    "privacyPolicy": "隐私政策",
+    "terms": "条款和条件",
+    "mediaKit": "媒体工具包",
+    "link": "关联",
+    "docs": "文档",
+    "nervos": "Nervos",
+    "download": "下载"
+  },
+  "privacyPolicy": {
+    "title": "隐私政策",
+    "introduction": {
+      "title": "简介",
+      "content01": "UTXO Global（“我们”，“我们的”，“我们”）致力于保护您的隐私。本隐私政策解释了当您使用我们的网站（访问地址为 ",
+      "content02": "，“网站”）和 UTXO Global Wallet 应用程序（“应用程序”）时，我们如何收集、使用和披露您的信息。"
+    },
+    "information": {
+      "title": "我们收集的信息",
+      "content01_01": "个人信息",
+      "content01_02": "当您创建账户或使用我们的服务时，我们可能会收集您的个人信息，例如您的姓名、电子邮件地址以及您提供的其他信息。",
+      "content02_01": "使用数据",
+      "content02_02": "我们可能会收集您如何使用我们服务的信息，包括您的 IP 地址、浏览器类型、操作系统以及其他使用信息。"
+    },
+    "howWeUse": {
+      "title": "我们如何使用您的信息",
+      "content01_01": "提供和改进我们的服务",
+      "content01_02": "我们使用您的信息来运营、维护和改进我们的服务。",
+      "content02_01": "与您沟通",
+      "content02_02": "我们可能会使用您的信息向您发送更新、安全警报和支持消息。",
+      "content03_01": "遵守法律义务",
+      "content03_02": "我们可能会使用您的信息以遵守适用的法律法规。"
+    },
+    "sharing": {
+      "title": "共享您的信息",
+      "content01_01": "服务提供商",
+      "content01_02": "我们可能会将您的信息与代表我们提供服务的第三方服务提供商共享。",
+      "content02_01": "法律要求",
+      "content02_02": "如果法律要求或响应公共机构的有效请求，我们可能会披露您的信息。"
+    },
+    "security": {
+      "title": "安全",
+      "content": "我们采取合理措施保护您的信息免受未经授权的访问、使用或披露。然而，任何互联网或电子邮件传输都不可能完全安全或无错误。"
+    },
+    "yourChoices": {
+      "title": "您的选择",
+      "content01_01": "账户信息",
+      "content01_02": "您可以随时通过登录您的账户来更新或删除您的账户信息。",
+      "content02_01": "Cookies",
+      "content02_02": "您可以设置您的浏览器拒绝所有或部分浏览器 cookies，或在发送 cookies 时提醒您。"
+    },
+    "changesToThis": {
+      "title": "隐私政策的变更",
+      "content": "我们可能会不时更新本隐私政策。如果我们对本隐私政策做出重大更改，我们将在本隐私政策顶部更新日期，并在我们的网站或应用程序上提供通知。"
+    },
+    "contactUs": {
+      "title": "联系我们",
+      "content01": "如果您对本隐私政策有任何疑问，请通过",
+      "content02": " 联系我们。"
+    }
+  },
+  "terms": {
+    "title": "条款和条件",
+    "introduction": {
+      "title": "简介",
+      "content01": "欢迎来到 UTXO Global。这些条款和条件（“条款”）适用于您对我们网站（访问地址为 ",
+      "content02": "，“网站”）和 UTXO Global Wallet 应用程序（“应用程序”）的使用。通过访问或使用我们的网站和应用程序，您同意受这些条款的约束。如果您不同意这些条款，请不要使用我们的网站或应用程序。"
+    },
+    "useOfOur": {
+      "title": "使用我们的服务",
+      "content01_01": "资格",
+      "content01_02": "您必须年满 18 岁才能使用我们的服务。通过使用我们的服务，您声明并保证您符合此年龄要求。",
+      "content02_01": "账户注册",
+      "content02_02": "为了访问应用程序的某些功能，您可能需要创建一个账户。您同意在注册过程中提供准确和完整的信息，并在信息发生变化时及时更新以确保其准确性和完整性。",
+      "content03_01": "账户安全",
+      "content03_02": "您有责任维护账户凭证的机密性，并对在您的账户下发生的所有活动负责。您同意立即通知我们任何未经授权使用您的账户的情况。"
+    },
+    "userConduct": {
+      "title": "用户行为",
+      "content01_01": "禁止活动",
+      "content01_02": "您同意不从事任何干扰或破坏我们服务的活动，包括但不限于传播任何病毒或有害代码，或试图未经授权访问我们的系统。",
+      "content02_01": "遵守法律",
+      "content02_02": "您同意在使用我们的服务时遵守所有适用的法律和法规。"
+    },
+    "intellectualProperty": {
+      "title": "知识产权",
+      "content01_01": "所有权",
+      "content01_02": "我们网站和应用程序上的所有内容和材料，包括但不限于文本、图形、标识和软件，均为 UTXO Global 或其许可方的财产，并受知识产权法保护。",
+      "content02_01": "许可",
+      "content02_02": "在遵守这些条款的前提下，我们授予您一个有限的、非排他性的、不可转让的、可撤销的许可，允许您为个人、非商业目的访问和使用我们的服务。"
+    },
+    "disclaimers": {
+      "title": "免责声明",
+      "content01_01": "无担保",
+      "content01_02": "我们的服务按“现状”和“可用”基础提供。我们不对服务或我们网站或应用程序上的内容的准确性或完整性做出任何保证或陈述。",
+      "content02_01": "责任限制",
+      "content02_02": "在法律允许的最大范围内，UTXO Global 对于因您使用我们的服务而引起的任何间接、附带、特殊或后果性损害不承担责任。"
+    },
+    "termination": {
+      "title": "终止",
+      "content": "我们可以在任何时间出于任何原因，无需事先通知或承担责任，终止或暂停您对我们服务的访问，包括如果您违反了这些条款。"
+    },
+    "governingLaw": {
+      "title": "法律适用",
+      "content": "这些条款应受 UTXO Global 所在司法管辖区的法律管辖并依其解释，不考虑其法律冲突原则。"
+    },
+    "changesToThese": {
+      "title": "条款的变更",
+      "content": "我们保留随时修改这些条款的权利。如果我们对这些条款做出重大变更，我们将在这些条款顶部更新日期，并在我们的网站或应用程序上提供通知。您在任何此类变更后继续使用我们的服务即表示您接受新的条款。"
+    },
+    "contactUs": {
+      "title": "联系我们",
+      "content01": "如果您对这些条款有任何疑问，请通过",
+      "content02": " 联系我们。"
+    }
+  }
+}

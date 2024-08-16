@@ -4,15 +4,23 @@
 import { useState } from "react";
 import Link from "next/link";
 import { Popover } from "antd";
+import { useTranslation } from "next-export-i18n";
 
 import cn from "@/utils/cn";
-import { NAVIGATIONS, CHROME_EXTENSION_LINK } from "@/configs/common";
+import {
+  NAVIGATIONS,
+  CHROME_EXTENSION_LINK,
+  MULTI_SIG_LINK,
+} from "@/configs/common";
 import IcnAlignLeft from "@/public/icons/icn-align-left.svg";
+import IcnMultiSig from "@/public/icons/icn-multi-sig.svg";
 import Button from "../Common/Button";
+import LangSwitcher from "../LangSwitcher";
 
 import useHashChange from "@/hooks/useHashChange";
 
 const MenuMobile = ({ localHash }: { localHash: string }) => {
+  const { t } = useTranslation();
   const [open, setOpen] = useState(false);
 
   const hide = () => {
@@ -24,7 +32,7 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
   };
 
   const content = (
-    <div className="grid gap-3 px-4">
+    <div className="grid gap-3 px-4 p-3">
       {NAVIGATIONS.map((z, i) => (
         <Link
           key={i}
@@ -39,7 +47,7 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
             }
           )}
         >
-          {z.label}
+          {t(z.label)}
         </Link>
       ))}
     </div>
@@ -66,6 +74,7 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
 };
 
 const Header = () => {
+  const { t } = useTranslation();
   const localHash = useHashChange();
 
   return (
@@ -73,6 +82,8 @@ const Header = () => {
       <div className="utxo-global-container flex justify-between items-center relative">
         <div className="flex gap-4 md:hidden items-center">
           <MenuMobile localHash={localHash} />
+
+          <LangSwitcher />
         </div>
         <div className="hidden md:flex items-center gap-4 lg:gap-10">
           {NAVIGATIONS.map((z, i) => (
@@ -89,7 +100,7 @@ const Header = () => {
                 }
               )}
             >
-              {z.label}
+              {t(z.label)}
             </Link>
           ))}
         </div>
@@ -101,20 +112,38 @@ const Header = () => {
         </Link>
 
         <div className="flex items-center gap-2">
-          {/* <Button kind="secondary">Launch Multi-Sig Wallet</Button> */}
+          <Link
+            href={MULTI_SIG_LINK}
+            target="_blank"
+            className="hidden xl:flex"
+          >
+            <Button kind="secondary" size="small">
+              {t("header.multiSig")}
+            </Button>
+          </Link>
+          <Link
+            href={MULTI_SIG_LINK}
+            target="_blank"
+            className="flex xl:hidden"
+          >
+            <Button kind="secondary" className="!px-2 sm:px-3" size="small">
+              <IcnMultiSig className="w-6" />
+            </Button>
+          </Link>
+
           <Link
             href={CHROME_EXTENSION_LINK}
             target="_blank"
-            className="hidden lg:flex"
+            className="hidden xl:flex"
           >
-            <Button>
+            <Button size="small">
               <div className="flex gap-2 items-center">
                 <img
                   src="/images/chrome.png"
                   alt="chrome"
-                  className="w-[24px]"
+                  className="w-[20px]"
                 />
-                <span>Download for Chrome</span>
+                <span>{t("header.chromeStore")}</span>
               </div>
             </Button>
           </Link>
@@ -122,22 +151,21 @@ const Header = () => {
           <Link
             href={CHROME_EXTENSION_LINK}
             target="_blank"
-            className="flex lg:hidden "
+            className="flex xl:hidden "
           >
-            <Button
-              className="!px-2 sm:px-3"
-              size="small"
-            >
+            <Button className="!px-2 sm:px-3" size="small">
               <div className="flex gap-2 items-center">
                 <img
                   src="/images/chrome.png"
                   alt="chrome"
                   className="w-[24px]"
                 />
-                <span className="hidden sm:block">Download for Chrome</span>
               </div>
             </Button>
           </Link>
+          <div className="ml-4 hidden md:block">
+            <LangSwitcher />
+          </div>
         </div>
       </div>
     </header>

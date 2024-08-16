@@ -234,5 +234,10 @@ body {
 }
 
 .Toastify__close-button {
-  color: #0D0D0D !important;
+  color: #0d0d0d !important;
+}
+
+/* ant design */
+.ant-popover-inner {
+  padding: 0 !important;
 }

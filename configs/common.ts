@@ -13,29 +13,30 @@ export const DOC_LINK = "https://utxo-global.gitbook.io/utxo-global";
 export const CHROME_EXTENSION_LINK =
   "https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle";
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACIKING_ID;
+export const MULTI_SIG_LINK = process.env.NEXT_PUBLIC_MULTI_SIG_LINK || "";
 
 export const NAVIGATIONS = [
   {
     id: "about-us",
-    label: "About Us",
+    label: "header.aboutUs",
     href: "/#about-us",
     isExternal: false,
   },
   {
     id: "features",
-    label: "Features",
+    label: "header.features",
     href: "/#features",
     isExternal: false,
   },
   {
     id: "contact",
-    label: "Contact",
+    label: "header.contact",
     href: "/#contact",
     isExternal: false,
   },
   {
     id: "github",
-    label: "GitHub",
+    label: "header.github",
     href: EXTENTSION_GITHUB,
     isExternal: true,
   },

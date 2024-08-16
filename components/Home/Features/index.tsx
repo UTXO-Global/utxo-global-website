@@ -1,17 +1,19 @@
 /* eslint-disable @next/next/no-img-element */
 import Link from "next/link";
-import { TWITTER_LINK, TELEGRAM_LINK } from "@/configs/social";
+import { useTranslation } from "next-export-i18n";
 
 import Button from "@/components/Common/Button";
-import IcnTwitter from "@/public/icons/icn-twitter.svg";
-import IcnTelegram from "@/public/icons/icn-telegram.svg";
+import { MULTI_SIG_LINK } from "@/configs/common";
 
 const Features = () => {
+  const { t } = useTranslation();
+
   return (
     <section className="pt-[100px] pb-[60px]" id="features">
       <div className="utxo-global-container">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
-          Explore our <span className="text-orange-100">Features</span>
+          {t("feature.title01")}{" "}
+          <span className="text-orange-100">{t("feature.title02")}</span>
         </h3>
         <div className="mt-10 md:mt-20 rounded-[16px] bg-grey-100 overflow-hidden flex flex-col lg:flex-row">
           <div className="flex-1 relative px-[65px] flex justify-between items-end pt-10 md:pt-20 lg:pt-0 overflow-hidden">
@@ -62,26 +64,67 @@ const Features = () => {
                   fill="#FF7201"
                 />
               </svg>
-              <p className="text-base text-dark-100 font-medium">Extension</p>
+              <p className="text-base text-dark-100 font-medium">
+                {t("feature.portfolio.extension")}
+              </p>
             </div>
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] text-dark-100 font-medium mt-[20px]">
-              Portfolio Management
+              {t("feature.portfolio.title")}
             </h6>
             <p className="mt-2 text-grey-200 text-base">
-              Easily view and manage your UTXOs directly within an intuitive
-              dashboard.
+              {t("feature.portfolio.description")}
             </p>
-          
           </div>
         </div>
-        <div className="mt-4 md:mt-[60px] grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div
+          className="my-4 md:my-[60px] border border-[#F5F5F5] rounded-[24px] pl-6 lg:pl-[127px] pb-[17px] pr-5 pt-[30px] md:pt-0 flex flex-col md:flex-row items-center"
+          style={{
+            background: `linear-gradient(270deg, #FFF 38.75%, #EBEBEB 75.19%, #F4F4F4 100%)`,
+          }}
+        >
+          <div className="flex-1">
+            <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] font-medium text-orange-100">
+              {t("feature.multiSig.title01")}{" "}
+              <span className="text-dark-100">
+                {t("feature.multiSig.title02")}
+              </span>
+            </h6>
+            <p className="text-base text-grey-200 mt-2 mb-6 md:mb-10">
+              {t("feature.multiSig.description")}
+            </p>
+            <Link href={MULTI_SIG_LINK} target="_blank" className="">
+              <Button>
+                <div className="flex items-center gap-2">
+                  <span>{t("feature.multiSig.getStarted")}</span>
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="16"
+                    height="16"
+                    viewBox="0 0 16 16"
+                    fill="none"
+                  >
+                    <path
+                      d="M8.84471 2.80503C8.74801 2.71753 8.62095 2.67128 8.49063 2.67613C8.36031 2.68098 8.23704 2.73656 8.14711 2.831C8.05719 2.92545 8.00772 3.0513 8.00926 3.1817C8.01081 3.3121 8.06324 3.43674 8.15537 3.52903L12.3227 7.49837L2.50004 7.49837C2.36743 7.49837 2.24026 7.55105 2.14649 7.64481C2.05272 7.73858 2.00004 7.86576 2.00004 7.99837C2.00004 8.13098 2.05272 8.25815 2.14649 8.35192C2.24026 8.44569 2.36743 8.49837 2.50004 8.49837L12.3227 8.49837L8.15537 12.4684C8.10779 12.5136 8.06959 12.5678 8.04295 12.6278C8.01631 12.6879 8.00176 12.7526 8.00012 12.8182C7.99848 12.8839 8.00978 12.9492 8.03339 13.0105C8.057 13.0718 8.09245 13.1278 8.13771 13.1754C8.18297 13.223 8.23716 13.2612 8.29719 13.2878C8.35721 13.3144 8.4219 13.329 8.48755 13.3306C8.5532 13.3323 8.61853 13.321 8.67981 13.2974C8.74109 13.2737 8.79713 13.2383 8.84471 13.193L13.7914 8.4817C13.8994 8.37882 13.9699 8.24267 13.9914 8.09504C14.0029 8.03109 14.0027 7.96557 13.9907 7.9017C13.9689 7.75454 13.8985 7.6189 13.7907 7.51637L8.84471 2.80503Z"
+                      fill="white"
+                    />
+                  </svg>
+                </div>
+              </Button>
+            </Link>
+          </div>
+          <img
+            src="/images/multi-sig.png"
+            alt="multi sig"
+            className="w-[400px] lg:w-[500px] xl:w-[690px] mt-6 md:mt-0"
+          />
+        </div>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="bg-grey-100 rounded-[16px] overflow-hidden pt-6 px-6">
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] font-medium text-orange-100 text-center">
-              Send & Receive
+              {t("feature.send&Receive.title")}
             </h6>
             <p className="text-base text-grey-200 max-w-[398px] mx-auto mt-2 text-center">
-              Experience a smooth and secure way to send, receive, and manage
-              your assets.
+              {t("feature.send&Receive.description")}
             </p>
             <div className="mt-[22px] flex justify-center">
               <img
@@ -101,11 +144,10 @@ const Features = () => {
           </div>
           <div className="bg-grey-100 rounded-[16px] overflow-hidden pt-6 px-6">
             <h6 className="text-[24px] leading-[32px] md:text-[32px] md:leading-[40px] lg:text-[40px] lg:leading-[48px] font-medium text-orange-100 text-center">
-              Explore
+              {t("feature.explore.title")}
             </h6>
             <p className="text-base text-grey-200 max-w-[398px] mx-auto mt-2 text-center">
-              Dive into a curated selection of DApps to revolutionize the way
-              you manage your assets.
+              {t("feature.explore.description")}
             </p>
             <div className="mt-[22px] flex justify-center">
               <img
