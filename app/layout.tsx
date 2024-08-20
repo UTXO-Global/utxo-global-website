@@ -9,13 +9,7 @@ import { Suspense } from "react";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 
-import {
-  SITE_DESCRIPTION,
-  SITE_TITLE,
-  SITE_URL,
-  SITE_IMAGE_URL,
-  GA_TRACKING_ID,
-} from "@/configs/common";
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, SITE_IMAGE_URL, GA_TRACKING_ID } from "@/configs/common";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -42,9 +36,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <Script
-        src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`}
-      />
+      <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
       <Script id="google-analytics">
         {`
           window.dataLayer = window.dataLayer || [];
@@ -59,6 +51,20 @@ export default function RootLayout({
           theme={{
             token: {
               fontFamily: `"Satoshi", sans-serif`,
+            },
+            components: {
+              Pagination: {
+                colorPrimary: "#0d0d0d",
+                colorPrimaryBgHover: "#2C2C2C",
+                colorPrimaryHover: "#2C2C2C",
+                itemActiveBg: "#F5F5F5",
+                itemBg: "transparent",
+                size: 40,
+                colorText: "#0d0d0d",
+                colorBgTextActive: "#0d0d0d",
+                fontSize: 16,
+                colorTextDisabled: "#A7A7A7",
+              },
             },
           }}
         >

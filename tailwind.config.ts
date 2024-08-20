@@ -17,7 +17,7 @@ const config: Config = {
         dark: {
           100: "#0D0D0D",
           200: "#141414",
-          300: "#2C2C2C"
+          300: "#2C2C2C",
         },
         light: {
           100: "#FFFFFF",
@@ -27,6 +27,9 @@ const config: Config = {
           200: "#787575",
           300: "#ABA8A1",
           400: "#BDBDBD",
+        },
+        lightGrey: {
+          100: "#F7F7F7",
         },
         success: {
           100: "#09C148",

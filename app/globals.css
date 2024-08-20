@@ -8,8 +8,7 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/satoshi/Satoshi-Variable.woff2") format("woff2"),
-    url("/fonts/satoshi/Satoshi-Variable.woff") format("woff"),
+  src: url("/fonts/satoshi/Satoshi-Variable.woff2") format("woff2"), url("/fonts/satoshi/Satoshi-Variable.woff") format("woff"),
     url("/fonts/satoshi/Satoshi-Variable.ttf") format("truetype");
   font-weight: 300 900;
   font-display: swap;
@@ -18,8 +17,7 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"),
-    url("/fonts/satoshi/Satoshi-Regular.woff") format("woff"),
+  src: url("/fonts/satoshi/Satoshi-Regular.woff2") format("woff2"), url("/fonts/satoshi/Satoshi-Regular.woff") format("woff"),
     url("/fonts/satoshi/Satoshi-Regular.ttf") format("truetype");
   font-weight: 400;
   font-display: swap;
@@ -28,8 +26,7 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/satoshi/Satoshi-Medium.woff2") format("woff2"),
-    url("/fonts/satoshi/Satoshi-Medium.woff") format("woff"),
+  src: url("/fonts/satoshi/Satoshi-Medium.woff2") format("woff2"), url("/fonts/satoshi/Satoshi-Medium.woff") format("woff"),
     url("/fonts/satoshi/Satoshi-Medium.ttf") format("truetype");
   font-weight: 500;
   font-display: swap;
@@ -38,8 +35,7 @@
 
 @font-face {
   font-family: "Satoshi";
-  src: url("/fonts/satoshi/Satoshi-Bold.woff2") format("woff2"),
-    url("/fonts/satoshi/Satoshi-Bold.woff") format("woff"),
+  src: url("/fonts/satoshi/Satoshi-Bold.woff2") format("woff2"), url("/fonts/satoshi/Satoshi-Bold.woff") format("woff"),
     url("/fonts/satoshi/Satoshi-Bold.ttf") format("truetype");
   font-weight: 700;
   font-display: swap;
@@ -240,4 +236,9 @@ body {
 /* ant design */
 .ant-popover-inner {
   padding: 0 !important;
+}
+
+/* Pagination */
+.ant-pagination-item-active {
+  border-color: transparent !important;
 }

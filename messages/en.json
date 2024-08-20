@@ -5,7 +5,8 @@
     "contact": "Contact",
     "github": "GitHub",
     "multiSig": "Launch Multi-Sig Wallet",
-    "chromeStore": "Download for Chrome"
+    "chromeStore": "Download for Chrome",
+    "bountyContest": "Bounty Contest"
   },
   "aboutUs": {
     "title01": "UTXO Global",

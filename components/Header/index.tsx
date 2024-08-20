@@ -7,17 +7,14 @@ import { Popover } from "antd";
 import { useTranslation } from "next-export-i18n";
 
 import cn from "@/utils/cn";
-import {
-  NAVIGATIONS,
-  CHROME_EXTENSION_LINK,
-  MULTI_SIG_LINK,
-} from "@/configs/common";
+import { NAVIGATIONS, CHROME_EXTENSION_LINK, MULTI_SIG_LINK } from "@/configs/common";
 import IcnAlignLeft from "@/public/icons/icn-align-left.svg";
 import IcnMultiSig from "@/public/icons/icn-multi-sig.svg";
 import Button from "../Common/Button";
 import LangSwitcher from "../LangSwitcher";
-
+import bountyContestBanner from "@/public/images/bounty-contest-banner-02.png";
 import useHashChange from "@/hooks/useHashChange";
+import Image from "next/image";
 
 const MenuMobile = ({ localHash }: { localHash: string }) => {
   const { t } = useTranslation();
@@ -38,14 +35,9 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
           key={i}
           href={z.href === "/#about-us" ? "/" : z.href}
           target={z.isExternal ? "_blank" : "_self"}
-          className={cn(
-            `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
-            {
-              "text-dark-100":
-                localHash === z.href ||
-                (z.href === "/#about-us" ? localHash === "/" : false),
-            }
-          )}
+          className={cn(`text-grey-400 text-base transition-all hover:text-dark-100 font-medium`, {
+            "text-dark-100": localHash === z.href || (z.href === "/#about-us" ? localHash === "/" : false),
+          })}
         >
           {t(z.label)}
         </Link>
@@ -54,14 +46,7 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
   );
 
   return (
-    <Popover
-      content={content}
-      trigger="click"
-      open={open}
-      onOpenChange={handleOpenChange}
-      placement="bottomLeft"
-      arrow={false}
-    >
+    <Popover content={content} trigger="click" open={open} onOpenChange={handleOpenChange} placement="bottomLeft" arrow={false}>
       <div
         className={cn(
           `w-6 h-6 cursor-pointer group rounded-[4px] border border-dark-100 hover:bg-dark-100 transition-all flex justify-center items-center`
@@ -78,97 +63,79 @@ const Header = () => {
   const localHash = useHashChange();
 
   return (
-    <header className="bg-light-100 py-3 md:py-6 sticky top-0 z-[9999]">
-      <div className="utxo-global-container flex justify-between items-center relative">
-        <div className="flex gap-4 md:hidden items-center">
-          <MenuMobile localHash={localHash} />
+    <>
+      <div className="relative">
+        <Image src={bountyContestBanner} alt="Bounty Contest" width={1400} height={100} className="w-full h-full" />
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <path
+            d="M6.75806 17.2438L12.0011 12.0008L17.2441 17.2438M17.2441 6.75781L12.0001 12.0008L6.75806 6.75781"
+            stroke="white"
+            strokeLinecap="round"
+            strokeWidth="1.5"
+            strokeLinejoin="round"
+          />
+        </svg>
+      </div>
+      <header className="bg-light-100 py-3 md:py-6 sticky top-0 z-[9999]">
+        <div className="utxo-global-container flex justify-between items-center relative">
+          <div className="flex gap-4 md:hidden items-center">
+            <MenuMobile localHash={localHash} />
 
-          <LangSwitcher />
-        </div>
-        <div className="hidden md:flex items-center gap-4 lg:gap-10">
-          {NAVIGATIONS.map((z, i) => (
-            <Link
-              key={i}
-              href={z.href === "/#about-us" ? "/" : z.href}
-              target={z.isExternal ? "_blank" : "_self"}
-              className={cn(
-                `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
-                {
-                  "text-dark-100":
-                    localHash === z.href ||
-                    (z.href === "/#about-us" ? localHash === "/" : false),
-                }
-              )}
-            >
-              {t(z.label)}
-            </Link>
-          ))}
-        </div>
-        <Link
-          href="/"
-          className="w-[100px] md:w-[120px] lg:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-        >
-          <img src="/logo.png" alt="UTXO Global" />
-        </Link>
-
-        <div className="flex items-center gap-2">
-          <Link
-            href={MULTI_SIG_LINK}
-            target="_blank"
-            className="hidden xl:flex"
-          >
-            <Button kind="secondary" size="small">
-              {t("header.multiSig")}
-            </Button>
-          </Link>
-          <Link
-            href={MULTI_SIG_LINK}
-            target="_blank"
-            className="flex xl:hidden"
-          >
-            <Button kind="secondary" className="!px-2 sm:px-3" size="small">
-              <IcnMultiSig className="w-6" />
-            </Button>
-          </Link>
-
-          <Link
-            href={CHROME_EXTENSION_LINK}
-            target="_blank"
-            className="hidden xl:flex"
-          >
-            <Button size="small">
-              <div className="flex gap-2 items-center">
-                <img
-                  src="/images/chrome.png"
-                  alt="chrome"
-                  className="w-[20px]"
-                />
-                <span>{t("header.chromeStore")}</span>
-              </div>
-            </Button>
-          </Link>
-
-          <Link
-            href={CHROME_EXTENSION_LINK}
-            target="_blank"
-            className="flex xl:hidden "
-          >
-            <Button className="!px-2 sm:px-3" size="small">
-              <div className="flex gap-2 items-center">
-                <img
-                  src="/images/chrome.png"
-                  alt="chrome"
-                  className="w-[24px]"
-                />
-              </div>
-            </Button>
-          </Link>
-          <div className="ml-4 hidden md:block">
             <LangSwitcher />
           </div>
+          <div className="hidden md:flex items-center gap-4 lg:gap-10">
+            {NAVIGATIONS.map((z, i) => (
+              <Link
+                key={i}
+                href={z.href === "/#about-us" ? "/" : z.href}
+                target={z.isExternal ? "_blank" : "_self"}
+                className={cn(`text-grey-400 text-base transition-all hover:text-dark-100 font-medium`, {
+                  "text-dark-100": localHash === z.href || (z.href === "/#about-us" ? localHash === "/" : false),
+                })}
+              >
+                {t(z.label)}
+              </Link>
+            ))}
+          </div>
+          <Link href="/" className="w-[100px] md:w-[120px] lg:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
+            <img src="/logo.png" alt="UTXO Global" />
+          </Link>
+
+          <div className="flex items-center gap-2">
+            <Link href={MULTI_SIG_LINK} target="_blank" className="hidden xl:flex">
+              <Button kind="secondary" size="small">
+                {t("header.multiSig")}
+              </Button>
+            </Link>
+            <Link href={MULTI_SIG_LINK} target="_blank" className="flex xl:hidden">
+              <Button kind="secondary" className="!px-2 sm:px-3" size="small">
+                <IcnMultiSig className="w-6" />
+              </Button>
+            </Link>
+
+            <Link href={CHROME_EXTENSION_LINK} target="_blank" className="hidden xl:flex">
+              <Button size="small">
+                <div className="flex gap-2 items-center">
+                  <img src="/images/chrome.png" alt="chrome" className="w-[20px]" />
+                  <span>{t("header.chromeStore")}</span>
+                </div>
+              </Button>
+            </Link>
+
+            <Link href={CHROME_EXTENSION_LINK} target="_blank" className="flex xl:hidden ">
+              <Button className="!px-2 sm:px-3" size="small">
+                <div className="flex gap-2 items-center">
+                  <img src="/images/chrome.png" alt="chrome" className="w-[24px]" />
+                </div>
+              </Button>
+            </Link>
+            <div className="ml-4 hidden md:block">
+              <LangSwitcher />
+            </div>
+          </div>
         </div>
-      </div>
-    </header>
+      </header>
+    </>
   );
 };
 
