@@ -1,86 +1,11 @@
-"use client";
-
 import Image from "next/image";
 import React from "react";
 import bountyContestBanner from "@/public/images/bounty-contest-banner.png";
-import bountyContestBanner01 from "@/public/images/bounty-contest-banner-01.png";
-import bountyContestBanner3 from "@/public/images/bounty-contest-banner-03.png";
-import bountyResult from "@/public/images/bounty-result.png";
-import IcnReward from "@/public/icons/icn-reward.svg";
 import Button from "@/components/Common/Button";
 import Link from "next/link";
 import { BOUNTY_CONTEST_ACTIVE, BUG_REPORT_LINK, BUG_REPORT_RESULT_LINK, CHROME_EXTENSION_LINK, CKBCCC_DEMO_LINK } from "@/configs/common";
-import { Pagination } from "antd";
-import { formatNumber } from "@/utils/helpers";
-import IcnMedalGold from "@/public/icons/icn-medal-gold.svg";
-import IcnMedalSilver from "@/public/icons/icn-medal-silver.svg";
-import IcnMedalBronze from "@/public/icons/icn-medal-bronze.svg";
-
-const Medals = [
-  {
-    icon: <IcnMedalGold className="w-[27px] h-[34px]" />,
-  },
-  {
-    icon: <IcnMedalSilver className="w-[27px] h-[34px]" />,
-  },
-  {
-    icon: <IcnMedalBronze className="w-[27px] h-[34px]" />,
-  },
-];
-
-const Leaderboard = () => {
-  return (
-    <div className="grid gap-6">
-      <div className="rounded-t-lg overflow-hidden">
-        <div className="px-6 py-4 bg-gradient-to-b text-center from-[#D3D1CE] via-[#E0DFDE] to-[#EFEFEF]">
-          <div className="flex justify-center gap-2">
-            <IcnReward className="h-8 w-[25px]" />
-            <h2 className="text-dark-100 text-2xl text-center font-bold uppercase">LEADERBOARD</h2>
-            <IcnReward className="h-8 w-[25px]" />
-          </div>
-          <p className="mt-2">Data is updated every 24 hours</p>
-        </div>
-        {/* <div className="p-6 bg-[#FCFCFC] min-h-[200px] flex items-center">
-          <p className="text-grey-200 mx-auto">Data has not been updated.</p>
-        </div> */}
-        <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5]">
-          <div className="text-lg sm:text-xl font-bold p-6 flex items-center">
-            <div className="w-[20%]">#</div>
-            <div className="w-[40%] text-start">Name / Email</div>
-            <div className="w-[40%] text-end">Total Points</div>
-          </div>
-          {Array(4)
-            .fill(0)
-            .map((_, i) => {
-              return (
-                <div className="px-6 py-4 flex items-center font-medium text-start" key={i}>
-                  <span className="w-[20%] text-grey-200">1</span>
-                  <div className="w-[50%] truncate">
-                    <span className="text-xl block">John</span>
-                    <span className="mt-1 text-sm font-normal text-grey-200">jo******@gmail.com</span>
-                  </div>
-                  <div className="w-[30%] text-xl text-end">{formatNumber(1200)}</div>
-                </div>
-              );
-            })}
-          <Pagination
-            responsive={true}
-            current={1}
-            defaultCurrent={1}
-            total={35}
-            size="default"
-            showSizeChanger={false}
-            onChange={() => {}}
-            defaultPageSize={4}
-            align="center"
-            className="py-6"
-          />
-        </div>
-      </div>
-      <Image src={bountyContestBanner01} alt="banner" width={490} height={370} className="mx-auto w-auto" />
-    </div>
-  );
-};
+import BountyResult from "@/components/BountyContest/BountyResult";
+import LeaderBoard from "@/components/BountyContest/LeaderBoard";
 
 export default function BountyPage() {
   return (
@@ -179,56 +104,12 @@ export default function BountyPage() {
               </div>
             </div>
             <div className="col-span-1 lg:col-span-2">
-              <Leaderboard />
+              <LeaderBoard />
             </div>
           </div>
         </div>
       )}
-      {!BOUNTY_CONTEST_ACTIVE && (
-        <div className="utxo-global-container mt-14">
-          <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] max-w-[836px] mx-auto rounded-lg">
-            <div className="text-lg sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-6 px-6 sm:px-16 pt-10 flex items-center">
-              <Image
-                src={bountyResult}
-                alt="banner"
-                width={300}
-                height={53}
-                className="absolute w-auto -translate-y-[100%] right-0 left-0 mx-auto"
-              />
-              <div className="w-[20%]">#</div>
-              <div className="w-[40%] text-start">Name / Email</div>
-              <div className="w-[40%] text-end">Total Points</div>
-            </div>
-            {Array(6)
-              .fill(0)
-              .map((_, i) => {
-                return (
-                  <div className="px-6 sm:px-16 py-4 flex items-center font-medium text-start" key={i}>
-                    {i < 3 ? <div className="w-[20%]">{Medals[i].icon}</div> : <span className="w-[20%] text-grey-200 ml-2">{i + 1}</span>}
-                    <div className="w-[50%] truncate">
-                      <span className="text-xl block">John</span>
-                      <span className="mt-1 text-sm font-normal text-grey-200">jo******@gmail.com</span>
-                    </div>
-                    <div className="w-[30%] text-xl text-end">{formatNumber(1200)}</div>
-                  </div>
-                );
-              })}
-            <Pagination
-              responsive={true}
-              current={1}
-              defaultCurrent={1}
-              total={35}
-              size="default"
-              showSizeChanger={false}
-              onChange={() => {}}
-              defaultPageSize={4}
-              align="center"
-              className="py-6"
-            />
-          </div>
-          <Image src={bountyContestBanner3} alt="banner" width={836} height={410} className="mx-auto mt-8" />
-        </div>
-      )}
+      {!BOUNTY_CONTEST_ACTIVE && <BountyResult />}
     </div>
   );
 }

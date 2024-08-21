@@ -31,6 +31,11 @@ const config: Config = {
         lightGrey: {
           100: "#F7F7F7",
         },
+        lightYellow: {
+          100: "#FBD87F",
+          200: "#FAE7A5",
+          300: "#FDEDCC",
+        },
         success: {
           100: "#09C148",
         },
