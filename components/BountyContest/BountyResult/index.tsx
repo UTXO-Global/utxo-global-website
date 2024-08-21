@@ -10,6 +10,7 @@ import bountyBannerResult from "@/public/images/bounty-result.png";
 import { Modal, Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
 import Button from "@/components/Common/Button";
+import { useTranslation } from "next-export-i18n";
 
 const medals = [
   {
@@ -25,6 +26,7 @@ const medals = [
 
 export default function BountyResult() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -50,8 +52,8 @@ export default function BountyResult() {
             className="absolute w-auto -translate-y-[100%]  right-0 left-0 mx-auto"
           />
           <div className="w-[20%]">#</div>
-          <div className="w-[40%] text-start">Name / Email</div>
-          <div className="w-[40%] text-end">Total Points</div>
+          <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
+          <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
         </div>
         {Array(6)
           .fill(0)
@@ -83,14 +85,14 @@ export default function BountyResult() {
       <div className="relative mx-auto w-fit">
         <Image src={bountyContestBanner3} alt="banner" width={836} height={410} />
         <div className="absolute top-[60%] right-[8%] sm:right-[12%] -translate-y-1/2 text-center">
-          <h2 className="text-sm sm:text-base md:text-2xl font-medium text-white">How To Claim Reward?</h2>
+          <h2 className="text-sm sm:text-base md:text-2xl font-medium text-white">{t("bountyContest.claimRewardTitle")}?</h2>
           <Button
             kind="light"
             size="small"
             className="!text-sm sm:!text-base border-none !font-bold md:px-6 md:py-[11px] bg-gradient-to-br md:w-[200px] from-lightYellow-200 mt-4 via-lightYellow-300 to-lightYellow-100"
             onClick={() => showModal()}
           >
-            Watch Now
+            {t("bountyContest.watchNow")}
           </Button>
         </div>
       </div>

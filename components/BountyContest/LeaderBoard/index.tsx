@@ -6,9 +6,11 @@ import IcnReward from "@/public/icons/icn-reward.svg";
 import { Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
 import Image from "next/image";
+import { useTranslation } from "next-export-i18n";
 
 export default function LeaderBoard() {
   const [currentPage, setCurrentPage] = useState(0);
+  const { t } = useTranslation();
 
   return (
     <div className="grid gap-6">
@@ -16,10 +18,10 @@ export default function LeaderBoard() {
         <div className="px-6 py-4 bg-gradient-to-b text-center from-[#D3D1CE] via-[#E0DFDE] to-[#EFEFEF]">
           <div className="flex justify-center gap-2">
             <IcnReward className="h-8 w-[25px]" />
-            <h2 className="text-dark-100 text-2xl text-center font-bold uppercase">LEADERBOARD</h2>
+            <h2 className="text-dark-100 text-2xl text-center font-bold uppercase">{t("bountyContest.leaderboard.title")}</h2>
             <IcnReward className="h-8 w-[25px]" />
           </div>
-          <p className="mt-2">Data is updated every 24 hours</p>
+          <p className="mt-2">{t("bountyContest.leaderboard.description")}</p>
         </div>
         {/* <div className="p-6 bg-[#FCFCFC] min-h-[200px] flex items-center">
             <p className="text-grey-200 mx-auto">Data has not been updated.</p>
@@ -27,8 +29,8 @@ export default function LeaderBoard() {
         <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5]">
           <div className="text-lg sm:text-xl font-bold p-6 flex items-center">
             <div className="w-[20%]">#</div>
-            <div className="w-[40%] text-start">Name / Email</div>
-            <div className="w-[40%] text-end">Total Points</div>
+            <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
+            <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
           </div>
           {Array(4)
             .fill(0)
