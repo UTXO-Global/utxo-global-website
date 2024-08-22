@@ -20,10 +20,12 @@ import LangSwitcher from "../LangSwitcher";
 import useHashChange from "@/hooks/useHashChange";
 import { TWITTER_LINK } from "@/configs/social";
 import { BountyContestStage } from "@/types/common";
+import { usePathname } from "next/navigation";
 
 const MenuMobile = ({ localHash }: { localHash: string }) => {
   const { t } = useTranslation();
   const [open, setOpen] = useState(false);
+  const pathname = usePathname();
 
   const hide = () => {
     setOpen(false);
@@ -45,7 +47,11 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
             {
               "text-dark-100":
                 localHash === z.href ||
-                (z.href === "/#about-us" ? localHash === "/" : false),
+                (z.href === "/#about-us"
+                  ? localHash === "/" && pathname === "/"
+                  : false) ||
+                (z.href === "/bounty-contest" &&
+                  pathname === "/bounty-contest/"),
             }
           )}
         >
@@ -78,6 +84,7 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
 const Header = () => {
   const { t } = useTranslation();
   const localHash = useHashChange();
+  const pathname = usePathname();
   const [showBanner, setShowBanner] = useState(true);
 
   return (
@@ -90,25 +97,6 @@ const Header = () => {
             className="w-full h-full"
           />
 
-          <button
-            className="absolute top-[6%] right-2"
-            onClick={() => setShowBanner(false)}
-          >
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              strokeWidth="1.5"
-              stroke="white"
-              className="size-3 md:size-6"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                d="M6 18 18 6M6 6l12 12"
-              />
-            </svg>
-          </button>
           <div className="absolute top-[50%] right-[6%] -translate-y-1/2 text-center">
             {BOUNTY_CONTEST_STAGE === BountyContestStage.Prepare ? (
               <Link
@@ -124,8 +112,8 @@ const Header = () => {
                 href="/bounty-contest"
                 className="text-xs rounded-md sm:rounded-lg flex items-center justify-center gap-1 sm:gap-2 sm:text-base border-none font-bold py-[2px] sm:py-[5px] lg:py-[11px] bg-gradient-to-br w-[60px] sm:w-[100px] lg:w-[150px] xl:w-[200px] from-light-yellow-200 via-light-yellow-300 to-light-yellow-100"
               >
-                <span className="hidden sm:block">Join Now</span>
-                <span className="block sm:hidden">Join</span>
+                <span className="hidden lg:block">Join Now</span>
+                <span className="block lg:hidden">Join</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -162,7 +150,11 @@ const Header = () => {
                   {
                     "text-dark-100":
                       localHash === z.href ||
-                      (z.href === "/#about-us" ? localHash === "/" : false),
+                      (z.href === "/#about-us"
+                        ? localHash === "/" && pathname === "/"
+                        : false) ||
+                      (z.href === "/bounty-contest" &&
+                        pathname === "/bounty-contest/"),
                   }
                 )}
               >

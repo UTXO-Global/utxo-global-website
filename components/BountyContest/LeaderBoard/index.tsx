@@ -27,8 +27,8 @@ export default function LeaderBoard() {
         </div> */}
         <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5]">
           <div className="text-lg sm:text-xl font-bold p-6 flex items-center">
-            <div className="w-[20%]">#</div>
-            <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
+            <div className="w-[10%]">#</div>
+            <div className="w-[50%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
             <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
           </div>
           {Array(4)
@@ -36,12 +36,12 @@ export default function LeaderBoard() {
             .map((_, i) => {
               return (
                 <div className="px-6 py-4 flex items-center font-medium text-start" key={i}>
-                  <span className="w-[20%] text-grey-200">{i + 1}</span>
+                  <span className="w-[10%] text-grey-200">{i + 1}</span>
                   <div className="w-[50%] truncate">
                     <span className="text-xl block">John</span>
                     <span className="mt-1 text-sm font-normal text-grey-200">jo******@gmail.com</span>
                   </div>
-                  <div className="w-[30%] text-xl text-end">{formatNumber(1200)}</div>
+                  <div className="w-[40%] text-xl text-end">{formatNumber(1200)}</div>
                 </div>
               );
             })}
