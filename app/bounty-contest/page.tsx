@@ -26,7 +26,7 @@ export default function BountyPage() {
           alt="bounty contest"
           className="mx-auto w-[530px]"
         />
-        {BOUNTY_CONTEST_STAGE === BountyContestStage.Prepare ? (
+        {BOUNTY_CONTEST_STAGE !== BountyContestStage.Ended ? (
           <>
             <p className="text-xl font-medium mt-8 text-grey-200">
               {t("bountyContest.description")}
@@ -86,7 +86,7 @@ export default function BountyPage() {
                       className="text-orange-100"
                       target="_blank"
                     >
-                      UTXO Wallet
+                      UTXO Global Wallet
                     </Link>
                   </p>
                 </div>
