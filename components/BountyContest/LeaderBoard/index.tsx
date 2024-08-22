@@ -60,7 +60,7 @@ export default function LeaderBoard() {
           />
         </div>
       </div>
-      <Image src={bountyContestBanner01} alt="banner" width={490} height={370} className="mx-auto w-auto" />
+      <Image src={bountyContestBanner01} alt="banner" width={1080} height={1080} className="mx-auto w-[490px]" />
     </div>
   );
 }

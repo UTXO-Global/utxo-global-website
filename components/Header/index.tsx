@@ -15,6 +15,7 @@ import LangSwitcher from "../LangSwitcher";
 import bountyContestBanner from "@/public/images/bounty-contest-banner-02.png";
 import useHashChange from "@/hooks/useHashChange";
 import Image from "next/image";
+import { TWITTER_LINK } from "@/configs/social";
 
 const MenuMobile = ({ localHash }: { localHash: string }) => {
   const { t } = useTranslation();
@@ -67,7 +68,7 @@ const Header = () => {
     <>
       {showBanner && (
         <div className="relative">
-          <div className="h-[100px] relative">
+          <div className="h-[103px] relative">
             <Image
               src={bountyContestBanner}
               alt="Bounty Contest"
@@ -82,10 +83,12 @@ const Header = () => {
             </svg>
           </button>
           <div className="absolute top-[50%] right-[12%] sm:right-[8%] lg:right-[6%] -translate-y-1/2 text-center">
-            <button className="text-sm px-4 rounded-lg flex items-center justify-center gap-2 sm:text-base border-none font-bold py-[11px] bg-gradient-to-br lg:w-[200px] from-lightYellow-200 via-lightYellow-300 to-lightYellow-100">
-              Follow
-              <IcnTwitter className="size-4 fill-black" />
-            </button>
+            <Link href={TWITTER_LINK} target="_blank">
+              <button className="text-sm transition-all px-4 rounded-lg flex items-center justify-center gap-2 sm:text-base border-none font-bold py-[11px] bg-gradient-to-br lg:w-[200px] hover:via-lightYellow-100 hover:to-lightYellow-300 from-lightYellow-200 via-lightYellow-300 to-lightYellow-100">
+                Follow
+                <IcnTwitter className="size-4 fill-black" />
+              </button>
+            </Link>
           </div>
         </div>
       )}
