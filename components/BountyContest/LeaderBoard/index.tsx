@@ -1,11 +1,10 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import React, { useState } from "react";
-import bountyContestBanner01 from "@/public/images/bounty-contest-banner-01.png";
 import IcnReward from "@/public/icons/icn-reward.svg";
 import { Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
-import Image from "next/image";
 import { useTranslation } from "next-export-i18n";
 
 export default function LeaderBoard() {
@@ -60,7 +59,7 @@ export default function LeaderBoard() {
           />
         </div>
       </div>
-      <Image src={bountyContestBanner01} alt="banner" width={490} height={370} className="mx-auto w-auto" />
+      <img src="/images/bounty-contest-reward.png" alt="reward" className="mx-auto w-auto" />
     </div>
   );
 }
