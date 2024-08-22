@@ -6,7 +6,8 @@
     "github": "GitHub",
 
     "multiSig": "启动多重签名钱包",
-    "chromeStore": "下载 Chrome 版本"
+    "chromeStore": "下载 Chrome 版本",
+    "bountyContest": "Bounty Contest"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -174,6 +175,41 @@
       "title": "联系我们",
       "content01": "如果您对这些条款有任何疑问，请通过",
       "content02": " 联系我们。"
+    }
+  },
+  "bountyContest": {
+    "description": "Hunt for vulnerabilities, earn rewards, & help us build a more secure future.",
+    "description01": "Period: August 20, 2024  10:00:00 AM (UTC) - Sep 03, 2024 10:00:00 AM (UTC)",
+    "submitBug": "Submit Bug",
+    "btnClose": "Close",
+    "claimRewardTitle": "How To Claim Rewards",
+    "watchNow": "Watch Now",
+    "instruction": {
+      "title": "How to participate",
+      "step_01_title": "Download UTXO Global Wallet",
+      "step_01_description": "Participants download the wallet from Chrome Store",
+      "step_02_title": "Test Wallet in Testing Zone",
+      "step_02_description": "Users test the wallet within the testing zone in UTXO Wallet Extension (dApp)",
+      "step_02_content_01": "Wallet Management",
+      "step_02_content_02": "Create / import / export a wallet from recovery phase and private key.",
+      "step_02_content_03": "Create and manage multiple wallets.",
+      "step_02_content_04": "Create and manage multiple accounts within a single wallet.",
+      "step_02_content_05": "CKB Native Coin Management",
+      "step_02_content_06": "Send and receive CKB to and from different addresses",
+      "step_02_content_07": "Sign Message + Transaction",
+      "step_02_content_08": "Use the CKB CCC demo to test. The valid testing zone: Sign, Transfer, Transfer with Lumos, Transfer xUDT, Transfer xUDT (SUS), and Issue xUDT",
+      "step_03_title": "Submit Bug Report",
+      "step_03_description": "If a bug is found, the participant submits a report detailing the issue via"
+    },
+    "leaderboard": {
+      "title": "Leaderboard",
+      "description": "Data is updated every 24 hours",
+      "field_01": "Name / Email",
+      "field_02": "Total Points"
+    },
+    "bountyResult": {
+      "description": "Check out the leaderboard to see who's leading the charge in making our platform more secure",
+      "bugReport": "Bug Report"
     }
   }
 }
