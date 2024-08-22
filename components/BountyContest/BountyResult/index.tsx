@@ -108,7 +108,7 @@ export default function BountyResult() {
           <div className="mt-8">
             <div className="relative w-full max-w-[353px] mx-auto flex-grow h-[400px] overflow-hidden pt-[56.25%]">
               <iframe
-                src="https://www.youtube.com/embed/wtGe24eV_Pk?si=01vE98u3DrLbjqiY"
+                src=""
                 className="absolute bottom-0 left-0 right-0 top-0 h-full w-full"
                 width="353"
                 height="600"
