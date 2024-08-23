@@ -188,7 +188,7 @@
       "step_01_title": "Download UTXO Global Wallet",
       "step_01_description": "Participants can download the wallet from the Chrome Web Store",
       "step_02_title": "Test Wallet in Testing Zone",
-      "step_02_description": "Users should test the wallet using the UTXO Wallet Extension (dApp) in the following areas",
+      "step_02_description": "Users should test the wallet using the UTXO Global Wallet Extension (dApp) in the following areas",
       "step_02_content_01": "Wallet Management",
       "step_02_content_02": "Create, import, and export a wallet using a recovery phrase or private key.",
       "step_02_content_03": "Create and manage multiple wallets.",

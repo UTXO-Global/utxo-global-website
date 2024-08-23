@@ -46,10 +46,10 @@ export const NAVIGATIONS = [
     href: EXTENTSION_GITHUB,
     isExternal: true,
   },
-  {
-    id: "bounty-contest",
-    label: "header.bountyContest",
-    href: "/bounty-contest",
-    isExternal: false,
-  },
+  // {
+  //   id: "bounty-contest",
+  //   label: "header.bountyContest",
+  //   href: "/bounty-contest",
+  //   isExternal: false,
+  // },
 ];

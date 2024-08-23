@@ -18,8 +18,10 @@ import { BountyContestStage } from "@/types/common";
 export default function BountyPage() {
   const { t } = useTranslation();
 
+  if (BOUNTY_CONTEST_STAGE === BountyContestStage.Prepare) return null;
+
   return (
-    <div>
+    <main>
       <div className="mt-16 text-center px-4">
         <img
           src="/images/bounty-contest-title.svg"
@@ -246,6 +248,6 @@ export default function BountyPage() {
         </div>
       ) : null}
       {BOUNTY_CONTEST_STAGE === BountyContestStage.Ended && <BountyResult />}
-    </div>
+    </main>
   );
 }

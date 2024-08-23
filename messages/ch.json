@@ -189,7 +189,7 @@
       "step_01_title": "下载 UTXO Global Wallet",
       "step_01_description": "参与者可以从 Chrome 网上应用店下载钱包",
       "step_02_title": "在测试区测试钱包",
-      "step_02_description": "用户应使用 UTXO 钱包扩展 (dApp) 在以下领域测试钱包",
+      "step_02_description": "用户应使用 UTXO Global 钱包扩展 (dApp) 在以下领域测试钱包",
       "step_02_content_01": "钱包管理",
       "step_02_content_02": "使用恢复短语或私钥创建、导入和导出钱包。",
       "step_02_content_03": "创建并管理多个钱包。",
