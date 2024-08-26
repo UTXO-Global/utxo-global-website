@@ -178,7 +178,7 @@
   },
   "bountyContest": {
     "description": "Hunt for vulnerabilities, earn rewards, & help us build a more secure future.",
-    "description01": "Period: August 26, 2024  10:00:00 AM (UTC) - Sep 09, 2024 10:00:00 AM (UTC)",
+    "description01": "Period: Aug 26, 2024  09:00:00 AM (UTC) - Sep 09, 2024 09:00:00 AM (UTC)",
     "submitBug": "Submit Bug",
     "btnClose": "Close",
     "claimRewardTitle": "How To Claim Rewards",
