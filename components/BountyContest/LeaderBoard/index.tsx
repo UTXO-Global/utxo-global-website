@@ -22,10 +22,10 @@ export default function LeaderBoard() {
           </div>
           <p className="mt-2">{t("bountyContest.leaderboard.description")}</p>
         </div>
-        {/* <div className="p-6 bg-[#FCFCFC] min-h-[200px] flex items-center">
-            <p className="text-grey-200 mx-auto">Data has not been updated.</p>
-        </div> */}
-        <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5]">
+        <div className="p-6 bg-[#FCFCFC] min-h-[200px] flex items-center">
+            <p className="text-grey-200 mx-auto">{t("bountyContest.leaderboard.no_data")}</p>
+        </div>
+        {/* <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5]">
           <div className="text-lg sm:text-xl font-bold p-6 flex items-center">
             <div className="w-[10%]">#</div>
             <div className="w-[50%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
@@ -57,7 +57,7 @@ export default function LeaderBoard() {
             align="center"
             className="py-6"
           />
-        </div>
+        </div> */}
       </div>
       <img src="/images/bounty-contest-reward.png" alt="reward" className="mx-auto w-auto" />
     </div>

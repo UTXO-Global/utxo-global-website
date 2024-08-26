@@ -52,7 +52,7 @@ export default function BountyResult() {
           <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
           <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
         </div>
-        {Array(6)
+        {/* {Array(6)
           .fill(0)
           .map((_, i) => {
             return (
@@ -65,7 +65,7 @@ export default function BountyResult() {
                 <div className="w-[30%] text-xl text-end">{formatNumber(1200)}</div>
               </div>
             );
-          })}
+          })} */}
         <Pagination
           responsive={true}
           current={1}

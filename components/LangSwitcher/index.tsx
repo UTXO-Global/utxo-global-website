@@ -50,7 +50,7 @@ const LangSwitcher = () => {
           setCurrentLang("ch");
         }}
       >
-        <LanguageSwitcher lang="ch">中国人</LanguageSwitcher>
+        <LanguageSwitcher lang="ch">中文</LanguageSwitcher>
       </div>
     </div>
   );
