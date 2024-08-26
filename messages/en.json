@@ -206,7 +206,8 @@
       "title": "Leaderboard",
       "description": "Data is updated every 24 hours",
       "field_01": "Name / Email",
-      "field_02": "Total Points"
+      "field_02": "Total Points",
+      "no_data": "Data has not been updated."
     },
     "bountyResult": {
       "description": "Check out the leaderboard to see who's leading the charge in making our platform more secure",
