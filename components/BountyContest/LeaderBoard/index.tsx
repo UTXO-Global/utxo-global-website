@@ -4,7 +4,7 @@
 import React from "react";
 import IcnReward from "@/public/icons/icn-reward.svg";
 import { Pagination } from "antd";
-import { formatEmail, formatNumber } from "@/utils/helpers";
+import { formatNumber } from "@/utils/helpers";
 import { useTranslation } from "next-export-i18n";
 import useBountyContest from "@/hooks/useBountyContest";
 
@@ -40,9 +40,7 @@ export default function LeaderBoard() {
                 <span className="w-[10%] text-grey-200">{user.rank}</span>
                 <div className="w-[50%] truncate">
                   <span className="text-xl block">{user.name}</span>
-                  <span className="mt-1 text-sm font-normal text-grey-200">
-                    {formatEmail(user.email)}
-                  </span>
+                  <span className="mt-1 text-sm font-normal text-grey-200">{user.email}</span>
                 </div>
                 <div className="w-[40%] text-xl text-end">{formatNumber(user.points)}</div>
               </div>

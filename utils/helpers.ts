@@ -13,7 +13,3 @@ export const comingSoonMsg = () => {
 export const formatNumber = (amount: number): string => {
   return new Intl.NumberFormat("en-US").format(amount);
 };
-
-export const formatEmail = (email: string): string => {
-  return email.slice(0, 2) + "******" + email.slice(email.indexOf("@"));
-};
