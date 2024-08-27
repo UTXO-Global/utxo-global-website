@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 "use client";
 
 import Image from "next/image";
@@ -5,8 +6,6 @@ import React, { useState } from "react";
 import IcnMedalGold from "@/public/icons/icn-medal-gold.svg";
 import IcnMedalSilver from "@/public/icons/icn-medal-silver.svg";
 import IcnMedalBronze from "@/public/icons/icn-medal-bronze.svg";
-import bountyContestBanner3 from "@/public/images/bounty-contest-banner-03.png";
-import bountyBannerResult from "@/public/images/bounty-result.png";
 import { Modal, Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
 import Button from "@/components/Common/Button";
@@ -44,18 +43,16 @@ export default function BountyResult() {
     <div className="utxo-global-container mt-14">
       <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] max-w-[836px] mx-auto rounded-lg">
         <div className="text-lg sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-6 px-6 sm:px-16 pt-10 flex items-center">
-          <Image
-            src={bountyBannerResult}
-            alt="banner"
-            width={300}
-            height={53}
+          <img
+            src="/images/bounty-contest-result-badge.svg"
+            alt="result badge"
             className="absolute w-auto -translate-y-[100%]  right-0 left-0 mx-auto"
           />
           <div className="w-[20%]">#</div>
           <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
           <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
         </div>
-        {Array(6)
+        {/* {Array(6)
           .fill(0)
           .map((_, i) => {
             return (
@@ -68,7 +65,7 @@ export default function BountyResult() {
                 <div className="w-[30%] text-xl text-end">{formatNumber(1200)}</div>
               </div>
             );
-          })}
+          })} */}
         <Pagination
           responsive={true}
           current={1}
@@ -82,14 +79,14 @@ export default function BountyResult() {
           className="py-6"
         />
       </div>
-      <div className="relative mx-auto w-fit">
-        <Image src={bountyContestBanner3} alt="banner" width={836} height={410} />
+      <div className="relative mx-auto w-fit max-w-[836px]">
+        <img src="/images/bounty-contest-final.png" alt="final" />
         <div className="absolute top-[60%] right-[8%] sm:right-[12%] -translate-y-1/2 text-center">
           <h2 className="text-sm sm:text-base md:text-2xl font-medium text-white">{t("bountyContest.claimRewardTitle")}?</h2>
           <Button
             kind="light"
             size="small"
-            className="!text-sm sm:!text-base border-none !font-bold md:px-6 md:py-[11px] bg-gradient-to-br md:w-[200px] from-lightYellow-200 mt-4 via-lightYellow-300 to-lightYellow-100"
+            className="!text-sm sm:!text-base border-none !font-bold md:px-6 md:py-[11px] bg-gradient-to-br md:w-[200px] from-light-yellow-200 mt-4 via-light-yellow-300 to-light-yellow-100"
             onClick={() => showModal()}
           >
             {t("bountyContest.watchNow")}
@@ -111,7 +108,7 @@ export default function BountyResult() {
           <div className="mt-8">
             <div className="relative w-full max-w-[353px] mx-auto flex-grow h-[400px] overflow-hidden pt-[56.25%]">
               <iframe
-                src="https://www.youtube.com/embed/wtGe24eV_Pk?si=01vE98u3DrLbjqiY"
+                src=""
                 className="absolute bottom-0 left-0 right-0 top-0 h-full w-full"
                 width="353"
                 height="600"

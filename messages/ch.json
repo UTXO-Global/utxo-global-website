@@ -178,38 +178,41 @@
     }
   },
   "bountyContest": {
-    "description": "Hunt for vulnerabilities, earn rewards, & help us build a more secure future.",
-    "description01": "Period: August 20, 2024  10:00:00 AM (UTC) - Sep 03, 2024 10:00:00 AM (UTC)",
-    "submitBug": "Submit Bug",
-    "btnClose": "Close",
-    "claimRewardTitle": "How To Claim Rewards",
-    "watchNow": "Watch Now",
+    "description": "寻找漏洞，获得奖励，并帮助我们建立更安全的未来。",
+    "description01": "期间： 2024年8月26日 09:00:00 AM (UTC) - 2024年9月09日 09:00:00 AM (UTC)",
+    "submitBug": "提交 Bug",
+    "btnClose": "关闭",
+    "claimRewardTitle": "如何领取奖励",
+    "watchNow": "立即观看",
     "instruction": {
-      "title": "How to participate",
-      "step_01_title": "Download UTXO Global Wallet",
-      "step_01_description": "Participants download the wallet from Chrome Store",
-      "step_02_title": "Test Wallet in Testing Zone",
-      "step_02_description": "Users test the wallet within the testing zone in UTXO Wallet Extension (dApp)",
-      "step_02_content_01": "Wallet Management",
-      "step_02_content_02": "Create / import / export a wallet from recovery phase and private key.",
-      "step_02_content_03": "Create and manage multiple wallets.",
-      "step_02_content_04": "Create and manage multiple accounts within a single wallet.",
-      "step_02_content_05": "CKB Native Coin Management",
-      "step_02_content_06": "Send and receive CKB to and from different addresses",
-      "step_02_content_07": "Sign Message + Transaction",
-      "step_02_content_08": "Use the CKB CCC demo to test. The valid testing zone: Sign, Transfer, Transfer with Lumos, Transfer xUDT, Transfer xUDT (SUS), and Issue xUDT",
-      "step_03_title": "Submit Bug Report",
-      "step_03_description": "If a bug is found, the participant submits a report detailing the issue via"
+      "title": "如何参与",
+      "step_01_title": "下载 UTXO Global Wallet",
+      "step_01_description": "参与者可以从 Chrome 网上应用店下载钱包",
+      "step_02_title": "在测试区测试钱包",
+      "step_02_description": "用户应使用 UTXO Global 钱包扩展 (dApp) 在以下领域测试钱包",
+      "step_02_content_01": "钱包管理",
+      "step_02_content_02": "使用恢复短语或私钥创建、导入和导出钱包。",
+      "step_02_content_03": "创建并管理多个钱包。",
+      "step_02_content_04": "在一个钱包内创建并管理多个账户。",
+      "step_02_content_05": "CKB 原生币管理",
+      "step_02_content_06": "向不同的地址发送和接收 CKB。",
+      "step_02_content_07": "签署消息 + 交易",
+      "step_02_content_08": "使用",
+      "step_02_content_09": "测试以下内容：",
+      "step_03_title": "提交错误报告",
+      "step_03_description": "如果您发现错误，请通过此表单提交详细报告",
+      "step_03_link_label": "提交错误报告"
     },
     "leaderboard": {
-      "title": "Leaderboard",
-      "description": "Data is updated every 24 hours",
-      "field_01": "Name / Email",
-      "field_02": "Total Points"
+      "title": "排行榜",
+      "description": "数据每 24 小时更新一次",
+      "field_01": "姓名 / 邮箱",
+      "field_02": "总分",
+       "no_data": "数据尚未更新。"
     },
     "bountyResult": {
-      "description": "Check out the leaderboard to see who's leading the charge in making our platform more secure",
-      "bugReport": "Bug Report"
+      "description": "查看排行榜，看看谁在使我们的平台更安全方面处于领先地位",
+      "bugReport": "错误报告"
     }
   }
 }
