@@ -24,34 +24,38 @@ const LangSwitcher = () => {
 
   const content = (
     <div className="grid py-[10px] text-[14px] leading-[18px] w-[110px] mt-2">
-      <div
-        className={cn(
-          `text-[#787575] text-base transition-colors hover:text-dark-100 hover:bg-[#F5F5F5] px-5 py-2 cursor-pointer`,
-          {
-            "text-dark-100": currentLang === "en",
-          }
-        )}
-        onClick={() => {
-          hide();
-          setCurrentLang("en");
-        }}
-      >
-        <LanguageSwitcher lang="en">English</LanguageSwitcher>
-      </div>
-      <div
-        className={cn(
-          `text-[#787575] text-base transition-colors hover:text-dark-100 hover:bg-[#F5F5F5] px-5 py-2 cursor-pointer`,
-          {
-            "text-dark-100": currentLang === "ch",
-          }
-        )}
-        onClick={() => {
-          hide();
-          setCurrentLang("ch");
-        }}
-      >
-        <LanguageSwitcher lang="ch">中文</LanguageSwitcher>
-      </div>
+      <LanguageSwitcher lang="en">
+        <div
+          className={cn(
+            `text-[#787575] text-base transition-colors hover:text-dark-100 px-4 py-2 hover:bg-[#F5F5F5] cursor-pointer`,
+            {
+              "text-dark-100": currentLang === "en",
+            }
+          )}
+          onClick={() => {
+            hide();
+            setCurrentLang("en");
+          }}
+        >
+          English
+        </div>
+      </LanguageSwitcher>
+      <LanguageSwitcher lang="ch">
+        <div
+          className={cn(
+            `text-[#787575] text-base transition-colors hover:text-dark-100 px-4 py-2 hover:bg-[#F5F5F5] cursor-pointer`,
+            {
+              "text-dark-100": currentLang === "ch",
+            }
+          )}
+          onClick={() => {
+            hide();
+            setCurrentLang("ch");
+          }}
+        >
+          中文
+        </div>
+      </LanguageSwitcher>
     </div>
   );
 

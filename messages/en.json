@@ -183,6 +183,8 @@
     "btnClose": "Close",
     "claimRewardTitle": "How To Claim Rewards",
     "watchNow": "Watch Now",
+    "joinNow": "Join Now",
+    "join": "Join",
     "instruction": {
       "title": "How to participate",
       "step_01_title": "Download UTXO Global Wallet",
