@@ -1,7 +1,6 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import Image from "next/image";
 import React, { useState } from "react";
 import IcnMedalGold from "@/public/icons/icn-medal-gold.svg";
 import IcnMedalSilver from "@/public/icons/icn-medal-silver.svg";
@@ -10,6 +9,7 @@ import { Modal, Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
 import Button from "@/components/Common/Button";
 import { useTranslation } from "next-export-i18n";
+import useBountyContest from "@/hooks/useBountyContest";
 
 const medals = [
   {
@@ -26,6 +26,7 @@ const medals = [
 export default function BountyResult() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { t } = useTranslation();
+  const { data, queryConfig, handlePagination, totalData } = useBountyContest({ limit: 10 });
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -52,37 +53,41 @@ export default function BountyResult() {
           <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
           <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
         </div>
-        {/* {Array(6)
-          .fill(0)
-          .map((_, i) => {
-            return (
-              <div className="px-6 sm:px-16 py-4 flex items-center font-medium text-start" key={i}>
-                {i < 3 ? <div className="w-[20%]">{medals[i].icon}</div> : <span className="w-[20%] text-grey-200 pl-2">{i + 1}</span>}
-                <div className="w-[50%] truncate">
-                  <span className="text-xl block">John</span>
-                  <span className="mt-1 text-sm font-normal text-grey-200">jo******@gmail.com</span>
-                </div>
-                <div className="w-[30%] text-xl text-end">{formatNumber(1200)}</div>
+        {data.map((user, i) => {
+          return (
+            <div className="px-6 sm:px-16 py-4 flex items-center font-medium text-start" key={i}>
+              {user.rank <= 3 ? (
+                <div className="w-[20%]">{medals[user.rank - 1].icon}</div>
+              ) : (
+                <span className="w-[20%] text-grey-200 pl-2">{user.rank}</span>
+              )}
+              <div className="w-[50%] truncate">
+                <span className="text-xl block">{user.name}</span>
+                <span className="mt-1 text-sm font-normal text-grey-200">{user.email}</span>
               </div>
-            );
-          })} */}
+              <div className="w-[30%] text-xl text-end">{formatNumber(user.points)}</div>
+            </div>
+          );
+        })}
         <Pagination
           responsive={true}
-          current={1}
-          defaultCurrent={1}
-          total={35}
+          current={queryConfig.page}
+          defaultCurrent={queryConfig.page}
+          total={totalData}
+          pageSize={queryConfig.limit}
           size="default"
           showSizeChanger={false}
-          onChange={() => {}}
-          defaultPageSize={4}
+          onChange={(page) => handlePagination(page, queryConfig.limit)}
           align="center"
           className="py-6"
         />
       </div>
-      <div className="relative mx-auto w-fit max-w-[836px]">
+      <div className="relative mx-auto w-fit max-w-[836px] mt-8">
         <img src="/images/bounty-contest-final.png" alt="final" />
         <div className="absolute top-[60%] right-[8%] sm:right-[12%] -translate-y-1/2 text-center">
-          <h2 className="text-sm sm:text-base md:text-2xl font-medium text-white">{t("bountyContest.claimRewardTitle")}?</h2>
+          <h2 className="text-sm sm:text-base md:text-2xl font-medium text-white">
+            {t("bountyContest.claimRewardTitle")}?
+          </h2>
           <Button
             kind="light"
             size="small"

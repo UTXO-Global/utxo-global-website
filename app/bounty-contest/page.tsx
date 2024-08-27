@@ -48,14 +48,8 @@ export default function BountyPage() {
               {t("bountyContest.bountyResult.description")}
             </p>
             <p className="text-orange-100 text-xl mt-3">
-              <span className="text-grey-200">
-                {t("bountyContest.bountyResult.bugReport")}:{" "}
-              </span>
-              <Link
-                href={BUG_REPORT_RESULT_LINK}
-                target="_blank"
-                className="font-medium"
-              >
+              <span className="text-grey-200">{t("bountyContest.bountyResult.bugReport")}: </span>
+              <Link href={BUG_REPORT_RESULT_LINK} target="_blank" className="font-medium">
                 {BUG_REPORT_RESULT_LINK}
               </Link>
             </p>
@@ -83,11 +77,7 @@ export default function BountyPage() {
                   </h5>
                   <p className="mt-4 text-grey-200">
                     {t("bountyContest.instruction.step_01_description")}:{" "}
-                    <Link
-                      href={CHROME_EXTENSION_LINK}
-                      className="text-orange-100"
-                      target="_blank"
-                    >
+                    <Link href={CHROME_EXTENSION_LINK} className="text-orange-100" target="_blank">
                       UTXO Global Wallet
                     </Link>
                   </p>
@@ -179,17 +169,13 @@ export default function BountyPage() {
                       >
                         <circle cx="3" cy="3" r="3" fill="#0D0D0D" />
                       </svg>
-                      <p>
+                      <span>
                         {t("bountyContest.instruction.step_02_content_08")}{" "}
-                        <Link
-                          href={CKBCCC_DEMO_LINK}
-                          className="text-orange-100"
-                          target="_blank"
-                        >
+                        <Link href={CKBCCC_DEMO_LINK} className="text-orange-100" target="_blank">
                           CKB CCC demo
                         </Link>{" "}
                         {t("bountyContest.instruction.step_02_content_09")}
-                      </p>
+                      </span>
                     </p>
                     <div className="grid grid-cols-2 gap-x-10 gap-y-[6px] ml-6">
                       <div className="text-grey-200">
@@ -230,11 +216,7 @@ export default function BountyPage() {
                   </h5>
                   <p className="mt-4 text-grey-200">
                     {t("bountyContest.instruction.step_03_description")}: <br />
-                    <Link
-                      href={BUG_REPORT_LINK}
-                      className="text-orange-100"
-                      target="_blank"
-                    >
+                    <Link href={BUG_REPORT_LINK} className="text-orange-100" target="_blank">
                       {t("bountyContest.instruction.step_03_link_label")}
                     </Link>
                   </p>

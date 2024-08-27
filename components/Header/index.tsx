@@ -42,18 +42,12 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
           key={i}
           href={z.href === "/#about-us" ? "/" : z.href}
           target={z.isExternal ? "_blank" : "_self"}
-          className={cn(
-            `text-grey-400 text-base transition-all hover:text-dark-100 font-medium`,
-            {
-              "text-dark-100":
-                localHash === z.href ||
-                (z.href === "/#about-us"
-                  ? localHash === "/" && pathname === "/"
-                  : false) ||
-                (z.href === "/bounty-contest" &&
-                  pathname === "/bounty-contest/"),
-            }
-          )}
+          className={cn(`text-grey-400 text-base transition-all hover:text-dark-100 font-medium`, {
+            "text-dark-100":
+              localHash === z.href ||
+              (z.href === "/#about-us" ? localHash === "/" && pathname === "/" : false) ||
+              (z.href === "/bounty-contest" && pathname === "/bounty-contest/"),
+          })}
         >
           {t(z.label)}
         </Link>
@@ -150,11 +144,8 @@ const Header = () => {
                   {
                     "text-dark-100":
                       localHash === z.href ||
-                      (z.href === "/#about-us"
-                        ? localHash === "/" && pathname === "/"
-                        : false) ||
-                      (z.href === "/bounty-contest" &&
-                        pathname === "/bounty-contest/"),
+                      (z.href === "/#about-us" ? localHash === "/" && pathname === "/" : false) ||
+                      (z.href === "/bounty-contest" && pathname === "/bounty-contest/"),
                   }
                 )}
               >
@@ -170,54 +161,30 @@ const Header = () => {
           </Link>
 
           <div className="flex items-center gap-2">
-            <Link
-              href={MULTI_SIG_LINK}
-              target="_blank"
-              className="hidden xl:flex"
-            >
+            <Link href={MULTI_SIG_LINK} target="_blank" className="hidden xl:flex">
               <Button kind="secondary" size="small">
                 {t("header.multiSig")}
               </Button>
             </Link>
-            <Link
-              href={MULTI_SIG_LINK}
-              target="_blank"
-              className="flex xl:hidden"
-            >
+            <Link href={MULTI_SIG_LINK} target="_blank" className="flex xl:hidden">
               <Button kind="secondary" className="!px-2 sm:px-3" size="small">
                 <IcnMultiSig className="w-6" />
               </Button>
             </Link>
 
-            <Link
-              href={CHROME_EXTENSION_LINK}
-              target="_blank"
-              className="hidden xl:flex"
-            >
+            <Link href={CHROME_EXTENSION_LINK} target="_blank" className="hidden xl:flex">
               <Button size="small">
                 <div className="flex gap-2 items-center">
-                  <img
-                    src="/images/chrome.png"
-                    alt="chrome"
-                    className="w-[20px]"
-                  />
+                  <img src="/images/chrome.png" alt="chrome" className="w-[20px]" />
                   <span>{t("header.chromeStore")}</span>
                 </div>
               </Button>
             </Link>
 
-            <Link
-              href={CHROME_EXTENSION_LINK}
-              target="_blank"
-              className="flex xl:hidden "
-            >
+            <Link href={CHROME_EXTENSION_LINK} target="_blank" className="flex xl:hidden ">
               <Button className="!px-2 sm:px-3" size="small">
                 <div className="flex gap-2 items-center">
-                  <img
-                    src="/images/chrome.png"
-                    alt="chrome"
-                    className="w-[24px]"
-                  />
+                  <img src="/images/chrome.png" alt="chrome" className="w-[24px]" />
                 </div>
               </Button>
             </Link>
