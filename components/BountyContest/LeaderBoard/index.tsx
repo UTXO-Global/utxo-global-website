@@ -34,9 +34,9 @@ export default function LeaderBoard() {
             <div className="w-[50%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
             <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
           </div>
-          {data.map((user, i) => {
+          {data.map((user) => {
             return (
-              <div className="px-6 py-4 flex items-center font-medium text-start" key={i}>
+              <div className="px-6 py-4 flex items-center font-medium text-start" key={user.email}>
                 <span className="w-[10%] text-grey-200">{user.rank}</span>
                 <div className="w-[50%] truncate">
                   <span className="text-xl block">{user.name}</span>

@@ -106,8 +106,8 @@ const Header = () => {
                 href="/bounty-contest"
                 className="text-xs rounded-md sm:rounded-lg flex items-center justify-center gap-1 sm:gap-2 sm:text-base border-none font-bold py-[2px] sm:py-[5px] lg:py-[11px] bg-gradient-to-br w-[60px] sm:w-[100px] lg:w-[150px] xl:w-[200px] from-light-yellow-200 via-light-yellow-300 to-light-yellow-100"
               >
-                <span className="hidden lg:block">Join Now</span>
-                <span className="block lg:hidden">Join</span>
+                <span className="hidden lg:block">{t("bountyContest.joinNow")}</span>
+                <span className="block lg:hidden">{t("bountyContest.join")}</span>
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

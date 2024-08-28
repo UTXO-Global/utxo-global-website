@@ -55,7 +55,10 @@ export default function BountyResult() {
         </div>
         {data.map((user, i) => {
           return (
-            <div className="px-6 sm:px-16 py-4 flex items-center font-medium text-start" key={i}>
+            <div
+              className="px-6 sm:px-16 py-4 flex items-center font-medium text-start"
+              key={user.email}
+            >
               {user.rank <= 3 ? (
                 <div className="w-[20%]">{medals[user.rank - 1].icon}</div>
               ) : (

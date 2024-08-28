@@ -184,6 +184,8 @@
     "btnClose": "关闭",
     "claimRewardTitle": "如何领取奖励",
     "watchNow": "立即观看",
+    "joinNow": "现在加入",
+    "join": "加入",
     "instruction": {
       "title": "如何参与",
       "step_01_title": "下载 UTXO Global Wallet",
@@ -208,7 +210,7 @@
       "description": "数据每 24 小时更新一次",
       "field_01": "姓名 / 邮箱",
       "field_02": "总分",
-       "no_data": "数据尚未更新。"
+      "no_data": "数据尚未更新。"
     },
     "bountyResult": {
       "description": "查看排行榜，看看谁在使我们的平台更安全方面处于领先地位",
