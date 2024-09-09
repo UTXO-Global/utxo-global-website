@@ -11,7 +11,7 @@ export const CHROME_EXTENSION_LINK =
   "https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle";
 export const CKBCCC_DEMO_LINK = "https://ckbccc-demo.vercel.app/";
 export const BUG_REPORT_LINK = "https://forms.gle/3Y4HSpLoY7nAVExz7";
-export const BUG_REPORT_RESULT_LINK = "https://forms.gle/3Y4HSpLoY7nAVExz7";
+export const BUG_REPORT_RESULT_LINK = "https://docs.google.com/spreadsheets/d/1QLgr6Ct8eC9ePoqKRlikdKikZPi1pJcPz9zIZuSHZZo/edit?usp=sharing";
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACIKING_ID;
 export const MULTI_SIG_LINK = process.env.NEXT_PUBLIC_MULTI_SIG_LINK || "";
 export const BOUNTY_CONTEST_STAGE = Number(process.env.NEXT_PUBLIC_BOUNTY_CONTEST_STAGE || 1); // 1: prepare; 2: in-progress; 3: ended

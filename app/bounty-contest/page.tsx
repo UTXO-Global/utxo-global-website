@@ -47,9 +47,10 @@ export default function BountyPage() {
             <p className="text-xl mt-8 text-grey-200">
               {t("bountyContest.bountyResult.description")}
             </p>
-            <p className="text-orange-100 text-xl mt-3">
+            
+            <p className="text-orange-100 text-xl mt-3 flex items-center justify-center gap-2">
               <span className="text-grey-200">{t("bountyContest.bountyResult.bugReport")}: </span>
-              <Link href={BUG_REPORT_RESULT_LINK} target="_blank" className="font-medium">
+              <Link href={BUG_REPORT_RESULT_LINK} target="_blank" className="font-medium w-[150px] md:w-[300px] truncate d-block">
                 {BUG_REPORT_RESULT_LINK}
               </Link>
             </p>
