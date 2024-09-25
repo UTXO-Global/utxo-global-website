@@ -35,6 +35,11 @@
     "explore": {
       "title": "Explore",
       "description": "Dive into a curated selection of DApps to revolutionize the way you manage your assets."
+    },
+    "indexer": {
+      "title": "Indexer As a Service",
+      "description": "API for real-time access to comprehensive token and NFT information.",
+      "btnLabel": "Learn More"
     }
   },
   "backedBy": "Backed By",
