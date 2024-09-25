@@ -36,6 +36,11 @@
     "explore": {
       "title": "探索",
       "description": "深入了解精选的 DApps，彻底改变你管理资产的方式。"
+    },
+    "indexer": {
+      "title": "Indexer 即服务",
+      "description": "用于实时访问全面代币和 NFT 信息的 API。",
+      "btnLabel": "了解更多"
     }
   },
   "backedBy": "支持",
