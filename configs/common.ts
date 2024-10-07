@@ -7,8 +7,7 @@ export const EXTENTSION_GITHUB = "https://github.com/UTXO-Global/utxo-wallet-ext
 export const MEDIA_KIT_GITHUB = "https://github.com/UTXO-Global/utxo-global-media-kit";
 export const SUBSTACK_LINK = "https://utxoglobal.substack.com/";
 export const DOC_LINK = "https://utxo-global.gitbook.io/utxo-global";
-export const CHROME_EXTENSION_LINK =
-  "https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle";
+export const CHROME_EXTENSION_LINK = "https://chromewebstore.google.com/detail/utxo-global-wallet/lnamkkidoonpeknminiadpgjiofpdmle";
 export const CKBCCC_DEMO_LINK = "https://ckbccc-demo.vercel.app/";
 export const BUG_REPORT_LINK = "https://forms.gle/3Y4HSpLoY7nAVExz7";
 export const BUG_REPORT_RESULT_LINK = "";
@@ -42,9 +41,9 @@ export const NAVIGATIONS = [
     isExternal: true,
   },
   {
-    id: "bounty-contest",
-    label: "header.bountyContest",
-    href: "/bounty-contest",
+    id: "point-system",
+    label: "Point System",
+    href: "/point-system",
     isExternal: false,
   },
 ];

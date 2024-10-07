@@ -6,11 +6,12 @@ import IcnReward from "@/public/icons/icn-reward.svg";
 import { Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
 import { useTranslation } from "next-export-i18n";
-import useBountyContest from "@/hooks/useBountyContest";
+import usePagination from "@/hooks/usePagination";
+import { leaderboardData } from "@/configs/bug-report";
 
 export default function LeaderBoard() {
   const { t } = useTranslation();
-  const { data, queryConfig, handlePagination, totalData } = useBountyContest({ limit: 4 });
+  const { data, queryConfig, handlePagination, totalData } = usePagination({ limit: 4, inititalData: leaderboardData });
 
   return (
     <div className="grid gap-6">
@@ -18,9 +19,7 @@ export default function LeaderBoard() {
         <div className="px-6 py-4 bg-gradient-to-b text-center from-[#D3D1CE] via-[#E0DFDE] to-[#EFEFEF]">
           <div className="flex justify-center gap-2">
             <IcnReward className="h-8 w-[25px]" />
-            <h2 className="text-dark-100 text-2xl text-center font-bold uppercase">
-              {t("bountyContest.leaderboard.title")}
-            </h2>
+            <h2 className="text-dark-100 text-2xl text-center font-bold uppercase">{t("bountyContest.leaderboard.title")}</h2>
             <IcnReward className="h-8 w-[25px]" />
           </div>
           <p className="mt-2">{t("bountyContest.leaderboard.description")}</p>

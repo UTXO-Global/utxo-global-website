@@ -6,9 +6,6 @@ import { ToastContainer } from "react-toastify";
 import { ConfigProvider } from "antd";
 import { Suspense } from "react";
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, SITE_IMAGE_URL, GA_TRACKING_ID } from "@/configs/common";
 
 export const metadata: Metadata = {
@@ -65,14 +62,13 @@ export default function RootLayout({
                 fontSize: 16,
                 colorTextDisabled: "#A7A7A7",
               },
+              Collapse: {
+                contentPadding: "0px 16px 0px",
+              },
             },
           }}
         >
-          <Suspense>
-            <Header />
-            {children}
-            <Footer />
-          </Suspense>
+          <Suspense>{children}</Suspense>
 
           <ToastContainer
             autoClose={5000}
