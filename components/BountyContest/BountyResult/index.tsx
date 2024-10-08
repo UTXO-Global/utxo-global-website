@@ -8,7 +8,8 @@ import IcnMedalBronze from "@/public/icons/icn-medal-bronze.svg";
 import { Pagination } from "antd";
 import { formatNumber } from "@/utils/helpers";
 import { useTranslation } from "next-export-i18n";
-import useBountyContest from "@/hooks/useBountyContest";
+import usePagination from "@/hooks/usePagination";
+import { leaderboardData } from "@/configs/bug-report";
 
 const medals = [
   {
@@ -24,8 +25,9 @@ const medals = [
 
 export default function BountyResult() {
   const { t } = useTranslation();
-  const { data, queryConfig, handlePagination, totalData } = useBountyContest({
+  const { data, queryConfig, handlePagination, totalData } = usePagination({
     limit: 10,
+    inititalData: leaderboardData,
   });
 
   return (
@@ -38,19 +40,12 @@ export default function BountyResult() {
             className="absolute w-auto -translate-y-[100%]  right-0 left-0 mx-auto"
           />
           <div className="w-[20%]">#</div>
-          <div className="w-[40%] text-start">
-            {t("bountyContest.leaderboard.field_01")}
-          </div>
-          <div className="w-[40%] text-end">
-            {t("bountyContest.leaderboard.field_02")}
-          </div>
+          <div className="w-[40%] text-start">{t("bountyContest.leaderboard.field_01")}</div>
+          <div className="w-[40%] text-end">{t("bountyContest.leaderboard.field_02")}</div>
         </div>
         {data.map((user, i) => {
           return (
-            <div
-              className="px-6 sm:px-16 py-4 flex items-center font-medium text-start"
-              key={user.email}
-            >
+            <div className="px-6 sm:px-16 py-4 flex items-center font-medium text-start" key={user.email}>
               {user.rank <= 3 ? (
                 <div className="w-[20%]">{medals[user.rank - 1].icon}</div>
               ) : (
@@ -58,13 +53,9 @@ export default function BountyResult() {
               )}
               <div className="w-[50%] truncate">
                 <span className="text-xl block">{user.name}</span>
-                <span className="mt-1 text-sm font-normal text-grey-200">
-                  {user.email}
-                </span>
+                <span className="mt-1 text-sm font-normal text-grey-200">{user.email}</span>
               </div>
-              <div className="w-[30%] text-xl text-end">
-                {formatNumber(user.points)}
-              </div>
+              <div className="w-[30%] text-xl text-end">{formatNumber(user.points)}</div>
             </div>
           );
         })}

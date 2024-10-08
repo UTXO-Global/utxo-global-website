@@ -220,5 +220,22 @@
       "description": "Check out the leaderboard to see who's leading the charge in making our platform more secure",
       "bugReport": "Bug Report"
     }
+  },
+  "pointSystem": {
+    "title_01": "Earn More points",
+    "title_02": "Earn More rewards",
+    "quest": "Quest",
+    "leaderboard": "Leaderboard",
+    "rank": "Rank",
+    "address": "Address",
+    "point": "Point",
+    "last_reward": "Last Reward",
+    "received_rewards": "Received Rewards",
+    "point_system": "Point System",
+    "go": "Go",
+    "claim": "Claim",
+    "claimed": "Claimed",
+    "quest_expired": "Quest Expired",
+    "logout": "Logout"
   }
 }

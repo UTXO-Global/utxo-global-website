@@ -221,5 +221,22 @@
       "description": "查看排行榜，看看谁在使我们的平台更安全方面处于领先地位",
       "bugReport": "错误报告"
     }
+  },
+  "pointSystem": {
+    "title_01": "赚取更多积分",
+    "title_02": "赚取更多奖励",
+    "quest": "寻求",
+    "leaderboard": "排行榜",
+    "rank": "排",
+    "address": "地址",
+    "point": "点",
+    "last_reward": "最后奖励",
+    "received_rewards": "收到的奖励",
+    "point_system": "积分系统",
+    "go": "去",
+    "claim": "索赔",
+    "claimed": "索赔",
+    "quest_expired": "任务已过期",
+    "logout": "登出"
   }
 }

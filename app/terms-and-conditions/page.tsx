@@ -40,22 +40,13 @@ export default function TermsAndConditions() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t("terms.useOfOur.content01_01")}:
-                  </span>{" "}
-                  {t("terms.useOfOur.content01_02")}
+                  <span className="font-medium">{t("terms.useOfOur.content01_01")}:</span> {t("terms.useOfOur.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t("terms.useOfOur.content02_01")}:
-                  </span>{" "}
-                  {t("terms.useOfOur.content02_02")}
+                  <span className="font-medium">{t("terms.useOfOur.content02_01")}:</span> {t("terms.useOfOur.content02_02")}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t("terms.useOfOur.content03_01")}:
-                  </span>{" "}
-                  {t("terms.useOfOur.content03_02")}
+                  <span className="font-medium">{t("terms.useOfOur.content03_01")}:</span> {t("terms.useOfOur.content03_02")}
                 </li>
               </ul>
             </div>
@@ -68,16 +59,10 @@ export default function TermsAndConditions() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t("terms.userConduct.content01_01")}:
-                  </span>{" "}
-                  {t("terms.userConduct.content01_02")}
+                  <span className="font-medium">{t("terms.userConduct.content01_01")}:</span> {t("terms.userConduct.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t("terms.userConduct.content02_01")}:
-                  </span>{" "}
-                  {t("terms.userConduct.content02_02")}
+                  <span className="font-medium">{t("terms.userConduct.content02_01")}:</span> {t("terms.userConduct.content02_02")}
                 </li>
               </ul>
             </div>
@@ -90,15 +75,11 @@ export default function TermsAndConditions() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t("terms.intellectualProperty.content01_01")}:
-                  </span>{" "}
+                  <span className="font-medium">{t("terms.intellectualProperty.content01_01")}:</span>{" "}
                   {t("terms.intellectualProperty.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t("terms.intellectualProperty.content02_01")}:
-                  </span>{" "}
+                  <span className="font-medium">{t("terms.intellectualProperty.content02_01")}:</span>{" "}
                   {t("terms.intellectualProperty.content02_02")}
                 </li>
               </ul>
@@ -112,16 +93,10 @@ export default function TermsAndConditions() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t("terms.disclaimers.content01_01")}:
-                  </span>{" "}
-                  {t("terms.disclaimers.content01_02")}
+                  <span className="font-medium">{t("terms.disclaimers.content01_01")}:</span> {t("terms.disclaimers.content01_02")}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t("terms.disclaimers.content02_01")}:
-                  </span>{" "}
-                  {t("terms.disclaimers.content02_02")}
+                  <span className="font-medium">{t("terms.disclaimers.content02_01")}:</span> {t("terms.disclaimers.content02_02")}
                 </li>
               </ul>
             </div>
@@ -161,10 +136,7 @@ export default function TermsAndConditions() {
             <div className="mt-3">
               <p>
                 {t("terms.contactUs.content01")}{" "}
-                <a
-                  href={`mailto:${CONTACT_MAIL}`}
-                  className="text-orange-100 font-medium underline"
-                >
+                <a href={`mailto:${CONTACT_MAIL}`} className="text-orange-100 font-medium underline">
                   {CONTACT_MAIL}
                 </a>
                 {t("terms.contactUs.content02")}

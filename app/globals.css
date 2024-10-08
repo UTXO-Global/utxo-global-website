@@ -242,3 +242,7 @@ body {
 .ant-pagination-item-active {
   border-color: transparent !important;
 }
+
+.ant-collapse-header {
+  align-items: center !important;
+}

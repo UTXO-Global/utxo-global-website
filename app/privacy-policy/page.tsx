@@ -39,15 +39,11 @@ export default function PrivacyPolicy() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.information.content01_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.information.content01_01`)}:</span>{" "}
                   {t(`privacyPolicy.information.content01_02`)}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.information.content02_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.information.content02_01`)}:</span>{" "}
                   {t(`privacyPolicy.information.content02_02`)}
                 </li>
               </ul>
@@ -61,21 +57,15 @@ export default function PrivacyPolicy() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.howWeUse.content01_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.howWeUse.content01_01`)}:</span>{" "}
                   {t(`privacyPolicy.howWeUse.content01_02`)}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.howWeUse.content02_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.howWeUse.content02_01`)}:</span>{" "}
                   {t(`privacyPolicy.howWeUse.content02_02`)}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.howWeUse.content03_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.howWeUse.content03_01`)}:</span>{" "}
                   {t(`privacyPolicy.howWeUse.content03_02`)}
                 </li>
               </ul>
@@ -89,16 +79,10 @@ export default function PrivacyPolicy() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.sharing.content01_01`)}:
-                  </span>{" "}
-                  {t(`privacyPolicy.sharing.content01_02`)}
+                  <span className="font-medium">{t(`privacyPolicy.sharing.content01_01`)}:</span> {t(`privacyPolicy.sharing.content01_02`)}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.sharing.content02_01`)}:
-                  </span>{" "}
-                  {t(`privacyPolicy.sharing.content02_02`)}
+                  <span className="font-medium">{t(`privacyPolicy.sharing.content02_01`)}:</span> {t(`privacyPolicy.sharing.content02_02`)}
                 </li>
               </ul>
             </div>
@@ -120,15 +104,11 @@ export default function PrivacyPolicy() {
             <div className="mt-3">
               <ul className="list-decimal grid gap-2 ml-5">
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.yourChoices.content01_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.yourChoices.content01_01`)}:</span>{" "}
                   {t(`privacyPolicy.yourChoices.content01_02`)}
                 </li>
                 <li>
-                  <span className="font-medium">
-                    {t(`privacyPolicy.yourChoices.content02_01`)}:
-                  </span>{" "}
+                  <span className="font-medium">{t(`privacyPolicy.yourChoices.content02_01`)}:</span>{" "}
                   {t(`privacyPolicy.yourChoices.content02_02`)}
                 </li>
               </ul>
@@ -151,10 +131,7 @@ export default function PrivacyPolicy() {
             <div className="mt-3">
               <p>
                 {t(`privacyPolicy.contactUs.content01`)}{" "}
-                <a
-                  href={`mailto:${CONTACT_MAIL}`}
-                  className="text-orange-100 font-medium underline"
-                >
+                <a href={`mailto:${CONTACT_MAIL}`} className="text-orange-100 font-medium underline">
                   {CONTACT_MAIL}
                 </a>{" "}
                 {t(`privacyPolicy.contactUs.content02`)}

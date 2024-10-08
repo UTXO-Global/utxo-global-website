@@ -6,10 +6,9 @@ import { ToastContainer } from "react-toastify";
 import { ConfigProvider } from "antd";
 import { Suspense } from "react";
 
+import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, SITE_IMAGE_URL, GA_TRACKING_ID } from "@/configs/common";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
-
-import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, SITE_IMAGE_URL, GA_TRACKING_ID } from "@/configs/common";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -64,6 +63,9 @@ export default function RootLayout({
                 colorBgTextActive: "#0d0d0d",
                 fontSize: 16,
                 colorTextDisabled: "#A7A7A7",
+              },
+              Collapse: {
+                contentPadding: "0px 16px 0px",
               },
             },
           }}
