@@ -13,7 +13,7 @@ export default function PointSystem() {
   const { t } = useTranslation();
 
   return (
-    <div>
+    <main>
       <div className="utxo-global-container">
         <div className="py-4 bg-transparent justify-between flex items-center">
           <div className="flex gap-4 sm:gap-10 items-center">
@@ -81,7 +81,6 @@ export default function PointSystem() {
         </div>
         <div className="mt-6">{isQuestTab ? <Quest /> : <Leaderboard />}</div>
       </section>
-      <Footer />
-    </div>
+    </main>
   );
 }

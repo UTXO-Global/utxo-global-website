@@ -7,6 +7,8 @@ import { ConfigProvider } from "antd";
 import { Suspense } from "react";
 
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, SITE_IMAGE_URL, GA_TRACKING_ID } from "@/configs/common";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -68,7 +70,11 @@ export default function RootLayout({
             },
           }}
         >
-          <Suspense>{children}</Suspense>
+          <Suspense>
+            <Header />
+            {children}
+            <Footer />
+          </Suspense>
 
           <ToastContainer
             autoClose={5000}

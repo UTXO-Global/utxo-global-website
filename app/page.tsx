@@ -17,9 +17,7 @@ export default function Home() {
 
   return (
     <main>
-      <Header />
       <HomeView />
-      <Footer />
     </main>
   );
 }
