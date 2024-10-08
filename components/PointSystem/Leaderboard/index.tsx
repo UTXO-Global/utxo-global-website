@@ -1,21 +1,28 @@
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { formatNumber } from "@/utils/helpers";
 import { Pagination } from "antd";
 import { pointSystemLeaderboardData } from "@/configs/point-system";
 import usePagination from "@/hooks/usePagination";
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 
 export default function Leaderboard() {
   const { data, queryConfig, handlePagination, totalData } = usePagination({ limit: 10, inititalData: pointSystemLeaderboardData });
-  const [showPrev, setShowPrev] = useState(false);
-  const [showNext, setShowNext] = useState(true);
+  const [swiperRef, setSwiperRef] = useState<SwiperClass>();
+
+  const handlePrevious = useCallback(() => {
+    swiperRef?.slidePrev();
+  }, [swiperRef]);
+
+  const handleNext = useCallback(() => {
+    swiperRef?.slideNext();
+  }, [swiperRef]);
 
   return (
     <div>
-      <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto rounded-lg overflow-hidden">
+      <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-sm sm:text-base rounded-lg overflow-hidden">
         <div className="text-lg sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-6 px-6 sm:px-16 pt-10 flex items-center">
           <div className="w-[20%]">Rank</div>
           <div className="w-[60%] text-start">Address</div>
@@ -42,30 +49,33 @@ export default function Leaderboard() {
           className="py-6 bg-[#FCFCFC]"
         />
       </div>
-      <div className="mt-10 bg-[#FAFAFA] rounded-lg p-4 sm:p-10">
-        <h2 className="text-3xl font-bold">Last rewards</h2>
+      <div className="mt-10 bg-[#FAFAFA] rounded-lg p-4 md:p-10">
+        <h2 className="text-2xl lg:text-3xl font-bold">Last rewards</h2>
         <div className="mt-6 relative">
           <Swiper
+            onSwiper={setSwiperRef}
             spaceBetween={24}
-            slidesPerView={3}
+            breakpoints={{
+              0: {
+                slidesPerView: 1,
+                navigation: false,
+              },
+              639: {
+                slidesPerView: 2,
+                navigation: false,
+              },
+              1400: {
+                slidesPerView: 3,
+              },
+            }}
             direction="horizontal"
-            navigation={{
-              nextEl: ".swiper-custom-button-next",
-              prevEl: ".swiper-custom-button-prev",
-            }}
             modules={[Navigation]}
-            onReachEnd={() => setShowNext(false)}
-            onReachBeginning={() => setShowPrev(false)}
-            onSlideChange={(swiper) => {
-              setShowPrev(!swiper.isBeginning);
-              setShowNext(!swiper.isEnd);
-            }}
           >
             {Array(6)
               .fill(0)
               .map((_, i) => (
-                <SwiperSlide key={i}>
-                  <div className="p-4  w-full bg-white rounded-lg flex items-start gap-4">
+                <SwiperSlide key={i} className="w-[380px]">
+                  <div className="p-4 bg-white rounded-lg flex items-start gap-4">
                     <div className="rounded-full bg-grey-100 p-2">
                       <svg width="24" height="25" viewBox="0 0 24 25" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path
@@ -77,7 +87,7 @@ export default function Leaderboard() {
                     <div className="w-full">
                       <h3 className="text-base font-medium truncate">ckb1qzda0cr08..hjebdf</h3>
                       <p className="text-grey-200 text-sm">Sep 11, 2024</p>
-                      <div className="flex items-center mt-1 justify-between gap-2">
+                      <div className="flex flex-wrap items-start mt-1 justify-between gap-1">
                         <span>Received Rewards:</span>
                         <div className="flex items-center gap-2">
                           <span className="font-medium">4,000</span>
@@ -90,34 +100,36 @@ export default function Leaderboard() {
                 </SwiperSlide>
               ))}
           </Swiper>
-          {showPrev && (
-            <button className="swiper-custom-button-prev absolute top-1/2 z-10 -translate-y-[50%] -left-5 bg-white shadow-md rounded-full p-2 after:content-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
-              </svg>
-            </button>
-          )}
-          {showNext && (
-            <button className="swiper-custom-button-next absolute top-1/2 z-10 -translate-y-[50%] -right-5 bg-white shadow-md rounded-full p-2 after:content-none">
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                strokeWidth={1.5}
-                stroke="currentColor"
-                className="size-6"
-              >
-                <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
-              </svg>
-            </button>
-          )}
+          <button
+            onClick={handlePrevious}
+            className="hidden lg:block absolute top-1/2 z-20 -translate-y-[50%] -left-5 bg-white shadow-md rounded-full p-2 after:content-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5 8.25 12l7.5-7.5" />
+            </svg>
+          </button>
+          <button
+            onClick={handleNext}
+            className="hidden lg:block absolute top-1/2 z-10 -translate-y-[50%] -right-5 bg-white shadow-md rounded-full p-2 after:content-none"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="size-6"
+            >
+              <path strokeLinecap="round" strokeLinejoin="round" d="m8.25 4.5 7.5 7.5-7.5 7.5" />
+            </svg>
+          </button>
         </div>
       </div>
     </div>

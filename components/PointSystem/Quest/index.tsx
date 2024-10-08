@@ -26,15 +26,17 @@ const getItems: (panelStyle: CSSProperties) => CollapseProps["items"] = (panelSt
         <div className="grid gap-3">
           <h3 className="flex items-center gap-2 text-lg sm:text-2xl font-bold">
             TaskOn{" "}
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path
-                d="M16.5 2.25H21.75V7.5M20.625 3.375L15 9M12.75 3.75H6C5.40326 3.75 4.83097 3.98705 4.40901 4.40901C3.98705 4.83097 3.75 5.40326 3.75 6V18C3.75 18.5967 3.98705 19.169 4.40901 19.591C4.83097 20.0129 5.40326 20.25 6 20.25H18C18.5967 20.25 19.169 20.0129 19.591 19.591C20.0129 19.169 20.25 18.5967 20.25 18V11.25"
-                stroke="#FF7201"
-                stroke-width="1.5"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-              />
-            </svg>
+            <Link href="#">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                  d="M16.5 2.25H21.75V7.5M20.625 3.375L15 9M12.75 3.75H6C5.40326 3.75 4.83097 3.98705 4.40901 4.40901C3.98705 4.83097 3.75 5.40326 3.75 6V18C3.75 18.5967 3.98705 19.169 4.40901 19.591C4.83097 20.0129 5.40326 20.25 6 20.25H18C18.5967 20.25 19.169 20.0129 19.591 19.591C20.0129 19.169 20.25 18.5967 20.25 18V11.25"
+                  stroke="#FF7201"
+                  stroke-width="1.5"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                />
+              </svg>
+            </Link>
           </h3>
           <div className="text-grey-200 text-base sm:text-lg">
             Complete these basic social media tasks on TaskOn to earn up to 300 points.
