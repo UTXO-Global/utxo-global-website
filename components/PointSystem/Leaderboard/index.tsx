@@ -7,10 +7,12 @@ import { Swiper, SwiperClass, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
+import { useTranslation } from "next-export-i18n";
 
 export default function Leaderboard() {
   const { data, queryConfig, handlePagination, totalData } = usePagination({ limit: 10, inititalData: pointSystemLeaderboardData });
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
+  const { t } = useTranslation();
 
   const handlePrevious = useCallback(() => {
     swiperRef?.slidePrev();
@@ -24,9 +26,9 @@ export default function Leaderboard() {
     <div>
       <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-sm sm:text-base rounded-lg overflow-hidden">
         <div className="text-lg sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-6 px-6 sm:px-16 pt-10 flex items-center">
-          <div className="w-[20%]">Rank</div>
-          <div className="w-[60%] text-start">Address</div>
-          <div className="w-[20%] text-end">Point</div>
+          <div className="w-[20%]">{t("pointSystem.rank")}</div>
+          <div className="w-[60%] text-start">{t("pointSystem.address")}</div>
+          <div className="w-[20%] text-end">{t("pointSystem.point")}</div>
         </div>
         {data.map((user, i) => {
           return (
@@ -50,7 +52,7 @@ export default function Leaderboard() {
         />
       </div>
       <div className="mt-10 bg-[#FAFAFA] rounded-lg p-4 md:p-10">
-        <h2 className="text-2xl lg:text-3xl font-bold">Last rewards</h2>
+        <h2 className="text-2xl lg:text-3xl font-bold">{t("pointSystem.last_reward")}</h2>
         <div className="mt-6 relative">
           <Swiper
             onSwiper={setSwiperRef}
@@ -88,9 +90,9 @@ export default function Leaderboard() {
                       <h3 className="text-base font-medium truncate">ckb1qzda0cr08..hjebdf</h3>
                       <p className="text-grey-200 text-sm">Sep 11, 2024</p>
                       <div className="flex flex-wrap items-start mt-1 justify-between gap-1">
-                        <span>Received Rewards:</span>
+                        <span>{t("pointSystem.received_rewards")}:</span>
                         <div className="flex items-center gap-2">
-                          <span className="font-medium">4,000</span>
+                          <span className="font-medium">{formatNumber(4000)}</span>
                           <img src="/icons/icn-nervos.svg" alt="utxo-nervos" className="size-8" />
                           <img src="/icons/icn-first-rank.svg" alt="utxo-rank" className="size-8" />
                         </div>

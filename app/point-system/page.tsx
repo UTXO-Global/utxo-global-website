@@ -6,9 +6,11 @@ import Footer from "@/components/Footer";
 import Quest from "@/components/PointSystem/Quest";
 import Leaderboard from "@/components/PointSystem/Leaderboard";
 import Link from "next/link";
+import { useTranslation } from "next-export-i18n";
 
 export default function PointSystem() {
   const [isQuestTab, setIsQuestTab] = React.useState(false);
+  const { t } = useTranslation();
 
   return (
     <div>
@@ -21,7 +23,7 @@ export default function PointSystem() {
               </div>
             </Link>
             <Link href="#" className="font-bold">
-              Point System
+              {t("pointSystem.point_system")}
             </Link>
           </div>
           <Button className="!py-2 md:!py-3">Connect Wallet</Button>
@@ -36,8 +38,8 @@ export default function PointSystem() {
           />
         </div>
         <div className="font-bold uppercase text-3xl text-center w-full sm:text-[40px] sm:leading-[48px] xl:text-[58px] xl:leading-[68px] absolute top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
-          <div>Earn More points</div>
-          <div className="text-orange-100">Earn More rewards</div>
+          <div>{t("pointSystem.title_01")}</div>
+          <div className="text-orange-100">{t("pointSystem.title_02")}</div>
         </div>
         <div className="bg-dark-100 absolute bottom-[10%] left-0 right-0 rounded-2xl w-fit mx-auto px-5 xl:px-10 py-2 xl:py-5 flex items-center gap-6">
           <div className="flex items-center text-white gap-4">
@@ -67,14 +69,14 @@ export default function PointSystem() {
             className={`!bg-grey-100 hover:!bg-grey-200/20 ${!isQuestTab && "!text-grey-200"}`}
             onClick={() => setIsQuestTab(true)}
           >
-            Quest
+            {t("pointSystem.quest")}
           </Button>
           <Button
             kind="light"
             className={`!bg-grey-100 hover:!bg-grey-200/20 ${isQuestTab && "!text-grey-200"}`}
             onClick={() => setIsQuestTab(false)}
           >
-            Leaderboard
+            {t("pointSystem.leaderboard")}
           </Button>
         </div>
         <div className="mt-6">{isQuestTab ? <Quest /> : <Leaderboard />}</div>
