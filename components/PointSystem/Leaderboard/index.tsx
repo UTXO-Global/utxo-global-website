@@ -28,8 +28,8 @@ export default function Leaderboard() {
 
   return (
     <div>
-      <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-sm sm:text-base rounded-lg overflow-hidden">
-        <div className="text-lg sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:px-16 sm:pt-10 flex items-center">
+      <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
+        <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:px-16 sm:pt-10 flex items-center">
           <div className="w-[20%]">{t("pointSystem.rank")}</div>
           <div className="w-[60%] text-start">{t("pointSystem.address")}</div>
           <div className="w-[20%] text-end">{t("pointSystem.point")}</div>
@@ -41,7 +41,7 @@ export default function Leaderboard() {
               <div className="w-[60%] truncate block sm:hidden">{shortAddress(user.address, 10)}</div>
               <div className="w-[60%] truncate hidden sm:block">{shortAddress(user.address, 20)}</div>
 
-              <div className="w-[20%] text-xl text-end font-medium">{formatNumber(user.points)}</div>
+              <div className="w-[20%] text-end font-medium">{formatNumber(user.points)}</div>
             </div>
           );
         })}
@@ -57,9 +57,9 @@ export default function Leaderboard() {
           className="py-6 bg-[#FCFCFC]"
         />
       </div>
-      <div className="mt-10 bg-[#FAFAFA] rounded-lg p-4 md:p-10">
+      <div className="mt-4 sm:mt-6 bg-[#FAFAFA] rounded-lg p-4 md:p-10">
         <h2 className="text-2xl lg:text-3xl font-bold">{t("pointSystem.last_reward")}</h2>
-        <div className="mt-4 relative">
+        <div className="mt-4 sm:mt-6 relative">
           <Swiper
             onSwiper={setSwiperRef}
             onSlideChange={(swiper) => {

@@ -69,14 +69,18 @@ export default function PointSystem() {
         <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6">
           <Button
             kind="light"
-            className={`!bg-grey-100 sm:!text-lg !py-2 !px-3 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${!isQuestTab && "!text-grey-200"}`}
+            className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
+              !isQuestTab && "!text-grey-200"
+            }`}
             onClick={() => setIsQuestTab(true)}
           >
             {t("pointSystem.quest")}
           </Button>
           <Button
             kind="light"
-            className={`!bg-grey-100 sm:!text-lg !py-2 !px-3 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${isQuestTab && "!text-grey-200"}`}
+            className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
+              isQuestTab && "!text-grey-200"
+            }`}
             onClick={() => setIsQuestTab(false)}
           >
             {t("pointSystem.leaderboard")}
