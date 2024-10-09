@@ -9,39 +9,42 @@ import Link from "next/link";
 import { useTranslation } from "next-export-i18n";
 
 export default function PointSystem() {
-  const [isQuestTab, setIsQuestTab] = React.useState(false);
+  const [isQuestTab, setIsQuestTab] = React.useState(true);
   const { t } = useTranslation();
 
   return (
     <main>
-      <div className="utxo-global-container">
-        <div className="py-4 bg-transparent justify-between flex items-center">
-          <div className="flex gap-4 sm:gap-10 items-center">
-            <Link href="/">
-              <div className="w-12 md:w-16">
-                <img src="/icon.png" alt="logo-point-system" />
-              </div>
-            </Link>
-            <Link href="#" className="font-bold">
-              {t("pointSystem.point_system")}
-            </Link>
+      <header className="sticky top-0 z-20 bg-white">
+        <div className="utxo-global-container">
+          <div className="py-3 bg-transparent justify-between flex items-center">
+            <div className="flex gap-4 sm:gap-10 items-center">
+              <Link href="/">
+                <div className="w-12 md:w-16">
+                  <img src="/icon.png" alt="logo-point-system" />
+                </div>
+              </Link>
+              <Link href="#" className="font-bold">
+                {t("pointSystem.point_system")}
+              </Link>
+            </div>
+            <Button className="!py-2 md:!py-3">Connect Wallet</Button>
           </div>
-          <Button className="!py-2 md:!py-3">Connect Wallet</Button>
         </div>
-      </div>
+      </header>
       <div className="relative">
-        <div className="min-h-[230px]">
+        <div className="sm:min-h-[230px]">
+          <img src="/images/point-system-banner-mobile.png" alt="point-system-banner" className="block sm:hidden" />
           <img
             src="/images/point-system-banner.png"
             alt="point-system-banner"
-            className="lg:relative absolute w-full h-full object-cover"
+            className="hidden sm:block lg:relative absolute w-full h-full object-cover"
           />
         </div>
-        <div className="font-bold uppercase text-3xl text-center w-full sm:text-[40px] sm:leading-[48px] xl:text-[58px] xl:leading-[68px] absolute top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
+        <div className="font-bold capitalize text-3xl text-center w-full sm:text-[40px] sm:leading-[48px] lg:text-[58px] lg:leading-[68px] absolute top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
           <div>{t("pointSystem.title_01")}</div>
           <div className="text-orange-100">{t("pointSystem.title_02")}</div>
         </div>
-        <div className="bg-dark-100 absolute bottom-[10%] left-0 right-0 rounded-2xl w-fit mx-auto px-5 xl:px-10 py-2 xl:py-5 flex items-center gap-6">
+        <div className="bg-dark-100 absolute bottom-[10%] left-0 right-0 rounded-2xl w-fit mx-auto px-4 xl:px-10 py-3 xl:py-5 flex items-center gap-4">
           <div className="flex items-center text-white gap-4">
             <div className="xl:size-10 size-8">
               <img src="/icons/icn-rank.png" alt="icn-rank" className="w-full h-full" />
@@ -63,23 +66,23 @@ export default function PointSystem() {
         </div>
       </div>
       <section className="utxo-global-container">
-        <div className="flex items-center gap-6 mt-6">
+        <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6">
           <Button
             kind="light"
-            className={`!bg-grey-100 hover:!bg-grey-200/20 ${!isQuestTab && "!text-grey-200"}`}
+            className={`!bg-grey-100 sm:!text-lg !py-2 !px-3 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${!isQuestTab && "!text-grey-200"}`}
             onClick={() => setIsQuestTab(true)}
           >
             {t("pointSystem.quest")}
           </Button>
           <Button
             kind="light"
-            className={`!bg-grey-100 hover:!bg-grey-200/20 ${isQuestTab && "!text-grey-200"}`}
+            className={`!bg-grey-100 sm:!text-lg !py-2 !px-3 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${isQuestTab && "!text-grey-200"}`}
             onClick={() => setIsQuestTab(false)}
           >
             {t("pointSystem.leaderboard")}
           </Button>
         </div>
-        <div className="mt-6">{isQuestTab ? <Quest /> : <Leaderboard />}</div>
+        <div className="mt-4 sm:mt-6">{isQuestTab ? <Quest /> : <Leaderboard />}</div>
       </section>
     </main>
   );

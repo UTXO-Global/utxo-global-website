@@ -65,7 +65,7 @@ export default function RootLayout({
                 colorTextDisabled: "#A7A7A7",
               },
               Collapse: {
-                contentPadding: "0px 16px 0px",
+                contentPadding: "0px",
               },
             },
           }}
