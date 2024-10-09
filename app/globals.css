@@ -245,4 +245,8 @@ body {
 
 .ant-collapse-header {
   align-items: center !important;
+  padding: 16px !important;
+}
+.ant-collapse-content-box {
+  padding: 0px !important;
 }

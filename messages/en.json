@@ -38,7 +38,7 @@
     },
     "indexer": {
       "title": "Indexer As a Service",
-      "description": "API for real-time access to comprehensive token and NFT information.",
+      "description": "API for real-time access to comprehensive Coins and NFT information.",
       "btnLabel": "Learn More"
     }
   },
@@ -229,7 +229,7 @@
     "rank": "Rank",
     "address": "Address",
     "point": "Point",
-    "last_reward": "Last Reward",
+    "last_reward": "Last Rewards",
     "received_rewards": "Received Rewards",
     "point_system": "Point System",
     "go": "Go",
