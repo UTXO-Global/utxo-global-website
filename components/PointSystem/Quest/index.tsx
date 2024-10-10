@@ -18,10 +18,10 @@ export default function Quest() {
       key: "1",
       label: (
         <div className="flex items-center justify-between">
-          <h3 className="text-base sm:text-xl font-medium">Quest 1</h3>
+          <h3 className="text-base md:text-2xl font-medium">Quest 1</h3>
           <div className="flex items-center gap-2 sm:gap-6">
             <div className="rounded-lg px-4 py-2 sm:block hidden border-dark-100 font-medium border">Oct 21 - Oct 28</div>
-            <div className="flex items-center gap-2 text-base sm:text-xl font-bold">
+            <div className="flex items-center gap-2 text-base md:text-2xl font-bold">
               <img src="/icons/utxo-point.png" alt="utxo-point" className="size-6 sm:size-10" />
               300 {t("pointSystem.point")}
             </div>
@@ -32,7 +32,7 @@ export default function Quest() {
         <div className="mx-4 py-4 mb-0  border-t flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
           <div className="grid gap-3 w-full">
             <div className="flex items-center justify-between">
-              <h3 className="flex items-center gap-2 text-xl sm:text-2xl font-bold">
+              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-bold">
                 TaskOn{" "}
                 <Link href="#">
                   <svg className="size-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -61,8 +61,8 @@ export default function Quest() {
       key: "2",
       label: (
         <div className="flex items-center justify-between">
-          <h3 className="text-base sm:text-xl font-medium">Quest 2</h3>
-          <div className="flex items-center gap-2 text-base sm:text-xl font-bold">
+          <h3 className="text-base md:text-2xl font-medium">Quest 2</h3>
+          <div className="flex items-center gap-2 text-base md:text-2xl font-bold">
             <img src="/icons/utxo-point.png" alt="utxo-point" className="size-6 sm:size-10" />
             100 {t("pointSystem.point")}
           </div>
@@ -71,7 +71,7 @@ export default function Quest() {
       children: (
         <div className="mx-4 py-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start sm:items-center">
           <div className="grid gap-3 w-full">
-            <h3 className="text-xl sm:text-2xl font-bold">Swap</h3>
+            <h3 className="text-xl md:text-3xl font-bold">Swap</h3>
             <div className="text-grey-200 text-base sm:text-lg">Use the UTXO Global Wallet to swap and you will receive 100 points.</div>
             <Link href="#" className="inline-block text-orange-100 text-base sm:text-lg underline hover:underline hover:text-orange-500">
               Quest Guide

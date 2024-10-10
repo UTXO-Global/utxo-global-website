@@ -40,13 +40,13 @@ export default function PointSystem() {
             className="hidden sm:block lg:relative absolute w-full h-full object-cover"
           />
         </div>
-        <div className="font-bold capitalize text-3xl text-center w-full sm:text-[40px] sm:leading-[48px] lg:text-[58px] lg:leading-[68px] absolute top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
+        <div className="font-bold capitalize text-3xl text-center w-full sm:text-[42px] sm:leading-[48px] lg:text-[58px] lg:leading-[68px] absolute top-[35%] md:top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
           <div>{t("pointSystem.title_01")}</div>
           <div className="text-orange-100">{t("pointSystem.title_02")}</div>
         </div>
-        <div className="bg-dark-100 absolute bottom-[10%] left-0 right-0 rounded-2xl w-fit mx-auto px-4 xl:px-10 py-3 xl:py-5 flex items-center gap-4">
-          <div className="flex items-center text-white gap-4">
-            <div className="xl:size-10 size-8">
+        <div className="bg-dark-100 absolute bottom-[18%] md:bottom-[10%] left-0 right-0 rounded-lg md:rounded-2xl w-fit mx-auto px-3 xl:px-10 py-2 md:px-6 md:py-3 xl:py-5 flex items-center gap-4">
+          <div className="flex items-center text-white gap-2 sm:gap-4">
+            <div className="xl:size-10 size-6 md:size-8">
               <img src="/icons/icn-rank.png" alt="icn-rank" className="w-full h-full" />
             </div>
             <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -54,8 +54,8 @@ export default function PointSystem() {
             </svg>
             {/* <span className="font-bold text-3xl">50</span> */}
           </div>
-          <div className="flex items-center text-white gap-4">
-            <div className="xl:size-10 size-8">
+          <div className="flex items-center text-white gap-2 sm:gap-4">
+            <div className="xl:size-10 size-6 md:size-8">
               <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
             </div>
             <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -69,14 +69,18 @@ export default function PointSystem() {
         <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6">
           <Button
             kind="light"
-            className={`!bg-grey-100 sm:!text-lg !py-2 !px-3 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${!isQuestTab && "!text-grey-200"}`}
+            className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
+              !isQuestTab && "!text-grey-200"
+            }`}
             onClick={() => setIsQuestTab(true)}
           >
             {t("pointSystem.quest")}
           </Button>
           <Button
             kind="light"
-            className={`!bg-grey-100 sm:!text-lg !py-2 !px-3 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${isQuestTab && "!text-grey-200"}`}
+            className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
+              isQuestTab && "!text-grey-200"
+            }`}
             onClick={() => setIsQuestTab(false)}
           >
             {t("pointSystem.leaderboard")}
