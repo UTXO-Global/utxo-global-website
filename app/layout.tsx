@@ -9,6 +9,9 @@ import { Suspense } from "react";
 import { SITE_DESCRIPTION, SITE_TITLE, SITE_URL, SITE_IMAGE_URL, GA_TRACKING_ID } from "@/configs/common";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import CCCProvider from "@/providers/ccc";
+import { AppProvider } from "@/providers/app-provider";
+import { ReduxProvider } from "@/redux/Provider";
 
 export const metadata: Metadata = {
   title: SITE_TITLE,
@@ -70,11 +73,17 @@ export default function RootLayout({
             },
           }}
         >
-          <Suspense>
-            <Header />
-            {children}
-            <Footer />
-          </Suspense>
+          <ReduxProvider>
+            <CCCProvider>
+              <AppProvider>
+                <Suspense>
+                  <Header />
+                  {children}
+                  <Footer />
+                </Suspense>
+              </AppProvider>
+            </CCCProvider>
+          </ReduxProvider>
 
           <ToastContainer
             autoClose={5000}
