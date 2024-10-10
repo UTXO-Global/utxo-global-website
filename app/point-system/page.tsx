@@ -18,11 +18,9 @@ export default function PointSystem() {
         <div className="utxo-global-container">
           <div className="py-3 bg-transparent justify-between flex items-center">
             <div className="flex gap-4 sm:gap-10 items-center">
-              <Link href="/">
-                <div className="w-12 md:w-16">
-                  <img src="/icon.png" alt="logo-point-system" />
-                </div>
-              </Link>
+              <div className="w-12 md:w-16">
+                <img src="/icon.png" alt="logo-point-system" />
+              </div>
               <Link href="#" className="font-bold">
                 {t("pointSystem.point_system")}
               </Link>
