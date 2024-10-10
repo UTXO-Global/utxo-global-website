@@ -42,8 +42,8 @@ export const NAVIGATIONS = [
   },
   {
     id: "point-system",
-    label: "Point System",
+    label: "pointSystem.point_system",
     href: "/point-system",
-    isExternal: false,
+    isExternal: true,
   },
 ];
