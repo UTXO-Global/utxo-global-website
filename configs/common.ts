@@ -14,6 +14,7 @@ export const BUG_REPORT_RESULT_LINK = "";
 export const GA_TRACKING_ID = process.env.NEXT_PUBLIC_GA_TRACIKING_ID;
 export const MULTI_SIG_LINK = process.env.NEXT_PUBLIC_MULTI_SIG_LINK || "";
 export const BOUNTY_CONTEST_STAGE = Number(process.env.NEXT_PUBLIC_BOUNTY_CONTEST_STAGE || 1); // 1: prepare; 2: in-progress; 3: ended
+export const DEFAULT_NETWORK = process.env.NEXT_PUBLIC_NETWORK_DEFAULT || "nervos_testnet";
 
 export const NAVIGATIONS = [
   {

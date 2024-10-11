@@ -1,16 +1,24 @@
 "use client";
 
 import Button from "@/components/Common/Button";
-import React from "react";
-import Footer from "@/components/Footer";
+import React, { useContext, useEffect } from "react";
 import Quest from "@/components/PointSystem/Quest";
 import Leaderboard from "@/components/PointSystem/Leaderboard";
 import Link from "next/link";
 import { useTranslation } from "next-export-i18n";
+import { ccc } from "@ckb-ccc/connector-react";
+import useLogin from "@/hooks/useLogin";
+import AccountModal from "@/components/AccountModal";
+import useAuthenticate from "@/hooks/useAuthenticate";
+import useProfile from "@/hooks/useProfile";
 
 export default function PointSystem() {
   const [isQuestTab, setIsQuestTab] = React.useState(true);
   const { t } = useTranslation();
+  const { open } = ccc.useCcc();
+  useLogin();
+  const { profile } = useProfile();
+  const { isLoggedIn } = useAuthenticate();
 
   return (
     <main>
@@ -25,7 +33,13 @@ export default function PointSystem() {
                 {t("pointSystem.point_system")}
               </Link>
             </div>
-            <Button className="!py-2 md:!py-3">Connect Wallet</Button>
+            {isLoggedIn ? (
+              <AccountModal />
+            ) : (
+              <Button onClick={open} className="!py-2 md:!py-3">
+                Connect Wallet
+              </Button>
+            )}
           </div>
         </div>
       </header>
@@ -47,19 +61,25 @@ export default function PointSystem() {
             <div className="xl:size-10 size-6 md:size-8">
               <img src="/icons/icn-rank.png" alt="icn-rank" className="w-full h-full" />
             </div>
+            {/* {isLoggedIn ? (
+              <span className="font-bold text-xl md:text-3xl">{profile.points}</span>
+            ) : ( */}
             <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z" fill="white" />
             </svg>
-            {/* <span className="font-bold text-3xl">50</span> */}
+            {/* )} */}
           </div>
           <div className="flex items-center text-white gap-2 sm:gap-4">
             <div className="xl:size-10 size-6 md:size-8">
               <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
             </div>
-            <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z" fill="white" />
-            </svg>
-            {/* <span className="font-bold text-3xl">50</span> */}
+            {isLoggedIn ? (
+              <span className="font-bold text-xl md:text-3xl">{profile.points}</span>
+            ) : (
+              <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z" fill="white" />
+              </svg>
+            )}
           </div>
         </div>
       </div>
