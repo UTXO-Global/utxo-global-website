@@ -35,7 +35,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
         return "";
       }
     };
-    console.log(await (window as any).utxoGlobal.ckbSigner.getNetwork());
 
     const _address = await _getAddress();
     setAddress(_address);
@@ -66,7 +65,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     setClient(_network === CkbNetwork.MiranaMainnet ? new ccc.ClientPublicMainnet() : new ccc.ClientPublicTestnet());
   }, [network, setClient]);
 
-  return <AppContext.Provider value={{ address }}>{address ? children : null}</AppContext.Provider>;
+  return <AppContext.Provider value={{ address }}>{children}</AppContext.Provider>;
 };
 
 export { AppContext, AppProvider };

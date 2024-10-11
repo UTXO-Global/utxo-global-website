@@ -2,14 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 
 import { RootState } from "@/redux/store";
 
-import {
-  reset,
-  setAddressLogged,
-  setIsDontShowAgainTestnetPopup,
-  setNetwork,
-  setToken,
-  setTokenExpired,
-} from "./action";
+import { reset, setAddressLogged, setIsDontShowAgainTestnetPopup, setNetwork, setToken, setTokenExpired } from "./action";
 import { defaultStorageReducer } from "./type";
 
 const storageReducer = createReducer(defaultStorageReducer, (builder) => {

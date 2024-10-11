@@ -37,7 +37,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning={true}>
       <Script src={`https://www.googletagmanager.com/gtag/js?id=${GA_TRACKING_ID}`} />
       <Script id="google-analytics">
         {`
@@ -48,7 +48,7 @@ export default function RootLayout({
           gtag('config', '${GA_TRACKING_ID}');
         `}
       </Script>
-      <body>
+      <body suppressHydrationWarning={true}>
         <ConfigProvider
           theme={{
             token: {

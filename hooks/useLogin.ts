@@ -9,15 +9,14 @@ import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { setAddressLogged, setToken, setTokenExpired } from "@/redux/features/storage/action";
 import { selectApp } from "@/redux/features/app/reducer";
 import { toast } from "react-toastify";
-import { AppContext } from "@/providers/app-provider";
+import { selectStorage } from "@/redux/features/storage/reducer";
 
 const useLogin = () => {
-  const [mounted, setMounted] = useState(false);
   const { isLoggedIn } = useAuthenticate();
   const signer = ccc.useSigner();
   const { disconnect } = ccc.useCcc();
   const { config } = useAppSelector(selectApp);
-  const { address } = useContext(AppContext);
+  const { addressLogged } = useAppSelector(selectStorage);
 
   const dispatch = useAppDispatch();
 
@@ -84,13 +83,10 @@ const useLogin = () => {
   }, [signer, isLoggedIn, _getNonce, _signMessage, _login]);
 
   useEffect(() => {
-    setMounted(true);
-  }, []);
-  useEffect(() => {
-    if (signer && !!signer.getInternalAddress() && mounted) {
+    if (signer && !!signer.getInternalAddress()) {
       login();
     }
-  }, [login, signer, signer?.getInternalAddress, mounted]);
+  }, [signer, signer?.getInternalAddress]);
 };
 
 export default useLogin;
