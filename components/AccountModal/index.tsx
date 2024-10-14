@@ -1,13 +1,12 @@
 /* eslint-disable @next/next/no-img-element */
 "use client";
 
-import { useContext, useEffect, useState } from "react";
+import { useState } from "react";
 import { ccc } from "@ckb-ccc/connector-react";
 import { useRouter } from "next/navigation";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { reset } from "@/redux/features/storage/action";
-import useAuthenticate from "@/hooks/useAuthenticate";
 import IcnChevron from "@/public/icons/icn-chevron.svg";
 import IcnLogout from "@/public/icons/icn-logout.svg";
 import { Popover } from "antd";
@@ -17,7 +16,6 @@ import { shortAddress } from "@/utils/helpers";
 const AccountModal = () => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
-  const { isLoggedIn } = useAuthenticate();
   const { disconnect } = ccc.useCcc();
   const { addressLogged } = useAppSelector(selectStorage);
 
@@ -39,9 +37,9 @@ const AccountModal = () => {
   };
 
   const content = (
-    <div className="bg-dark-100 pt-[10px] -mt-[10px] w-[183px] rounded-b-lg overflow-hidden">
-      <button onClick={logout} className="border-t w-full hover:bg-dark-300 border-[#2C2C2C] flex items-center gap-2 py-3 px-4 text-white ">
-        <IcnLogout className="w-4" />
+    <div className="rounded-lg w-[180px]">
+      <button onClick={logout} className="text-base w-full flex font-medium items-center gap-2 py-3 px-10">
+        <IcnLogout className="w-6 text-black" fill={"black"} />
         <span>Logout</span>
       </button>
     </div>

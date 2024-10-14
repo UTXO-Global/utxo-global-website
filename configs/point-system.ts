@@ -1,52 +1,52 @@
 export const pointSystemLeaderboardData = [
   {
     rank: 1,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 2,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 3,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 4,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 5,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 6,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 7,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 8,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 9,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
   {
     rank: 10,
-    address: "ckb1qzda0cr08m85hc8jlnf...0hgesebdf",
+    address: "ckt1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqw29lpzqqjhuutzazxy3h5ce7v43zxc3qcqzg75f",
     points: 200,
   },
 ];
