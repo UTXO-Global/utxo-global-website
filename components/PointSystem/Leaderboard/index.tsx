@@ -11,6 +11,7 @@ import { useTranslation } from "next-export-i18n";
 import IcnRankGold from "@/public/icons/icn-first-rank.svg";
 import IcnRankSilver from "@/public/icons/icn-second-rank.svg";
 import IcnRankBronze from "@/public/icons/icn-third-rank.svg";
+import IcnSeal from "@/public/icons/icn-seal.svg";
 
 const ranks = [
   {
@@ -43,34 +44,50 @@ export default function Leaderboard() {
 
   return (
     <div>
-      <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
-        <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:px-16 sm:pt-10 flex items-center">
-          <div className="w-[20%]">{t("pointSystem.rank")}</div>
-          <div className="w-[60%] text-start">{t("pointSystem.address")}</div>
-          <div className="w-[20%] text-end">{t("pointSystem.point")}</div>
-        </div>
-        {data.map((user) => {
-          return (
-            <div className="px-4 sm:px-16 py-4 flex items-center text-start" key={user.rank}>
-              <span className="w-[20%] font-medium pl-4">{user.rank}</span>
-              <div className="w-[60%] truncate block sm:hidden">{shortAddress(user.address, 10)}</div>
-              <div className="w-[60%] truncate hidden sm:block">{shortAddress(user.address, 20)}</div>
-
-              <div className="w-[20%] text-end font-medium">{formatNumber(user.points)}</div>
+      <div className="relative">
+        <div className="absolute z-10 hidden lg:block -translate-x-1/2 left-1/2 -top-3">
+          <div
+            className="relative px-24 py-4 flex items-center justify-center"
+            style={{
+              backgroundImage: "url('/images/leaderboard-top.png')",
+              backgroundSize: "contain",
+              backgroundRepeat: "no-repeat",
+            }}
+          >
+            <div className="z-20 relative font-bold text-2xl">
+              My Ranking:
+              <span className="ml-2">--</span>
             </div>
-          );
-        })}
-        <Pagination
-          responsive={true}
-          current={queryConfig.page}
-          defaultCurrent={queryConfig.page}
-          total={totalData}
-          pageSize={queryConfig.limit}
-          showSizeChanger={false}
-          onChange={(page) => handlePagination(page, queryConfig.limit)}
-          align="center"
-          className="py-6 bg-[#FCFCFC]"
-        />
+          </div>
+        </div>
+        <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
+          <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:px-16 sm:pt-10 flex items-center gap-4">
+            <div className="w-[15%]">{t("pointSystem.rank")}</div>
+            <div className="w-[65%] text-start">{t("pointSystem.address")}</div>
+            <div className="w-[20%] text-end">{t("pointSystem.point")}</div>
+          </div>
+          {data.map((user) => {
+            return (
+              <div className="px-4 sm:px-16 text-base sm:text-xl py-4 flex items-center text-start gap-4" key={user.rank}>
+                <span className="w-[15%] font-medium pl-3">{user.rank}</span>
+                <div className="w-[65%] truncate block sm:hidden">{shortAddress(user.address, 10)}</div>
+                <div className="w-[65%] truncate hidden sm:block">{shortAddress(user.address, 20)}</div>
+                <div className="w-[20%] text-end font-medium">{formatNumber(user.points)}</div>
+              </div>
+            );
+          })}
+          <Pagination
+            responsive={true}
+            current={queryConfig.page}
+            defaultCurrent={queryConfig.page}
+            total={totalData}
+            pageSize={queryConfig.limit}
+            showSizeChanger={false}
+            onChange={(page) => handlePagination(page, queryConfig.limit)}
+            align="center"
+            className="py-6 bg-[#FCFCFC]"
+          />
+        </div>
       </div>
       <div className="mt-4 sm:mt-6 bg-[#FAFAFA] rounded-lg p-4 md:p-10">
         <h2 className="text-2xl lg:text-3xl font-bold">{t("pointSystem.last_reward")}</h2>
@@ -118,7 +135,7 @@ export default function Leaderboard() {
                         <div className="flex items-center gap-2">
                           <span className="font-medium">{formatNumber(lastReward.rewards)}</span>
                           <img src="/icons/icn-nervos.svg" alt="utxo-nervos" className="size-7 sm:size-8" />
-                          {lastReward.rank <= 3 && ranks[lastReward.rank - 1].icon}
+                          {lastReward.rank <= 3 ? ranks[lastReward.rank - 1].icon : <IcnSeal className="size-7 sm:size-8" />}
                         </div>
                       </div>
                     </div>

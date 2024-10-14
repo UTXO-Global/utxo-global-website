@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 import type { CSSProperties } from "react";
 import { CaretRightOutlined } from "@ant-design/icons";
 import type { CollapseProps } from "antd";
@@ -7,11 +7,25 @@ import Link from "next/link";
 import Button from "@/components/Common/Button";
 import { useTranslation } from "next-export-i18n";
 import useResizable from "@/hooks/useResizeable";
+import BonusReward from "@/components/PointSystem/BonusReward";
 
 export default function Quest() {
   const { token } = theme.useToken();
   const { t } = useTranslation();
   const { width } = useResizable();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  const showModal = () => {
+    setIsModalOpen(true);
+  };
+
+  const handleOk = () => {
+    setIsModalOpen(false);
+  };
+
+  const handleCancel = () => {
+    setIsModalOpen(false);
+  };
 
   const getItems: (panelStyle: CSSProperties) => CollapseProps["items"] = (panelStyle) => [
     {
@@ -19,19 +33,13 @@ export default function Quest() {
       label: (
         <div className="flex items-center justify-between">
           <h3 className="text-base md:text-2xl font-medium">Quest 1</h3>
-          <div className="flex items-center gap-2 sm:gap-6">
-            <div className="rounded-lg px-4 py-2 sm:block hidden border-dark-100 font-medium border">Oct 21 - Oct 28</div>
-            <div className="flex items-center gap-2 text-base md:text-2xl font-bold">
-              <img src="/icons/utxo-point.png" alt="utxo-point" className="size-6 sm:size-10" />
-              300 {t("pointSystem.point")}
-            </div>
-          </div>
+          <div className="text-base md:text-2xl font-bold">300 {t("pointSystem.point")}</div>
         </div>
       ),
       children: (
-        <div className="mx-4 py-4 mb-0  border-t flex flex-col sm:flex-row gap-3 justify-between items-start sm:items-center">
+        <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0  border-t flex flex-col sm:flex-row gap-3 justify-betwee3 items-start">
           <div className="grid gap-3 w-full">
-            <div className="flex items-center justify-between">
+            <div className="flex items-center justify-between sm:justify-start gap-6">
               <h3 className="flex items-center gap-2 text-xl md:text-3xl font-bold">
                 TaskOn{" "}
                 <Link href="#">
@@ -46,13 +54,13 @@ export default function Quest() {
                   </svg>
                 </Link>
               </h3>
-              <span className="sm:hidden">(Oct 21 - Oct 28)</span>
+              <span className="sm:text-xl">(Oct 21 - Oct 28)</span>
             </div>
-            <div className="text-grey-200 text-base sm:text-lg">
+            <div className="text-grey-200 font-medium text-base sm:text-lg">
               Complete these basic social media tasks on TaskOn to earn up to 300 points.
             </div>
           </div>
-          <Button className="max-w-[120px] w-full !py-2">{t("pointSystem.go")}</Button>
+          <Button className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.go")}</Button>
         </div>
       ),
       style: panelStyle,
@@ -62,22 +70,61 @@ export default function Quest() {
       label: (
         <div className="flex items-center justify-between">
           <h3 className="text-base md:text-2xl font-medium">Quest 2</h3>
-          <div className="flex items-center gap-2 text-base md:text-2xl font-bold">
-            <img src="/icons/utxo-point.png" alt="utxo-point" className="size-6 sm:size-10" />
-            100 {t("pointSystem.point")}
-          </div>
+          <div className="text-base md:text-2xl font-bold">100 {t("pointSystem.point")}</div>
         </div>
       ),
       children: (
-        <div className="mx-4 py-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start sm:items-center">
+        <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start">
           <div className="grid gap-3 w-full">
-            <h3 className="text-xl md:text-3xl font-bold">Swap</h3>
-            <div className="text-grey-200 text-base sm:text-lg">Use the UTXO Global Wallet to swap and you will receive 100 points.</div>
-            <Link href="#" className="inline-block text-orange-100 text-base sm:text-lg underline hover:underline hover:text-orange-500">
-              Quest Guide
-            </Link>
+            <h3 className="text-xl text-[22px] md:text-3xl font-bold">Swap in UTXO Global Wallet Extension</h3>
+            <div className="text-grey-200 font-medium text-base sm:text-lg">
+              Use the UTXO Global Wallet to swap and you will receive 100 points.
+            </div>
+            <div className="flex items-center gap-6 text-base sm:text-xl">
+              <Link href="#" className="inline-block underline hover:underline hover:text-orange-500">
+                Quest Guide
+              </Link>
+              <div className="flex items-center gap-2">
+                <div className="text-[#EA8D01] underline cursor-pointer" onClick={showModal}>
+                  Bonus Reward
+                </div>
+                <img src="/icons/icn-star.svg" alt="icnStar" className="size-6 sm:size-[34px]" />
+              </div>
+            </div>
           </div>
-          <Button className="max-w-[120px] w-full !py-2">{t("pointSystem.claim")}</Button>
+          <Button className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</Button>
+        </div>
+      ),
+      style: panelStyle,
+    },
+    {
+      key: "3",
+      label: (
+        <div className="flex items-center justify-between">
+          <h3 className="text-base md:text-2xl font-medium">Quest 3</h3>
+          <div className="text-base md:text-2xl font-bold">100 {t("pointSystem.point")}</div>
+        </div>
+      ),
+      children: (
+        <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start">
+          <div className="grid gap-3 w-full">
+            <h3 className="text-xl text-[22px] md:text-3xl font-bold">Swap on the UTXOSwap Webpage</h3>
+            <div className="text-grey-200 font-medium text-base sm:text-lg">
+              Use UTXOSwap webpage connecting UTXO Global wallet to swap and earn 100 Points.
+            </div>
+            <div className="flex items-center gap-6 text-base sm:text-xl">
+              <Link href="#" className="inline-block underline hover:underline hover:text-orange-500">
+                Quest Guide
+              </Link>
+              <div className="flex items-center gap-2">
+                <div className="text-[#EA8D01] underline cursor-pointer" onClick={showModal}>
+                  Bonus Reward
+                </div>
+                <img src="/icons/icn-star.svg" alt="icnStar" className="size-6 sm:size-[34px]" />
+              </div>
+            </div>
+          </div>
+          <Button className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</Button>
         </div>
       ),
       style: panelStyle,
@@ -94,12 +141,15 @@ export default function Quest() {
   };
 
   return (
-    <Collapse
-      bordered={false}
-      defaultActiveKey={["1", "2"]}
-      expandIcon={({ isActive }) => <CaretRightOutlined size={40} rotate={isActive ? 90 : 0} />}
-      ghost
-      items={getItems(panelStyle)}
-    />
+    <>
+      <Collapse
+        bordered={false}
+        defaultActiveKey={["1", "2", "3"]}
+        expandIcon={({ isActive }) => <CaretRightOutlined size={40} rotate={isActive ? 90 : 0} />}
+        ghost
+        items={getItems(panelStyle)}
+      />
+      <BonusReward isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} />
+    </>
   );
 }
