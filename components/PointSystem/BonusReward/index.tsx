@@ -10,15 +10,15 @@ import { pointSystemLeaderboardData } from "@/configs/point-system";
 
 const IconShields = [
   {
-    icon: <IcnShieldFirst className="size-6 md:size-8" />,
+    icon: <IcnShieldFirst className="size-6 sm:size-8" />,
     seals: formatNumber(1000),
   },
   {
-    icon: <IcnShieldSecond className="size-6 md:size-8" />,
+    icon: <IcnShieldSecond className="size-6 sm:size-8" />,
     seals: formatNumber(500),
   },
   {
-    icon: <IcnShieldThird className="size-6 md:size-8" />,
+    icon: <IcnShieldThird className="size-6 sm:size-8" />,
     seals: formatNumber(300),
   },
 ];
@@ -57,7 +57,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
         <div className="relative">
           <div className="absolute z-10 hidden md:block -translate-x-1/2 left-1/2 -top-3">
             <div
-              className="relative px-10 py-1 flex items-center justify-center"
+              className="relative px-9 py-1 flex items-center justify-center"
               style={{
                 backgroundImage: "url('/images/leaderboard-top.png')",
                 backgroundSize: "contain",
@@ -78,11 +78,11 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
             </div>
             {data.map((user) => {
               return (
-                <div className="text-base sm:text-xl px-4 py-3 sm:px-6 flex items-center text-start gap-4" key={user.rank}>
+                <div className="text-base sm:text-xl px-4 py-2 sm:px-6 flex items-center text-start gap-4" key={user.rank}>
                   {user.rank <= 3 ? (
                     <span className="w-[15%] font-medium pl-1">{IconShields[user.rank - 1].icon}</span>
                   ) : (
-                    <span className="w-[15%] font-medium pl-3">{user.rank}</span>
+                    <span className="w-[15%] font-medium pl-2 sm:pl-3 h-8 flex items-center">{user.rank}</span>
                   )}
                   <div className="w-[65%] truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
                   <div className="w-[50%] truncate block sm:hidden">{shortAddress(user.address, 8)}</div>
