@@ -6,7 +6,7 @@ import Link from "next/link";
 import { Popover } from "antd";
 import { useTranslation } from "next-export-i18n";
 import cn from "@/utils/cn";
-import { NAVIGATIONS, CHROME_EXTENSION_LINK, MULTI_SIG_LINK, BOUNTY_CONTEST_STAGE } from "@/configs/common";
+import { NAVIGATIONS, CHROME_EXTENSION_LINK, MULTI_SIG_LINK, BOUNTY_CONTEST_STAGE, pathWithoutHeader } from "@/configs/common";
 import IcnAlignLeft from "@/public/icons/icn-align-left.svg";
 import IcnMultiSig from "@/public/icons/icn-multi-sig.svg";
 import IcnTwitter from "@/public/icons/icn-twitter.svg";
@@ -69,7 +69,7 @@ const Header = () => {
   const pathname = usePathname();
   const [showBanner, setShowBanner] = useState(true);
 
-  if (pathname === "/point-system/") return null;
+  if (pathWithoutHeader.includes(pathname)) return null;
   return (
     <>
       {showBanner && BOUNTY_CONTEST_STAGE !== BountyContestStage.Ended && (

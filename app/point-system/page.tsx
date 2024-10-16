@@ -61,7 +61,7 @@ export default function PointSystem() {
         </div>
         <div className="bg-dark-100 absolute bottom-[15%] md:bottom-[13%] left-0 right-0 rounded-2xl md:rounded-2xl w-fit mx-auto flex items-center gap-4">
           <div className="flex items-center text-white gap-2 sm:gap-3 px-3 xl:px-10 py-2 md:px-6 md:py-3 xl:py-4">
-            <span className="text-lg md:text-2xl xl:text-[32px] xl:leading-[24px] font-bold">My Point:</span>
+            <span className="text-lg md:text-2xl xl:text-[32px] xl:leading-[24px] font-bold">{t("pointSystem.my_points")}:</span>
             <div className="xl:size-10 size-6 md:size-8">
               <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
             </div>

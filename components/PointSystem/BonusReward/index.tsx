@@ -71,7 +71,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
             </div>
           </div>
           <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] w-full mt-8 bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
-            <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold px-4 py-4 sm:px-6 flex items-center gap-4">
+            <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-medium px-4 py-4 sm:px-6 flex items-center gap-4">
               <div className="w-[15%]">{t("pointSystem.rank")}</div>
               <div className="sm:w-[65%] w-[55%] text-start">{t("pointSystem.address")}</div>
               <div className="w-[35%] sm:w-[20%] text-end">{"Amount"}</div>
