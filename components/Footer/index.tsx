@@ -6,8 +6,9 @@ import { useTranslation } from "next-export-i18n";
 
 import IcnTwitter from "@/public/icons/icn-twitter.svg";
 import IcnTelegram from "@/public/icons/icn-telegram.svg";
+import IcnGithub from "@/public/icons/icn-github.svg";
 
-import { CHROME_EXTENSION_LINK, DOC_LINK, MEDIA_KIT_GITHUB, NERVOS_LINK, SUBSTACK_LINK } from "@/configs/common";
+import { CHROME_EXTENSION_LINK, DOC_LINK, EXTENTSION_GITHUB, MEDIA_KIT_GITHUB, NERVOS_LINK } from "@/configs/common";
 import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
 
 const Footer = () => {
@@ -31,9 +32,18 @@ const Footer = () => {
                 <IcnTelegram className="w-6" />
               </div>
             </Link>
+            <Link href={EXTENTSION_GITHUB} target="_blank">
+              <div className="rounded-full w-[48px] h-[48px] flex justify-center items-center bg-dark-100 transition-all hover:bg-dark-200">
+                <IcnGithub className="w-10" />
+              </div>
+            </Link>
           </div>
         </div>
-        <img src="/icon.png" alt="utxo global" className="md:absolute w-[100px] lg:w-[150px] md:left-1/2 md:-translate-x-1/2 md:top-10" />
+        <img
+          src="/icon.png"
+          alt="utxo global"
+          className="md:absolute w-[100px] lg:w-[150px] md:left-1/2 md:-translate-x-1/2 md:top-10"
+        />
         <div className="flex flex-row md:flex-col lg:flex-row gap-10 lg:gap-20 w-full justify-between md:justify-center md:w-[unset]">
           <div className="grid gap-4 text-[18px] leading-[24px] md:text-[20px] md:leading-[28px] font-medium items-start justify-items-start md:justify-items-end lg:justify-items-start">
             <p className=" text-dark-100"> {t("footer.support")}</p>
@@ -43,7 +53,11 @@ const Footer = () => {
             <Link href="/terms-and-conditions" className="text-grey-200 transition-colors hover:text-dark-100">
               {t("footer.terms")}
             </Link>
-            <Link href={MEDIA_KIT_GITHUB} target="_blank" className="text-grey-200 transition-colors hover:text-dark-100">
+            <Link
+              href={MEDIA_KIT_GITHUB}
+              target="_blank"
+              className="text-grey-200 transition-colors hover:text-dark-100"
+            >
               {t("footer.mediaKit")}
             </Link>
           </div>
@@ -56,7 +70,11 @@ const Footer = () => {
             <Link href={NERVOS_LINK} target="_blank" className="text-grey-200 transition-colors hover:text-dark-100">
               {t("footer.nervos")}
             </Link>
-            <Link href={CHROME_EXTENSION_LINK} target="_blank" className="text-grey-200 transition-colors hover:text-dark-100">
+            <Link
+              href={CHROME_EXTENSION_LINK}
+              target="_blank"
+              className="text-grey-200 transition-colors hover:text-dark-100"
+            >
               {t("footer.download")}
             </Link>
           </div>

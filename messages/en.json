@@ -4,9 +4,10 @@
     "features": "Features",
     "contact": "Contact",
     "github": "GitHub",
-    "multiSig": "Launch Multi-Sig Wallet",
+    "multiSig": "Multi-Sig Wallet",
     "chromeStore": "Download for Chrome",
-    "bountyContest": "Bounty Contest"
+    "bountyContest": "Bounty Contest",
+    "home": "Home"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -238,7 +239,11 @@
     "quest_expired": "Quest Expired",
     "logout": "Logout",
     "my_points": "My Points",
-    "my_ranking": "My Ranking"
+    "my_ranking": "My Ranking",
+    "amount": "Amount",
+    "exclusive_rewards": "Exclusive Rewards",
+    "duration": "Duration",
+    "bonus_reward_description": "The top 3 traders who buy $SEAL tokens (applies to buying only, not selling) during the campaign will receive additional $SEAL rewards."
   },
   "indexer": {
     "title": "Build Together",

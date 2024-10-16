@@ -7,7 +7,8 @@
 
     "multiSig": "启动多重签名钱包",
     "chromeStore": "下载 Chrome 版本",
-    "bountyContest": "Bounty Contest"
+    "bountyContest": "Bounty Contest",
+    "home": "主页"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -239,7 +240,11 @@
     "quest_expired": "任务已过期",
     "logout": "登出",
     "my_points": "我的积分",
-    "my_ranking": "我的排名"
+    "my_ranking": "我的排名",
+    "amount": "量",
+    "exclusive_rewards": "独家奖励",
+    "duration": "期间",
+    "bonus_reward_description": "活动期间购买 $SEAL 代币（仅适用于购买，不适用于出售）的前 3 名交易者将获得额外的 $SEAL 奖励."
   },
   "indexer": {
     "title": "共同构建",
