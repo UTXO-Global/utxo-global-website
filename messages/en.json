@@ -4,9 +4,10 @@
     "features": "Features",
     "contact": "Contact",
     "github": "GitHub",
-    "multiSig": "Launch Multi-Sig Wallet",
+    "multiSig": "Multi-Sig Wallet",
     "chromeStore": "Download for Chrome",
-    "bountyContest": "Bounty Contest"
+    "bountyContest": "Bounty Contest",
+    "home": "Home"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -236,6 +237,52 @@
     "claim": "Claim",
     "claimed": "Claimed",
     "quest_expired": "Quest Expired",
-    "logout": "Logout"
+    "logout": "Logout",
+    "my_points": "My Points",
+    "my_ranking": "My Ranking",
+    "amount": "Amount",
+    "exclusive_rewards": "Exclusive Rewards",
+    "duration": "Duration",
+    "bonus_reward_description": "The top 3 traders who buy $SEAL tokens (applies to buying only, not selling) during the campaign will receive additional $SEAL rewards."
+  },
+  "indexer": {
+    "title": "Build Together",
+    "description": "API for real-time access to comprehensive token and NFT information.",
+    "btn_label": "Request API Access",
+    "title_01": "CKB Advanced Indexer API",
+    "card_01_title": "Coins API",
+    "card_01_description": "Endpoints related to UDT type",
+    "card_link": "Learn More",
+    "card_02_title": "NFT API",
+    "card_02_description": "Endpoints related to Spores Protocol",
+    "btn_label_check_doc": "Check The Docs",
+    "faq": "FAQ",
+    "question": {
+      "question_01": "Why don't see any data when using the indexer API?",
+      "question_02": "How do I switch between Testnet and Mainnet?",
+      "question_03": "What is the rate limit for API calls?",
+      "question_04": "How do I get access to the API?",
+      "question_05": "What should I do if encounter unexpected behavior?"
+    },
+    "answer": {
+      "answer_01_content_01": "First, make sure that your node is synced to the latest block. You can check the tip by calling the following node RPC:",
+      "answer_01_content_02": "This command will return the current tip of the indexer. If you're not at the latest block, the data might not be available. If the issue persists, please join our",
+      "answer_01_content_03": "to ask for support.",
+
+      "answer_02_content_01": "You need to adjust the",
+      "answer_02_content_02": "variable to point to the appropriate base URL. For Testnet, use ",
+      "answer_02_content_03": "and for Mainnet, use",
+
+      "answer_03_content_01": "The rate limit depends on your API key. The",
+      "answer_03_content_02": "Basic",
+      "answer_03_content_03": "key allows up to X calls per day, while the",
+      "answer_03_content_04": "Pro",
+      "answer_03_content_05": "key offers higher limits and additional endpoints.",
+
+      "answer_04_content_01": "You need to register through the",
+      "answer_04_content_02": "provided for either Testnet or Mainnet. Once registered, you will receive an API key for the appropriate network.",
+
+      "answer_05": "If you encounter any issues or unexpected behavior, first verify that your node is synced by checking the indexer tip (as mentioned in the first question). If everything appears correct and the issue persists, reach out to the support team on"
+    }
   }
 }

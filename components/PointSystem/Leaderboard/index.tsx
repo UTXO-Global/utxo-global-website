@@ -55,8 +55,7 @@ export default function Leaderboard() {
             }}
           >
             <div className="z-20 relative font-bold text-2xl">
-              My Ranking:
-              <span className="ml-2">--</span>
+              {t("pointSystem.my_ranking")}:<span className="ml-2">--</span>
             </div>
           </div>
         </div>

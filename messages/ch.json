@@ -7,7 +7,8 @@
 
     "multiSig": "启动多重签名钱包",
     "chromeStore": "下载 Chrome 版本",
-    "bountyContest": "Bounty Contest"
+    "bountyContest": "Bounty Contest",
+    "home": "主页"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -237,6 +238,52 @@
     "claim": "索赔",
     "claimed": "索赔",
     "quest_expired": "任务已过期",
-    "logout": "登出"
+    "logout": "登出",
+    "my_points": "我的积分",
+    "my_ranking": "我的排名",
+    "amount": "量",
+    "exclusive_rewards": "独家奖励",
+    "duration": "期间",
+    "bonus_reward_description": "活动期间购买 $SEAL 代币（仅适用于购买，不适用于出售）的前 3 名交易者将获得额外的 $SEAL 奖励."
+  },
+  "indexer": {
+    "title": "共同构建",
+    "description": "用于实时访问全面的代币和 NFT 信息的 API.",
+    "btn_label": "请求 API 访问权限",
+    "title_01": "CKB 高级索引器 API",
+    "card_01_title": "硬币 API",
+    "card_01_description": "与 UDT 类型相关的终结点",
+    "card_link": "了解更多信息",
+    "card_02_title": "NFT API",
+    "card_02_description": "与 Spores Protocol 相关的端点",
+    "btn_label_check_doc": "查看文档",
+    "faq": "FAQ",
+    "question": {
+      "question_01": "为什么在使用索引器 API 时看不到任何数据？",
+      "question_02": "如何在测试网和主网之间切换？",
+      "question_03": "API 调用的速率限制是多少？",
+      "question_04": "如何访问 API？",
+      "question_05": "如果遇到意外行为，我该怎么办？"
+    },
+    "answer": {
+      "answer_01_content_01": "首先，确保您的节点已同步到最新的数据块。您可以通过调用以下节点 RPC 来检查提示：",
+      "answer_01_content_02": "此命令将返回索引器的当前提示。如果您未访问最新的数据块，则数据可能不可用。如果问题仍然存在，请加入我们的 ",
+      "answer_01_content_03": "寻求支持.",
+
+      "answer_02_content_01": "您需要调整",
+      "answer_02_content_02": "变量以指向相应的基 URL. 对于 Testnet，请使用",
+      "answer_02_content_03": "对于 Mainnet，请使用",
+
+      "answer_03_content_01": "速率限制取决于您的 API 密钥.",
+      "answer_03_content_02": "Basic",
+      "answer_03_content_03": "键每天最多允许 X 次调用，而",
+      "answer_03_content_04": "Pro",
+      "answer_03_content_05": "键提供更高的限制和额外的终端节点.",
+
+      "answer_04_content_01": "您需要通过为 Testnet 或 Mainnet 提供的",
+      "answer_04_content_02": "进行注册。注册后，您将收到相应网络的 API 密钥.",
+
+      "answer_05": "如果遇到任何问题或意外行为，请首先通过检查索引器提示（如第一个问题中所述）来验证节点是否已同步。如果一切正常但问题仍然存在，请联系 上的支持团队"
+    }
   }
 }

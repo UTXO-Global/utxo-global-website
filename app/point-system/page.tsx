@@ -55,18 +55,18 @@ export default function PointSystem() {
             className="hidden sm:block lg:relative absolute w-full h-full object-cover"
           />
         </div>
-        <div className="font-bold capitalize text-3xl text-center w-full sm:text-[42px] sm:leading-[48px] lg:text-[58px] lg:leading-[68px] absolute top-[35%] md:top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
+        <div className="font-bold capitalize text-3xl text-center w-full sm:text-[42px] sm:leading-[48px] lg:text-[48px] xl:text-[58px] xl:leading-[68px] absolute top-[35%] md:top-[30%] -translate-y-1/2 left-1/2 -translate-x-1/2 right-0 mx-0">
           <div>{t("pointSystem.title_01")}</div>
           <div className="text-orange-100">{t("pointSystem.title_02")}</div>
         </div>
-        <div className="bg-dark-100 absolute bottom-[12%] md:bottom-[10%] left-0 right-0 rounded-2xl md:rounded-2xl w-fit mx-auto flex items-center gap-4">
+        <div className="bg-dark-100 absolute bottom-[15%] md:bottom-[13%] left-0 right-0 rounded-2xl md:rounded-2xl w-fit mx-auto flex items-center gap-4">
           <div className="flex items-center text-white gap-2 sm:gap-3 px-3 xl:px-10 py-2 md:px-6 md:py-3 xl:py-4">
-            <span className="text-xl lg:text-[32px] lg:leading-[24px] font-bold">My Point:</span>
+            <span className="text-lg md:text-2xl xl:text-[32px] xl:leading-[24px] font-bold">{t("pointSystem.my_points")}:</span>
             <div className="xl:size-10 size-6 md:size-8">
               <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
             </div>
             {isLoggedIn ? (
-              <span className="font-bold text-2xl lg:text-3xl">{profile.points}</span>
+              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">{profile.points}</span>
             ) : (
               <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z" fill="white" />
