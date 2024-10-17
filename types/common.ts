@@ -20,3 +20,10 @@ export enum AddressPrefix {
   "Pudge Testnet" = "ckt",
   "Mirana Mainnet" = "ckb",
 }
+
+export type PaginationType = {
+  page: number;
+  limit: number;
+  total_records: number;
+  total_page: number;
+};

@@ -26,7 +26,7 @@ export default function IndexerPage() {
           </div>
           <div className="text-center pt-4 pb-8 md:pt-20 md:pb-32 relative">
             <h1 className="uppercase text-3xl md:text-5xl font-bold text-center">{t("indexer.title")}</h1>
-            <p className="text-orange-100 text-xl md:text-2xl mt-4 mb-6 font-medium">{t("indexer.description")}</p>
+            <p className="text-orange-100 text-xl md:text-2xl mt-4 mb-6 font-medium capitalize">{t("indexer.description")}</p>
             <Link href={REQUEST_API_ACCESS_LINK} target="_blank" rel="noreferrer">
               <Button className="border-none rounded-full !py-2 md:!py-3">
                 <div className="flex items-center">

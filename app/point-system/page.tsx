@@ -6,16 +6,15 @@ import Quest from "@/components/PointSystem/Quest";
 import Leaderboard from "@/components/PointSystem/Leaderboard";
 import Link from "next/link";
 import { useTranslation } from "next-export-i18n";
-import { ccc } from "@ckb-ccc/connector-react";
 import useLogin from "@/hooks/useLogin";
 import AccountModal from "@/components/AccountModal";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import useProfile from "@/hooks/useProfile";
+import ConnectButton from "@/components/ConnectButton";
 
 export default function PointSystem() {
   const [isQuestTab, setIsQuestTab] = React.useState(true);
   const { t } = useTranslation();
-  const { open } = ccc.useCcc();
   useLogin();
   const { profile } = useProfile();
   const { isLoggedIn } = useAuthenticate();
@@ -34,13 +33,7 @@ export default function PointSystem() {
                 {t("pointSystem.point_system")}
               </Link>
             </div>
-            {isLoggedIn ? (
-              <AccountModal />
-            ) : (
-              <Button onClick={open} className="!py-2 md:!py-3">
-                Connect Wallet
-              </Button>
-            )}
+            {isLoggedIn ? <AccountModal /> : <ConnectButton />}
           </div>
         </div>
       </header>
