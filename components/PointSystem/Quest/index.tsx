@@ -40,7 +40,7 @@ export default function Quest() {
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0  border-t flex flex-col sm:flex-row gap-3 justify-betwee3 items-start">
           <div className="grid gap-3 w-full">
             <div className="flex items-center justify-between sm:justify-start gap-6">
-              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-bold">
+              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">
                 TaskOn{" "}
                 <Link href="#">
                   <svg className="size-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -76,7 +76,7 @@ export default function Quest() {
       children: (
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start">
           <div className="grid gap-3 w-full">
-            <h3 className="text-xl text-[22px] md:text-3xl font-bold">Swap in UTXO Global Wallet Extension</h3>
+            <h3 className="text-xl md:text-3xl font-medium">Swap in UTXO Global Wallet Extension</h3>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
               Use the UTXO Global Wallet to swap and you will receive 100 points.
             </div>
@@ -108,7 +108,7 @@ export default function Quest() {
       children: (
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start">
           <div className="grid gap-3 w-full">
-            <h3 className="text-xl text-[22px] md:text-3xl font-bold">Swap on the UTXOSwap Webpage</h3>
+            <h3 className="text-xl md:text-3xl font-medium">Swap on the UTXOSwap Webpage</h3>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
               Use UTXOSwap webpage connecting UTXO Global wallet to swap and earn 100 Points.
             </div>

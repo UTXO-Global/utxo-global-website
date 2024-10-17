@@ -80,7 +80,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
               return (
                 <div className="text-base sm:text-xl px-4 py-2 sm:px-6 flex items-center text-start gap-4" key={user.rank}>
                   {user.rank <= 3 ? (
-                    <span className="w-[15%] font-medium pl-1">{IconShields[user.rank - 1].icon}</span>
+                    <span className="w-[15%] font-medium min-h-8 pl-1 flex items-center">{IconShields[user.rank - 1].icon}</span>
                   ) : (
                     <span className="w-[15%] font-medium pl-2 sm:pl-3 h-8 flex items-center">{user.rank}</span>
                   )}
