@@ -247,7 +247,7 @@
   },
   "indexer": {
     "title": "Build Together",
-    "description": "API for real-time access to comprehensive token and NFT information.",
+    "description": "API for real-time access to comprehensive Coin and NFT information.",
     "btn_label": "Request API Access",
     "title_01": "CKB Advanced Indexer API",
     "card_01_title": "Coins API",

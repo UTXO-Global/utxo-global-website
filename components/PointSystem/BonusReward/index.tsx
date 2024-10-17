@@ -42,19 +42,12 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
         <div className="grid gap-4 text-center">
           <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")}</div>
           <div>
-            <p className="text-orange-100 text-base sm:text-lg font-medium mb-2">
-              {t("pointSystem.duration")}: Oct 21 - Oct 28, 2024
-            </p>
-            <p className="text-grey-200 text-base sm:text-xl font-medium">
-              {t("pointSystem.bonus_reward_description")}
-            </p>
+            <p className="text-orange-100 text-base sm:text-lg font-medium mb-2">{t("pointSystem.duration")}: Oct 21 - Oct 28, 2024</p>
+            <p className="text-grey-200 text-base sm:text-xl font-medium">{t("pointSystem.bonus_reward_description")}</p>
           </div>
           <div className="flex items-center gap-4 flex-wrap justify-center">
             {IconShields.map((shield, i) => (
-              <div
-                key={i}
-                className="bg-[#EFEFEF] py-2 md:py-3 gap-1 flex items-center text-sm sm:text-base font-medium px-2 rounded-lg"
-              >
+              <div key={i} className="bg-[#EFEFEF] py-2 md:py-3 gap-1 flex items-center text-sm sm:text-base font-medium px-2 rounded-lg">
                 {shield.icon}
                 {shield.seals} $SEAL
               </div>
@@ -85,12 +78,9 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
             </div>
             {data.map((user) => {
               return (
-                <div
-                  className="text-base sm:text-xl px-4 py-2 sm:px-6 flex items-center text-start gap-4"
-                  key={user.rank}
-                >
+                <div className="text-base sm:text-xl px-4 py-2 sm:px-6 flex items-center text-start gap-4" key={user.rank}>
                   {user.rank <= 3 ? (
-                    <span className="w-[15%] font-medium pl-1">{IconShields[user.rank - 1].icon}</span>
+                    <span className="w-[15%] font-medium min-h-8 pl-1 flex items-center">{IconShields[user.rank - 1].icon}</span>
                   ) : (
                     <span className="w-[15%] font-medium pl-2 sm:pl-3 h-8 flex items-center">{user.rank}</span>
                   )}

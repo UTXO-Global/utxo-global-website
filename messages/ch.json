@@ -248,7 +248,7 @@
   },
   "indexer": {
     "title": "共同构建",
-    "description": "用于实时访问全面的代币和 NFT 信息的 API.",
+    "description": "用于实时访问全面的 Coins 和 NFT 信息的 API.",
     "btn_label": "请求 API 访问权限",
     "title_01": "CKB 高级索引器 API",
     "card_01_title": "硬币 API",
