@@ -37,7 +37,7 @@ const Backer = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="pt-[60px] pb-[20px]">
+    <section className="pt-[100px] pb-[20px]">
       <div className="utxo-global-container">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
           {t("backedBy")}
