@@ -26,7 +26,7 @@ const Subscribe = () => {
   };
 
   return (
-    <section className="pt-[60px]">
+    <section className="pt-[100px]">
       <div
         className="bg-cover bg-no-repeat bg-center py-[100px] md:py-[144px] bg-dark-100"
         style={{

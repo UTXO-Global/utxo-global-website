@@ -11,7 +11,7 @@ const Community = () => {
   const { t } = useTranslation();
 
   return (
-    <section className="pb-[60px] pt-[100px] overflow-hidden" id="contact">
+    <section className="pb-[20px] pt-[100px] overflow-hidden" id="contact">
       <div className="utxo-global-container">
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
           {t("community.title")}
