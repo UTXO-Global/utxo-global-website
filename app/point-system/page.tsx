@@ -13,7 +13,7 @@ import useProfile from "@/hooks/useProfile";
 import ConnectButton from "@/components/ConnectButton";
 
 export default function PointSystem() {
-  const [isQuestTab, setIsQuestTab] = React.useState(true);
+  const [isQuestTab, setIsQuestTab] = React.useState(false);
   const { t } = useTranslation();
   useLogin();
   const { profile } = useProfile();
@@ -41,7 +41,11 @@ export default function PointSystem() {
       {/* Banner */}
       <div className="relative">
         <div className="sm:min-h-[230px]">
-          <img src="/images/point-system-banner-mobile.png" alt="point-system-banner" className="block sm:hidden" />
+          <img
+            src="/images/point-system-banner-mobile.png"
+            alt="point-system-banner"
+            className="block sm:hidden"
+          />
           <img
             src="/images/point-system-banner.png"
             alt="point-system-banner"
@@ -58,12 +62,24 @@ export default function PointSystem() {
               {t("pointSystem.my_points")}:
             </span>
             <div className="xl:size-10 size-6 md:size-8">
-              <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
+              <img
+                src="/icons/utxo-point.png"
+                alt="icn-rank"
+                className="w-full h-full"
+              />
             </div>
             {isLoggedIn ? (
-              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">{profile.points}</span>
+              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">
+                {profile.points}
+              </span>
             ) : (
-              <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <svg
+                width="25"
+                height="5"
+                viewBox="0 0 25 5"
+                fill="none"
+                xmlns="http://www.w3.org/2000/svg"
+              >
                 <path
                   d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z"
                   fill="white"
@@ -77,15 +93,20 @@ export default function PointSystem() {
       {/* Quests and Leaderboard */}
       <section className="utxo-global-container">
         <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6">
-          <Button
-            kind="light"
-            className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
-              !isQuestTab && "!text-grey-200"
-            }`}
-            onClick={() => setIsQuestTab(true)}
-          >
-            {t("pointSystem.quest")}
-          </Button>
+          <div className="relative">
+            <Button
+              kind="light"
+              className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 cursor-not-allowed ${
+                !isQuestTab && "!text-grey-200"
+              }`}
+            >
+              {t("pointSystem.quest")}
+            </Button>
+            <div className="bg-dark-100 text-white text-[6px] sm:text-xs font-medium p-1 rounded-md absolute -top-2 sm:-top-3 -right-[10px] sm:-right-[16px]">
+              Coming soon
+            </div>
+          </div>
+
           <Button
             kind="light"
             className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
@@ -96,7 +117,9 @@ export default function PointSystem() {
             {t("pointSystem.leaderboard")}
           </Button>
         </div>
-        <div className="mt-4 sm:mt-6">{isQuestTab ? <Quest /> : <Leaderboard />}</div>
+        <div className="mt-4 sm:mt-6">
+          {isQuestTab ? <Quest /> : <Leaderboard />}
+        </div>
       </section>
     </main>
   );
