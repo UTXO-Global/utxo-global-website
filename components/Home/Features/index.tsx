@@ -98,7 +98,7 @@ const Features = () => {
             </div>
           </div>
         </div>
-        {/* <div
+        <div
           className="mt-4 md:mt-[60px] flex items-center justify-between pt-[30px] md:pt-[61px] pb-[17px] md:pb-[39px] pl-6 lg:pl-[127px] rounded-[24px] pr-5 md:pr-[42px] flex-col md:flex-row"
           style={{
             background: `linear-gradient(270deg, #FFF 38.75%, #EBEBEB 75.19%, #F4F4F4 100%)`,
@@ -124,7 +124,7 @@ const Features = () => {
             </Link>
           </div>
           <img src="/images/indexer.png" alt="indexer" className="w-full md:w-[55%] mt-6 md:mt-0" />
-        </div> */}
+        </div>
       </div>
     </section>
   );
