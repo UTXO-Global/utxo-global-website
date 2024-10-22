@@ -11,9 +11,10 @@ import AccountModal from "@/components/AccountModal";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import useProfile from "@/hooks/useProfile";
 import ConnectButton from "@/components/ConnectButton";
+import { PointSystemTab } from "@/types/common";
 
 export default function PointSystem() {
-  const [isQuestTab, setIsQuestTab] = React.useState(false);
+  const [tab, setTab] = React.useState(PointSystemTab.LeaderBoard);
   const { t } = useTranslation();
   useLogin();
   const { profile } = useProfile();
@@ -41,11 +42,7 @@ export default function PointSystem() {
       {/* Banner */}
       <div className="relative">
         <div className="sm:min-h-[230px]">
-          <img
-            src="/images/point-system-banner-mobile.png"
-            alt="point-system-banner"
-            className="block sm:hidden"
-          />
+          <img src="/images/point-system-banner-mobile.png" alt="point-system-banner" className="block sm:hidden" />
           <img
             src="/images/point-system-banner.png"
             alt="point-system-banner"
@@ -58,32 +55,15 @@ export default function PointSystem() {
         </div>
         <div className="bg-dark-100 absolute bottom-[15%] lg:bottom-[14%] xl:bottom-[15%] left-0 right-0 rounded-2xl md:rounded-2xl w-fit mx-auto flex items-center gap-4">
           <div className="flex items-center text-white gap-2 sm:gap-3 px-3 xl:px-10 py-2 md:px-6 md:py-3 xl:py-4">
-            <span className="text-lg md:text-2xl xl:text-[32px] xl:leading-[24px] font-bold">
-              {t("pointSystem.my_points")}:
-            </span>
+            <span className="text-lg md:text-2xl xl:text-[32px] xl:leading-[24px] font-bold">{t("pointSystem.my_points")}:</span>
             <div className="xl:size-10 size-6 md:size-8">
-              <img
-                src="/icons/utxo-point.png"
-                alt="icn-rank"
-                className="w-full h-full"
-              />
+              <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
             </div>
             {isLoggedIn ? (
-              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">
-                {profile.points}
-              </span>
+              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">{profile.points}</span>
             ) : (
-              <svg
-                width="25"
-                height="5"
-                viewBox="0 0 25 5"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z"
-                  fill="white"
-                />
+              <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z" fill="white" />
               </svg>
             )}
           </div>
@@ -96,8 +76,8 @@ export default function PointSystem() {
           <div className="relative">
             <Button
               kind="light"
-              className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 cursor-not-allowed ${
-                !isQuestTab && "!text-grey-200"
+              className={`!bg-grey-100 text-base sm:!text-2xl !p-2 !text-grey-200 sm:!py-3 sm:!px-4 cursor-not-allowed ${
+                tab === PointSystemTab.Quest && "!text-dark-100"
               }`}
             >
               {t("pointSystem.quest")}
@@ -106,19 +86,19 @@ export default function PointSystem() {
               Coming soon
             </div>
           </div>
-
           <Button
             kind="light"
-            className={`!bg-grey-100 text-base sm:!text-2xl !p-2  sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
-              isQuestTab && "!text-grey-200"
+            className={`!bg-grey-100 text-base sm:!text-2xl !p-2 !text-grey-200 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
+              tab === PointSystemTab.LeaderBoard && "!text-dark-100"
             }`}
-            onClick={() => setIsQuestTab(false)}
+            onClick={() => setTab(PointSystemTab.LeaderBoard)}
           >
             {t("pointSystem.leaderboard")}
           </Button>
         </div>
         <div className="mt-4 sm:mt-6">
-          {isQuestTab ? <Quest /> : <Leaderboard />}
+          {tab === PointSystemTab.Quest && <Quest />}
+          {tab === PointSystemTab.LeaderBoard && <Leaderboard />}
         </div>
       </section>
     </main>

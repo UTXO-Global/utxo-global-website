@@ -2,7 +2,7 @@ import { createReducer } from "@reduxjs/toolkit";
 
 import { RootState } from "@/redux/store";
 
-import { reset, setAddressLogged, setIsDontShowAgainTestnetPopup, setNetwork, setToken, setTokenExpired } from "./action";
+import { reset, setAddressLogged, setToken, setTokenExpired } from "./action";
 import { defaultStorageReducer } from "./type";
 
 const storageReducer = createReducer(defaultStorageReducer, (builder) => {
@@ -15,12 +15,6 @@ const storageReducer = createReducer(defaultStorageReducer, (builder) => {
     })
     .addCase(setTokenExpired, (state, action) => {
       state.tokenExpired = action.payload;
-    })
-    .addCase(setNetwork, (state, action) => {
-      state.network = action.payload;
-    })
-    .addCase(setIsDontShowAgainTestnetPopup, (state, action) => {
-      state.isDontShowAgainTestnetPopup = action.payload;
     })
     .addCase(reset, (state) => {
       state.token = "";

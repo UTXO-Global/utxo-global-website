@@ -5,10 +5,8 @@ import { ccc } from "@ckb-ccc/connector-react";
 
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { selectStorage } from "@/redux/features/storage/reducer";
-
 import { isAddressEqual } from "@/utils/helpers";
-import { reset, setNetwork } from "@/redux/features/storage/action";
-import { setNetworkConfig } from "@/redux/features/app/action";
+import { reset } from "@/redux/features/storage/action";
 import { DEFAULT_NETWORK } from "@/configs/common";
 import { CkbNetwork } from "@/types/common";
 
@@ -58,9 +56,6 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     if (!network) {
       _network = DEFAULT_NETWORK === CkbNetwork.MiranaMainnet ? CkbNetwork.MiranaMainnet : CkbNetwork.PudgeTestnet;
     }
-
-    dispatch(setNetwork(_network));
-    dispatch(setNetworkConfig(_network));
 
     setClient(_network === CkbNetwork.MiranaMainnet ? new ccc.ClientPublicMainnet() : new ccc.ClientPublicTestnet());
   }, [network, setClient]);
