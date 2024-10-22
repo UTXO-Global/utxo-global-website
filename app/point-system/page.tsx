@@ -17,7 +17,7 @@ import cn from "@/utils/cn";
 import { AppContext } from "@/providers/app-provider";
 
 export default function PointSystem() {
-  const [tab, setTab] = React.useState(PointSystemTab.LeaderBoard);
+  const [tab, setTab] = React.useState(PointSystemTab.Quest);
   const { t } = useTranslation();
   useLogin();
   useProfile();
