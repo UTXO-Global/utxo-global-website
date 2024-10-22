@@ -12,6 +12,8 @@ import useAuthenticate from "@/hooks/useAuthenticate";
 import useProfile from "@/hooks/useProfile";
 import ConnectButton from "@/components/ConnectButton";
 import { PointSystemTab } from "@/types/common";
+import { pointSystemTabs } from "@/configs/point-system";
+import cn from "@/utils/cn";
 
 export default function PointSystem() {
   const [tab, setTab] = React.useState(PointSystemTab.LeaderBoard);
@@ -73,28 +75,26 @@ export default function PointSystem() {
       {/* Quests and Leaderboard */}
       <section className="utxo-global-container">
         <div className="flex items-center gap-4 sm:gap-6 mt-4 sm:mt-6">
-          <div className="relative">
-            <Button
-              kind="light"
-              className={`!bg-grey-100 text-base sm:!text-2xl !p-2 !text-grey-200 sm:!py-3 sm:!px-4 cursor-not-allowed ${
-                tab === PointSystemTab.Quest && "!text-dark-100"
-              }`}
-            >
-              {t("pointSystem.quest")}
-            </Button>
-            <div className="bg-dark-100 text-white text-[6px] sm:text-xs font-medium p-1 rounded-md absolute -top-2 sm:-top-3 -right-[10px] sm:-right-[16px]">
-              Coming soon
+          {pointSystemTabs.map((item) => (
+            <div className="relative" key={item.label}>
+              <Button
+                kind="light"
+                className={cn("!bg-grey-100 text-base sm:!text-2xl !p-2 !text-grey-200 sm:!py-3 sm:!px-4", {
+                  "!text-dark-100": tab === item.key,
+                  "cursor-not-allowed": item.isCommingSoon,
+                })}
+                disabled={item.isCommingSoon}
+                onClick={() => setTab(item.key)}
+              >
+                {t(item.label)}
+              </Button>
+              {item.isCommingSoon && (
+                <div className="bg-dark-100 text-white text-[6px] sm:text-xs font-medium p-1 rounded-md absolute -top-2 sm:-top-3 -right-[10px] sm:-right-[16px]">
+                  Coming soon
+                </div>
+              )}
             </div>
-          </div>
-          <Button
-            kind="light"
-            className={`!bg-grey-100 text-base sm:!text-2xl !p-2 !text-grey-200 sm:!py-3 sm:!px-4 hover:!bg-grey-200/20 ${
-              tab === PointSystemTab.LeaderBoard && "!text-dark-100"
-            }`}
-            onClick={() => setTab(PointSystemTab.LeaderBoard)}
-          >
-            {t("pointSystem.leaderboard")}
-          </Button>
+          ))}
         </div>
         <div className="mt-4 sm:mt-6">
           {tab === PointSystemTab.Quest && <Quest />}
