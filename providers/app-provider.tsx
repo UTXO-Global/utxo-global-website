@@ -9,15 +9,32 @@ import { isAddressEqual } from "@/utils/helpers";
 import { reset } from "@/redux/features/storage/action";
 import { DEFAULT_NETWORK } from "@/configs/common";
 import { CkbNetwork } from "@/types/common";
+import { ProfileType } from "@/types/profile";
+
+type AppContextType = {
+  address: string;
+  profile: ProfileType;
+  setProfile: React.Dispatch<React.SetStateAction<ProfileType>>;
+};
 
 const defaultValue = {
   address: "",
+  profile: {
+    user_address: "",
+    email: "",
+    username: "",
+    twitter_url: "",
+    ref_code: "",
+    points: 0,
+  },
+  setProfile: () => null,
 };
 
-const AppContext = createContext(defaultValue);
+const AppContext = createContext<AppContextType>(defaultValue);
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
-  const [address, setAddress] = useState<string>("");
+  const [address, setAddress] = useState<string>(defaultValue.address);
+  const [profile, setProfile] = React.useState<ProfileType>(defaultValue.profile);
 
   const signer = ccc.useSigner();
   const { setClient } = ccc.useCcc();
@@ -60,7 +77,7 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
     setClient(_network === CkbNetwork.MiranaMainnet ? new ccc.ClientPublicMainnet() : new ccc.ClientPublicTestnet());
   }, [network, setClient]);
 
-  return <AppContext.Provider value={{ address }}>{children}</AppContext.Provider>;
+  return <AppContext.Provider value={{ address, profile, setProfile }}>{children}</AppContext.Provider>;
 };
 
 export { AppContext, AppProvider };

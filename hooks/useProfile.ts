@@ -1,18 +1,12 @@
+import { AppContext } from "@/providers/app-provider";
 import { selectStorage } from "@/redux/features/storage/reducer";
 import { useAppSelector } from "@/redux/hook";
 import { ProfileType } from "@/types/profile";
 import api from "@/utils/api";
-import React, { useEffect } from "react";
+import { useContext, useEffect } from "react";
 
 export default function useProfile() {
-  const [profile, setProfile] = React.useState<ProfileType>({
-    user_address: "",
-    email: "",
-    username: "",
-    twitter_url: "",
-    ref_code: "",
-    points: 0,
-  });
+  const { setProfile } = useContext(AppContext);
   const { token, addressLogged } = useAppSelector(selectStorage);
 
   const getProfile = async () => {
@@ -29,6 +23,4 @@ export default function useProfile() {
       getProfile();
     }
   }, [token, addressLogged]);
-
-  return { profile };
 }

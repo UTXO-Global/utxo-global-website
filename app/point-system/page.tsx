@@ -1,7 +1,7 @@
 "use client";
 
 import Button from "@/components/Common/Button";
-import React from "react";
+import React, { useContext } from "react";
 import Quest from "@/components/PointSystem/Quest";
 import Leaderboard from "@/components/PointSystem/Leaderboard";
 import Link from "next/link";
@@ -14,12 +14,14 @@ import ConnectButton from "@/components/ConnectButton";
 import { PointSystemTab } from "@/types/common";
 import { pointSystemTabs } from "@/configs/point-system";
 import cn from "@/utils/cn";
+import { AppContext } from "@/providers/app-provider";
 
 export default function PointSystem() {
   const [tab, setTab] = React.useState(PointSystemTab.LeaderBoard);
   const { t } = useTranslation();
   useLogin();
-  const { profile } = useProfile();
+  useProfile();
+  const { profile } = useContext(AppContext);
   const { isLoggedIn } = useAuthenticate();
 
   return (
