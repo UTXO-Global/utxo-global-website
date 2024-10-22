@@ -1,13 +1,11 @@
 "use client";
 
-import { useCallback, useContext, useEffect, useState } from "react";
+import { useCallback, useEffect } from "react";
 import { ccc } from "@ckb-ccc/connector-react";
-
 import useAuthenticate from "./useAuthenticate";
 import api from "@/utils/api";
 import { useAppDispatch, useAppSelector } from "@/redux/hook";
 import { setAddressLogged, setToken, setTokenExpired } from "@/redux/features/storage/action";
-import { selectApp } from "@/redux/features/app/reducer";
 import { toast } from "react-toastify";
 import { selectStorage } from "@/redux/features/storage/reducer";
 
@@ -15,8 +13,7 @@ const useLogin = () => {
   const { isLoggedIn } = useAuthenticate();
   const signer = ccc.useSigner();
   const { disconnect } = ccc.useCcc();
-  const { config } = useAppSelector(selectApp);
-  const { addressLogged } = useAppSelector(selectStorage);
+  const { network } = useAppSelector(selectStorage);
 
   const dispatch = useAppDispatch();
 
@@ -62,10 +59,10 @@ const useLogin = () => {
 
   const login = useCallback(async () => {
     const currentNetwork = await (window as any).utxoGlobal.ckbSigner.getNetwork();
-    const isNetworkEqual = currentNetwork === config.network;
+    const isNetworkEqual = currentNetwork === network;
 
     if (!isNetworkEqual) {
-      await (window as any).utxoGlobal.ckbSigner.switchNetwork(config.network);
+      await (window as any).utxoGlobal.ckbSigner.switchNetwork(network);
       return login();
     }
     const address = (await signer?.getInternalAddress()) as string;

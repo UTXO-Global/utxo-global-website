@@ -1,3 +1,5 @@
+import { PointSystemTab } from "@/types/common";
+
 export const pointSystemLeaderboardData = [
   {
     rank: 1,
@@ -75,5 +77,18 @@ export const lastRewardData = [
     address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqfcj85g6yzzkhyllg290wf7cqqhv6rjrcsx25j53",
     date: "Sep 17, 2024",
     rewards: 750,
+  },
+];
+
+export const pointSystemTabs = [
+  {
+    key: PointSystemTab.Quest,
+    label: "pointSystem.quest",
+    isCommingSoon: true,
+  },
+  {
+    key: PointSystemTab.LeaderBoard,
+    label: "pointSystem.leaderboard",
+    isCommingSoon: false,
   },
 ];

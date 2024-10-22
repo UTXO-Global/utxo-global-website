@@ -1,3 +1,4 @@
+import { DEFAULT_NETWORK } from "@/configs/common";
 import { CkbNetwork } from "@/types/common";
 
 export type StorageReducerType = {
@@ -5,13 +6,11 @@ export type StorageReducerType = {
   addressLogged: string;
   tokenExpired: number;
   network: CkbNetwork;
-  isDontShowAgainTestnetPopup: boolean;
 };
 
 export const defaultStorageReducer: StorageReducerType = {
   addressLogged: "",
   token: "",
   tokenExpired: 0,
-  network: CkbNetwork.PudgeTestnet,
-  isDontShowAgainTestnetPopup: false,
+  network: DEFAULT_NETWORK === "nervos" ? CkbNetwork.MiranaMainnet : CkbNetwork.PudgeTestnet,
 };

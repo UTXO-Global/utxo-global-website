@@ -2,7 +2,6 @@ import { Action, configureStore, ThunkAction, combineReducers } from "@reduxjs/t
 import { persistStore, persistReducer } from "redux-persist";
 import storage from "redux-persist/lib/storage";
 import autoMergeLevel2 from "redux-persist/es/stateReconciler/autoMergeLevel2";
-import appReducer from "./features/app/reducer";
 import storageReducer from "./features/storage/reducer";
 
 const persistConfig = {
@@ -14,7 +13,6 @@ const persistConfig = {
 };
 
 const rootReducer = combineReducers({
-  app: appReducer,
   storage: storageReducer,
 });
 
