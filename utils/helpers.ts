@@ -10,10 +10,6 @@ export const comingSoonMsg = () => {
   toast.info("Coming Soon!");
 };
 
-export const formatNumber = (amount: number): string => {
-  return new Intl.NumberFormat("en-US").format(amount);
-};
-
 export function shortAddress(address?: string, len = 5) {
   if (!address) return "";
   if (address.length <= len * 2) return address;
@@ -22,4 +18,12 @@ export function shortAddress(address?: string, len = 5) {
 
 export const isAddressEqual = (address01: string, address02: string) => {
   return address01.trim().toLowerCase() === address02.trim().toLowerCase();
+};
+
+export const formatNumber = (number: number, minPrecision = 0, maxPrecision = 8) => {
+  const options = {
+    minimumFractionDigits: minPrecision,
+    maximumFractionDigits: maxPrecision,
+  };
+  return number.toLocaleString(undefined, options);
 };

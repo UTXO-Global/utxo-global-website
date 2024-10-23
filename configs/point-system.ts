@@ -84,7 +84,7 @@ export const pointSystemTabs = [
   {
     key: PointSystemTab.Quest,
     label: "pointSystem.quest",
-    isCommingSoon: true,
+    isCommingSoon: false,
   },
   {
     key: PointSystemTab.LeaderBoard,
