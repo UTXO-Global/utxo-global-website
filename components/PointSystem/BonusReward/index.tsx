@@ -7,6 +7,7 @@ import { formatNumber, shortAddress } from "@/utils/helpers";
 import { useTranslation } from "next-export-i18n";
 import usePagination from "@/hooks/usePagination";
 import { pointSystemLeaderboardData } from "@/configs/point-system";
+import useSealTrader from "@/hooks/useSealTrader";
 
 const IconShields = [
   {
@@ -31,10 +32,7 @@ interface BonusRewardProps {
 
 export default function BonusReward({ isModalOpen, handleOk, handleCancel }: BonusRewardProps) {
   const { t } = useTranslation();
-  const { data, queryConfig, handlePagination, totalData } = usePagination({
-    limit: 5,
-    inititalData: pointSystemLeaderboardData,
-  });
+  const { data: sealTraders, ranking, queryConfig, totalData, handlePagination } = useSealTrader();
 
   return (
     <Modal open={isModalOpen} centered footer={false} width={1000} onOk={handleOk} onCancel={handleCancel}>
@@ -66,29 +64,29 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
               }}
             >
               <div className="z-20 relative font-bold text-xl">
-                {t("pointSystem.my_ranking")}:<span className="ml-2">--</span>
+                {t("pointSystem.my_ranking")}:{ranking ? <span className="ml-2">{ranking}</span> : <span className="ml-2">--</span>}
               </div>
             </div>
           </div>
-          <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] w-full mt-8 bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
-            <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-medium px-4 py-4 sm:px-6 flex items-center gap-4">
-              <div className="w-[15%]">{t("pointSystem.rank")}</div>
-              <div className="sm:w-[65%] w-[55%] text-start">{t("pointSystem.address")}</div>
-              <div className="w-[35%] sm:w-[20%] text-end">{t("pointSystem.amount")}</div>
+          <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] w-full mt-6 md:mt-8 bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
+            <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-medium px-4 py-4 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center gap-4">
+              <div className="w-[20%] text-center">{t("pointSystem.rank")}</div>
+              <div className="w-full text-start">{t("pointSystem.address")}</div>
+              <div className="w-[45%] whitespace-nowrap text-end">{t("pointSystem.amount")} ($SEAL)</div>
             </div>
-            {data.map((user) => {
+            {sealTraders.map((user) => {
               return (
-                <div className="text-base sm:text-xl px-4 py-2 sm:px-6 flex items-center text-start gap-4" key={user.rank}>
-                  {user.rank <= 3 ? (
-                    <span className="w-[15%] font-medium min-h-8 pl-1 flex items-center">{IconShields[user.rank - 1].icon}</span>
+                <div className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4" key={user.address}>
+                  {user.top <= 3 ? (
+                    <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">{IconShields[user.top - 1].icon}</div>
                   ) : (
-                    <span className="w-[15%] font-medium pl-2 sm:pl-3 h-8 flex items-center">{user.rank}</span>
+                    <div className="w-[20%] font-medium h-8 flex items-center justify-center">{user.top}</div>
                   )}
-                  <div className="w-[65%] truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
-                  <div className="w-[50%] truncate block sm:hidden">{shortAddress(user.address, 8)}</div>
-                  <div className="w-[35%] sm:w-[20%] text-end font-medium">
-                    300
-                    <span className="text-grey-200 ml-2">$SEAL</span>
+                  <div className="w-full truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
+                  <div className="w-full truncate block sm:hidden">{shortAddress(user.address, 5)}</div>
+                  <div className="w-[45%] whitespace-nowrap text-end font-medium">
+                    {formatNumber(Number(user.netSealBuying), 0, 5)}
+                    {/* <span className="text-grey-200 ml-2">$SEAL</span> */}
                   </div>
                 </div>
               );
