@@ -53,20 +53,6 @@ export default function Leaderboard() {
     <div>
       {isLoggedIn ? (
         <div className="relative">
-          {/* <div className="absolute z-10 hidden lg:block -translate-x-1/2 left-1/2 -top-3">
-            <div
-              className="relative px-24 py-4 flex items-center justify-center"
-              style={{
-                backgroundImage: "url('/images/leaderboard-top.png')",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <div className="z-20 relative font-bold text-2xl">
-                {t("pointSystem.my_ranking")}:{ranking ? <span className="ml-2">{ranking}</span> : <span className="ml-2">--</span>}
-              </div>
-            </div>
-          </div> */}
           <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
             <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:pr-10 lg:pr-16 sm:pt-10 flex items-center gap-4 sm:gap-6">
               <div className="w-[20%] text-center">{t("pointSystem.rank")}</div>

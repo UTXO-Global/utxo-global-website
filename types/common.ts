@@ -27,3 +27,8 @@ export enum PointSystemTab {
   Quest = "quest",
   LeaderBoard = "leaderboard",
 }
+
+export type SuccessResponse<T> = {
+  message: string;
+  data: T;
+};
