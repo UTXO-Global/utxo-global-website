@@ -5,8 +5,6 @@ import IcnShieldSecond from "@/public/icons/icn-shield-second.svg";
 import IcnShieldThird from "@/public/icons/icn-shield-third.svg";
 import { formatNumber, shortAddress } from "@/utils/helpers";
 import { useTranslation } from "next-export-i18n";
-import usePagination from "@/hooks/usePagination";
-import { pointSystemLeaderboardData } from "@/configs/point-system";
 import useSealTrader from "@/hooks/useSealTrader";
 
 const IconShields = [

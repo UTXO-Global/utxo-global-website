@@ -38,7 +38,7 @@ export default function PointSystem() {
                 {t("pointSystem.point_system")}
               </Link>
             </div>
-            {isLoggedIn ? <AccountModal /> : <ConnectButton />}
+            {isLoggedIn ? <AccountModal /> : <ConnectButton className="!py-2 md:!py-3" />}
           </div>
         </div>
       </header>
