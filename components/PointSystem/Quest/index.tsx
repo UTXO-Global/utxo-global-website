@@ -118,7 +118,7 @@ export default function Quest() {
               <span className="sm:text-lg">(Oct 30, 10:00AM UTC+8 - Nov 4, 10:00AM UTC+8)</span>
             </div>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
-              Complete these basic social media tasks on TaskOn to earn up to 400 points.
+              Complete these basic social media tasks on TaskOn to receive up to 400 points.
             </div>
           </div>
           <Link href={taskOnLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">

@@ -51,7 +51,7 @@ export const questSwapInitial: QuestItemComponentType[] = [
   {
     quest_id: "utxo-swap-extension",
     quest_name: "Swap in UTXO Global Wallet Extension",
-    quest_description: "Use the UTXO Global Wallet to swap and you will receive 100 points.",
+    quest_description: "Use UTXO Global wallet to swap and receive 100 points.",
     guideLink: questGuideLink_2,
     is_claimed: false,
     quest_number: 2,
@@ -60,7 +60,7 @@ export const questSwapInitial: QuestItemComponentType[] = [
   {
     quest_id: "utxo-swap-website",
     quest_name: "Swap on the UTXOSwap Webpage",
-    quest_description: "Use UTXOSwap webpage connecting UTXO Global wallet to swap and earn 100 Points.",
+    quest_description: "Use UTXOSwap, connect to UTXO Global wallet, and swap to receive 100 points.",
     guideLink: questGuideLink_3,
     is_claimed: false,
     quest_number: 3,
