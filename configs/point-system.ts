@@ -5,7 +5,7 @@ export const questGuideLink_2 =
   "https://nexmio.notion.site/Quest-2-Swap-in-UTXO-Global-Wallet-100-points-ec13ea718b4746e583018f2a4a9849a3?pvs=4";
 export const questGuideLink_3 =
   "https://nexmio.notion.site/Quest-3-Swap-on-the-UTXOSwap-Webpage-100-points-0f6464b8a318477faa535ce66211eeec?pvs=4";
-export const taskOnLink = "https://taskon.xyz/quest/144546623";
+export const taskOnLink = "https://rewards.taskon.xyz/quest/494939152";
 
 export const lastRewardData = [
   {

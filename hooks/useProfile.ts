@@ -5,7 +5,12 @@ import { ProfileType } from "@/types/profile";
 import api from "@/utils/api";
 import { useContext, useEffect } from "react";
 
-export default function useProfile() {
+interface UseProfileProps {
+  enable: boolean;
+}
+
+export default function useProfile(props?: UseProfileProps) {
+  const enable = props?.enable ?? true;
   const { setProfile } = useContext(AppContext);
   const { token, addressLogged } = useAppSelector(selectStorage);
 
@@ -19,8 +24,10 @@ export default function useProfile() {
   };
 
   useEffect(() => {
-    if (token && addressLogged) {
+    if (token && addressLogged && enable) {
       getProfile();
     }
   }, [token, addressLogged]);
+
+  return { getProfile };
 }
