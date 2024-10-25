@@ -38,7 +38,9 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
         <div className="grid gap-4 text-center">
           <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")}</div>
           <div>
-            <p className="text-orange-100 text-base sm:text-lg font-medium mb-2">{t("pointSystem.duration")}: Oct 30 - Nov 4, 2024</p>
+            <p className="text-orange-100 text-base items-center sm:text-lg flex gap-1 flex-wrap justify-center font-medium mb-2">
+              {t("pointSystem.duration")}: <span>Oct 30, 10:00AM UTC+8</span> - <span>Nov 4, 10:00AM UTC+8</span>
+            </p>
             <p className="text-grey-200 text-base sm:text-xl font-medium">{t("pointSystem.bonus_reward_description")}</p>
           </div>
           <div className="flex items-center gap-4 flex-wrap justify-center">
