@@ -114,20 +114,7 @@ export default function Quest() {
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0  border-t flex flex-col sm:flex-row gap-3 justify-betwee3 items-start">
           <div className="grid gap-3 w-full">
             <div className="flex items-center justify-between sm:justify-start gap-6">
-              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">
-                TaskOn{" "}
-                {/* <Link href="#">
-                  <svg className="size-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                    <path
-                      d="M16.5 2.25H21.75V7.5M20.625 3.375L15 9M12.75 3.75H6C5.40326 3.75 4.83097 3.98705 4.40901 4.40901C3.98705 4.83097 3.75 5.40326 3.75 6V18C3.75 18.5967 3.98705 19.169 4.40901 19.591C4.83097 20.0129 5.40326 20.25 6 20.25H18C18.5967 20.25 19.169 20.0129 19.591 19.591C20.0129 19.169 20.25 18.5967 20.25 18V11.25"
-                      stroke="#FF7201"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </Link> */}
-              </h3>
+              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">TaskOn </h3>
               <span className="sm:text-xl">(Oct 30 - Nov 4)</span>
             </div>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
@@ -144,23 +131,17 @@ export default function Quest() {
   ];
 
   const questList: CollapseProps["items"] = useMemo(() => {
-    if (quests.length <= 0) {
-      return questTaskOn.concat(questSwapInitial.map((quest) => questItemComponent(quest)));
-    }
-
-    return questTaskOn.concat(
-      quests.map((quest, index) =>
-        questItemComponent({
-          quest_id: quest.quest_id,
-          quest_name: quest.quest_name,
-          quest_description: quest.quest_description,
-          guideLink: questSwapInitial[index].guideLink,
-          is_claimed: quest.is_claimed,
-          quest_number: questSwapInitial[index].quest_number,
-          reward_points: quest.reward_points,
+    if (quests.length) {
+      return questTaskOn.concat(
+        questSwapInitial.map((item) => {
+          return questItemComponent({
+            ...item,
+            is_claimed: quests.map((z) => z.quest_id).includes(item.quest_id),
+          });
         })
-      )
-    );
+      );
+    }
+    return questTaskOn.concat(questSwapInitial.map((quest) => questItemComponent(quest)));
   }, [quests]);
 
   return (

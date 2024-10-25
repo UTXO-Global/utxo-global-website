@@ -1,15 +1,10 @@
 export type QuestType = {
-  can_repeat: boolean;
-  end_at: string | null;
-  is_active: boolean;
-  is_claimed: boolean;
-  milestone: number;
-  process: number;
-  quest_description: string;
+  user_quest_id: number;
   quest_id: string;
-  quest_name: string;
-  reward_points: number;
-  start_at: string | null;
+  user_address: string;
+  process: number;
+  is_claimed: boolean;
+  completed_at: string;
 };
 
 export type QuestItemComponentType = {
