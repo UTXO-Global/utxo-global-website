@@ -9,7 +9,7 @@ import useResizable from "@/hooks/useResizeable";
 import BonusReward from "@/components/PointSystem/BonusReward";
 import useQuest from "@/hooks/useQuest";
 import ConnectButton from "@/components/ConnectButton";
-import { questSwapInitial } from "@/configs/point-system";
+import { questSwapInitial, taskOnLink } from "@/configs/point-system";
 import { QuestItemComponentType } from "@/types/quest";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import cn from "@/utils/cn";
@@ -107,7 +107,7 @@ export default function Quest() {
       label: (
         <div className="flex items-center justify-between">
           <h3 className="text-base md:text-2xl font-medium">Quest 1</h3>
-          <div className="text-base md:text-2xl font-bold">300 {t("pointSystem.point")}</div>
+          <div className="text-base md:text-2xl font-bold">400 {t("pointSystem.point")}</div>
         </div>
       ),
       children: (
@@ -116,7 +116,7 @@ export default function Quest() {
             <div className="flex items-center justify-between sm:justify-start gap-6">
               <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">
                 TaskOn{" "}
-                <Link href="#">
+                {/* <Link href="#">
                   <svg className="size-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
                       d="M16.5 2.25H21.75V7.5M20.625 3.375L15 9M12.75 3.75H6C5.40326 3.75 4.83097 3.98705 4.40901 4.40901C3.98705 4.83097 3.75 5.40326 3.75 6V18C3.75 18.5967 3.98705 19.169 4.40901 19.591C4.83097 20.0129 5.40326 20.25 6 20.25H18C18.5967 20.25 19.169 20.0129 19.591 19.591C20.0129 19.169 20.25 18.5967 20.25 18V11.25"
@@ -126,15 +126,17 @@ export default function Quest() {
                       strokeLinejoin="round"
                     />
                   </svg>
-                </Link>
+                </Link> */}
               </h3>
-              <span className="sm:text-xl">(Oct 21 - Oct 28)</span>
+              <span className="sm:text-xl">(Oct 30 - Nov 4)</span>
             </div>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
-              Complete these basic social media tasks on TaskOn to earn up to 300 points.
+              Complete these basic social media tasks on TaskOn to earn up to 400 points.
             </div>
           </div>
-          <Button className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.go")}</Button>
+          <Link href={taskOnLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">
+            <Button className="!w-full !py-2">{t("pointSystem.go")}</Button>
+          </Link>
         </div>
       ),
       style: panelStyle,

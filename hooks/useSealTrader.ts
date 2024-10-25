@@ -5,13 +5,19 @@ import { SealTraderResType, SealTraderType } from "@/types/bonus-reward";
 import api from "@/utils/api";
 import React, { useEffect } from "react";
 
-export default function useSealTrader() {
+interface UseSealTraderProps {
+  enable?: boolean;
+}
+
+export default function useSealTrader({ enable }: UseSealTraderProps) {
   const [ranking, setRanking] = React.useState<number | undefined>(0);
+  const [isFetching, setIsFetching] = React.useState(false);
   const { addressLogged } = useAppSelector((state) => state.storage);
   const { data, queryConfig, totalData, handleSetData, handlePagination } = usePagination<SealTraderType>({ limit: 5, inititalData: [] });
 
   // Get SEAL traders
   const getSEALTraders = async () => {
+    setIsFetching(true);
     try {
       const { data } = await api.get<SealTraderResType>("", {
         params: {
@@ -24,12 +30,15 @@ export default function useSealTrader() {
       handleSetData(data.data.list);
     } catch (error) {
       console.log(error);
+    } finally {
+      setIsFetching(false);
     }
   };
 
   useEffect(() => {
+    if (!enable) return;
     getSEALTraders();
-  }, []);
+  }, [enable]);
 
-  return { data, ranking, queryConfig, totalData, handlePagination };
+  return { data, ranking, queryConfig, totalData, handlePagination, isFetching };
 }
