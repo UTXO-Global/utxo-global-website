@@ -80,7 +80,8 @@ export default function Quest() {
               </div>
             </div>
           </div>
-          {isLoggedIn ? (
+          <div className="sm:text-lg text-nowrap font-medium">Coming soon</div>
+          {/* {isLoggedIn ? (
             <Button
               className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2", {
                 "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200  cursor-not-allowed": questInfo.is_claimed,
@@ -93,8 +94,10 @@ export default function Quest() {
               {questInfo.is_claimed ? "Claimed" : t("pointSystem.claim")}
             </Button>
           ) : (
-            <ConnectButton className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</ConnectButton>
-          )}
+            <ConnectButton className="max-w-[110px] sm:max-w-[160px] w-full !py-2">
+              {t("pointSystem.claim")}
+            </ConnectButton>
+          )} */}
         </div>
       ),
       style: panelStyle,
@@ -114,16 +117,17 @@ export default function Quest() {
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0  border-t flex flex-col sm:flex-row gap-3 justify-betwee3 items-start">
           <div className="grid gap-3 w-full">
             <div className="flex items-center justify-between sm:justify-start gap-6">
-              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">TaskOn </h3>
-              <span className="sm:text-lg">(Oct 30, 10:00AM UTC+8 - Nov 4, 10:00AM UTC+8)</span>
+              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">Galxe</h3>
+              <span className="sm:text-lg">(Oct 30, 19:00PM UTC+8 - Nov 4, 19:00PM UTC+8)</span>
             </div>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
-              Complete these basic social media tasks on TaskOn to receive up to 400 points.
+              Complete all social media tasks on Galxe to receive 400 points.
             </div>
           </div>
-          <Link href={taskOnLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">
+          <div className="sm:text-lg text-nowrap font-medium">Coming soon</div>
+          {/* <Link href={taskOnLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">
             <Button className="!w-full !py-2">{t("pointSystem.go")}</Button>
-          </Link>
+          </Link> */}
         </div>
       ),
       style: panelStyle,
@@ -138,7 +142,7 @@ export default function Quest() {
             ...item,
             is_claimed: quests.map((z) => z.quest_id).includes(item.quest_id),
           });
-        })
+        }),
       );
     }
     return questTaskOn.concat(questSwapInitial.map((quest) => questItemComponent(quest)));
