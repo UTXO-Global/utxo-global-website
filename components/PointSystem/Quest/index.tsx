@@ -80,7 +80,12 @@ export default function Quest() {
               </div>
             </div>
           </div>
-          <div className="sm:text-lg text-nowrap font-medium">Coming soon</div>
+          <Button
+            className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2 cursor-not-allowed !bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200")}
+            disabled={true}
+          >
+            Coming soon
+          </Button>
           {/* {isLoggedIn ? (
             <Button
               className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2", {
@@ -124,7 +129,12 @@ export default function Quest() {
               Complete all social media tasks on Galxe to receive 400 points.
             </div>
           </div>
-          <div className="sm:text-lg text-nowrap font-medium">Coming soon</div>
+          <Button
+            className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2 cursor-not-allowed !bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200")}
+            disabled={true}
+          >
+            Coming soon
+          </Button>
           {/* <Link href={taskOnLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">
             <Button className="!w-full !py-2">{t("pointSystem.go")}</Button>
           </Link> */}
