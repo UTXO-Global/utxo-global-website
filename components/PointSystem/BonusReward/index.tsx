@@ -39,7 +39,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
           <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")}</div>
           <div>
             <p className="text-orange-100 text-base items-center sm:text-lg flex gap-1 flex-wrap justify-center font-medium mb-2">
-              {t("pointSystem.duration")}: <span>Oct 30, 10:00AM UTC+8</span> - <span>Nov 4, 10:00AM UTC+8</span>
+              {t("pointSystem.duration")}: <span>Oct 30, 19:00PM UTC+8</span> - <span>Nov 4, 19:00PM UTC+8</span>
             </p>
             <p className="text-grey-200 text-base sm:text-xl font-medium">{t("pointSystem.bonus_reward_description")}</p>
           </div>
@@ -97,23 +97,31 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
               </div>
             ) : (
               <>
-                {sealTraders.map((user) => {
-                  return (
-                    <div
-                      className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4"
-                      key={user.address}
-                    >
-                      {user.top <= 3 ? (
-                        <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">{IconShields[user.top - 1].icon}</div>
-                      ) : (
-                        <div className="w-[20%] font-medium h-8 flex items-center justify-center">{user.top}</div>
-                      )}
-                      <div className="w-full truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
-                      <div className="w-full truncate block sm:hidden">{shortAddress(user.address, 5)}</div>
-                      <div className="w-[45%] whitespace-nowrap text-end font-medium">{formatNumber(Number(user.netSealBuying), 0, 5)}</div>
-                    </div>
-                  );
-                })}
+                {sealTraders.length > 0 ? (
+                  sealTraders.map((user) => {
+                    return (
+                      <div
+                        className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4"
+                        key={user.address}
+                      >
+                        {user.top <= 3 ? (
+                          <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">
+                            {IconShields[user.top - 1].icon}
+                          </div>
+                        ) : (
+                          <div className="w-[20%] font-medium h-8 flex items-center justify-center">{user.top}</div>
+                        )}
+                        <div className="w-full truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
+                        <div className="w-full truncate block sm:hidden">{shortAddress(user.address, 5)}</div>
+                        <div className="w-[45%] whitespace-nowrap text-end font-medium">
+                          {formatNumber(Number(user.netSealBuying), 0, 5)}
+                        </div>
+                      </div>
+                    );
+                  })
+                ) : (
+                  <div className="font-medium text-lg h-[150px] flex items-center justify-center !bg-[#FCFCFC]">No data available!</div>
+                )}
               </>
             )}
 
