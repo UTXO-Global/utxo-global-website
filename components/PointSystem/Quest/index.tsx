@@ -123,7 +123,7 @@ export default function Quest() {
           <div className="grid gap-3 w-full">
             <div className="flex items-center justify-between sm:justify-start gap-6">
               <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">Galxe</h3>
-              <span className="sm:text-lg">(Oct 30, 19:00PM UTC+8 - Nov 4, 19:00PM UTC+8)</span>
+              <span className="sm:text-lg">(Oct 30, 7:00PM UTC+8 - Nov 4, 7:00PM UTC+8)</span>
             </div>
             <div className="text-grey-200 font-medium text-base sm:text-lg">
               Complete all social media tasks on Galxe to receive 400 points.
@@ -152,7 +152,7 @@ export default function Quest() {
             ...item,
             is_claimed: quests.map((z) => z.quest_id).includes(item.quest_id),
           });
-        }),
+        })
       );
     }
     return questTaskOn.concat(questSwapInitial.map((quest) => questItemComponent(quest)));

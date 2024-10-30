@@ -39,7 +39,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel }: Bon
           <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")}</div>
           <div>
             <p className="text-orange-100 text-base items-center sm:text-lg flex gap-1 flex-wrap justify-center font-medium mb-2">
-              {t("pointSystem.duration")}: <span>Oct 30, 19:00PM UTC+8</span> - <span>Nov 4, 19:00PM UTC+8</span>
+              {t("pointSystem.duration")}: <span>Oct 30, 7:00PM UTC+8</span> - <span>Nov 4, 7:00PM UTC+8</span>
             </p>
             <p className="text-grey-200 text-base sm:text-xl font-medium">{t("pointSystem.bonus_reward_description")}</p>
           </div>
