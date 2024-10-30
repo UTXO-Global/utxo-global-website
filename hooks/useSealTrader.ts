@@ -37,7 +37,7 @@ export default function useSealTrader({ enable }: UseSealTraderProps) {
 
   useEffect(() => {
     if (!enable) return;
-    // getSEALTraders();
+    getSEALTraders();
   }, [enable]);
 
   return { data, ranking, queryConfig, totalData, handlePagination, isFetching };
