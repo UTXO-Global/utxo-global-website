@@ -51,6 +51,9 @@ const config: Config = {
         satoshi: ["Satoshi", "sans-serif"],
       },
     },
+    backgroundImage: {
+      'twa': "url('/images/telegram-bg.png')",
+    },
   },
   plugins: [],
 };
