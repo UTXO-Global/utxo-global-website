@@ -15,5 +15,9 @@ export default function usePagination<DataType>({ limit = 4, inititalData }: { l
     setData(inititalData.slice(start, end));
   };
 
-  return { data, queryConfig, handlePagination, totalData };
+  const handleSetData = (data: DataType[]) => {
+    setData(data.slice(0, limit));
+  };
+
+  return { data, queryConfig, handlePagination, totalData, handleSetData };
 }

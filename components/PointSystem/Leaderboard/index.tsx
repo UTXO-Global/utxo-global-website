@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useContext, useState } from "react";
 import { formatNumber, shortAddress } from "@/utils/helpers";
 import { Pagination } from "antd";
 import { lastRewardData } from "@/configs/point-system";
@@ -14,6 +14,8 @@ import IcnSeal from "@/public/icons/icn-seal.svg";
 import ConnectButton from "@/components/ConnectButton";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import useLeaderboard from "@/hooks/useLeaderboard";
+import { useAppSelector } from "@/redux/hook";
+import { AppContext } from "@/providers/app-provider";
 
 const ranks = [
   {
@@ -29,12 +31,14 @@ const ranks = [
 
 export default function Leaderboard() {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
+  const { profile } = useContext(AppContext);
   const [slideChange, setSwiperChange] = useState({
     isBeginning: true,
     isEnd: false,
   });
   const { t } = useTranslation();
   const { isLoggedIn } = useAuthenticate();
+  const { addressLogged } = useAppSelector((state) => state.storage);
   const { leaderboard, ranking, handleChangePage, pagination, isFetching } = useLeaderboard();
 
   const handlePrevious = useCallback(() => {
@@ -49,24 +53,10 @@ export default function Leaderboard() {
     <div>
       {isLoggedIn ? (
         <div className="relative">
-          <div className="absolute z-10 hidden lg:block -translate-x-1/2 left-1/2 -top-3">
-            <div
-              className="relative px-24 py-4 flex items-center justify-center"
-              style={{
-                backgroundImage: "url('/images/leaderboard-top.png')",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-              }}
-            >
-              <div className="z-20 relative font-bold text-2xl">
-                {t("pointSystem.my_ranking")}:{ranking ? <span className="ml-2">{ranking}</span> : <span className="ml-2">--</span>}
-              </div>
-            </div>
-          </div>
           <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
-            <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:px-16 sm:pt-10 flex items-center gap-4">
-              <div className="w-[15%]">{t("pointSystem.rank")}</div>
-              <div className="w-[65%] text-start">{t("pointSystem.address")}</div>
+            <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-bold py-4 px-4 sm:pr-10 lg:pr-16 sm:pt-10 flex items-center gap-4 sm:gap-6">
+              <div className="w-[20%] text-center">{t("pointSystem.rank")}</div>
+              <div className="w-full text-start">{t("pointSystem.address")}</div>
               <div className="w-[20%] text-end">{t("pointSystem.point")}</div>
             </div>
             {isFetching ? (
@@ -92,12 +82,24 @@ export default function Leaderboard() {
               </div>
             ) : (
               <>
+                <div className="px-4 sm:pr-10 lg:pr-16 text-base !bg-orange-100 text-white sm:text-xl sm:leading-9 py-4 flex items-center text-start gap-4 sm:gap-6">
+                  <div className="w-[20%] text-center font-medium">{ranking}</div>
+                  <div className="w-full truncate block md:hidden">{shortAddress(addressLogged, 10)}</div>
+                  <div className="w-full truncate hidden md:block lg:hidden">{shortAddress(addressLogged, 15)}</div>
+                  <div className="w-full truncate hidden lg:block">{shortAddress(addressLogged, 20)}</div>
+                  <div className="w-[20%] text-end font-medium">{profile.points}</div>
+                </div>
                 {leaderboard.map((user) => {
+                  if (user.user_address === addressLogged) return null;
                   return (
-                    <div className="px-4 sm:px-16 text-base sm:text-xl py-4 flex items-center text-start gap-4" key={user.user_address}>
-                      <span className="w-[15%] font-medium pl-3">{user.rank}</span>
-                      <div className="w-[65%] truncate block sm:hidden">{shortAddress(user.user_address, 10)}</div>
-                      <div className="w-[65%] truncate hidden sm:block">{shortAddress(user.user_address, 20)}</div>
+                    <div
+                      className="px-4 sm:pr-10 lg:pr-16 text-base sm:text-xl sm:leading-9 py-4 flex items-center text-start gap-4 sm:gap-6"
+                      key={user.user_address}
+                    >
+                      <div className="w-[20%] text-center font-medium">{user.rank}</div>
+                      <div className="w-full truncate block md:hidden">{shortAddress(user.user_address, 10)}</div>
+                      <div className="w-full truncate hidden md:block lg:hidden">{shortAddress(user.user_address, 15)}</div>
+                      <div className="w-full truncate hidden lg:block">{shortAddress(user.user_address, 20)}</div>
                       <div className="w-[20%] text-end font-medium">{formatNumber(user.points)}</div>
                     </div>
                   );
