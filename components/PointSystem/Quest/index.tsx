@@ -9,7 +9,7 @@ import useResizable from "@/hooks/useResizeable";
 import BonusReward from "@/components/PointSystem/BonusReward";
 import useQuest from "@/hooks/useQuest";
 import ConnectButton from "@/components/ConnectButton";
-import { questSwapInitial, taskOnLink } from "@/configs/point-system";
+import { galxeLink, questSwapInitial } from "@/configs/point-system";
 import { QuestItemComponentType } from "@/types/quest";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import cn from "@/utils/cn";
@@ -80,13 +80,7 @@ export default function Quest() {
               </div>
             </div>
           </div>
-          <Button
-            className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2 cursor-not-allowed !bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200")}
-            disabled={true}
-          >
-            Coming soon
-          </Button>
-          {/* {isLoggedIn ? (
+          {isLoggedIn ? (
             <Button
               className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2", {
                 "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200  cursor-not-allowed": questInfo.is_claimed,
@@ -99,10 +93,8 @@ export default function Quest() {
               {questInfo.is_claimed ? "Claimed" : t("pointSystem.claim")}
             </Button>
           ) : (
-            <ConnectButton className="max-w-[110px] sm:max-w-[160px] w-full !py-2">
-              {t("pointSystem.claim")}
-            </ConnectButton>
-          )} */}
+            <ConnectButton className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</ConnectButton>
+          )}
         </div>
       ),
       style: panelStyle,
@@ -129,15 +121,9 @@ export default function Quest() {
               Complete all social media tasks on Galxe to receive 400 points.
             </div>
           </div>
-          <Button
-            className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2 cursor-not-allowed !bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200")}
-            disabled={true}
-          >
-            Coming soon
-          </Button>
-          {/* <Link href={taskOnLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">
+          <Link href={galxeLink} className="max-w-[110px] sm:max-w-[160px] w-full" target="_blank" rel="noreferrer">
             <Button className="!w-full !py-2">{t("pointSystem.go")}</Button>
-          </Link> */}
+          </Link>
         </div>
       ),
       style: panelStyle,
