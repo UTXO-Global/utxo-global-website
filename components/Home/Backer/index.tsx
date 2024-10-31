@@ -2,34 +2,18 @@
 import Link from "next/link";
 import { useTranslation } from "next-export-i18n";
 
-import IcnTwitter from "@/public/icons/icn-twitter.svg";
-import IcnTelegram from "@/public/icons/icn-telegram.svg";
-import IcnGlobal from "@/public/icons/icn-global.svg";
-import IcnDiscord from "@/public/icons/icn-discord.svg";
-
-import Button from "@/components/Common/Button";
-
 const BACKERS = [
   {
     name: "ckb eco fund",
     images: "/images/ckb-eco-fund.png",
-    socials: [
-      {
-        name: "website",
-        icon: <IcnGlobal className="w-4 md:w-6" />,
-        link: "https://www.ckbeco.fund/",
-      },
-      {
-        name: "twitter",
-        icon: <IcnTwitter className="w-4 md:w-6" />,
-        link: "https://twitter.com/CKBEcoFund",
-      },
-      {
-        name: "telegram",
-        icon: <IcnTelegram className="w-4 md:w-6" />,
-        link: "https://t.me/ckb_community",
-      },
-    ],
+    websiteLink: "https://www.ckbeco.fund/",
+    width: 150,
+  },
+  {
+    name: "nexum",
+    images: "/images/nexum.png",
+    websiteLink: "https://nexm.io/",
+    width: 200,
   },
 ];
 
@@ -39,22 +23,35 @@ const Backer = () => {
   return (
     <section className="pt-[100px] pb-[20px]">
       <div className="utxo-global-container">
-        <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
-          {t("backedBy")}
-        </h3>
-        <div className="flex justify-center gap-4 mt-4 md:mt-10">
-          {BACKERS.map((z, i) => (
-            <div key={i} className="flex items-center">
-              <div className="flex gap-3 md:gap-6 justify-center items-center">
-                <img src={z.images} alt="ckb eco fund" className="w-[120px] md:w-[180px] lg:w-[240px]" />
-                {z.socials.map((k, j) => (
-                  <Link key={j} href={k.link} target="_blank">
-                    <Button className="!px-2 !py-2 md:!px-3 md:!py-3 !rounded-lg">{k.icon}</Button>
-                  </Link>
-                ))}
-              </div>
-            </div>
-          ))}
+        <div
+          className="rounded-[16px] px-10 xl:px-[116px] py-10 flex flex-col md:flex-row justify-between items-center"
+          style={{
+            background: `linear-gradient(169deg, #D3D1CE -19.12%, #E0DFDE 16.17%, #EFEFEF 55.97%)`,
+          }}
+        >
+          <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
+            {t("backedBy")}
+          </h3>
+          <div className="flex items-center gap-[13px] lg:gap-[26px] mt-6 md:mt-0 justify-center">
+            {BACKERS.map((z, i) => (
+              <Link
+                href={z.websiteLink}
+                key={i}
+                target="_blank"
+                className="group"
+               
+              >
+                <img
+                  src={z.images}
+                  alt="ckb eco fund"
+                  className="opacity-100 group-hover:opacity-60 transition-all"
+                  style={{
+                    width: `${z.width}px`,
+                  }}
+                />
+              </Link>
+            ))}
+          </div>
         </div>
       </div>
     </section>

@@ -13,7 +13,8 @@
     "title01": "UTXO Global",
     "title02": "Wallet",
     "description": "Where UTXO Technology Meets Global Innovation",
-    "chromeStore": "Download for Chrome"
+    "chromeStore": "Download for Chrome",
+    "telegram": "Start on Telegram"
   },
   "feature": {
     "title01": "Explore our",
@@ -41,6 +42,11 @@
       "title": "Indexer As a Service",
       "description": "API for real-time access to comprehensive Coins and NFT information.",
       "btnLabel": "Learn More"
+    },
+    "telegram": {
+      "title": "UTXO Global Wallet on Telegram",
+      "description": "Manage their assets conveniently from any location even Telegram.",
+      "btnLabel": "Start"
     }
   },
   "partners": "Partners",
