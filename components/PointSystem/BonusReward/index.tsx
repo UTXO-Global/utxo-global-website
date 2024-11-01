@@ -30,7 +30,7 @@ interface BonusRewardProps {
 
 export default function BonusReward({ isModalOpen, handleOk, handleCancel }: BonusRewardProps) {
   const { t } = useTranslation();
-  const { data: sealTraders, ranking, queryConfig, totalData, handlePagination, isFetching } = useSealTrader({ enable: isModalOpen });
+  const { data: sealTraders, ranking, queryConfig, totalData, handlePagination, isFetching } = useSealTrader();
 
   return (
     <Modal open={isModalOpen} centered footer={false} width={1000} onOk={handleOk} onCancel={handleCancel}>
