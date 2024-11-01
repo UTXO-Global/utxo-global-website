@@ -1,12 +1,12 @@
 import { useState } from "react";
 
-export default function usePagination<DataType>({ limit = 4, inititalData }: { limit?: number; inititalData: DataType[] }) {
+export default function usePagination<DataType>({ limit = 4, inititalData = [] }: { limit?: number; inititalData?: DataType[] }) {
   const [data, setData] = useState(inititalData.slice(0, limit));
   const [queryConfig, setQueryConfig] = useState({
     page: 1,
     limit: limit,
   });
-  const totalData = inititalData.length;
+  const [totalData, setTotalData] = useState(inititalData.length);
 
   const handlePagination = (page: number, limit: number) => {
     setQueryConfig({ page, limit });
@@ -16,8 +16,8 @@ export default function usePagination<DataType>({ limit = 4, inititalData }: { l
   };
 
   const handleSetData = (data: DataType[]) => {
-    setData(data.slice(0, limit));
+    setData(data.slice(0, queryConfig.limit));
   };
 
-  return { data, queryConfig, handlePagination, totalData, handleSetData };
+  return { data, queryConfig, handlePagination, totalData, handleSetData, setTotalData };
 }

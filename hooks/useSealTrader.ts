@@ -1,19 +1,27 @@
 import { UTXOSWAP_API_URL } from "@/configs/common";
-import usePagination from "@/hooks/usePagination";
 import { useAppSelector } from "@/redux/hook";
 import { SealTraderResType, SealTraderType } from "@/types/bonus-reward";
 import api from "@/utils/api";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-interface UseSealTraderProps {
-  enable?: boolean;
-}
-
-export default function useSealTrader({ enable }: UseSealTraderProps) {
+export default function useSealTrader() {
   const [ranking, setRanking] = React.useState<number | undefined>(0);
   const [isFetching, setIsFetching] = React.useState(false);
   const { addressLogged } = useAppSelector((state) => state.storage);
-  const { data, queryConfig, totalData, handleSetData, handlePagination } = usePagination<SealTraderType>({ limit: 5, inititalData: [] });
+  const initData = useRef<SealTraderType[]>([]);
+  const [data, setData] = useState<SealTraderType[]>([]);
+  const [queryConfig, setQueryConfig] = useState({
+    page: 1,
+    limit: 5,
+  });
+  const [totalData, setTotalData] = useState(0);
+
+  const handlePagination = (page: number, limit: number) => {
+    setQueryConfig({ page, limit });
+    const start = (page - 1) * limit;
+    const end = page * limit;
+    setData(initData.current.slice(start, end));
+  };
 
   // Get SEAL traders
   const getSEALTraders = async () => {
@@ -27,7 +35,13 @@ export default function useSealTrader({ enable }: UseSealTraderProps) {
       });
       const ranking = data.data.list.find((item) => item.address === addressLogged)?.top;
       setRanking(ranking);
-      handleSetData(data.data.list);
+
+      // Filter data with netSealBuying > 0
+      const dataFilter = data.data.list.filter((item) => parseFloat(item.netSealBuying) > 0);
+      initData.current = dataFilter;
+      setData(dataFilter.slice(0, queryConfig.limit));
+
+      setTotalData(dataFilter.length);
     } catch (error) {
       console.log(error);
     } finally {
@@ -36,9 +50,8 @@ export default function useSealTrader({ enable }: UseSealTraderProps) {
   };
 
   useEffect(() => {
-    if (!enable) return;
     getSEALTraders();
-  }, [enable]);
+  }, []);
 
   return { data, ranking, queryConfig, totalData, handlePagination, isFetching };
 }
