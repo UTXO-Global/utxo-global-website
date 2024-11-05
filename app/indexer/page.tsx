@@ -85,7 +85,7 @@ export default function IndexerPage() {
             <IcnLongArrow className="w-[6px] mx-auto" />
           </div>
           <div className="mx-auto w-fit">
-            <Link href={DOC_LINK} target="_blank" rel="noreferrer">
+            <Link href={`${DOC_LINK}/developer-tools/ckb-advanced-indexer-api`} target="_blank" rel="noreferrer">
               <Button className="!bg-orange-100 hover:!bg-[#FF9D4E] !text-xl md:!text-2xl border-none rounded-full">
                 <div className="flex items-center">
                   {t("indexer.btn_label_check_doc")}
