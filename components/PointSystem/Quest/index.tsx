@@ -90,7 +90,7 @@ export default function Quest() {
           {questInfo.questLink ? (
             <Link
               href={questInfo.questLink}
-              className={cn("max-w-[110px] sm:max-w-[160px] w-full", {
+              className={cn("max-w-[160px] w-full", {
                 "cursor-not-allowed pointer-events-none": questInfo.disabled,
               })}
               target="_blank"
@@ -108,7 +108,7 @@ export default function Quest() {
             <>
               {isLoggedIn ? (
                 <Button
-                  className={cn("max-w-[110px] sm:max-w-[160px] w-full !py-2", {
+                  className={cn("max-w-[160px] w-full !py-2", {
                     "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.is_claimed || questInfo.disabled,
                   })}
                   onClick={() => {
@@ -119,7 +119,7 @@ export default function Quest() {
                   {questInfo.is_claimed ? "Claimed" : t(questInfo.labelButton)}
                 </Button>
               ) : (
-                <ConnectButton className="max-w-[110px] sm:max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</ConnectButton>
+                <ConnectButton className="max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</ConnectButton>
               )}
             </>
           )}

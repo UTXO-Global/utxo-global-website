@@ -101,7 +101,7 @@ export const initialQuests: QuestItemComponentType[] = [
     is_claimed: false,
     quest_number: 4,
     reward_points: 200,
-    duration: "Nov 9, 9:00 AM (UTC+8) - Nov 10, 9:00 AM (UTC+8)",
+    duration: "Nov 9, 9:00AM UTC+8 - Nov 10, 9:00AM UTC+8",
     bonusReward: false,
     questLink: ckConQuestLink,
     disabled: true,
