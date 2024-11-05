@@ -7,7 +7,7 @@ import React, { useEffect } from "react";
 import { toast } from "react-toastify";
 
 export default function useQuest() {
-  const [quests, setQuests] = React.useState<QuestType[]>([]);
+  const [userQuests, setUserQuests] = React.useState<QuestType[]>([]);
   const { isLoggedIn } = useAuthenticate();
   const { getProfile } = useProfile({
     enable: false,
@@ -16,7 +16,7 @@ export default function useQuest() {
   const getQuests = async () => {
     try {
       const res = await api.get<SuccessResponse<QuestType[]>>("/quests");
-      setQuests(res.data.data);
+      setUserQuests(res.data.data);
     } catch (error) {
       console.log(error);
     }
@@ -35,11 +35,11 @@ export default function useQuest() {
 
   useEffect(() => {
     if (!isLoggedIn) {
-      setQuests([]);
+      setUserQuests([]);
       return;
     }
     getQuests();
   }, [isLoggedIn]);
 
-  return { quests, claimQuest };
+  return { userQuests, claimQuest };
 }
