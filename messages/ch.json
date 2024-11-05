@@ -14,7 +14,8 @@
     "title01": "UTXO Global",
     "title02": "Wallet",
     "description": "UTXO 技术与全球创新的交汇",
-    "chromeStore": "下载 Chrome 版本"
+    "chromeStore": "下载 Chrome 版本",
+    "telegram": "从 Telegram 开始"
   },
   "feature": {
     "title01": "探索我们的",
@@ -42,6 +43,11 @@
       "title": "Indexer 即服务",
       "description": "用于实时访问全面代币和 NFT 信息的 API。",
       "btnLabel": "了解更多"
+    },
+    "telegram": {
+      "title": "Telegram 上的 UTXO 全球钱包",
+      "description": "可以从任何位置甚至通过 Telegram 方便地管理他们的资产。",
+      "btnLabel": "开始"
     }
   },
   "partners": "合作伙伴",
