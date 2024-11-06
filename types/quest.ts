@@ -12,7 +12,12 @@ export type QuestItemComponentType = {
   quest_name: string;
   quest_description: string;
   reward_points: number;
-  guideLink: string;
+  guideLink: string | null;
   is_claimed: boolean;
   quest_number: number;
+  duration: string | null;
+  bonusReward: boolean;
+  questLink: string | null;
+  disabled: boolean;
+  labelButton: string;
 };

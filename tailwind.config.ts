@@ -27,7 +27,7 @@ const config: Config = {
           200: "#787575",
           300: "#ABA8A1",
           400: "#BDBDBD",
-          500: "#F7F7F7"
+          500: "#F7F7F7",
         },
         "light-yellow": {
           100: "#FBD87F",
@@ -50,9 +50,9 @@ const config: Config = {
       fontFamily: {
         satoshi: ["Satoshi", "sans-serif"],
       },
-    },
-    backgroundImage: {
-      'twa': "url('/images/telegram-bg.png')",
+      backgroundImage: {
+        twa: "url('/images/telegram-bg.png')",
+      },
     },
   },
   plugins: [],

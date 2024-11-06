@@ -1,11 +1,14 @@
 import { QuestItemComponentType } from "@/types/quest";
 import { PointSystemTab } from "@/types/common";
 
-export const questGuideLink_2 =
+export const utxoSwapExtensionQuestGuide =
   "https://nexmio.notion.site/Quest-2-Swap-in-UTXO-Global-Wallet-100-points-ec13ea718b4746e583018f2a4a9849a3?pvs=4";
-export const questGuideLink_3 =
+export const utxoSwapWebpageQuestGuide =
   "https://nexmio.notion.site/Quest-3-Swap-on-the-UTXOSwap-Webpage-100-points-0f6464b8a318477faa535ce66211eeec?pvs=4";
 export const galxeLink = "https://app.galxe.com/quest/nNN5UQTfPQzaVHwzqffmtN/GCmxvtVrGq";
+export const ckConQuestGuideLink =
+  "https://www.notion.so/Quest-4-CKCon-Common-Knowledge-Conference-200-points-36b8ced7ee184561a6751129174244bb?pvs=4";
+export const ckConQuestLink = "https://t.me/ckcat_bot";
 
 export const lastRewardData = [
   {
@@ -47,23 +50,61 @@ export const pointSystemTabs = [
   },
 ];
 
-export const questSwapInitial: QuestItemComponentType[] = [
+export const initialQuests: QuestItemComponentType[] = [
+  {
+    quest_id: "ckcon-quest",
+    quest_name: "CKCon: Common Knowledge Conference",
+    quest_description: "Play the CKCat Game Telegram Mini App & Explore the first CKB Wallet on Telegram",
+    guideLink: ckConQuestGuideLink,
+    is_claimed: false,
+    quest_number: 1,
+    reward_points: 200,
+    duration: "Nov 9, 9:00AM UTC+7 - Nov 10, 9:00AM UTC+7",
+    bonusReward: false,
+    questLink: ckConQuestLink,
+    disabled: true,
+    labelButton: "Coming Soon",
+  },
   {
     quest_id: "utxo-swap-extension",
     quest_name: "Swap in UTXO Global Wallet Extension",
     quest_description: "Use UTXO Global wallet to swap and receive 100 points.",
-    guideLink: questGuideLink_2,
+    guideLink: utxoSwapExtensionQuestGuide,
     is_claimed: false,
     quest_number: 2,
     reward_points: 100,
+    duration: null,
+    bonusReward: true,
+    questLink: null,
+    disabled: false,
+    labelButton: "pointSystem.claim",
   },
   {
     quest_id: "utxo-swap-website",
     quest_name: "Swap on the UTXOSwap Webpage",
     quest_description: "Use UTXOSwap, connect to UTXO Global wallet, and swap to receive 100 points.",
-    guideLink: questGuideLink_3,
+    guideLink: utxoSwapWebpageQuestGuide,
     is_claimed: false,
     quest_number: 3,
     reward_points: 100,
+    duration: null,
+    bonusReward: true,
+    questLink: null,
+    disabled: false,
+    labelButton: "pointSystem.claim",
+  },
+  {
+    quest_id: "galxe-quest",
+    quest_name: "Galxe",
+    quest_description: "Complete all social media tasks on Galxe to receive 400 points.",
+    guideLink: null,
+    is_claimed: false,
+    quest_number: 4,
+    reward_points: 400,
+    duration: "Oct 30, 7:00PM UTC+8 - Nov 4, 7:00PM UTC+8",
+    bonusReward: false,
+    questLink: galxeLink,
+    disabled: true,
+    labelButton: "Quest Expired",
   },
 ];
