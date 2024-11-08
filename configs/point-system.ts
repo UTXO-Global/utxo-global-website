@@ -87,8 +87,8 @@ export const initialQuests: QuestItemComponentType[] = [
     duration: "Nov 9, 9:00AM UTC+7 - Nov 10, 9:00AM UTC+7",
     bonusReward: true,
     questLink: ckConQuestLink,
-    disabled: false,
-    labelButton: "Go",
+    disabled: true,
+    labelButton: "Coming Soon",
   },
   {
     quest_id: "utxo-swap-extension",

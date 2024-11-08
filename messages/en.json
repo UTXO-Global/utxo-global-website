@@ -250,7 +250,11 @@
     "amount": "Amount",
     "exclusive_rewards": "Exclusive Rewards",
     "duration": "Duration",
-    "bonus_reward_description": "The top 3 traders who buy $SEAL tokens (applies to buying only, not selling) during the campaign will receive additional $SEAL rewards."
+    "bonus_reward_description": "The top 3 traders who buy $SEAL tokens (applies to buying only, not selling) during the campaign will receive additional $SEAL rewards.",
+    "exclusive_rewards_ckcon": "Exclusive Reward for CKCat Mainnet Launch!",
+    "how_to_enter_title": "How to Enter:",
+    "how_to_enter_step_1": "1. Complete CKCon Quest.",
+    "how_to_enter_step_2": "2. 10 random addresses will win 100 gems each when we go live on Mainnet."
   },
   "indexer": {
     "title": "Build Together",
