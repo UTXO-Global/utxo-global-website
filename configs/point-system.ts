@@ -85,7 +85,7 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_number: 1,
     reward_points: 200,
     duration: "Nov 9, 9:00AM UTC+7 - Nov 10, 9:00AM UTC+7",
-    bonusReward: false,
+    bonusReward: true,
     questLink: ckConQuestLink,
     disabled: false,
     labelButton: "Go",

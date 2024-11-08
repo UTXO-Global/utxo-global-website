@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { CaretRightOutlined } from "@ant-design/icons";
 import type { CollapseProps } from "antd";
-import { Collapse, theme } from "antd";
+import { Collapse, Modal, theme } from "antd";
 import Link from "next/link";
 import Button from "@/components/Common/Button";
 import { useTranslation } from "next-export-i18n";
@@ -21,6 +21,7 @@ export default function Quest() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const { userQuests, claimQuest } = useQuest();
   const { isLoggedIn } = useAuthenticate();
+  const [questId, setQuestId] = useState<string | undefined>();
 
   const showModal = () => {
     setIsModalOpen(true);
@@ -79,7 +80,13 @@ export default function Quest() {
               )}
               {questInfo.bonusReward && (
                 <div className="flex items-center gap-2">
-                  <div className="text-[#EA8D01] underline cursor-pointer" onClick={showModal}>
+                  <div
+                    className="text-[#EA8D01] underline cursor-pointer"
+                    onClick={() => {
+                      showModal();
+                      setQuestId(questInfo.quest_id);
+                    }}
+                  >
                     Bonus Reward
                   </div>
                   <img src="/icons/icn-star.svg" alt="icnStar" className="size-6 sm:size-[34px]" />
@@ -150,7 +157,7 @@ export default function Quest() {
         ghost
         items={questList}
       />
-      <BonusReward isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} />
+      <BonusReward isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} questId={questId} />
     </>
   );
 }
