@@ -7,27 +7,11 @@ import "swiper/css";
 import "swiper/css/navigation";
 import { Navigation } from "swiper/modules";
 import { useTranslation } from "next-export-i18n";
-import IcnRankGold from "@/public/icons/icn-first-rank.svg";
-import IcnRankSilver from "@/public/icons/icn-second-rank.svg";
-import IcnRankBronze from "@/public/icons/icn-third-rank.svg";
-import IcnSeal from "@/public/icons/icn-seal.svg";
 import ConnectButton from "@/components/ConnectButton";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import useLeaderboard from "@/hooks/useLeaderboard";
 import { useAppSelector } from "@/redux/hook";
 import { AppContext } from "@/providers/app-provider";
-
-const ranks = [
-  {
-    icon: <IcnRankGold className="size-7 sm:size-8" />,
-  },
-  {
-    icon: <IcnRankSilver className="size-7 sm:size-8" />,
-  },
-  {
-    icon: <IcnRankBronze className="size-7 sm:size-8" />,
-  },
-];
 
 export default function Leaderboard() {
   const [swiperRef, setSwiperRef] = useState<SwiperClass>();
@@ -173,8 +157,8 @@ export default function Leaderboard() {
                         <span>{t("pointSystem.received_rewards")}:</span>
                         <div className="flex items-center gap-2">
                           <span className="font-medium">{formatNumber(lastReward.rewards)}</span>
-                          <img src="/icons/icn-nervos.svg" alt="utxo-nervos" className="size-7 sm:size-8" />
-                          {lastReward.rank <= 3 ? ranks[lastReward.rank - 1].icon : <IcnSeal className="size-7 sm:size-8" />}
+                          <img src={lastReward.iconReward} alt="last_reward_icon" className="size-7 sm:size-8" />
+                          <img src={lastReward.iconBonusReward} alt="last_reward_icon_bonus" className="size-7 sm:size-8" />
                         </div>
                       </div>
                     </div>
