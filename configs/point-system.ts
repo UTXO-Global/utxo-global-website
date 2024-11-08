@@ -12,28 +12,53 @@ export const ckConQuestLink = "https://t.me/ckcat_bot";
 
 export const lastRewardData = [
   {
-    rank: 1,
+    address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqvkthpvhhxq8mpcwgv2t7nmn7nhs6xafrgs2s4w4",
+    date: "Nov 6, 2024",
+    rewards: 350,
+    iconReward: "/icons/icn-seal-token.svg",
+    iconBonusReward: "/icons/icn-last-reward-point.svg",
+  },
+  {
+    address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqdnu5pcspyxza3wsepht4xu5gzg4asqr9s7alwrf",
+    date: "Nov 6, 2024",
+    rewards: 150,
+    iconReward: "/icons/icn-seal-token.svg",
+    iconBonusReward: "/icons/icn-last-reward-point.svg",
+  },
+  {
+    address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsq0cehfd205ng3ey2hwhuffyv23urhy5nlqcat8zk",
+    date: "Nov 6, 2024",
+    rewards: 50,
+    iconReward: "/icons/icn-seal-token.svg",
+    iconBonusReward: "/icons/icn-last-reward-point.svg",
+  },
+  {
     address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqt0xzvdfah3s7m8uy52uxl9enket48krus2qjj4r",
     date: "Sep 17, 2024",
     rewards: 4000,
+    iconReward: "/icons/icn-nervos.svg",
+    iconBonusReward: "/icons/icn-first-rank.svg",
   },
   {
-    rank: 2,
     address: "ckb1qrgqep8saj8agswr30pls73hra28ry8jlnlc3ejzh3dl2ju7xxpjxqgqqyrjcmkn42y68d8muq8509xvq0pyzwvv7uv65r0z",
     date: "Sep 17, 2024",
     rewards: 2500,
+    iconReward: "/icons/icn-nervos.svg",
+    iconBonusReward: "/icons/icn-second-rank.svg",
   },
   {
-    rank: 3,
     address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqftfnj09af485x9memjqyx9xnsh499mnagksw0rm",
     date: "Sep 17, 2024",
     rewards: 750,
+    iconReward: "/icons/icn-nervos.svg",
+    iconBonusReward: "/icons/icn-third-rank.svg",
   },
   {
-    rank: 3,
     address: "ckb1qzda0cr08m85hc8jlnfp3zer7xulejywt49kt2rr0vthywaa50xwsqfcj85g6yzzkhyllg290wf7cqqhv6rjrcsx25j53",
     date: "Sep 17, 2024",
     rewards: 750,
+    iconReward: "/icons/icn-nervos.svg",
+    iconBonusReward: "/icons/icn-third-rank.svg",
   },
 ];
 
@@ -62,8 +87,8 @@ export const initialQuests: QuestItemComponentType[] = [
     duration: "Nov 9, 9:00AM UTC+7 - Nov 10, 9:00AM UTC+7",
     bonusReward: false,
     questLink: ckConQuestLink,
-    disabled: true,
-    labelButton: "Coming Soon",
+    disabled: false,
+    labelButton: "Go",
   },
   {
     quest_id: "utxo-swap-extension",
