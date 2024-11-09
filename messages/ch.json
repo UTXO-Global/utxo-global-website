@@ -251,7 +251,11 @@
     "amount": "量",
     "exclusive_rewards": "独家奖励",
     "duration": "期间",
-    "bonus_reward_description": "活动期间购买 $SEAL 代币（仅适用于购买，不适用于出售）的前 3 名交易者将获得额外的 $SEAL 奖励."
+    "bonus_reward_description": "活动期间购买 $SEAL 代币（仅适用于购买，不适用于出售）的前 3 名交易者将获得额外的 $SEAL 奖励.",
+    "exclusive_rewards_ckcon": "CKCat 主网启动专属奖励！",
+    "how_to_enter_title": "如何进入：",
+    "how_to_enter_step_1": "1.完成CKCon任务。",
+    "how_to_enter_step_2": "2.当我们在主网上线时，10 个随机地址将各赢得 100 颗宝石。"
   },
   "indexer": {
     "title": "共同构建",
