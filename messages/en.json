@@ -45,7 +45,7 @@
     },
     "telegram": {
       "title": "UTXO Global Wallet on Telegram",
-      "description": "Manage their assets conveniently from any location even Telegram.",
+      "description": "Manage your assets conveniently from any location even Telegram.",
       "btnLabel": "Start"
     }
   },
