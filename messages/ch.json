@@ -46,7 +46,7 @@
     },
     "telegram": {
       "title": "Telegram 上的 UTXO 全球钱包",
-      "description": "可以从任何位置甚至通过 Telegram 方便地管理他们的资产。",
+      "description": "可以从任何位置甚至通过 Telegram 方便地管理您的资产。",
       "btnLabel": "开始"
     }
   },
