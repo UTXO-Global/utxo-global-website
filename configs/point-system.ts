@@ -77,20 +77,6 @@ export const pointSystemTabs = [
 
 export const initialQuests: QuestItemComponentType[] = [
   {
-    quest_id: "ckcon-quest",
-    quest_name: "CKCon: Common Knowledge Conference",
-    quest_description: "Play the CKCat Game Telegram Mini App & Explore the first CKB Wallet on Telegram",
-    guideLink: ckConQuestGuideLink,
-    is_claimed: false,
-    quest_number: 1,
-    reward_points: 200,
-    duration: "Nov 12, 4:00PM UTC+8 - Nov 21, 4:00PM UTC+8",
-    bonusReward: true,
-    questLink: ckConQuestLink,
-    disabled: false,
-    labelButton: "Go",
-  },
-  {
     quest_id: "utxo-swap-extension",
     quest_name: "Swap in UTXO Global Wallet Extension",
     quest_description: "Use UTXO Global wallet to swap and receive 100 points.",
@@ -117,6 +103,20 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: null,
     disabled: false,
     labelButton: "pointSystem.claim",
+  },
+  {
+    quest_id: "ckcon-quest",
+    quest_name: "CKCon: Common Knowledge Conference",
+    quest_description: "Play the CKCat Game Telegram Mini App & Explore the first CKB Wallet on Telegram",
+    guideLink: ckConQuestGuideLink,
+    is_claimed: false,
+    quest_number: 1,
+    reward_points: 200,
+    duration: "Nov 12, 4:00PM UTC+8 - Nov 21, 4:00PM UTC+8",
+    bonusReward: true,
+    questLink: ckConQuestLink,
+    disabled: true,
+    labelButton: "Quest Expired",
   },
   {
     quest_id: "galxe-quest",
