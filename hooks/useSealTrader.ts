@@ -50,7 +50,7 @@ export default function useSealTrader() {
   };
 
   useEffect(() => {
-    getSEALTraders();
+    // getSEALTraders();
   }, []);
 
   return { data, ranking, queryConfig, totalData, handlePagination, isFetching };
