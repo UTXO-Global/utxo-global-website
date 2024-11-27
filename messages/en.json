@@ -286,7 +286,7 @@
 
       "answer_03_content_01": "The rate limit depends on your API key. The",
       "answer_03_content_02": "Basic",
-      "answer_03_content_03": "key allows up to X calls per day, while the",
+      "answer_03_content_03": "key allows up to 60 requests per minute, while the",
       "answer_03_content_04": "Pro",
       "answer_03_content_05": "key offers higher limits and additional endpoints.",
 
