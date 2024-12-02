@@ -93,7 +93,7 @@ export const initialQuests: QuestItemComponentType[] = [
   {
     quest_id: "utxo-multisig-has-seal",
     quest_name: " Create Multi-Sig wallet that has $SEAL",
-    quest_description: "Users create Multi-Sig wallet that has $SEAL can receive 100 points.",
+    quest_description: "Users create Multi-Sig wallet that has $SEAL can receive 400 points.",
     guideLink: "",
     is_claimed: false,
     quest_number: 2,
@@ -107,7 +107,7 @@ export const initialQuests: QuestItemComponentType[] = [
   {
     quest_id: "utxo-multisig-has-rusd",
     quest_name: " Create Multi-Sig wallet that has $RUSD",
-    quest_description: "Users create Multi-Sig wallet that has $RUSD can receive 100 points.",
+    quest_description: "Users create Multi-Sig wallet that has $RUSD can receive 400 points.",
     guideLink: "",
     is_claimed: false,
     quest_number: 2,
