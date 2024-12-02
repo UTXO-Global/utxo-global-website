@@ -14,6 +14,14 @@ const PARTNERS = [
     name: "Beaf",
     image: "/images/beaf.png",
   },
+  {
+    name: "d.id",
+    image: "/images/d.id.png",
+  },
+  {
+    name: "Stable++",
+    image: "/images/stablepp.svg",
+  },
 ];
 
 const Partners = () => {
@@ -25,7 +33,7 @@ const Partners = () => {
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
           {t("partners")}
         </h3>
-        <div className="flex flex-wrap justify-center gap-3 sm:gap-6 lg:gap-16 mt-4 md:mt-10">
+        <div className="flex flex-wrap xl:justify-between justify-center gap-8 xl:gap-0 mt-4 md:mt-10">
           {PARTNERS.map((z, i) => (
             <div
               key={z.name}
