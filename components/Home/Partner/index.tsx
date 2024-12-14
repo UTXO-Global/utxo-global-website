@@ -3,6 +3,10 @@ import { useTranslation } from "next-export-i18n";
 
 const PARTNERS = [
   {
+    name: "d.id",
+    image: "/images/d.id.png",
+  },
+  {
     name: "UTXOSwap",
     image: "/images/utxo-swap.png",
   },
@@ -33,7 +37,7 @@ const Partners = () => {
         <h3 className="text-[36px] leading-[44px] md:text-[50px] md:leading-[58px] lg:text-[64px] lg:leading-[72px] text-dark-100 font-medium text-center">
           {t("partners")}
         </h3>
-        <div className="flex flex-wrap xl:justify-between justify-center gap-4 md:gap-8 xl:gap-0 mt-10 md:mt-20">
+        <div className="flex flex-wrap justify-center gap-4 md:gap-8 mt-10 md:mt-20">
           {PARTNERS.map((z, i) => (
             <div
               key={z.name}
