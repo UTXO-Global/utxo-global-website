@@ -18,14 +18,6 @@ const PARTNERS = [
     name: "Beaf",
     image: "/images/beaf.png",
   },
-  {
-    name: "d.id",
-    image: "/images/d.id.png",
-  },
-  {
-    name: "Stable++",
-    image: "/images/stablepp.svg",
-  },
 ];
 
 const Partners = () => {

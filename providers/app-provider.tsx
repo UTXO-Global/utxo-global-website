@@ -34,7 +34,9 @@ const AppContext = createContext<AppContextType>(defaultValue);
 
 const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const [address, setAddress] = useState<string>(defaultValue.address);
-  const [profile, setProfile] = React.useState<ProfileType>(defaultValue.profile);
+  const [profile, setProfile] = React.useState<ProfileType>(
+    defaultValue.profile
+  );
 
   const signer = ccc.useSigner();
   const { setClient } = ccc.useCcc();
@@ -44,7 +46,9 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   const checkIsLoggedIn = useCallback(async () => {
     const _getAddress = async () => {
       try {
-        const [address] = await (window as any).utxoGlobal.ckbSigner.getAccount();
+        const [address] = await (
+          window as any
+        ).utxoGlobal.ckbSigner.getAccount();
         return address;
       } catch (e) {
         return "";
@@ -69,15 +73,26 @@ const AppProvider = ({ children }: { children: React.ReactNode }) => {
   }, [address, addressLogged, dispatch]);
 
   useEffect(() => {
-    let _network = network;
+    let _network = DEFAULT_NETWORK;
     if (!network) {
-      _network = DEFAULT_NETWORK === CkbNetwork.MiranaMainnet ? CkbNetwork.MiranaMainnet : CkbNetwork.PudgeTestnet;
+      _network =
+        DEFAULT_NETWORK === CkbNetwork.MiranaMainnet
+          ? CkbNetwork.MiranaMainnet
+          : CkbNetwork.PudgeTestnet;
     }
 
-    setClient(_network === CkbNetwork.MiranaMainnet ? new ccc.ClientPublicMainnet() : new ccc.ClientPublicTestnet());
+    setClient(
+      _network === CkbNetwork.MiranaMainnet
+        ? new ccc.ClientPublicMainnet()
+        : new ccc.ClientPublicTestnet()
+    );
   }, [network, setClient]);
 
-  return <AppContext.Provider value={{ address, profile, setProfile }}>{children}</AppContext.Provider>;
+  return (
+    <AppContext.Provider value={{ address, profile, setProfile }}>
+      {children}
+    </AppContext.Provider>
+  );
 };
 
 export { AppContext, AppProvider };

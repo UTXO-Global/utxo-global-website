@@ -55,7 +55,7 @@ export default function BonusReward({
       onOk={handleOk}
       onCancel={handleCancel}
     >
-      {questId !== "ckcon-quest" && (
+      {!["ckcon-quest", "did-galxe-quest"].includes(questId!) && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4 text-center">
             <div className="text-3xl font-bold">
@@ -185,6 +185,30 @@ export default function BonusReward({
                 align="center"
                 className="py-6 bg-[#FCFCFC]"
               />
+            </div>
+          </div>
+        </div>
+      )}
+      {questId === "did-galxe-quest" && (
+        <div className="md:pt-5 md:px-4">
+          <div className="grid gap-4">
+            <div className="text-3xl font-bold">
+              {t("pointSystem.exclusive_rewards")} 🎉
+            </div>
+            <p className="text-grey-200 text-[16px] sm:text-xl font-medium">
+              <div className="flex flex-col gap-1">
+                <span>{t("pointSystem.did_galxe_quest_step_1")}</span>
+                <span>{t("pointSystem.did_galxe_quest_step_2")}</span>
+                <span>{t("pointSystem.did_galxe_quest_step_3")}</span>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: t("pointSystem.did_galxe_quest_step_4"),
+                  }}
+                />
+              </div>
+            </p>
+            <div className="">
+              <img src="/images/did-galaxy-bonus-gems.png" alt="bonusReward" />
             </div>
           </div>
         </div>
