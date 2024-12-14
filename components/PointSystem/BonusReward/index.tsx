@@ -195,18 +195,18 @@ export default function BonusReward({
             <div className="text-3xl font-bold">
               {t("pointSystem.exclusive_rewards")} 🎉
             </div>
-            <p className="text-grey-200 text-[16px] sm:text-xl font-medium">
+            <div className="text-grey-200 text-[16px] sm:text-xl font-medium">
               <div className="flex flex-col gap-1">
-                <span>{t("pointSystem.did_galxe_quest_step_1")}</span>
-                <span>{t("pointSystem.did_galxe_quest_step_2")}</span>
-                <span>{t("pointSystem.did_galxe_quest_step_3")}</span>
+                <p>{t("pointSystem.did_galxe_quest_step_1")}</p>
+                <p>{t("pointSystem.did_galxe_quest_step_2")}</p>
+                <p>{t("pointSystem.did_galxe_quest_step_3")}</p>
                 <div
                   dangerouslySetInnerHTML={{
                     __html: t("pointSystem.did_galxe_quest_step_4"),
                   }}
                 />
               </div>
-            </p>
+            </div>
             <div className="">
               <img src="/images/did-galaxy-bonus-gems.png" alt="bonusReward" />
             </div>
