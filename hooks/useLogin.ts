@@ -75,8 +75,6 @@ const useLogin = () => {
     if (signature) {
       await _login(signature, address);
     }
-
-    return;
   }, [signer, isLoggedIn, _getNonce, _signMessage, _login]);
 
   useEffect(() => {
