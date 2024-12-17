@@ -11,6 +11,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
+        warmIvory: {
+          100: "#FFFAF6",
+          200: "#FFF5EC",
+          300: "#FFEFE3",
+          400: "#FFE7D5",
+        },
         orange: {
           100: "#FF7201",
         },

@@ -51,17 +51,10 @@ const MenuMobile = ({ localHash }: { localHash: string }) => {
   );
 
   return (
-    <Popover
-      content={content}
-      trigger="click"
-      open={open}
-      onOpenChange={handleOpenChange}
-      placement="bottomLeft"
-      arrow={false}
-    >
+    <Popover content={content} trigger="click" open={open} onOpenChange={handleOpenChange} placement="bottomLeft" arrow={false}>
       <div
         className={cn(
-          `w-6 h-6 cursor-pointer group rounded-[4px] border border-dark-100 hover:bg-dark-100 transition-all flex justify-center items-center`,
+          `w-6 h-6 cursor-pointer group rounded-[4px] border border-dark-100 hover:bg-dark-100 transition-all flex justify-center items-center`
         )}
       >
         <IcnAlignLeft className="w-4 fill-dark-100 transition-all group-hover:fill-light-100" />
@@ -100,14 +93,7 @@ const Header = () => {
               >
                 <span className="hidden lg:block">{t("bountyContest.joinNow")}</span>
                 <span className="block lg:hidden">{t("bountyContest.join")}</span>
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="16"
-                  height="17"
-                  viewBox="0 0 16 17"
-                  fill="none"
-                  className="size-3 sm:size-6"
-                >
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="17" viewBox="0 0 16 17" fill="none" className="size-3 sm:size-6">
                   <path
                     d="M8.82125 3.71456C8.72502 3.62749 8.59858 3.58145 8.4689 3.58628C8.33921 3.59111 8.21654 3.64642 8.12705 3.7404C8.03757 3.83439 7.98834 3.95962 7.98988 4.08939C7.99141 4.21916 8.04359 4.34319 8.13528 4.43503L12.2823 8.38502L2.50751 8.38502C2.37554 8.38502 2.24899 8.43744 2.15568 8.53075C2.06237 8.62406 2.00994 8.75062 2.00994 8.88258C2.00994 9.01454 2.06237 9.1411 2.15568 9.23441C2.24899 9.32772 2.37554 9.38014 2.50751 9.38014L12.2823 9.38014L8.13528 13.3308C8.08793 13.3758 8.04991 13.4298 8.0234 13.4895C7.99689 13.5492 7.98241 13.6136 7.98078 13.6789C7.97914 13.7443 7.99039 13.8093 8.01389 13.8703C8.03738 13.9312 8.07265 13.987 8.1177 14.0343C8.16274 14.0817 8.21666 14.1197 8.2764 14.1462C8.33613 14.1727 8.4005 14.1872 8.46583 14.1888C8.53116 14.1905 8.59618 14.1792 8.65716 14.1557C8.71814 14.1322 8.7739 14.097 8.82125 14.0519L13.7438 9.36356C13.8513 9.26118 13.9214 9.1257 13.9428 8.97878C13.9543 8.91514 13.9541 8.84994 13.9422 8.78639C13.9205 8.63994 13.8504 8.50496 13.7431 8.40293L8.82125 3.71456Z"
                     fill="#0D0D0D"
@@ -131,26 +117,20 @@ const Header = () => {
                 key={i}
                 href={z.href === "/#about-us" ? "/" : z.href}
                 target={z.isExternal ? "_blank" : "_self"}
-                className={cn(
-                  `text-grey-400 text-base transition-all hover:text-dark-100 flex gap-1 items-center font-medium`,
-                  {
-                    "text-dark-100":
-                      localHash === z.href ||
-                      (z.href === "/#about-us" ? localHash === "/" && pathname === "/" : false) ||
-                      (z.href === "/bounty-contest" && pathname === "/bounty-contest/"),
-                    "text-orange-100 hover:text-orange-100/50": z.href === "/point-system",
-                  },
-                )}
+                className={cn(`text-grey-400 text-base transition-all hover:text-dark-100 flex gap-1 items-center font-medium`, {
+                  "text-dark-100":
+                    localHash === z.href ||
+                    (z.href === "/#about-us" ? localHash === "/" && pathname === "/" : false) ||
+                    (z.href === "/bounty-contest" && pathname === "/bounty-contest/"),
+                  "text-orange-100 hover:text-orange-100/50": ["/point-system", "/persona"].includes(z.href),
+                })}
               >
-                {z.href === "/point-system" && <IcnFire className="size-6" />}
+                {["/point-system", "/persona"].includes(z.href) && <IcnFire className="size-6" />}
                 {t(z.label)}
               </Link>
             ))}
           </div>
-          <Link
-            href="/"
-            className="w-[100px] md:w-[120px] lg:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
-          >
+          <Link href="/" className="w-[100px] md:w-[120px] lg:w-[140px] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2">
             <img src="/logo.png" alt="UTXO Global" />
           </Link>
 
