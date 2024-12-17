@@ -24,7 +24,9 @@ export default function useQuest() {
 
   const claimQuest = async (questId: string) => {
     try {
-      const res = await api.post<{ data: any; message: string }>(`/quests/${questId}`);
+      const res = await api.post<{ data: any; message: string }>(
+        `/quests/claim/${questId}`
+      );
       toast.success(res.data.message);
       getQuests();
       getProfile();

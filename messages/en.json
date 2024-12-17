@@ -254,7 +254,11 @@
     "exclusive_rewards_ckcon": "Exclusive Reward for CKCat Mainnet Launch!",
     "how_to_enter_title": "How to Enter:",
     "how_to_enter_step_1": "1. Complete CKCon Quest.",
-    "how_to_enter_step_2": "2. 10 random addresses will win 100 gems each when we go live on Mainnet."
+    "how_to_enter_step_2": "2. 10 random addresses will win 100 gems each when we go live on Mainnet.",
+    "did_galxe_quest_step_1": "1. \"The Identity Frontier\" Badge (UTXO Global x DID) per participant.",
+    "did_galxe_quest_step_2": "2. 1,000 $CKB for 5 random participants (200 $CKB each).",
+    "did_galxe_quest_step_3": "3. 20 DID Builder Codes (1 year free d.id account) for 20 random participants.",
+    "did_galxe_quest_step_4": "4. 800 CKCAT gems per participant: <a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a> when Mainnet launch."
   },
   "indexer": {
     "title": "Build Together",

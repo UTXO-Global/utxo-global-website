@@ -52,8 +52,10 @@ export default function Quest() {
     return {
       key: questInfo.quest_id,
       label: (
-        <div className="flex items-center justify-between">
-          <h3 className="text-base md:text-2xl font-medium">Quest {questInfo.quest_number}</h3>
+        <div className="flex justify-between items-start">
+          <h3 className="text-base md:text-2xl font-medium md:w-auto w-2/3">
+            {questInfo.quest_name}
+          </h3>
           <div className="text-base md:text-2xl font-bold">
             {questInfo.reward_points} {t("pointSystem.point")}
           </div>
@@ -62,11 +64,15 @@ export default function Quest() {
       children: (
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start">
           <div className="grid gap-3 w-full">
-            <div className="flex items-end justify-between sm:justify-start gap-2 w-[80%] flex-wrap">
-              <h3 className="flex items-center gap-2 text-xl md:text-3xl font-medium">{questInfo.quest_name}</h3>
-              {questInfo.duration && <span className="sm:text-lg">{questInfo.duration}</span>}
+            {questInfo.duration ? (
+              <div className="flex items-end justify-between sm:justify-start gap-2 w-[80%] flex-wrap">
+                <span className="sm:text-lg">{questInfo.duration}</span>
+              </div>
+            ) : null}
+
+            <div className="text-grey-200 font-medium text-base sm:text-lg">
+              {questInfo.quest_description}
             </div>
-            <div className="text-grey-200 font-medium text-base sm:text-lg">{questInfo.quest_description}</div>
             <div className="flex items-center gap-6 text-base sm:text-xl">
               {questInfo.guideLink && (
                 <Link
@@ -89,7 +95,11 @@ export default function Quest() {
                   >
                     Bonus Reward
                   </div>
-                  <img src="/icons/icn-star.svg" alt="icnStar" className="size-6 sm:size-[34px]" />
+                  <img
+                    src="/icons/icn-star.svg"
+                    alt="icnStar"
+                    className="size-6 sm:size-[34px]"
+                  />
                 </div>
               )}
             </div>
@@ -105,7 +115,8 @@ export default function Quest() {
             >
               <Button
                 className={cn("!w-full !py-2", {
-                  "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.disabled,
+                  "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed":
+                    questInfo.disabled,
                 })}
               >
                 {t(questInfo.labelButton)}
@@ -116,7 +127,8 @@ export default function Quest() {
               {isLoggedIn ? (
                 <Button
                   className={cn("max-w-[160px] w-full !py-2", {
-                    "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.is_claimed || questInfo.disabled,
+                    "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed":
+                      questInfo.is_claimed || questInfo.disabled,
                   })}
                   onClick={() => {
                     handleClaim(questInfo.quest_id);
@@ -126,7 +138,9 @@ export default function Quest() {
                   {questInfo.is_claimed ? "Claimed" : t(questInfo.labelButton)}
                 </Button>
               ) : (
-                <ConnectButton className="max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</ConnectButton>
+                <ConnectButton className="max-w-[160px] w-full !py-2">
+                  {t("pointSystem.claim")}
+                </ConnectButton>
               )}
             </>
           )}
@@ -152,12 +166,22 @@ export default function Quest() {
     <>
       <Collapse
         bordered={false}
-        defaultActiveKey={["1", ...initialQuests.map((quest) => quest.quest_id)]}
-        expandIcon={({ isActive }) => <CaretRightOutlined size={40} rotate={isActive ? 90 : 0} />}
+        defaultActiveKey={[
+          "1",
+          ...initialQuests.map((quest) => quest.quest_id),
+        ]}
+        expandIcon={({ isActive }) => (
+          <CaretRightOutlined size={40} rotate={isActive ? 90 : 0} />
+        )}
         ghost
         items={questList}
       />
-      <BonusReward isModalOpen={isModalOpen} handleOk={handleOk} handleCancel={handleCancel} questId={questId} />
+      <BonusReward
+        isModalOpen={isModalOpen}
+        handleOk={handleOk}
+        handleCancel={handleCancel}
+        questId={questId}
+      />
     </>
   );
 }
