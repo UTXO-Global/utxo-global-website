@@ -19,9 +19,10 @@ interface AccountModalProps {
   chevronClassName?: string;
   popupLabel?: string;
   popupClassName?: string;
+  avatar?: React.ReactNode;
 }
 
-const AccountModal = ({ className, chevronClassName, popupLabel = "Logout", popupClassName }: AccountModalProps) => {
+const AccountModal = ({ className, chevronClassName, popupLabel = "Logout", popupClassName, avatar }: AccountModalProps) => {
   const router = useRouter();
   const [open, setOpen] = useState(false);
   const { disconnect } = ccc.useCcc();
@@ -62,7 +63,7 @@ const AccountModal = ({ className, chevronClassName, popupLabel = "Logout", popu
             className
           )}
         >
-          <div className="size-8 rounded-full bg-gradient-to-t from-[#FF862E] to-[#000000]"></div>
+          {avatar ? avatar : <div className="size-8 rounded-full bg-gradient-to-t from-[#FF862E] to-[#000000]"></div>}
           <span>{shortAddress(addressLogged, 5)}</span>
           <IcnChevron className={cn("w-4", chevronClassName)} />
         </button>

@@ -1,7 +1,6 @@
 "use client";
 
 import AccountModal from "@/components/AccountModal";
-import Button from "@/components/Common/Button";
 import ConnectButton from "@/components/ConnectButton";
 import { initialBadges } from "@/configs/persona";
 import { initialQuests } from "@/configs/point-system";
@@ -12,19 +11,27 @@ import { AppContext } from "@/providers/app-provider";
 import { selectStorage } from "@/redux/features/storage/reducer";
 import { useAppSelector } from "@/redux/hook";
 import { shortAddress } from "@/utils/helpers";
-import { message, Tooltip } from "antd";
+import { Tooltip } from "antd";
 import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
 import Link from "next/link";
-import React, { useContext } from "react";
+import React, { useContext, useMemo } from "react";
+import { toast } from "react-toastify";
 
 export default function PersonaPage() {
   const { isLoggedIn } = useAuthenticate();
-  useLogin();
-  useProfile();
   const { profile } = useContext(AppContext);
   const { addressLogged } = useAppSelector(selectStorage);
   const { t } = useTranslation();
+  useLogin();
+  useProfile();
+
+  const questNumber = useMemo(() => {
+    return initialQuests
+      .filter((item) => item.disabled === false)
+      .length.toString()
+      .padStart(2, "0");
+  }, [initialQuests]);
 
   return (
     <div className="bg-warmIvory-200 min-h-screen">
@@ -39,7 +46,16 @@ export default function PersonaPage() {
                 className="bg-transparent text-black hover:enabled:text-black"
                 chevronClassName="fill-black"
                 popupLabel="Disconnect"
-                popupClassName="bg-warmIvory-300"
+                popupClassName="hover:bg-warmIvory-300 transition-all"
+                avatar={
+                  <Image
+                    src="/icons/persona-avatar.svg"
+                    alt="persona avatar"
+                    width={40}
+                    height={40}
+                    className="size-8 rounded-full overflow-hidden"
+                  />
+                }
               />
             ) : (
               <ConnectButton className="!py-2 md:!py-3" />
@@ -56,10 +72,9 @@ export default function PersonaPage() {
                   <img src="/images/persona-avatar.png" alt="persona avatar" className="w-full" />
                 </div>
                 <div className="mt-6 flex items-center justify-between">
-                  <div>{shortAddress(addressLogged, 6)}</div>
-                  <div className="bg-warmIvory-200 rounded-md cursor-pointer p-[2px]">
+                  <div>{shortAddress(addressLogged, 8)}</div>
+                  <div className="bg-warmIvory-200 rounded-md cursor-pointer p-[2px] hover:bg-warmIvory-500">
                     <svg
-                      className="hover:scale-110"
                       width={24}
                       height={24}
                       viewBox="0 0 26 26"
@@ -67,7 +82,7 @@ export default function PersonaPage() {
                       xmlns="http://www.w3.org/2000/svg"
                       onClick={() => {
                         navigator.clipboard.writeText(addressLogged);
-                        message.success(t("persona.copy_message"));
+                        toast.success(t("persona.copy_message"));
                       }}
                     >
                       <path
@@ -121,8 +136,8 @@ export default function PersonaPage() {
                 </div>
                 <div className=" font-bold mt-4 flex justify-between items-end">
                   <div className="text-4xl flex items-center gap-2">
-                    <div className="rounded-lg border-black border p-3">{initialQuests.length.toString().padStart(2, "0").at(0)}</div>
-                    <div className="rounded-lg border-black border p-3">{initialQuests.length.toString().padStart(2, "0").at(1)}</div>
+                    <div className="rounded-lg border-black border p-3">{questNumber.at(0)}</div>
+                    <div className="rounded-lg border-black border p-3">{questNumber.at(1)}</div>
                   </div>
                   <Link href={"/point-system"}>
                     <svg
@@ -131,7 +146,7 @@ export default function PersonaPage() {
                       viewBox="0 0 24 24"
                       strokeWidth={1.5}
                       stroke="currentColor"
-                      className="size-8 md:size-10 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                      className="size-8 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
                     >
                       <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
                     </svg>
@@ -154,8 +169,8 @@ export default function PersonaPage() {
                       color: "black",
                     }}
                   >
-                    <div className="w-[70px] md:w-[100px] hover:-rotate-6 transition-all">
-                      <img src={item.url} alt="badge" className="grayscale" />
+                    <div className="w-[70px] md:w-[100px] h-[120px] hover:-rotate-6 transition-all">
+                      <img src={item.url} alt="badge" className="grayscale opacity-30" />
                     </div>
                   </Tooltip>
                 ))}
@@ -172,22 +187,18 @@ export default function PersonaPage() {
               <img
                 src="/icons/icn-twitter-black.svg"
                 alt="icon"
-                className="cursor-pointer size-6 md:size-8 m-[10px] hover:scale-125 transition-all"
+                className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
               />
             </Link>
             <Link href={""} target="_blank">
               <img
                 src="/icons/icn-telegram-black.svg"
                 alt="icon"
-                className="cursor-pointer size-6 md:size-8 m-[10px] hover:scale-125 transition-all"
+                className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
               />
             </Link>
             <Link href={""} target="_blank">
-              <img
-                src="/icons/icn-docs.svg"
-                alt="icon"
-                className="cursor-pointer size-6 md:size-8 m-[10px] hover:scale-125 transition-all"
-              />
+              <img src="/icons/icn-docs.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
             </Link>
           </div>
         </div>
