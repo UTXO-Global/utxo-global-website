@@ -2,9 +2,10 @@
 
 import AccountModal from "@/components/AccountModal";
 import ConnectButton from "@/components/ConnectButton";
-import { initialBadges } from "@/configs/persona";
+import { BADGE_DOMAIN } from "@/configs/persona";
 import { initialQuests } from "@/configs/point-system";
 import useAuthenticate from "@/hooks/useAuthenticate";
+import useBadge from "@/hooks/useBadge";
 import useLogin from "@/hooks/useLogin";
 import useProfile from "@/hooks/useProfile";
 import { AppContext } from "@/providers/app-provider";
@@ -25,6 +26,7 @@ export default function PersonaPage() {
   const { t } = useTranslation();
   useLogin();
   useProfile();
+  const { userBadges } = useBadge();
 
   const questNumber = useMemo(() => {
     return initialQuests
@@ -63,6 +65,8 @@ export default function PersonaPage() {
           </div>
         </div>
       </header>
+
+      {/* Main */}
       <main className="utxo-global-container py-10">
         <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-7 gap-6 mt-5">
           <div className="col-span-1 md:col-span-3 lg:col-span-2">
@@ -105,7 +109,7 @@ export default function PersonaPage() {
                   backgroundPosition: "center",
                   backgroundRepeat: "no-repeat",
                 }}
-                className="p-8 md:p-10 rounded-3xl md:max-w-[320px] h-full flex-1"
+                className="p-8 md:p-10 rounded-3xl h-full flex-1"
               >
                 <h2 className="font-bold text-3xl">{t("persona.welcome")}</h2>
                 <p className="mt-4">{t("persona.description")}</p>
@@ -157,23 +161,31 @@ export default function PersonaPage() {
             <div className="bg-warmIvory-100 mt-6 p-4 md:p-6 rounded-3xl border border-warmIvory-400">
               <div className="font-medium flex justify-between">
                 <span>{t("persona.badges")}</span>
-                <div className="px-2 py-1 bg-warmIvory-400 rounded">0 {t("persona.owned")}</div>
+                <div className="px-2 py-1 bg-warmIvory-400 rounded">
+                  {userBadges.length} {t("persona.owned")}
+                </div>
               </div>
-              <div className="mt-6 flex items-center gap-8 md:gap-10 flex-wrap">
-                {initialBadges.map((item) => (
-                  <Tooltip
-                    title={item.name}
-                    key={item.id}
-                    color="white"
-                    overlayInnerStyle={{
-                      color: "black",
-                    }}
-                  >
-                    <div className="w-[70px] md:w-[100px] h-[120px] hover:-rotate-6 transition-all">
-                      <img src={item.url} alt="badge" className="grayscale opacity-30" />
-                    </div>
-                  </Tooltip>
-                ))}
+              <div className="mt-6 pl-4 flex items-center max-h-[150px] overflow-y-auto gap-8 md:gap-10 flex-wrap">
+                {userBadges.length > 0 ? (
+                  <>
+                    {userBadges.map((item) => (
+                      <Tooltip
+                        title={item.badge_name}
+                        key={item.badge_id}
+                        color="white"
+                        overlayInnerStyle={{
+                          color: "black",
+                        }}
+                      >
+                        <div className="w-[70px] md:w-[90px] lg:w-[100px] hover:-rotate-6 transition-all">
+                          <img src={`${BADGE_DOMAIN}/${item.badge_icon}`} alt="badge" className="grayscale-0" />
+                        </div>
+                      </Tooltip>
+                    ))}
+                  </>
+                ) : (
+                  <div className="pt-4 pb-12 mx-auto text-gray-400 text-lg">No Badges Available</div>
+                )}
               </div>
             </div>
           </div>
