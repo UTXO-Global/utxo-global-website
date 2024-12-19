@@ -11,16 +11,16 @@ const PARTNERS = [
     image: "/images/utxo-swap.png",
   },
   {
+    name: "Stable++",
+    image: "/images/stablepp.svg",
+  },
+  {
     name: "Seal",
     image: "/images/seal.png",
   },
   {
     name: "Beaf",
     image: "/images/beaf.png",
-  },
-  {
-    name: "Stable++",
-    image: "/images/stablepp.svg",
   },
 ];
 
