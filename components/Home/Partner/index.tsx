@@ -18,6 +18,14 @@ const PARTNERS = [
     name: "Beaf",
     image: "/images/beaf.png",
   },
+  {
+    name: "Stable++",
+    image: "/images/stablepp.svg",
+  },
+  {
+    name: "OneKey",
+    image: "/images/onekey.png",
+  },
 ];
 
 const Partners = () => {
@@ -35,11 +43,7 @@ const Partners = () => {
               key={z.name}
               className="flex cursor-pointer border-[#F5F5F5]  border rounded-2xl gap-2 md:gap-4 sm:gap-3 p-2 sm:px-4 sm:py-2 lg:py-3 lg:px-5 items-center group"
             >
-              <img
-                src={z.image}
-                alt={z.name}
-                className="w-8 md:w-10 lg:w-[52px] group-hover:grayscale-0 grayscale transition-all"
-              />
+              <img src={z.image} alt={z.name} className="w-8 md:w-10 lg:w-[52px] group-hover:grayscale-0 grayscale transition-all" />
               <div className="text-base sm:text-2xl font-medium lg:text-4xl text-grey-200 group-hover:text-dark-100 transition-all">
                 {z.name}
               </div>
