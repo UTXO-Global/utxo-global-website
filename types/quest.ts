@@ -14,7 +14,6 @@ export type QuestItemComponentType = {
   reward_points: number;
   guideLink: string | null;
   is_claimed: boolean;
-  quest_number: number;
   duration: string | null;
   bonusReward: boolean;
   questLink: string | null;

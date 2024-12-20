@@ -2,8 +2,10 @@
 
 import AccountModal from "@/components/AccountModal";
 import ConnectButton from "@/components/ConnectButton";
+import { DOC_LINK } from "@/configs/common";
 import { BADGE_DOMAIN } from "@/configs/persona";
 import { initialQuests } from "@/configs/point-system";
+import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import useBadge from "@/hooks/useBadge";
 import useLogin from "@/hooks/useLogin";
@@ -117,10 +119,10 @@ export default function PersonaPage() {
               </div>
             )}
           </div>
-          <div className="md:col-span-5">
+          <div className="md:col-span-5 flex flex-col">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
               <div
-                className="rounded-3xl p-4 md:p-6 overflow-hidden col-span-1 border border-warmIvory-400"
+                className="rounded-3xl p-4 md:p-6 flex flex-col overflow-hidden col-span-1 border border-warmIvory-400"
                 style={{
                   backgroundImage: "url('/images/persona-my-point.png')",
                   backgroundSize: "cover",
@@ -128,9 +130,23 @@ export default function PersonaPage() {
                   backgroundRepeat: "no-repeat",
                 }}
               >
-                <div className="font-medium">{t("persona.my_points")}</div>
-                <div className="text-4xl font-bold mt-4">
-                  {isLoggedIn ? profile.points : 0} {t("persona.points")}
+                <div className="font-medium h-8 flex items-center">{t("persona.my_points")}</div>
+                <div className="flex items-end justify-between flex-1">
+                  <div className="text-4xl font-bold mb-3">
+                    {isLoggedIn ? profile.points : 0} {t("persona.points")}
+                  </div>
+                  <Link href={"/point-system"}>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="size-8 cursor-pointer transition ease-in-out hover:-translate-y-1 hover:scale-110 duration-300"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
               <div className="rounded-3xl p-4 md:p-6 overflow-hidden col-span-1 bg-warmIvory-300 hover:bg-warmIvory-400 transition-all border border-warmIvory-400">
@@ -158,7 +174,7 @@ export default function PersonaPage() {
                 </div>
               </div>
             </div>
-            <div className="bg-warmIvory-100 mt-6 p-4 md:p-6 rounded-3xl border border-warmIvory-400">
+            <div className="bg-warmIvory-100 flex-1 mt-6 p-4 md:p-6 rounded-3xl border border-warmIvory-400">
               <div className="font-medium flex justify-between">
                 <span>{t("persona.badges")}</span>
                 <div className="px-2 py-1 bg-warmIvory-400 rounded">
@@ -177,14 +193,14 @@ export default function PersonaPage() {
                           color: "black",
                         }}
                       >
-                        <div className="w-[70px] md:w-[90px] lg:w-[100px] hover:-rotate-6 transition-all">
-                          <img src={`${BADGE_DOMAIN}/${item.badge_icon}`} alt="badge" className="grayscale-0" />
+                        <div className="w-[70px] md:w-[90px] lg:w-[110px] hover:-rotate-6 transition-all">
+                          <img src={`${BADGE_DOMAIN}/${item.badge_icon}?t=${Date.now()}`} alt="badge" className="grayscale-0" />
                         </div>
                       </Tooltip>
                     ))}
                   </>
                 ) : (
-                  <div className="pt-4 pb-12 mx-auto text-gray-400 text-lg">No Badges Available</div>
+                  <div className="pt-4 pb-10 mx-auto text-gray-400 text-lg">No Badges Available</div>
                 )}
               </div>
             </div>
@@ -195,21 +211,21 @@ export default function PersonaPage() {
             <img src="/persona-logo.svg" alt="logo" width={100} />
           </div>
           <div className="gap-4 flex">
-            <Link href={profile.twitter_url || ""} target="_blank">
+            <Link href={TWITTER_LINK} target="_blank">
               <img
                 src="/icons/icn-twitter-black.svg"
                 alt="icon"
                 className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
               />
             </Link>
-            <Link href={""} target="_blank">
+            <Link href={TELEGRAM_LINK} target="_blank">
               <img
                 src="/icons/icn-telegram-black.svg"
                 alt="icon"
                 className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
               />
             </Link>
-            <Link href={""} target="_blank">
+            <Link href={DOC_LINK} target="_blank">
               <img src="/icons/icn-docs.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
             </Link>
           </div>
