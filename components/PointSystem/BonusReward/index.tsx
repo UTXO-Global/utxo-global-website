@@ -30,52 +30,25 @@ interface BonusRewardProps {
   questId?: string;
 }
 
-export default function BonusReward({
-  isModalOpen,
-  handleOk,
-  handleCancel,
-  questId,
-}: BonusRewardProps) {
+export default function BonusReward({ isModalOpen, handleOk, handleCancel, questId }: BonusRewardProps) {
   const { t } = useTranslation();
-  const {
-    data: sealTraders,
-    ranking,
-    queryConfig,
-    totalData,
-    handlePagination,
-    isFetching,
-  } = useSealTrader();
+  const { data: sealTraders, ranking, queryConfig, totalData, handlePagination, isFetching } = useSealTrader();
 
   return (
-    <Modal
-      open={isModalOpen}
-      centered
-      footer={false}
-      width={1000}
-      onOk={handleOk}
-      onCancel={handleCancel}
-    >
+    <Modal open={isModalOpen} centered footer={false} width={1000} onOk={handleOk} onCancel={handleCancel}>
       {!["ckcon-quest", "did-galxe-quest"].includes(questId!) && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4 text-center">
-            <div className="text-3xl font-bold">
-              {t("pointSystem.exclusive_rewards")}
-            </div>
+            <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")}</div>
             <div>
               <p className="text-orange-100 text-base items-center sm:text-lg flex gap-1 flex-wrap justify-center font-medium mb-2">
-                {t("pointSystem.duration")}: <span>Oct 30, 7:00PM UTC+8</span> -{" "}
-                <span>Nov 4, 7:00PM UTC+8</span>
+                {t("pointSystem.duration")}: <span>Oct 30, 7:00PM UTC+8</span> - <span>Nov 4, 7:00PM UTC+8</span>
               </p>
-              <p className="text-grey-200 text-base sm:text-xl font-medium">
-                {t("pointSystem.bonus_reward_description")}
-              </p>
+              <p className="text-grey-200 text-base sm:text-xl font-medium">{t("pointSystem.bonus_reward_description")}</p>
             </div>
             <div className="flex items-center gap-4 flex-wrap justify-center">
               {IconShields.map((shield, i) => (
-                <div
-                  key={i}
-                  className="bg-[#EFEFEF] py-2 md:py-3 gap-1 flex items-center text-sm sm:text-base font-medium px-2 rounded-lg"
-                >
+                <div key={i} className="bg-[#EFEFEF] py-2 md:py-3 gap-1 flex items-center text-sm sm:text-base font-medium px-2 rounded-lg">
                   {shield.icon}
                   {shield.seals} $SEAL
                 </div>
@@ -94,26 +67,15 @@ export default function BonusReward({
                 }}
               >
                 <div className="z-20 relative font-bold text-xl">
-                  {t("pointSystem.my_ranking")}:
-                  {ranking ? (
-                    <span className="ml-2">{ranking}</span>
-                  ) : (
-                    <span className="ml-2">--</span>
-                  )}
+                  {t("pointSystem.my_ranking")}:{ranking ? <span className="ml-2">{ranking}</span> : <span className="ml-2">--</span>}
                 </div>
               </div>
             </div>
             <div className="[&>*:nth-child(even)]:bg-[#FCFCFC] w-full mt-6 md:mt-8 bg-[#F5F5F5] mx-auto text-base rounded-lg overflow-hidden">
               <div className="text-base sm:text-xl bg-gradient-to-b from-[#D3D1CE] relative via-[#E0DFDE] to-[#EFEFEF] font-medium px-4 py-4 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center gap-4">
-                <div className="w-[20%] text-center">
-                  {t("pointSystem.rank")}
-                </div>
-                <div className="w-full text-start">
-                  {t("pointSystem.address")}
-                </div>
-                <div className="w-[45%] whitespace-nowrap text-end">
-                  {t("pointSystem.amount")} ($SEAL)
-                </div>
+                <div className="w-[20%] text-center">{t("pointSystem.rank")}</div>
+                <div className="w-full text-start">{t("pointSystem.address")}</div>
+                <div className="w-[45%] whitespace-nowrap text-end">{t("pointSystem.amount")} ($SEAL)</div>
               </div>
               {isFetching ? (
                 <div className="bg-[#F5F5F5] flex items-center justify-center h-[200px]">
@@ -150,16 +112,10 @@ export default function BonusReward({
                               {IconShields[user.top - 1].icon}
                             </div>
                           ) : (
-                            <div className="w-[20%] font-medium h-8 flex items-center justify-center">
-                              {user.top}
-                            </div>
+                            <div className="w-[20%] font-medium h-8 flex items-center justify-center">{user.top}</div>
                           )}
-                          <div className="w-full truncate hidden sm:block">
-                            {shortAddress(user.address, 15)}
-                          </div>
-                          <div className="w-full truncate block sm:hidden">
-                            {shortAddress(user.address, 5)}
-                          </div>
+                          <div className="w-full truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
+                          <div className="w-full truncate block sm:hidden">{shortAddress(user.address, 5)}</div>
                           <div className="w-[45%] whitespace-nowrap text-end font-medium">
                             {formatNumber(Number(user.netSealBuying), 0, 5)}
                           </div>
@@ -167,13 +123,10 @@ export default function BonusReward({
                       );
                     })
                   ) : (
-                    <div className="font-medium text-lg h-[150px] flex items-center justify-center !bg-[#FCFCFC]">
-                      No data available!
-                    </div>
+                    <div className="font-medium text-lg h-[150px] flex items-center justify-center !bg-[#FCFCFC]">No data available!</div>
                   )}
                 </>
               )}
-
               <Pagination
                 responsive={true}
                 current={queryConfig.page}
@@ -192,9 +145,7 @@ export default function BonusReward({
       {questId === "did-galxe-quest" && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4">
-            <div className="text-3xl font-bold">
-              {t("pointSystem.exclusive_rewards")} 🎉
-            </div>
+            <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")} 🎉</div>
             <div className="text-grey-200 text-[16px] sm:text-xl font-medium">
               <div className="flex flex-col gap-1">
                 <p>{t("pointSystem.did_galxe_quest_step_1")}</p>
@@ -216,13 +167,26 @@ export default function BonusReward({
       {questId === "ckcon-quest" && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4">
-            <div className="text-3xl font-bold">
-              {t("pointSystem.exclusive_rewards_ckcon")} 🎉
-            </div>
+            <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards_ckcon")} 🎉</div>
             <p className="text-grey-200 text-[16px] sm:text-xl font-medium">
-              <span className="font-bold text-dark-100">
-                {t("pointSystem.how_to_enter_title")}
-              </span>
+              <span className="font-bold text-dark-100">{t("pointSystem.how_to_enter_title")}</span>
+              <br />
+              <span>{t("pointSystem.how_to_enter_step_1")}</span>
+              <br />
+              <span>{t("pointSystem.how_to_enter_step_2")}</span>
+            </p>
+            <div className="">
+              <img src="/images/ckcon-bonus-gems.png" alt="bonusReward" />
+            </div>
+          </div>
+        </div>
+      )}
+      {questId === "ckcon-quest" && (
+        <div className="md:pt-5 md:px-4">
+          <div className="grid gap-4">
+            <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards_ckcon")} 🎉</div>
+            <p className="text-grey-200 text-[16px] sm:text-xl font-medium">
+              <span className="font-bold text-dark-100">{t("pointSystem.how_to_enter_title")}</span>
               <br />
               <span>{t("pointSystem.how_to_enter_step_1")}</span>
               <br />
