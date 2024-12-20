@@ -93,11 +93,19 @@ export const initialQuests: QuestItemComponentType[] = [
   },
   {
     quest_id: "utxo-multisig-has-seal",
-    quest_name: " Create Multi-Sig wallet that has $SEAL",
-    quest_description: "Users create Multi-Sig wallet that has $SEAL can receive 400 points.",
-    guideLink: "",
+    quest_name: "Hold $SEAL in UTXO Global Multisig wallet",
+    quest_description: `
+              <p>
+                Hold $SEAL in UTXO Global
+                <a href='${MULTI_SIG_LINK}' target="_blank" class="utxo-hyperlink">
+                  Multisig wallet
+                </a> 
+                to receive exclusive reward
+              </p>
+    `,
+    guideLink: "https://nexmio.notion.site/Hold-SEAL-in-UTXO-Global-Multisig-wallet-400-points-b259f0c338aa4e6b86002d5cd77be039",
     is_claimed: false,
-    reward_points: 100,
+    reward_points: 400,
     duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
     bonusReward: false,
     questLink: null,
@@ -113,10 +121,10 @@ export const initialQuests: QuestItemComponentType[] = [
                 <a href='${MULTI_SIG_LINK}' target="_blank" class="utxo-hyperlink">
                   Multisig wallet
                 </a> 
-                to receive exclusive rewards
+                to receive exclusive reward
               </p>
     `,
-    guideLink: "",
+    guideLink: "https://nexmio.notion.site/Hold-RUSD-in-UTXO-Global-Multisig-wallet-400-points-80c1ff2b2e004feb82363e57ff2862f5",
     is_claimed: false,
     reward_points: 400,
     duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
