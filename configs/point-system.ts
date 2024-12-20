@@ -103,7 +103,7 @@ export const initialQuests: QuestItemComponentType[] = [
                 to receive exclusive reward
               </p>
     `,
-    guideLink: "https://nexmio.notion.site/Hold-SEAL-in-UTXO-Global-Multisig-wallet-100-points-b259f0c338aa4e6b86002d5cd77be039?pvs=4",
+    guideLink: "https://nexmio.notion.site/Hold-SEAL-in-UTXO-Global-Multisig-wallet-400-points-b259f0c338aa4e6b86002d5cd77be039",
     is_claimed: false,
     reward_points: 400,
     duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
@@ -124,7 +124,7 @@ export const initialQuests: QuestItemComponentType[] = [
                 to receive exclusive reward
               </p>
     `,
-    guideLink: "https://www.notion.so/nexmio/Hold-RUSD-in-UTXO-Global-Multisig-wallet-100-points-80c1ff2b2e004feb82363e57ff2862f5",
+    guideLink: "https://nexmio.notion.site/Hold-RUSD-in-UTXO-Global-Multisig-wallet-400-points-80c1ff2b2e004feb82363e57ff2862f5",
     is_claimed: false,
     reward_points: 400,
     duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
