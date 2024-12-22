@@ -103,22 +103,15 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
                   {sealTraders.length > 0 ? (
                     sealTraders.map((user) => {
                       return (
-                        <div
-                          className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4"
-                          key={user.address}
-                        >
+                        <div className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4" key={user.address}>
                           {user.top <= 3 ? (
-                            <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">
-                              {IconShields[user.top - 1].icon}
-                            </div>
+                            <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">{IconShields[user.top - 1].icon}</div>
                           ) : (
                             <div className="w-[20%] font-medium h-8 flex items-center justify-center">{user.top}</div>
                           )}
                           <div className="w-full truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
                           <div className="w-full truncate block sm:hidden">{shortAddress(user.address, 5)}</div>
-                          <div className="w-[45%] whitespace-nowrap text-end font-medium">
-                            {formatNumber(Number(user.netSealBuying), 0, 5)}
-                          </div>
+                          <div className="w-[45%] whitespace-nowrap text-end font-medium">{formatNumber(Number(user.netSealBuying), 0, 5)}</div>
                         </div>
                       );
                     })
@@ -160,23 +153,6 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
             </div>
             <div className="">
               <img src="/images/did-galaxy-bonus-gems.png" alt="bonusReward" />
-            </div>
-          </div>
-        </div>
-      )}
-      {questId === "ckcon-quest" && (
-        <div className="md:pt-5 md:px-4">
-          <div className="grid gap-4">
-            <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards_ckcon")} 🎉</div>
-            <p className="text-grey-200 text-[16px] sm:text-xl font-medium">
-              <span className="font-bold text-dark-100">{t("pointSystem.how_to_enter_title")}</span>
-              <br />
-              <span>{t("pointSystem.how_to_enter_step_1")}</span>
-              <br />
-              <span>{t("pointSystem.how_to_enter_step_2")}</span>
-            </p>
-            <div className="">
-              <img src="/images/ckcon-bonus-gems.png" alt="bonusReward" />
             </div>
           </div>
         </div>

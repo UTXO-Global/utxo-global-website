@@ -4,16 +4,16 @@ import { useCallback, useEffect } from "react";
 import { ccc } from "@ckb-ccc/connector-react";
 import useAuthenticate from "./useAuthenticate";
 import api from "@/utils/api";
-import { useAppDispatch, useAppSelector } from "@/redux/hook";
+import { useAppDispatch } from "@/redux/hook";
 import { setAddressLogged, setToken, setTokenExpired } from "@/redux/features/storage/action";
 import { toast } from "react-toastify";
-import { selectStorage } from "@/redux/features/storage/reducer";
+import { DEFAULT_NETWORK } from "@/configs/common";
+import { CkbNetwork } from "@/types/common";
 
 const useLogin = () => {
   const { isLoggedIn } = useAuthenticate();
   const signer = ccc.useSigner();
   const { disconnect } = ccc.useCcc();
-  const { network } = useAppSelector(selectStorage);
 
   const dispatch = useAppDispatch();
 
@@ -37,7 +37,7 @@ const useLogin = () => {
         console.error(e);
       }
     },
-    [signer]
+    [signer],
   );
 
   const _login = useCallback(
@@ -54,11 +54,12 @@ const useLogin = () => {
         console.error(e);
       }
     },
-    [dispatch]
+    [dispatch],
   );
 
   const login = useCallback(async () => {
     const currentNetwork = await (window as any).utxoGlobal.ckbSigner.getNetwork();
+    const network = DEFAULT_NETWORK === CkbNetwork.MiranaMainnet ? DEFAULT_NETWORK : CkbNetwork.PudgeTestnet;
     const isNetworkEqual = currentNetwork === network;
 
     if (!isNetworkEqual) {

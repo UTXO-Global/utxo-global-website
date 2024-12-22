@@ -41,7 +41,7 @@ export default function PersonaPage() {
     <div className="bg-warmIvory-200 min-h-screen">
       <header className="bg-white">
         <div className="utxo-global-container">
-          <div className="flex items-center justify-between py-6">
+          <div className="flex items-center justify-between py-4 md:py-6">
             <div>
               <Image src="/persona-logo.svg" alt="persona logo" width={157} height={30} className="w-[120px] md:w-[157px]" />
             </div>
@@ -51,15 +51,7 @@ export default function PersonaPage() {
                 chevronClassName="fill-black"
                 popupLabel="Disconnect"
                 popupClassName="hover:bg-warmIvory-300 transition-all"
-                avatar={
-                  <Image
-                    src="/icons/persona-avatar.svg"
-                    alt="persona avatar"
-                    width={40}
-                    height={40}
-                    className="size-8 rounded-full overflow-hidden"
-                  />
-                }
+                avatar={<Image src="/icons/persona-avatar.svg" alt="persona avatar" width={40} height={40} className="size-8 rounded-full overflow-hidden" />}
               />
             ) : (
               <ConnectButton className="!py-2 md:!py-3" />
@@ -70,7 +62,7 @@ export default function PersonaPage() {
 
       {/* Main */}
       <main className="utxo-global-container py-10">
-        <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-7 gap-6 mt-5">
+        <div className="grid grid-cols-1 md:grid-cols-8 lg:grid-cols-7 gap-6">
           <div className="col-span-1 md:col-span-3 lg:col-span-2">
             {isLoggedIn ? (
               <div className="p-4 md:p-6 bg-warmIvory-400 rounded-3xl h-full ">
@@ -122,7 +114,7 @@ export default function PersonaPage() {
           <div className="md:col-span-5 flex flex-col">
             <div className="grid lg:grid-cols-2 grid-cols-1 gap-6">
               <div
-                className="rounded-3xl p-4 md:p-6 flex flex-col overflow-hidden col-span-1 border border-warmIvory-400"
+                className="rounded-3xl p-4 md:p-6 flex gap-4 flex-col overflow-hidden col-span-1 border border-warmIvory-400"
                 style={{
                   backgroundImage: "url('/images/persona-my-point.png')",
                   backgroundSize: "cover",
@@ -132,7 +124,7 @@ export default function PersonaPage() {
               >
                 <div className="font-medium h-8 flex items-center">{t("persona.my_points")}</div>
                 <div className="flex items-end justify-between flex-1">
-                  <div className="text-4xl font-bold mb-3">
+                  <div className="text-4xl font-bold md:mb-3">
                     {isLoggedIn ? profile.points : 0} {t("persona.points")}
                   </div>
                   <Link href={"/point-system"}>
@@ -175,13 +167,13 @@ export default function PersonaPage() {
               </div>
             </div>
             <div className="bg-warmIvory-100 flex-1 mt-6 p-4 md:p-6 rounded-3xl border border-warmIvory-400">
-              <div className="font-medium flex justify-between">
+              <div className="font-medium flex items-center justify-between">
                 <span>{t("persona.badges")}</span>
                 <div className="px-2 py-1 bg-warmIvory-400 rounded">
                   {userBadges.length} {t("persona.owned")}
                 </div>
               </div>
-              <div className="mt-6 pl-4 flex items-center max-h-[150px] overflow-y-auto gap-8 md:gap-10 flex-wrap">
+              <div className="mt-4 md:mt-6 flex items-center max-h-[130px] overflow-y-auto gap-x-6 gap-y-3 md:gap-x-8 lg:gap-y-4 lg:gap-x-10  flex-wrap">
                 {userBadges.length > 0 ? (
                   <>
                     {userBadges.map((item) => (
@@ -191,9 +183,10 @@ export default function PersonaPage() {
                         color="white"
                         overlayInnerStyle={{
                           color: "black",
+                          textAlign: "center",
                         }}
                       >
-                        <div className="w-[70px] md:w-[90px] lg:w-[110px] hover:-rotate-6 transition-all">
+                        <div className="w-[70px] md:w-[100px] lg:w-[125px] hover:-rotate-6 transition-all">
                           <img src={`${BADGE_DOMAIN}/${item.badge_icon}?t=${Date.now()}`} alt="badge" className="grayscale-0" />
                         </div>
                       </Tooltip>
@@ -212,18 +205,10 @@ export default function PersonaPage() {
           </div>
           <div className="gap-4 flex">
             <Link href={TWITTER_LINK} target="_blank">
-              <img
-                src="/icons/icn-twitter-black.svg"
-                alt="icon"
-                className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
-              />
+              <img src="/icons/icn-twitter-black.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
             </Link>
             <Link href={TELEGRAM_LINK} target="_blank">
-              <img
-                src="/icons/icn-telegram-black.svg"
-                alt="icon"
-                className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
-              />
+              <img src="/icons/icn-telegram-black.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
             </Link>
             <Link href={DOC_LINK} target="_blank">
               <img src="/icons/icn-docs.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
