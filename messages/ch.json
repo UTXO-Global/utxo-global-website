@@ -8,7 +8,8 @@
     "multiSig": "启动多重签名钱包",
     "chromeStore": "下载 Chrome 版本",
     "bountyContest": "Bounty Contest",
-    "home": "主页"
+    "home": "主页",
+    "persona_journey": "个人旅程"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -296,5 +297,16 @@
 
       "answer_05": "如果遇到任何问题或意外行为，请首先通过检查索引器提示（如第一个问题中所述）来验证节点是否已同步。如果一切正常但问题仍然存在，请联系 上的支持团队"
     }
+  },
+  "persona": {
+    "welcome": "欢迎来到个人旅程",
+    "description": "Persona 是一个独特且永恒的头像集合",
+    "my_points": "我的积分",
+    "points": "积分",
+    "quest": "寻求",
+    "quest_available": "新任务可用",
+    "badges": "徽章",
+    "owned": "拥有",
+    "copy_message": "复制到剪贴板"
   }
 }

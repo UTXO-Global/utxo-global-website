@@ -1,5 +1,6 @@
 import { QuestItemComponentType } from "@/types/quest";
 import { PointSystemTab } from "@/types/common";
+import { MULTI_SIG_LINK } from "@/configs/common";
 
 export const utxoSwapExtensionQuestGuide =
   "https://nexmio.notion.site/Quest-2-Swap-in-UTXO-Global-Wallet-100-points-ec13ea718b4746e583018f2a4a9849a3?pvs=4";
@@ -78,14 +79,35 @@ export const pointSystemTabs = [
 
 export const initialQuests: QuestItemComponentType[] = [
   // {
-  //   quest_id: "utxo-multisig-has-seal",
-  //   quest_name: " Create Multi-Sig wallet that has $SEAL",
-  //   quest_description: "Users create Multi-Sig wallet that has $SEAL can receive 400 points.",
+  //   quest_id: "utxo-global-stabelpp",
+  //   quest_name: "Xmas Giveaway: UTXO Global x Stable++",
+  //   quest_description: `To celebrate UTXO Global x Stable++ partnership, we are co-hosting this "CKB Odyssey: The Stable Impact" event!`,
   //   guideLink: "",
   //   is_claimed: false,
-  //   quest_number: 2,
-  //   reward_points: 100,
-  //   duration: null,
+  //   reward_points: 400,
+  //   duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
+  //   bonusReward: false,
+  //   questLink: "#",
+  //   disabled: false,
+  //   labelButton: "Go",
+  // },
+  // {
+  //   quest_id: "utxo-multisig-has-seal",
+  //   quest_name: "Hold $SEAL in UTXO Global Multisig wallet",
+  //   quest_description: `
+  //             <p>
+  //               Hold $SEAL in UTXO Global
+  //               <a href='${MULTI_SIG_LINK}' target="_blank" class="utxo-hyperlink">
+  //                 Multisig wallet
+  //               </a>
+  //               to receive exclusive reward
+  //             </p>
+  //   `,
+  //   guideLink:
+  //     "https://nexmio.notion.site/Hold-SEAL-in-UTXO-Global-Multisig-wallet-400-points-b259f0c338aa4e6b86002d5cd77be039",
+  //   is_claimed: false,
+  //   reward_points: 400,
+  //   duration: "",
   //   bonusReward: false,
   //   questLink: null,
   //   disabled: false,
@@ -93,14 +115,21 @@ export const initialQuests: QuestItemComponentType[] = [
   // },
   // {
   //   quest_id: "utxo-multisig-has-rusd",
-  //   quest_name: " Create Multi-Sig wallet that has $RUSD",
-  //   quest_description:
-  //     "Users create Multi-Sig wallet that has $RUSD can receive 400 points.",
-  //   guideLink: "",
+  //   quest_name: "Hold $RUSD in UTXO Global Multisig wallet",
+  //   quest_description: `
+  //             <p>
+  //               Hold $RUSD in UTXO Global
+  //               <a href='${MULTI_SIG_LINK}' target="_blank" class="utxo-hyperlink">
+  //                 Multisig wallet
+  //               </a>
+  //               to receive exclusive reward
+  //             </p>
+  //   `,
+  //   guideLink:
+  //     "https://nexmio.notion.site/Hold-RUSD-in-UTXO-Global-Multisig-wallet-400-points-80c1ff2b2e004feb82363e57ff2862f5",
   //   is_claimed: false,
-  //   quest_number: 2,
-  //   reward_points: 100,
-  //   duration: null,
+  //   reward_points: 400,
+  //   duration: "",
   //   bonusReward: false,
   //   questLink: null,
   //   disabled: false,
@@ -112,7 +141,6 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_description: "Use UTXO Global wallet to swap and receive 100 points.",
     guideLink: utxoSwapExtensionQuestGuide,
     is_claimed: false,
-    quest_number: 2,
     reward_points: 100,
     duration: null,
     bonusReward: false,
@@ -126,7 +154,6 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_description: "Use UTXOSwap, connect to UTXO Global wallet, and swap to receive 100 points.",
     guideLink: utxoSwapWebpageQuestGuide,
     is_claimed: false,
-    quest_number: 3,
     reward_points: 100,
     duration: null,
     bonusReward: false,
@@ -140,7 +167,6 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_description: `To celebrate UTXO Global x d.id integration & partnership, we are co-hosting this "CKB Odyssey: The Identity Frontier" event!`,
     guideLink: null,
     is_claimed: false,
-    quest_number: 4,
     reward_points: 400,
     duration: "Dec 13, 17:00 UTC+7 - Dec 20, 17:00 UTC+7",
     bonusReward: true,
@@ -154,7 +180,6 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_description: "Play the CKCat Game Telegram Mini App & Explore the first CKB Wallet on Telegram",
     guideLink: ckConQuestGuideLink,
     is_claimed: false,
-    quest_number: 1,
     reward_points: 200,
     duration: "Nov 12, 4:00PM UTC+8 - Nov 21, 4:00PM UTC+8",
     bonusReward: true,
@@ -168,7 +193,6 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_description: "Complete all social media tasks on Galxe to receive 400 points.",
     guideLink: null,
     is_claimed: false,
-    quest_number: 4,
     reward_points: 400,
     duration: "Oct 30, 7:00PM UTC+8 - Nov 4, 7:00PM UTC+8",
     bonusReward: false,
