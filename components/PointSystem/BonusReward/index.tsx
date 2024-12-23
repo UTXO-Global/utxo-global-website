@@ -7,21 +7,22 @@ import IcnShieldThird from "@/public/icons/icn-shield-third.svg";
 import { formatNumber, shortAddress } from "@/utils/helpers";
 import { useTranslation } from "next-export-i18n";
 import useSealTrader from "@/hooks/useSealTrader";
+import { QuestIDs } from "@/types/point-system";
 
-const IconShields = [
-  {
-    icon: <IcnShieldFirst className="size-6 sm:size-8" />,
-    seals: formatNumber(300),
-  },
-  {
-    icon: <IcnShieldSecond className="size-6 sm:size-8" />,
-    seals: formatNumber(150),
-  },
-  {
-    icon: <IcnShieldThird className="size-6 sm:size-8" />,
-    seals: formatNumber(50),
-  },
-];
+// const IconShields = [
+//   {
+//     icon: <IcnShieldFirst className="size-6 sm:size-8" />,
+//     seals: formatNumber(300),
+//   },
+//   {
+//     icon: <IcnShieldSecond className="size-6 sm:size-8" />,
+//     seals: formatNumber(150),
+//   },
+//   {
+//     icon: <IcnShieldThird className="size-6 sm:size-8" />,
+//     seals: formatNumber(50),
+//   },
+// ];
 
 interface BonusRewardProps {
   isModalOpen: boolean;
@@ -32,11 +33,14 @@ interface BonusRewardProps {
 
 export default function BonusReward({ isModalOpen, handleOk, handleCancel, questId }: BonusRewardProps) {
   const { t } = useTranslation();
-  const { data: sealTraders, ranking, queryConfig, totalData, handlePagination, isFetching } = useSealTrader();
+  // const { data: sealTraders, ranking, queryConfig, totalData, handlePagination, isFetching } = useSealTrader();
 
+  if (!questId) {
+    return null;
+  }
   return (
     <Modal open={isModalOpen} centered footer={false} width={1000} onOk={handleOk} onCancel={handleCancel}>
-      {!["ckcon-quest", "did-galxe-quest"].includes(questId!) && (
+      {/* {!["ckcon-quest", "did-galxe-quest"].includes(questId!) && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4 text-center">
             <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")}</div>
@@ -103,15 +107,22 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
                   {sealTraders.length > 0 ? (
                     sealTraders.map((user) => {
                       return (
-                        <div className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4" key={user.address}>
+                        <div
+                          className="text-sm sm:text-xl px-4 py-2 sm:pr-6 sm:pl-2 lg:pl-0 flex items-center text-start gap-4"
+                          key={user.address}
+                        >
                           {user.top <= 3 ? (
-                            <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">{IconShields[user.top - 1].icon}</div>
+                            <div className="w-[20%] font-medium min-h-8 flex items-center justify-center">
+                              {IconShields[user.top - 1].icon}
+                            </div>
                           ) : (
                             <div className="w-[20%] font-medium h-8 flex items-center justify-center">{user.top}</div>
                           )}
                           <div className="w-full truncate hidden sm:block">{shortAddress(user.address, 15)}</div>
                           <div className="w-full truncate block sm:hidden">{shortAddress(user.address, 5)}</div>
-                          <div className="w-[45%] whitespace-nowrap text-end font-medium">{formatNumber(Number(user.netSealBuying), 0, 5)}</div>
+                          <div className="w-[45%] whitespace-nowrap text-end font-medium">
+                            {formatNumber(Number(user.netSealBuying), 0, 5)}
+                          </div>
                         </div>
                       );
                     })
@@ -134,8 +145,8 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
             </div>
           </div>
         </div>
-      )}
-      {questId === "did-galxe-quest" && (
+      )} */}
+      {questId === QuestIDs.DID_GALXE_QUEST && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4">
             <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")} 🎉</div>
@@ -157,7 +168,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
           </div>
         </div>
       )}
-      {questId === "ckcon-quest" && (
+      {questId === QuestIDs.CKCON_QUEST && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4">
             <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards_ckcon")} 🎉</div>
@@ -170,6 +181,27 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
             </p>
             <div className="">
               <img src="/images/ckcon-bonus-gems.png" alt="bonusReward" />
+            </div>
+          </div>
+        </div>
+      )}
+      {questId === QuestIDs.UTXO_GLOBAL_STABELPP && (
+        <div className="md:pt-5 md:px-4">
+          <div className="grid gap-4">
+            <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")} 🎉</div>
+            <div className="text-grey-200 text-[16px] sm:text-xl font-medium">
+              <div className="flex flex-col gap-1">
+                <p>{t("pointSystem.stablepp_step_1")}</p>
+                <p>{t("pointSystem.stablepp_step_2")}</p>
+                <div
+                  dangerouslySetInnerHTML={{
+                    __html: t("pointSystem.stablepp_step_3"),
+                  }}
+                />
+              </div>
+            </div>
+            <div className="">
+              <img src="/images/stablepp-bonus-gems.png" alt="bonusReward" />
             </div>
           </div>
         </div>
