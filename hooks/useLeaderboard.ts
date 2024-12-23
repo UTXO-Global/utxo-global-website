@@ -20,7 +20,7 @@ export default function useLeaderboard() {
   const getLeaderboard = async (page: number) => {
     try {
       setIsFetching(true);
-      const { data } = await api.get<LeaderboardResType>(`/users/leaderboard?page=${page}`);
+      const { data } = await api.get<LeaderboardResType>(`/users/leaderboard?page=${page}&address=${addressLogged}`);
       setLeaderboard(data.data.leaderboard);
       setRanking(data.data.ranking);
       setPagination(data.pagination);
