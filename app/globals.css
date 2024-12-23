@@ -250,3 +250,12 @@ body {
 .ant-collapse-content-box {
   padding: 0px !important;
 }
+
+.utxo-hyperlink {
+  color: #ea8d01;
+  cursor: pointer;
+}
+.utxo-hyperlink:hover {
+  text-decoration: underline;
+  color: #ea8d01;
+}

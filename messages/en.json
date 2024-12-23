@@ -7,7 +7,8 @@
     "multiSig": "Multi-Sig Wallet",
     "chromeStore": "Download for Chrome",
     "bountyContest": "Bounty Contest",
-    "home": "Home"
+    "home": "Home",
+    "persona_journey": "Persona Journey"
   },
   "aboutUs": {
     "title01": "UTXO Global",
@@ -299,5 +300,16 @@
 
       "answer_05": "If you encounter any issues or unexpected behavior, first verify that your node is synced by checking the indexer tip (as mentioned in the first question). If everything appears correct and the issue persists, reach out to the support team on"
     }
+  },
+  "persona": {
+    "welcome": "Welcome to persona journey",
+    "description": "Persona is a Unique and timeless avatar collection.",
+    "my_points": "My Points",
+    "points": "Points",
+    "quest": "Quest",
+    "quest_available": "New Quest Available",
+    "badges": "Badges",
+    "owned": "Owned",
+    "copy_message": "Copied to clipboard"
   }
 }
