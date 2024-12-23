@@ -259,7 +259,10 @@
     "did_galxe_quest_step_1": "1. \"The Identity Frontier\" Badge (UTXO Global x DID) per participant.",
     "did_galxe_quest_step_2": "2. 1,000 $CKB for 5 random participants (200 $CKB each).",
     "did_galxe_quest_step_3": "3. 20 DID Builder Codes (1 year free d.id account) for 20 random participants.",
-    "did_galxe_quest_step_4": "4. 800 CKCAT gems per participant: <a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a> when Mainnet launch."
+    "did_galxe_quest_step_4": "4. 800 CKCAT gems per participant: <a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a> when Mainnet launch.",
+    "stablepp_step_1": "1. \"The Stable Impact\" Badge (UTXO Global x Stable++) per participant.",
+    "stablepp_step_2": "2. 1,380 $CKB for 3 random participants. (460 $CKB each)",
+    "stablepp_step_3": "3. 800 CKCAT gems per participant: <a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a> when Mainnet launch."
   },
   "indexer": {
     "title": "Build Together",
