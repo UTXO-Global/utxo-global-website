@@ -19,4 +19,5 @@ export type QuestItemComponentType = {
   questLink: string | null;
   disabled: boolean;
   labelButton: string;
+  isCheck: boolean;
 };
