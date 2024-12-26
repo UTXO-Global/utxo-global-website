@@ -101,7 +101,7 @@ export const initialQuests: QuestItemComponentType[] = [
                 <a href='${MULTI_SIG_LINK}' target="_blank" class="utxo-hyperlink">
                   Multisig wallet
                 </a>
-                to receive exclusive reward
+                to receive 400 points
               </p>
     `,
     guideLink: "https://nexmio.notion.site/Hold-RUSD-in-UTXO-Global-Multisig-wallet-400-points-80c1ff2b2e004feb82363e57ff2862f5",
@@ -122,7 +122,7 @@ export const initialQuests: QuestItemComponentType[] = [
                 <a href='${MULTI_SIG_LINK}' target="_blank" class="utxo-hyperlink">
                   Multisig wallet
                 </a>
-                to receive exclusive reward
+                to receive 400 points
               </p>
     `,
     guideLink: "https://nexmio.notion.site/Hold-SEAL-in-UTXO-Global-Multisig-wallet-400-points-b259f0c338aa4e6b86002d5cd77be039",
