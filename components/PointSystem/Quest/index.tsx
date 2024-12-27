@@ -20,7 +20,7 @@ export default function Quest() {
   const { t } = useTranslation();
   const { width } = useResizable();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { userQuests, claimQuest, isClaiming } = useQuest();
+  const { userQuests, claimQuest, claimingQuestId } = useQuest();
   const { isLoggedIn } = useAuthenticate();
   const [questId, setQuestId] = useState<string | undefined>();
 
@@ -121,10 +121,10 @@ export default function Quest() {
                   onClick={async () => {
                     questInfo.questLink && window.open(questInfo.questLink, "_blank");
                     await sleep(300);
-                    claimQuest(questInfo.quest_id, 20000);
+                    await claimQuest(questInfo.quest_id, 20000);
                   }}
                   disabled={questInfo.is_claimed || questInfo.disabled}
-                  loading={isClaiming}
+                  loading={claimingQuestId === questInfo.quest_id}
                 >
                   {questInfo.is_claimed ? "Claimed" : t(questInfo.labelButton)}
                 </Button>
@@ -149,7 +149,7 @@ export default function Quest() {
       });
     }
     return initialQuests.map((quest) => questItemComponent(quest));
-  }, [userQuests, isClaiming]);
+  }, [userQuests, claimingQuestId]);
 
   return (
     <>

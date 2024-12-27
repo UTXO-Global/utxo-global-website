@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 export default function useQuest() {
   const [userQuests, setUserQuests] = React.useState<QuestType[]>([]);
   const { isLoggedIn } = useAuthenticate();
-  const [isClaiming, setIsClaiming] = React.useState(false);
+  const [claimingQuestId, setClaimingQuestId] = React.useState<string | null>(null);
   const { getProfile } = useProfile({
     enable: false,
   });
@@ -25,17 +25,17 @@ export default function useQuest() {
   };
 
   const claimQuest = async (questId: string, delay?: number) => {
-    setIsClaiming(true);
+    setClaimingQuestId(questId);
     try {
-      const res = await api.post<{ data: any; message: string }>(`/quests/claim/${questId}`);
       delay && (await sleep(delay));
+      const res = await api.post<{ data: any; message: string }>(`/quests/claim/${questId}`);
       toast.success(res.data.message);
-      setIsClaiming(false);
+      setClaimingQuestId(null);
       getQuests();
       getProfile();
     } catch (error) {
       console.log(error);
-      setIsClaiming(false);
+      setClaimingQuestId(null);
       toast.error((error as any).response.data.message);
     }
   };
@@ -48,5 +48,5 @@ export default function useQuest() {
     getQuests();
   }, [isLoggedIn]);
 
-  return { userQuests, claimQuest, isClaiming };
+  return { userQuests, claimQuest, claimingQuestId };
 }
