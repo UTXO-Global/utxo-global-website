@@ -9,7 +9,7 @@ import IcnTelegram from "@/public/icons/icn-telegram.svg";
 import IcnGithub from "@/public/icons/icn-github.svg";
 
 import { CHROME_EXTENSION_LINK, DOC_LINK, EXTENTSION_GITHUB, MEDIA_KIT_GITHUB, NERVOS_LINK, pathWithoutFooter } from "@/configs/common";
-import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
+import { TELEGRAM_LINK, UTXO_GLOBAL_TWITTER_LINK } from "@/configs/social";
 import { usePathname } from "next/navigation";
 
 const Footer = () => {
@@ -25,7 +25,7 @@ const Footer = () => {
             <span className="font-bold text-dark-100">{t("footer.utxoGlobal")}</span> {t("footer.description")}
           </p>
           <div className="mt-6 flex justify-center md:justify-start gap-4">
-            <Link href={TWITTER_LINK} target="_blank">
+            <Link href={UTXO_GLOBAL_TWITTER_LINK} target="_blank">
               <div className="rounded-full w-[48px] h-[48px] flex justify-center items-center bg-dark-100 transition-all hover:bg-dark-200">
                 <IcnTwitter className="w-6" />
               </div>

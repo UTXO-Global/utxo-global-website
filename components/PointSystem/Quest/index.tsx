@@ -1,7 +1,7 @@
 import React, { useMemo, useState } from "react";
 import { CaretRightOutlined } from "@ant-design/icons";
 import type { CollapseProps } from "antd";
-import { Collapse, Modal, theme } from "antd";
+import { Collapse, theme } from "antd";
 import Link from "next/link";
 import Button from "@/components/Common/Button";
 import { useTranslation } from "next-export-i18n";
@@ -13,13 +13,14 @@ import { initialQuests } from "@/configs/point-system";
 import { QuestItemComponentType } from "@/types/quest";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import cn from "@/utils/cn";
+import { sleep } from "@/utils/helpers";
 
 export default function Quest() {
   const { token } = theme.useToken();
   const { t } = useTranslation();
   const { width } = useResizable();
   const [isModalOpen, setIsModalOpen] = useState(false);
-  const { userQuests, claimQuest } = useQuest();
+  const { userQuests, claimQuest, isClaiming } = useQuest();
   const { isLoggedIn } = useAuthenticate();
   const [questId, setQuestId] = useState<string | undefined>();
 
@@ -42,10 +43,6 @@ export default function Quest() {
     border: "none",
     fontFamily: token.fontFamily,
     padding: width > 640 ? "24px" : "0px",
-  };
-
-  const handleClaim = (questId: string) => {
-    claimQuest(questId);
   };
 
   const questItemComponent = (questInfo: QuestItemComponentType) => {
@@ -97,7 +94,7 @@ export default function Quest() {
               )}
             </div>
           </div>
-          {questInfo.questLink ? (
+          {questInfo.questLink && !questInfo.isCheck ? (
             <Link
               href={questInfo.questLink}
               className={cn("max-w-[160px] w-full", {
@@ -121,10 +118,13 @@ export default function Quest() {
                   className={cn("max-w-[160px] w-full !py-2", {
                     "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.is_claimed || questInfo.disabled,
                   })}
-                  onClick={() => {
-                    handleClaim(questInfo.quest_id);
+                  onClick={async () => {
+                    questInfo.questLink && window.open(questInfo.questLink, "_blank");
+                    await sleep(300);
+                    claimQuest(questInfo.quest_id, 20000);
                   }}
                   disabled={questInfo.is_claimed || questInfo.disabled}
+                  loading={isClaiming}
                 >
                   {questInfo.is_claimed ? "Claimed" : t(questInfo.labelButton)}
                 </Button>
@@ -149,7 +149,7 @@ export default function Quest() {
       });
     }
     return initialQuests.map((quest) => questItemComponent(quest));
-  }, [userQuests]);
+  }, [userQuests, isClaiming]);
 
   return (
     <>

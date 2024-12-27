@@ -27,3 +27,5 @@ export const formatNumber = (number: number, minPrecision = 0, maxPrecision = 8)
   };
   return number.toLocaleString(undefined, options);
 };
+
+export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
