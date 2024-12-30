@@ -18,7 +18,7 @@ import IcnFire from "@/public/icons/icn-fire.svg";
 import Button from "../Common/Button";
 import LangSwitcher from "../LangSwitcher";
 import useHashChange from "@/hooks/useHashChange";
-import { TWITTER_LINK } from "@/configs/social";
+import { UTXO_GLOBAL_TWITTER_LINK } from "@/configs/social";
 import { BountyContestStage } from "@/types/common";
 import { usePathname } from "next/navigation";
 
@@ -101,7 +101,7 @@ const Header = () => {
           <div className="absolute top-[50%] right-[6%] -translate-y-1/2 text-center">
             {BOUNTY_CONTEST_STAGE === BountyContestStage.Prepare ? (
               <Link
-                href={TWITTER_LINK}
+                href={UTXO_GLOBAL_TWITTER_LINK}
                 target="_blank"
                 className="text-xs rounded-md sm:rounded-lg flex items-center justify-center gap-1 sm:gap-2 sm:text-base border-none font-bold py-[2px] sm:py-[5px] lg:py-[11px] bg-gradient-to-br w-[60px] sm:w-[100px] lg:w-[150px] xl:w-[200px] from-light-yellow-200 via-light-yellow-300 to-light-yellow-100"
               >

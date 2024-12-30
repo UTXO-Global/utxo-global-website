@@ -2,6 +2,7 @@ import { QuestItemComponentType } from "@/types/quest";
 import { PointSystemTab } from "@/types/common";
 import { MULTI_SIG_LINK } from "@/configs/common";
 import { QuestIDs } from "@/types/point-system";
+import { CKCAT_TWITTER_LINK, UTXO_GLOBAL_TWITTER_LINK } from "@/configs/social";
 
 export const utxoSwapExtensionQuestGuide =
   "https://nexmio.notion.site/Quest-2-Swap-in-UTXO-Global-Wallet-100-points-ec13ea718b4746e583018f2a4a9849a3?pvs=4";
@@ -91,6 +92,7 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: "https://x.com/UTXOGlobal/status/1871140774332813563",
     disabled: false,
     labelButton: "Go",
+    isCheck: false,
   },
   {
     quest_id: QuestIDs.UTXO_MULTISIG_HAS_RUSD,
@@ -112,6 +114,7 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: null,
     disabled: false,
     labelButton: "pointSystem.claim",
+    isCheck: false,
   },
   {
     quest_id: QuestIDs.UTXO_MULTISIG_HAS_SEAL,
@@ -133,6 +136,35 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: null,
     disabled: false,
     labelButton: "pointSystem.claim",
+    isCheck: false,
+  },
+  {
+    quest_id: QuestIDs.FOLLOW_X_UTXO_GLOBAL,
+    quest_name: "Follow UTXO Global on X",
+    quest_description: "Follow UTXO Global on X to receive 100 points.",
+    guideLink: null,
+    is_claimed: false,
+    reward_points: 100,
+    duration: null,
+    bonusReward: false,
+    questLink: UTXO_GLOBAL_TWITTER_LINK,
+    disabled: false,
+    labelButton: "pointSystem.claim",
+    isCheck: true,
+  },
+  {
+    quest_id: QuestIDs.FOLLOW_X_CKCAT,
+    quest_name: "Follow CKCat on X",
+    quest_description: "Follow CKCat on X to receive 100 points.",
+    guideLink: null,
+    is_claimed: false,
+    reward_points: 100,
+    duration: null,
+    bonusReward: false,
+    questLink: CKCAT_TWITTER_LINK,
+    disabled: false,
+    labelButton: "pointSystem.claim",
+    isCheck: true,
   },
   {
     quest_id: QuestIDs.UTXO_SWAP_EXTENSION,
@@ -146,6 +178,7 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: null,
     disabled: false,
     labelButton: "pointSystem.claim",
+    isCheck: false,
   },
   {
     quest_id: QuestIDs.UTXO_SWAP_WEBSITE,
@@ -159,6 +192,7 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: null,
     disabled: false,
     labelButton: "pointSystem.claim",
+    isCheck: false,
   },
   {
     quest_id: QuestIDs.DID_GALXE_QUEST,
@@ -172,6 +206,7 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: galxeDIDLink,
     disabled: true,
     labelButton: "Quest Expired",
+    isCheck: false,
   },
   {
     quest_id: QuestIDs.CKCON_QUEST,
@@ -185,6 +220,7 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: ckConQuestLink,
     disabled: true,
     labelButton: "Quest Expired",
+    isCheck: false,
   },
   {
     quest_id: QuestIDs.GALXE_QUEST,
@@ -198,5 +234,6 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: galxeLink,
     disabled: true,
     labelButton: "Quest Expired",
+    isCheck: false,
   },
 ];

@@ -5,7 +5,7 @@ import ConnectButton from "@/components/ConnectButton";
 import { DOC_LINK } from "@/configs/common";
 import { BADGE_DOMAIN } from "@/configs/persona";
 import { initialQuests } from "@/configs/point-system";
-import { TELEGRAM_LINK, TWITTER_LINK } from "@/configs/social";
+import { TELEGRAM_LINK, UTXO_GLOBAL_TWITTER_LINK } from "@/configs/social";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import useBadge from "@/hooks/useBadge";
 import useLogin from "@/hooks/useLogin";
@@ -51,7 +51,15 @@ export default function PersonaPage() {
                 chevronClassName="fill-black"
                 popupLabel="Disconnect"
                 popupClassName="hover:bg-warmIvory-300 transition-all"
-                avatar={<Image src="/icons/persona-avatar.svg" alt="persona avatar" width={40} height={40} className="size-8 rounded-full overflow-hidden" />}
+                avatar={
+                  <Image
+                    src="/icons/persona-avatar.svg"
+                    alt="persona avatar"
+                    width={40}
+                    height={40}
+                    className="size-8 rounded-full overflow-hidden"
+                  />
+                }
               />
             ) : (
               <ConnectButton className="!py-2 md:!py-3" />
@@ -204,11 +212,19 @@ export default function PersonaPage() {
             <img src="/persona-logo.svg" alt="logo" width={100} />
           </div>
           <div className="gap-4 flex">
-            <Link href={TWITTER_LINK} target="_blank">
-              <img src="/icons/icn-twitter-black.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
+            <Link href={UTXO_GLOBAL_TWITTER_LINK} target="_blank">
+              <img
+                src="/icons/icn-twitter-black.svg"
+                alt="icon"
+                className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
+              />
             </Link>
             <Link href={TELEGRAM_LINK} target="_blank">
-              <img src="/icons/icn-telegram-black.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />
+              <img
+                src="/icons/icn-telegram-black.svg"
+                alt="icon"
+                className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all"
+              />
             </Link>
             <Link href={DOC_LINK} target="_blank">
               <img src="/icons/icn-docs.svg" alt="icon" className="cursor-pointer size-6 md:size-8 m-2 hover:scale-125 transition-all" />

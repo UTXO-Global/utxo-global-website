@@ -7,4 +7,6 @@ export enum QuestIDs {
   DID_GALXE_QUEST = "did-galxe-quest",
   CKCON_QUEST = "ckcon-quest",
   GALXE_QUEST = "galxe-quest",
+  FOLLOW_X_UTXO_GLOBAL = "follow-x-utxo-global",
+  FOLLOW_X_CKCAT = "follow-x-ckcat",
 }
