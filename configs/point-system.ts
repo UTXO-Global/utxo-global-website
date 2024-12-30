@@ -81,20 +81,6 @@ export const lastRewardData = [
 
 export const initialQuests: QuestItemComponentType[] = [
   {
-    quest_id: QuestIDs.UTXO_GLOBAL_STABELPP,
-    quest_name: "Xmas Giveaway: UTXO Global x Stable++",
-    quest_description: `To celebrate UTXO Global x Stable++ partnership, we are co-hosting this "CKB Odyssey: The Stable Impact" event!`,
-    guideLink: "",
-    is_claimed: false,
-    reward_points: 400,
-    duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
-    bonusReward: true,
-    questLink: "https://x.com/UTXOGlobal/status/1871140774332813563",
-    disabled: false,
-    labelButton: "Go",
-    isCheck: false,
-  },
-  {
     quest_id: QuestIDs.UTXO_MULTISIG_HAS_RUSD,
     quest_name: "Hold $RUSD in UTXO Global Multisig wallet",
     quest_description: `
@@ -192,6 +178,20 @@ export const initialQuests: QuestItemComponentType[] = [
     questLink: null,
     disabled: false,
     labelButton: "pointSystem.claim",
+    isCheck: false,
+  },
+  {
+    quest_id: QuestIDs.UTXO_GLOBAL_STABELPP,
+    quest_name: "Xmas Giveaway: UTXO Global x Stable++",
+    quest_description: `To celebrate UTXO Global x Stable++ partnership, we are co-hosting this "CKB Odyssey: The Stable Impact" event!`,
+    guideLink: "",
+    is_claimed: false,
+    reward_points: 400,
+    duration: "Dec 23, 6PM (UTC+8) - Dec 30, 6PM (UTC+8)",
+    bonusReward: true,
+    questLink: "https://x.com/UTXOGlobal/status/1871140774332813563",
+    disabled: true,
+    labelButton: "Quest Expired",
     isCheck: false,
   },
   {
