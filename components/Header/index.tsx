@@ -137,13 +137,13 @@ const Header = () => {
           </div>
         </div>
       )}
-      <Link href="/point-system" target="_blank" className="relative">
+      {/* <Link href="/point-system" target="_blank" className="relative">
         <img
           src="/images/xmas-banner.png"
           alt="xmas"
           className="w-full h-full"
         />
-      </Link>
+      </Link> */}
       <header className="bg-light-100 py-3 md:py-6 sticky top-0 z-[1000]">
         <div className="utxo-global-container flex justify-between items-center relative">
           <div className="flex gap-4 xl:hidden items-center">
