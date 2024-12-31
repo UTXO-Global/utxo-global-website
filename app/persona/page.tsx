@@ -13,7 +13,7 @@ import useProfile from "@/hooks/useProfile";
 import { AppContext } from "@/providers/app-provider";
 import { selectStorage } from "@/redux/features/storage/reducer";
 import { useAppSelector } from "@/redux/hook";
-import { shortAddress } from "@/utils/helpers";
+import { formatNumber, shortAddress } from "@/utils/helpers";
 import { Tooltip } from "antd";
 import { useTranslation } from "next-export-i18n";
 import Image from "next/image";
@@ -133,7 +133,7 @@ export default function PersonaPage() {
                 <div className="font-medium h-8 flex items-center">{t("persona.my_points")}</div>
                 <div className="flex items-end justify-between flex-1">
                   <div className="text-4xl font-bold md:mb-3">
-                    {isLoggedIn ? profile.points : 0} {t("persona.points")}
+                    {isLoggedIn ? formatNumber(profile.points) : 0} {t("persona.points")}
                   </div>
                   <Link href={"/point-system"}>
                     <svg
