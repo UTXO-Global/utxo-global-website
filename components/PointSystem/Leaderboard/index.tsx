@@ -71,7 +71,7 @@ export default function Leaderboard() {
                   <div className="w-full truncate block md:hidden">{shortAddress(addressLogged, 10)}</div>
                   <div className="w-full truncate hidden md:block lg:hidden">{shortAddress(addressLogged, 15)}</div>
                   <div className="w-full truncate hidden lg:block">{shortAddress(addressLogged, 20)}</div>
-                  <div className="w-[20%] text-end font-medium">{profile.points}</div>
+                  <div className="w-[20%] text-end font-medium">{formatNumber(profile.points)}</div>
                 </div>
                 {leaderboard.map((user) => {
                   if (user.user_address === addressLogged) return null;

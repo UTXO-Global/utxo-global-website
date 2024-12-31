@@ -15,6 +15,7 @@ import { PointSystemTab } from "@/types/common";
 import { pointSystemTabs } from "@/configs/point-system";
 import cn from "@/utils/cn";
 import { AppContext } from "@/providers/app-provider";
+import { formatNumber } from "@/utils/helpers";
 
 export default function PointSystem() {
   const [tab, setTab] = React.useState(PointSystemTab.Quest);
@@ -64,7 +65,7 @@ export default function PointSystem() {
               <img src="/icons/utxo-point.png" alt="icn-rank" className="w-full h-full" />
             </div>
             {isLoggedIn ? (
-              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">{profile.points}</span>
+              <span className="font-bold text-3xl md:text-4xl xl:text-[2.875rem]">{formatNumber(profile.points)}</span>
             ) : (
               <svg width="25" height="5" viewBox="0 0 25 5" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M0.0279454 4.184V0.728H10.3319V4.184H0.0279454ZM14.2779 4.184V0.728H24.5819V4.184H14.2779Z" fill="white" />
