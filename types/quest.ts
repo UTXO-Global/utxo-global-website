@@ -23,6 +23,7 @@ export type QuestItemComponentType = {
   duration: string | null;
   expired_at: number | null;
   bonus_reward: boolean;
+  disabled: boolean;
   quest_link: string | null;
   quest_kind: QuestKind;
 };
