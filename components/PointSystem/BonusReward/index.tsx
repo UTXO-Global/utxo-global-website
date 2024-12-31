@@ -185,7 +185,7 @@ export default function BonusReward({ isModalOpen, handleOk, handleCancel, quest
           </div>
         </div>
       )}
-      {questId === QuestIDs.UTXO_GLOBAL_STABELPP && (
+      {questId === QuestIDs.UTXO_GLOBAL_STABLEPP && (
         <div className="md:pt-5 md:px-4">
           <div className="grid gap-4">
             <div className="text-3xl font-bold">{t("pointSystem.exclusive_rewards")} 🎉</div>

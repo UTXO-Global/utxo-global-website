@@ -10,10 +10,10 @@ import BonusReward from "@/components/PointSystem/BonusReward";
 import useQuest from "@/hooks/useQuest";
 import ConnectButton from "@/components/ConnectButton";
 import { initialQuests } from "@/configs/point-system";
-import { QuestItemComponentType } from "@/types/quest";
+import { QuestItemComponentType, QuestKind } from "@/types/quest";
 import useAuthenticate from "@/hooks/useAuthenticate";
 import cn from "@/utils/cn";
-import { sleep } from "@/utils/helpers";
+import { isQuestExpired, sleep } from "@/utils/helpers";
 
 export default function Quest() {
   const { token } = theme.useToken();
@@ -66,11 +66,16 @@ export default function Quest() {
             )}
             <div className="text-grey-200 font-medium text-base sm:text-lg">
               <div dangerouslySetInnerHTML={{ __html: questInfo.quest_description }}></div>
+              {questInfo.quest_kind === QuestKind.LINK && (
+                <div className="italic text-[15px] leading-6">
+                  (The points will be automatically distributed 24 hours after the campaign ends)
+                </div>
+              )}
             </div>
             <div className="flex items-center gap-6 text-base sm:text-xl">
-              {questInfo.guideLink && (
+              {questInfo.guide_link && (
                 <Link
-                  href={questInfo.guideLink}
+                  href={questInfo.guide_link}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-block underline hover:underline hover:text-orange-500"
@@ -78,7 +83,7 @@ export default function Quest() {
                   Quest Guide
                 </Link>
               )}
-              {questInfo.bonusReward && (
+              {questInfo.bonus_reward && (
                 <div className="flex items-center gap-2">
                   <div
                     className="text-[#EA8D01] underline cursor-pointer"
@@ -94,21 +99,21 @@ export default function Quest() {
               )}
             </div>
           </div>
-          {questInfo.questLink && !questInfo.isCheck ? (
+          {questInfo.quest_kind === QuestKind.LINK ? (
             <Link
-              href={questInfo.questLink}
+              href={questInfo.quest_link || ""}
               className={cn("max-w-[160px] w-full", {
-                "cursor-not-allowed pointer-events-none": questInfo.disabled,
+                "cursor-not-allowed pointer-events-none": isQuestExpired(questInfo.expired_at),
               })}
               target="_blank"
               rel="noreferrer"
             >
               <Button
                 className={cn("!w-full !py-2", {
-                  "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.disabled,
+                  "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": isQuestExpired(questInfo.expired_at),
                 })}
               >
-                {t(questInfo.labelButton)}
+                {isQuestExpired(questInfo.expired_at) ? t("pointSystem.quest_expired") : t("pointSystem.go")}
               </Button>
             </Link>
           ) : (
@@ -116,17 +121,21 @@ export default function Quest() {
               {isLoggedIn ? (
                 <Button
                   className={cn("max-w-[160px] w-full !py-2", {
-                    "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.is_claimed || questInfo.disabled,
+                    "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.disabled || questInfo.is_claimed,
                   })}
                   onClick={async () => {
-                    questInfo.questLink && window.open(questInfo.questLink, "_blank");
-                    await sleep(300);
-                    await claimQuest(questInfo.quest_id, 20000);
+                    if (questInfo.quest_kind === QuestKind.COMBINATION) {
+                      questInfo.quest_link && window.open(questInfo.quest_link, "_blank");
+                      await sleep(300);
+                      await claimQuest(questInfo.quest_id, 20000);
+                      return;
+                    }
+                    await claimQuest(questInfo.quest_id);
                   }}
-                  disabled={questInfo.is_claimed || questInfo.disabled}
+                  disabled={questInfo.is_claimed}
                   loading={claimingQuestId === questInfo.quest_id}
                 >
-                  {questInfo.is_claimed ? "Claimed" : t(questInfo.labelButton)}
+                  {questInfo.is_claimed ? t("pointSystem.claimed") : t("pointSystem.claim")}
                 </Button>
               ) : (
                 <ConnectButton className="max-w-[160px] w-full !py-2">{t("pointSystem.claim")}</ConnectButton>
