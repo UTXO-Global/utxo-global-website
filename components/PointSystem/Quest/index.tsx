@@ -67,7 +67,7 @@ export default function Quest() {
             <div className="text-grey-200 font-medium text-base sm:text-lg">
               <div dangerouslySetInnerHTML={{ __html: questInfo.quest_description }}></div>
               {questInfo.quest_kind === QuestKind.LINK && (
-                <div className="italic text-sm sm:text-base">
+                <div className="italic text-[15px] leading-6">
                   (The points will be automatically distributed 24 hours after the campaign ends)
                 </div>
               )}
@@ -121,7 +121,7 @@ export default function Quest() {
               {isLoggedIn ? (
                 <Button
                   className={cn("max-w-[160px] w-full !py-2", {
-                    "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.is_claimed,
+                    "!bg-[#D1D1D1] !border-[#D1D1D1] !text-grey-200 cursor-not-allowed": questInfo.disabled || questInfo.is_claimed,
                   })}
                   onClick={async () => {
                     if (questInfo.quest_kind === QuestKind.COMBINATION) {
