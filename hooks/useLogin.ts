@@ -34,10 +34,11 @@ const useLogin = () => {
         const sig = await signer?.signMessage(`utxo.global login ${nonce}`);
         return sig?.signature;
       } catch (e) {
+        disconnect();
         console.error(e);
       }
     },
-    [signer],
+    [signer]
   );
 
   const _login = useCallback(
@@ -54,7 +55,7 @@ const useLogin = () => {
         console.error(e);
       }
     },
-    [dispatch],
+    [dispatch]
   );
 
   const login = useCallback(async () => {

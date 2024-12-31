@@ -29,3 +29,8 @@ export const formatNumber = (number: number, minPrecision = 0, maxPrecision = 8)
 };
 
 export const sleep = (ms: number) => new Promise((r) => setTimeout(r, ms));
+
+export const isQuestExpired = (timestamp: number | null) => {
+  if (!timestamp) return true;
+  return Date.now() > timestamp;
+};

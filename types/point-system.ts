@@ -1,5 +1,5 @@
 export enum QuestIDs {
-  UTXO_GLOBAL_STABELPP = "utxo-global-stabelpp",
+  UTXO_GLOBAL_STABLEPP = "utxo-global-stablepp",
   UTXO_MULTISIG_HAS_RUSD = "utxo-multisig-has-rusd",
   UTXO_MULTISIG_HAS_SEAL = "utxo-multisig-has-seal",
   UTXO_SWAP_EXTENSION = "utxo-swap-extension",
