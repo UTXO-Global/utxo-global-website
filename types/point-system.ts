@@ -9,4 +9,5 @@ export enum QuestIDs {
   GALXE_QUEST = "galxe-quest",
   FOLLOW_X_UTXO_GLOBAL = "follow-x-utxo-global",
   FOLLOW_X_CKCAT = "follow-x-ckcat",
+  HOLD_NERVAPE_NFT = "hold-nervape-nft",
 }
