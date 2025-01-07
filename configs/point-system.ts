@@ -13,6 +13,8 @@ export const galxeDIDLink = "https://app.galxe.com/quest/nNN5UQTfPQzaVHwzqffmtN/
 export const ckConQuestGuideLink =
   "https://www.notion.so/Quest-4-CKCon-Common-Knowledge-Conference-200-points-36b8ced7ee184561a6751129174244bb?pvs=4";
 export const ckConQuestLink = "https://t.me/ckcat_bot";
+const NFT_COLLECTION_NERVAPE_LINK =
+  "https://explorer.nervos.org/nft-collections/0xb8a46214f1c1602d69ea30c5fe4552829277af91b3c5199fdc7f83b3d48ce250";
 
 export const pointSystemTabs = [
   {
@@ -83,14 +85,22 @@ export const initialQuests: QuestItemComponentType[] = [
   {
     quest_id: QuestIDs.HOLD_NERVAPE_NFT,
     quest_name: "HODL Nervape NFT",
-    quest_description: "Keep at least one Nervape NFT (main collection) in your CKB wallet and earn 6 points per day just by holding.",
+    quest_description: `
+              <p>
+                Keep at least one Nervape NFT
+                <a href='${NFT_COLLECTION_NERVAPE_LINK}' target="_blank" class="utxo-hyperlink">
+                  (main collection)
+                </a>
+                in your CKB wallet and earn 6 points per day just by holding
+              </p>
+    `,
     guide_link: null,
     is_claimed: false,
     reward_points: null,
     duration: null,
     expired_at: null,
     bonus_reward: false,
-    disabled: true,
+    disabled: false,
     quest_link: null,
     quest_kind: QuestKind.DEFAULT,
   },
