@@ -81,6 +81,20 @@ export const lastRewardData = [
 
 export const initialQuests: QuestItemComponentType[] = [
   {
+    quest_id: QuestIDs.HOLD_NERVAPE_NFT,
+    quest_name: "HODL Nervape NFT",
+    quest_description: "Keep at least one Nervape NFT (main collection) in your CKB wallet and earn 6 points per day just by holding.",
+    guide_link: null,
+    is_claimed: false,
+    reward_points: null,
+    duration: null,
+    expired_at: null,
+    bonus_reward: false,
+    disabled: true,
+    quest_link: null,
+    quest_kind: QuestKind.DEFAULT,
+  },
+  {
     quest_id: QuestIDs.UTXO_MULTISIG_HAS_RUSD,
     quest_name: "Hold $RUSD in UTXO Global Multisig wallet",
     quest_description: `

@@ -52,7 +52,7 @@ export default function Quest() {
         <div className="flex justify-between items-start">
           <h3 className="text-base md:text-2xl font-medium md:w-auto w-2/3">{questInfo.quest_name}</h3>
           <div className="text-base md:text-2xl font-bold">
-            {questInfo.reward_points} {t("pointSystem.point")}
+            {questInfo.reward_points ? questInfo.reward_points + t("pointSystem.point") : null}
           </div>
         </div>
       ),
@@ -99,7 +99,7 @@ export default function Quest() {
               )}
             </div>
           </div>
-          {questInfo.quest_kind === QuestKind.LINK ? (
+          {questInfo.quest_kind === QuestKind.LINK && (
             <Link
               href={questInfo.quest_link || ""}
               className={cn("max-w-[160px] w-full", {
@@ -116,7 +116,8 @@ export default function Quest() {
                 {isQuestExpired(questInfo.expired_at) ? t("pointSystem.quest_expired") : t("pointSystem.go")}
               </Button>
             </Link>
-          ) : (
+          )}
+          {[QuestKind.CLAIM, QuestKind.COMBINATION].includes(questInfo.quest_kind) && (
             <>
               {isLoggedIn ? (
                 <Button

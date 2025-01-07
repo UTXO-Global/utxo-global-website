@@ -11,6 +11,7 @@ export enum QuestKind {
   LINK = "LINK",
   CLAIM = "CLAIM",
   COMBINATION = "COMBINATION",
+  DEFAULT = "DEFAULT",
 }
 
 export type QuestItemComponentType = {
@@ -19,7 +20,7 @@ export type QuestItemComponentType = {
   quest_description: string;
   guide_link: string | null;
   is_claimed: boolean;
-  reward_points: number;
+  reward_points: number | null;
   duration: string | null;
   expired_at: number | null;
   bonus_reward: boolean;
