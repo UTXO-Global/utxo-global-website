@@ -17,10 +17,11 @@ export type QuestItemComponentType = {
   quest_id: string;
   quest_name: string;
   quest_description: string;
-  guide_link: string | null;
+  quest_note: string | null;
+  quest_duration: string | null;
+  quest_guide_link: string | null;
   is_claimed: boolean;
-  reward_points: number;
-  duration: string | null;
+  reward_points: number | null;
   expired_at: number | null;
   bonus_reward: boolean;
   disabled: boolean;
