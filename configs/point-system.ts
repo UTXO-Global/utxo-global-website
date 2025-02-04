@@ -83,14 +83,14 @@ export const lastRewardData = [
 export const initialQuests: QuestItemComponentType[] = [
   {
     quest_id: QuestIDs.HOLD_NERVAPE_NFT,
-    quest_name: "HODL Nervape NFT",
+    quest_name: "HOLD Nervape NFT",
     quest_description: `
               <p>
-                Hold Nervape
+                By holding a Nervape 
                 <a href='${nervapeQuestLink}' target="_blank" class="utxo-hyperlink">
                   (main collection)
                 </a>
-                on Bitcoin/CKB, fill out the form, and earn 6 points/NFT/day
+                NFT on Bitcoin or CKB and filling out our form, you can earn 6 points per NFT per day.
               </p>
     `,
     quest_note: null,
