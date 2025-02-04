@@ -52,30 +52,26 @@ export default function Quest() {
         <div className="flex justify-between items-start">
           <h3 className="text-base md:text-2xl font-medium md:w-auto w-2/3">{questInfo.quest_name}</h3>
           <div className="text-base md:text-2xl font-bold">
-            {questInfo.reward_points ? questInfo.reward_points + t("pointSystem.point") : null}
+            {questInfo.reward_points ? questInfo.reward_points + " " + t("pointSystem.point") : null}
           </div>
         </div>
       ),
       children: (
         <div className="mx-4 pt-4 md:pt-6 pb-4 mb-0 border-t flex sm:flex-row flex-col justify-between gap-3 items-start">
           <div className="grid gap-3 w-full">
-            {questInfo.duration && (
+            {questInfo.quest_duration && (
               <div className="flex items-end justify-between sm:justify-start gap-2 w-[80%] flex-wrap">
-                <span className="sm:text-lg">{questInfo.duration}</span>
+                <span className="sm:text-lg">{questInfo.quest_duration}</span>
               </div>
             )}
             <div className="text-grey-200 font-medium text-base sm:text-lg">
               <div dangerouslySetInnerHTML={{ __html: questInfo.quest_description }}></div>
-              {questInfo.quest_kind === QuestKind.LINK && (
-                <div className="italic text-[15px] leading-6">
-                  (The points will be automatically distributed 24 hours after the campaign ends)
-                </div>
-              )}
+              <div className="italic text-[15px] leading-6">{questInfo.quest_note}</div>
             </div>
             <div className="flex items-center gap-6 text-base sm:text-xl">
-              {questInfo.guide_link && (
+              {questInfo.quest_guide_link && (
                 <Link
-                  href={questInfo.guide_link}
+                  href={questInfo.quest_guide_link}
                   target="_blank"
                   rel="noreferrer"
                   className="inline-block underline hover:underline hover:text-orange-500"
