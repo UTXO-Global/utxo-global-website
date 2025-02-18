@@ -2,7 +2,7 @@ import { QuestItemComponentType, QuestKind } from "@/types/quest";
 import { PointSystemTab } from "@/types/common";
 import { MULTI_SIG_LINK } from "@/configs/common";
 import { QuestIDs } from "@/types/point-system";
-import { CKCAT_TWITTER_LINK, UTXO_GLOBAL_TWITTER_LINK } from "@/configs/social";
+import { CAT_FUSION_TWITTER_LINK, UTXO_GLOBAL_TWITTER_LINK } from "@/configs/social";
 
 export const utxoSwapExtensionQuestGuide =
   "https://nexmio.notion.site/Quest-2-Swap-in-UTXO-Global-Wallet-100-points-ec13ea718b4746e583018f2a4a9849a3?pvs=4";
@@ -166,9 +166,9 @@ export const initialQuests: QuestItemComponentType[] = [
     quest_kind: QuestKind.COMBINATION,
   },
   {
-    quest_id: QuestIDs.FOLLOW_X_CKCAT,
-    quest_name: "Follow CKCat on X",
-    quest_description: "Follow CKCat on X to receive 100 points.",
+    quest_id: QuestIDs.FOLLOW_X_CAT_FUSION,
+    quest_name: "Follow Cat Fusion on X",
+    quest_description: "Follow Cat Fusion on X to receive 100 points.",
     quest_note: null,
     quest_guide_link: null,
     quest_duration: null,
@@ -177,7 +177,7 @@ export const initialQuests: QuestItemComponentType[] = [
     expired_at: null,
     bonus_reward: false,
     disabled: false,
-    quest_link: CKCAT_TWITTER_LINK,
+    quest_link: CAT_FUSION_TWITTER_LINK,
     quest_kind: QuestKind.COMBINATION,
   },
   {
