@@ -1,63 +1,62 @@
 {
   "header": {
     "aboutUs": "关于我们",
-    "features": "特征",
-    "contact": "接触",
+    "features": "功能特点",
+    "contact": "联系我们",
     "github": "GitHub",
-
-    "multiSig": "启动多重签名钱包",
+    "multiSig": "多签钱包",
     "chromeStore": "下载 Chrome 版本",
-    "bountyContest": "Bounty Contest",
+    "bountyContest": "赏金竞赛",
     "home": "主页",
     "persona_journey": "个人旅程"
   },
   "aboutUs": {
     "title01": "UTXO Global",
-    "title02": "Wallet",
-    "description": "UTXO 技术与全球创新的交汇",
+    "title02": "钱包",
+    "description": "UTXO 技术与全球创新的完美结合",
     "chromeStore": "下载 Chrome 版本",
     "telegram": "从 Telegram 开始"
   },
   "feature": {
     "title01": "探索我们的",
-    "title02": "特征",
+    "title02": "特色",
     "portfolio": {
-      "extension": "扩大",
-      "title": "投资组合管理",
-      "description": "直接在直观的仪表板内轻松查看和管理您的 UTXOs。"
+      "extension": "扩展程序",
+      "title": "资产组合管理",
+      "description": "通过直观的面板轻松查看和管理您的 UTXO 资产。"
     },
     "multiSig": {
-      "title01": "Multi-Signature",
-      "title02": "使用权",
-      "description": "使用多个私钥保护您的 UTXO 资产，增加额外的安全层。",
+      "title01": "多重签名",
+      "title02": "访问控制",
+      "description": "使用多个私钥保护您的 UTXO 资产，增加额外的安全保障。",
       "getStarted": "立即开始"
     },
     "send&Receive": {
       "title": "发送和接收",
-      "description": "体验顺畅且安全的方式来发送、接收和管理您的资产。"
+      "description": "享受流畅安全的资产转账和管理体验。"
     },
     "explore": {
       "title": "探索",
-      "description": "深入了解精选的 DApps，彻底改变你管理资产的方式。"
+      "description": "探索精选 DApps，革新您的资产管理方式。"
     },
     "indexer": {
-      "title": "Indexer 即服务",
-      "description": "用于实时访问全面代币和 NFT 信息的 API。",
+      "title": "索引服务",
+      "description": "提供实时访问代币和 NFT 全面信息的 API。",
       "btnLabel": "了解更多"
     },
     "telegram": {
-      "title": "Telegram 上的 UTXO 全球钱包",
-      "description": "可以从任何位置甚至通过 Telegram 方便地管理您的资产。",
-      "btnLabel": "开始"
+      "title": "Telegram 上的 UTXO Global 钱包",
+      "description": "随时随地通过 Telegram 便捷管理您的资产。",
+      "btnLabel": "开始使用"
     }
   },
   "partners": "合作伙伴",
-  "backedBy": "支持",
+  "backedBy": "生态支持",
   "community": {
-    "title": "成为我们的一部分",
-    "description01": "加入我们充满活力的社区，与其他朋友互动",
+    "title": "加入我们",
+    "description01": "加入我们充满活力的社区，参与",
     "description02": "UTXO Global",
-    "description03": "并获取最新更新.",
+    "description03": "互动，获取最新动态。",
     "twitter": "Twitter",
     "followTwitter": "在 X 上关注我们",
     "telegram": "Telegram",
@@ -66,21 +65,21 @@
   "subscribe": {
     "title01": "订阅",
     "title02": "UTXO Global",
-    "description01": "不要错过最新",
+    "description01": "不要错过",
     "description02": "UTXO Global",
-    "description03": "新闻和产品更新！",
-    "signUp": "报名",
-    "emailIsNotValid": "电子邮件无效。",
-    "subscribed": "已订阅"
+    "description03": "的最新动态和产品更新！",
+    "signUp": "立即订阅",
+    "emailIsNotValid": "邮箱格式无效",
+    "subscribed": "订阅成功"
   },
   "footer": {
     "utxoGlobal": "UTXO Global",
-    "description": "是 CKB 生态系统的革命性钱包。它提供 UTXO 模型的强大安全性保证，同时解决其在可扩展性和互操作性方面的限制。",
+    "description": "是 CKB 生态系统中的革命性钱包。它在保持 UTXO 模型强大安全性的同时，创新性地解决了可扩展性和互操作性的挑战。",
     "support": "支持",
     "privacyPolicy": "隐私政策",
-    "terms": "条款和条件",
-    "mediaKit": "媒体工具包",
-    "link": "关联",
+    "terms": "服务条款",
+    "mediaKit": "媒体资源",
+    "link": "相关链接",
     "docs": "文档",
     "nervos": "Nervos",
     "download": "下载"
@@ -89,15 +88,15 @@
     "title": "隐私政策",
     "introduction": {
       "title": "简介",
-      "content01": "UTXO Global（“我们”，“我们的”，“我们”）致力于保护您的隐私。本隐私政策解释了当您使用我们的网站（访问地址为 ",
-      "content02": "，“网站”）和 UTXO Global Wallet 应用程序（“应用程序”）时，我们如何收集、使用和披露您的信息。"
+      "content01": "UTXO Global（以下简称“我们”）致力于保护您的隐私。本隐私政策说明了我们在您使用我们的网站（访问地址为 ",
+      "content02": "，以下简称“网站”）和 UTXO Global Wallet 应用程序（以下简称“应用程序”）时如何收集、使用和保护您的信息。"
     },
     "information": {
       "title": "我们收集的信息",
       "content01_01": "个人信息",
       "content01_02": "当您创建账户或使用我们的服务时，我们可能会收集您的个人信息，例如您的姓名、电子邮件地址以及您提供的其他信息。",
       "content02_01": "使用数据",
-      "content02_02": "我们可能会收集您如何使用我们服务的信息，包括您的 IP 地址、浏览器类型、操作系统以及其他使用信息。"
+      "content02_02": "我们可能会收集您使用服务时的相关信息，包括 IP 地址、浏览器类型、操作系统等使用数据。"
     },
     "howWeUse": {
       "title": "我们如何使用您的信息",
@@ -137,183 +136,185 @@
     }
   },
   "terms": {
-    "title": "条款和条件",
+    "title": "服务条款",
     "introduction": {
-      "title": "简介",
-      "content01": "欢迎来到 UTXO Global。这些条款和条件（“条款”）适用于您对我们网站（访问地址为 ",
-      "content02": "，“网站”）和 UTXO Global Wallet 应用程序（“应用程序”）的使用。通过访问或使用我们的网站和应用程序，您同意受这些条款的约束。如果您不同意这些条款，请不要使用我们的网站或应用程序。"
+      "title": "引言",
+      "content01": "欢迎使用 UTXO Global。本服务条款（以下简称“服务条款”）规范您对我们网站（访问地址为 ",
+      "content02": "，以下简称“网站”）及 UTXO Global 钱包应用程序（以下简称“应用程序”）的使用。访问或使用我们的网站和应用程序，即表示您同意接受本条款的约束。如果您不同意本条款，请勿使用我们的网站或应用程序。"
     },
     "useOfOur": {
-      "title": "使用我们的服务",
-      "content01_01": "资格",
-      "content01_02": "您必须年满 18 岁才能使用我们的服务。通过使用我们的服务，您声明并保证您符合此年龄要求。",
+      "title": "服务使用",
+      "content01_01": "使用资格",
+      "content01_02": "您必须年满 18 周岁才能使用我们的服务。使用我们的服务即表示您声明并保证您满足此年龄要求。",
       "content02_01": "账户注册",
-      "content02_02": "为了访问应用程序的某些功能，您可能需要创建一个账户。您同意在注册过程中提供准确和完整的信息，并在信息发生变化时及时更新以确保其准确性和完整性。",
+      "content02_02": "使用应用程序的特定功能可能需要创建账户。您同意在注册过程中提供准确完整的信息，并及时更新相关信息以确保其准确性和完整性。",
       "content03_01": "账户安全",
-      "content03_02": "您有责任维护账户凭证的机密性，并对在您的账户下发生的所有活动负责。您同意立即通知我们任何未经授权使用您的账户的情况。"
+      "content03_02": "您有责任保护您的账户凭证安全，并对您账户下的所有活动负责。如发现任何未经授权使用您账户的情况，您同意立即通知我们。"
     },
     "userConduct": {
-      "title": "用户行为",
-      "content01_01": "禁止活动",
-      "content01_02": "您同意不从事任何干扰或破坏我们服务的活动，包括但不限于传播任何病毒或有害代码，或试图未经授权访问我们的系统。",
-      "content02_01": "遵守法律",
-      "content02_02": "您同意在使用我们的服务时遵守所有适用的法律和法规。"
+      "title": "用户行为规范",
+      "content01_01": "禁止行为",
+      "content01_02": "您同意不从事任何干扰或破坏我们服务的行为，包括但不限于传播病毒或恶意代码，或试图未经授权访问我们的系统。",
+      "content02_01": "法律合规",
+      "content02_02": "您同意在使用我们的服务时遵守所有适用的法律法规。"
     },
     "intellectualProperty": {
       "title": "知识产权",
-      "content01_01": "所有权",
-      "content01_02": "我们网站和应用程序上的所有内容和材料，包括但不限于文本、图形、标识和软件，均为 UTXO Global 或其许可方的财产，并受知识产权法保护。",
-      "content02_01": "许可",
-      "content02_02": "在遵守这些条款的前提下，我们授予您一个有限的、非排他性的、不可转让的、可撤销的许可，允许您为个人、非商业目的访问和使用我们的服务。"
+      "content01_01": "所有权声明",
+      "content01_02": "我们的网站和应用程序上的所有内容和资料，包括但不限于文本、图形、标识和软件，均为 UTXO Global 或其许可方所有，受知识产权法律保护。",
+      "content02_01": "使用许可",
+      "content02_02": "根据本条款，我们授予您一个有限的、非独占的、不可转让的、可撤销的许可，允许您出于个人非商业目的使用我们的服务。"
     },
     "disclaimers": {
       "title": "免责声明",
       "content01_01": "无担保",
-      "content01_02": "我们的服务按“现状”和“可用”基础提供。我们不对服务或我们网站或应用程序上的内容的准确性或完整性做出任何保证或陈述。",
+      "content01_02": "我们的服务均以『按现状』和『按可用性』为基础提供。我们不对我们的服务或网站或应用上的内容的准确性或完整性作出任何保证或声明。",
       "content02_01": "责任限制",
-      "content02_02": "在法律允许的最大范围内，UTXO Global 对于因您使用我们的服务而引起的任何间接、附带、特殊或后果性损害不承担责任。"
+      "content02_02": "在法律允许的最大范围内，UTXO Global 不对您使用我们服务而产生的任何间接、偶然、特殊或后果性损害承担责任。"
     },
     "termination": {
-      "title": "终止",
-      "content": "我们可以在任何时间出于任何原因，无需事先通知或承担责任，终止或暂停您对我们服务的访问，包括如果您违反了这些条款。"
+      "title": "终止服务",
+      "content": "我们有权在任何时候因任何原因终止或暂停您使用我们的服务，无需事先通知或承担任何责任，包括但不限于您违反本条款的情况。"
     },
     "governingLaw": {
-      "title": "法律适用",
-      "content": "这些条款应受 UTXO Global 所在司法管辖区的法律管辖并依其解释，不考虑其法律冲突原则。"
+      "title": "适用法律",
+      "content": "本条款应受 UTXO Global 所在司法管辖区的法律管辖和解释，而不考虑其法律冲突原则。"
     },
     "changesToThese": {
-      "title": "条款的变更",
-      "content": "我们保留随时修改这些条款的权利。如果我们对这些条款做出重大变更，我们将在这些条款顶部更新日期，并在我们的网站或应用程序上提供通知。您在任何此类变更后继续使用我们的服务即表示您接受新的条款。"
+      "title": "条款变更",
+      "content": "我们保留随时修改本条款的权利。如有重大变更，我们将更新本条款顶部的日期，并通过网站或应用程序发布通知。在条款变更后继续使用我们的服务，即表示您接受新的条款内容。"
     },
     "contactUs": {
-      "title": "联系我们",
-      "content01": "如果您对这些条款有任何疑问，请通过",
-      "content02": " 联系我们。"
+      "title": "联系方式",
+      "content01": "如果您对本条款有任何疑问，请通过",
+      "content02": "与我们联系。"
     }
   },
   "bountyContest": {
-    "description": "寻找漏洞，获得奖励，并帮助我们建立更安全的未来。",
-    "description01": "期间： 2024年8月26日 09:00:00 AM (UTC) - 2024年9月09日 09:00:00 AM (UTC)",
-    "submitBug": "提交 Bug",
+    "description": "发现漏洞，获取奖励，共同构建更安全的未来。",
+    "description01": "活动时间：2024年8月26日 09:00:00 AM (UTC) - 2024年9月09日 09:00:00 AM (UTC)",
+    "submitBug": "提交漏洞",
     "btnClose": "关闭",
-    "claimRewardTitle": "如何领取奖励",
-    "watchNow": "立即观看",
-    "joinNow": "现在加入",
-    "join": "加入",
+    "claimRewardTitle": "奖励领取说明",
+    "watchNow": "立即查看",
+    "joinNow": "立即参与",
+    "join": "参与",
     "instruction": {
-      "title": "如何参与",
-      "step_01_title": "下载 UTXO Global Wallet",
-      "step_01_description": "参与者可以从 Chrome 网上应用店下载钱包",
-      "step_02_title": "在测试区测试钱包",
-      "step_02_description": "用户应使用 UTXO Global 钱包扩展 (dApp) 在以下领域测试钱包",
-      "step_02_content_01": "钱包管理",
-      "step_02_content_02": "使用恢复短语或私钥创建、导入和导出钱包。",
-      "step_02_content_03": "创建并管理多个钱包。",
-      "step_02_content_04": "在一个钱包内创建并管理多个账户。",
-      "step_02_content_05": "CKB 原生币管理",
-      "step_02_content_06": "向不同的地址发送和接收 CKB。",
-      "step_02_content_07": "签署消息 + 交易",
+      "title": "参与指南",
+      "step_01_title": "下载 UTXO Global 钱包",
+      "step_01_description": "从 Chrome 应用商店下载钱包扩展程序",
+      "step_02_title": "在测试环境中进行测试",
+      "step_02_description": "请使用 UTXO Global 钱包扩展程序测试以下功能：",
+      "step_02_content_01": "钱包管理功能",
+      "step_02_content_02": "使用助记词或私钥进行钱包的创建、导入和导出",
+      "step_02_content_03": "多钱包的创建和管理",
+      "step_02_content_04": "单个钱包内的多账户创建和管理",
+      "step_02_content_05": "CKB 原生代币管理",
+      "step_02_content_06": "向不同地址发送和接收 CKB",
+      "step_02_content_07": "消息签名和交易",
       "step_02_content_08": "使用",
-      "step_02_content_09": "测试以下内容：",
-      "step_03_title": "提交错误报告",
-      "step_03_description": "如果您发现错误，请通过此表单提交详细报告",
-      "step_03_link_label": "提交错误报告"
+      "step_02_content_09": "测试以下功能：",
+      "step_03_title": "提交漏洞报告",
+      "step_03_description": "如发现任何问题，请通过表单提交详细报告",
+      "step_03_link_label": "提交漏洞报告"
     },
     "leaderboard": {
       "title": "排行榜",
       "description": "数据每 24 小时更新一次",
-      "field_01": "姓名 / 邮箱",
-      "field_02": "总分",
-      "no_data": "数据尚未更新。"
+      "field_01": "用户名 / 邮箱",
+      "field_02": "总积分",
+      "no_data": "暂无数据"
     },
     "bountyResult": {
-      "description": "查看排行榜，看看谁在使我们的平台更安全方面处于领先地位",
-      "bugReport": "错误报告"
+      "description": "查看排行榜，了解谁为平台安全做出了最大贡献",
+      "bugReport": "漏洞报告"
     }
   },
   "pointSystem": {
-    "title_01": "赚取更多积分",
-    "title_02": "赚取更多奖励",
-    "quest": "寻求",
+    "title_01": "赚取积分",
+    "title_02": "获得奖励",
+    "quest": "任务",
     "leaderboard": "排行榜",
-    "rank": "排",
+    "rank": "排名",
     "address": "地址",
-    "point": "点",
-    "last_reward": "最后奖励",
-    "received_rewards": "收到的奖励",
+    "point": "积分",
+    "last_reward": "最近奖励",
+    "received_rewards": "已获得奖励",
     "point_system": "积分系统",
-    "go": "去",
-    "claim": "索赔",
-    "claimed": "索赔",
+    "go": "开始",
+    "claim": "领取",
+    "claimed": "已领取",
     "quest_expired": "任务已过期",
-    "logout": "登出",
+    "logout": "退出",
     "my_points": "我的积分",
     "my_ranking": "我的排名",
-    "amount": "量",
-    "exclusive_rewards": "独家奖励",
-    "duration": "期间",
-    "bonus_reward_description": "活动期间购买 $SEAL 代币（仅适用于购买，不适用于出售）的前 3 名交易者将获得额外的 $SEAL 奖励.",
-    "exclusive_rewards_ckcon": "CKCat 主网启动专属奖励！",
-    "how_to_enter_title": "如何进入：",
-    "how_to_enter_step_1": "1.完成CKCon任务。",
-    "how_to_enter_step_2": "2.当我们在主网上线时，10 个随机地址将各赢得 100 颗宝石。",
-    "did_galxe_quest_step_1": "1. \"The Identity Frontier\" Badge (UTXO Global x DID) 每位参与者。",
-    "did_galxe_quest_step_2": "2. 1,000 $CKB 将分发给 5 名随机参与者。（每人 200 $CKB）。",
-    "did_galxe_quest_step_3": "3. 20 个 DID Builder 代码（1 年免费 d.id 帐户）供 20 名随机参与者使用。",
-    "did_galxe_quest_step_4": "4. 每个参与者 800 个 CKCAT 宝石： <a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a> 当主网启动时。",
-    "stablepp_step_1": "1. \"The Stable Impact\" Badge (UTXO Global x Stable++) 每位参与者。",
-    "stablepp_step_2": "2. 1,380 $CKB 将分发给 3 名随机参与者。（每人 460 $CKB）。",
-    "stablepp_step_3": "3. 每个参与者 800 个 CKCAT 宝石： <a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a> 当主网启动时。"
+    "connect_to_show_ranking": "连接钱包以查看您的排名",
+    "amount": "数量",
+    "exclusive_rewards": "专属奖励",
+    "duration": "活动期限",
+    "bonus_reward_description": "活动期间，购买 $SEAL 代币（仅计算买入，不计算卖出）金额排名前 3 的用户将获得额外的 $SEAL 奖励。",
+    "exclusive_rewards_ckcon": "CKCat 主网上线专属奖励！",
+    "how_to_enter_title": "参与方式：",
+    "how_to_enter_step_1": "1. 完成 CKCon 任务",
+    "how_to_enter_step_2": "2. 主网上线时，10 个随机地址将各获得 100 颗宝石。",
+    "did_galxe_quest_step_1": "1. 每位参与者将获得\"The Identity Frontier\"徽章（UTXO Global x DID）",
+    "did_galxe_quest_step_2": "2. 随机抽取 5 名参与者，每人获得 200 $CKB（总计 1,000 $CKB）",
+    "did_galxe_quest_step_3": "3. 随机抽取 20 名参与者，每人获得 DID Builder 代码（可兑换 1 年免费 d.id 账户）",
+    "did_galxe_quest_step_4": "4. 主网启动时，每位参与者将获得 800 个 CKCAT 宝石：<a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a>",
+    "stablepp_step_1": "1. 每位参与者将获得\"The Stable Impact\"徽章（UTXO Global x Stable++）",
+    "stablepp_step_2": "2. 随机抽取 3 名参与者，每人获得 460 $CKB（总计 1,380 $CKB）",
+    "stablepp_step_3": "3. 主网启动时，每位参与者将获得 800 个 CKCAT 宝石：<a target='_blank' class='text-inherit underline' href='https://ckcat.xyz/'>https://ckcat.xyz/</a>"
   },
   "indexer": {
-    "title": "共同构建",
-    "description": "用于实时访问全面的 Coins 和 NFT 信息的 API.",
-    "btn_label": "请求 API 访问权限",
+    "title": "一起 BUIDL",
+    "description": "提供实时访问代币和 NFT 全面信息的 API 服务",
+    "btn_label": "申请 API 访问权限",
     "title_01": "CKB 高级索引器 API",
-    "card_01_title": "硬币 API",
-    "card_01_description": "与 UDT 类型相关的终结点",
+    "card_01_title": "代币 API",
+    "card_01_description": "UDT 相关的接口",
     "card_link": "了解更多信息",
     "card_02_title": "NFT API",
-    "card_02_description": "与 Spores Protocol 相关的端点",
+    "card_02_description": "Spores Protocol 相关的接口",
     "btn_label_check_doc": "查看文档",
-    "faq": "FAQ",
+    "faq": "常见问题",
     "question": {
-      "question_01": "为什么在使用索引器 API 时看不到任何数据？",
+      "question_01": "为什么使用索引器 API 时看不到任何数据？",
       "question_02": "如何在测试网和主网之间切换？",
       "question_03": "API 调用的速率限制是多少？",
-      "question_04": "如何访问 API？",
-      "question_05": "如果遇到意外行为，我该怎么办？"
+      "question_04": "如何获取 API 访问权限？",
+      "question_05": "遇到异常情况时该怎么办？"
     },
     "answer": {
-      "answer_01_content_01": "首先，确保您的节点已同步到最新的数据块。您可以通过调用以下节点 RPC 来检查提示：",
-      "answer_01_content_02": "此命令将返回索引器的当前提示。如果您未访问最新的数据块，则数据可能不可用。如果问题仍然存在，请加入我们的 ",
-      "answer_01_content_03": "寻求支持.",
+      "answer_01_content_01": "首先，请确保您的节点已同步至最新区块。您可以通过调用以下节点 RPC 来检查当前高度：",
+      "answer_01_content_02": "此命令将返回索引器当前的区块高度。如果您未同步至最新区块，数据可能不可用。如果问题持续存在，请加入我们的",
+      "answer_01_content_03": "寻求技术支持。",
 
       "answer_02_content_01": "您需要调整",
-      "answer_02_content_02": "变量以指向相应的基 URL. 对于 Testnet，请使用",
-      "answer_02_content_03": "对于 Mainnet，请使用",
+      "answer_02_content_02": "环境变量以指向相应的基础 URL。测试网请使用",
+      "answer_02_content_03": "主网请使用",
 
-      "answer_03_content_01": "速率限制取决于您的 API 密钥.",
-      "answer_03_content_02": "Basic",
-      "answer_03_content_03": "键每天最多允许 X 次调用，而",
-      "answer_03_content_04": "Pro",
-      "answer_03_content_05": "键提供更高的限制和额外的终端节点.",
+      "answer_03_content_01": "API 调用限制取决于您的 API 密钥类型。",
+      "answer_03_content_02": "基础版",
+      "answer_03_content_03": "密钥每分钟最多允许 60 次请求，而",
+      "answer_03_content_04": "专业版",
+      "answer_03_content_05": "密钥则提供更高的限制和额外的接口。",
 
-      "answer_04_content_01": "您需要通过为 Testnet 或 Mainnet 提供的",
-      "answer_04_content_02": "进行注册。注册后，您将收到相应网络的 API 密钥.",
+      "answer_04_content_01": "您需要通过",
+      "answer_04_content_02": "注册测试网或主网的访问权限。注册完成后，您将收到相应网络的 API 密钥。",
 
-      "answer_05": "如果遇到任何问题或意外行为，请首先通过检查索引器提示（如第一个问题中所述）来验证节点是否已同步。如果一切正常但问题仍然存在，请联系 上的支持团队"
+      "answer_05": "如果遇到任何问题或异常行为，请先通过检查索引器高度（如第一个问题所述）验证节点同步状态。如果一切正常但问题仍然存在，请通过以下方式联系我们："
     }
   },
   "persona": {
-    "welcome": "欢迎来到个人旅程",
-    "description": "Persona 是一个独特且永恒的头像集合",
+    "welcome": "开启你的个性之旅",
+    "description": "Persona 是独一无二的数字身份头像集",
     "my_points": "我的积分",
     "points": "积分",
-    "quest": "寻求",
-    "quest_available": "新任务可用",
-    "badges": "徽章",
-    "owned": "拥有",
-    "copy_message": "复制到剪贴板"
+    "quest": "任务",
+    "quest_available": "新任务已开放",
+    "badges": "成就徽章",
+    "owned": "已获得",
+    "not_owned_badges": "还没有获得任何徽章哦",
+    "copy_message": "已复制到剪贴板"
   }
 }

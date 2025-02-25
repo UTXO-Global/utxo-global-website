@@ -201,7 +201,7 @@ export default function PersonaPage() {
                     ))}
                   </>
                 ) : (
-                  <div className="pt-4 pb-10 mx-auto text-gray-400 text-lg">No Badges Available</div>
+                  <div className="pt-4 pb-10 mx-auto text-gray-400 text-lg">{t("persona.not_owned_badges")}</div>
                 )}
               </div>
             </div>
