@@ -105,8 +105,8 @@ export default function Leaderboard() {
         </div>
       ) : (
         <div className="bg-[#FAFAFA] text-center py-14 sm:py-20 rounded-lg">
-          <h2 className="text-2xl sm:text-3xl font-bold">My Ranking</h2>
-          <p className="text-lg sm:text-2xl font-medium mt-4 sm:mt-6 mb-10">Connect wallet to check out Your Ranking !</p>
+          <h2 className="text-2xl sm:text-3xl font-bold">{t("pointSystem.my_ranking")}</h2>
+          <p className="text-lg sm:text-2xl font-medium mt-4 sm:mt-6 mb-10">{t("pointSystem.connect_to_show_ranking")}</p>
           <ConnectButton />
         </div>
       )}
