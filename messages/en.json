@@ -248,6 +248,7 @@
     "logout": "Logout",
     "my_points": "My Points",
     "my_ranking": "My Ranking",
+    "connect_to_show_ranking": "Connect wallet to check out Your Ranking !",
     "amount": "Amount",
     "exclusive_rewards": "Exclusive Rewards",
     "duration": "Duration",
@@ -313,6 +314,7 @@
     "quest_available": "New Quest Available",
     "badges": "Badges",
     "owned": "Owned",
+    "not_owned_badges": "No Badges Available",
     "copy_message": "Copied to clipboard"
   }
 }
