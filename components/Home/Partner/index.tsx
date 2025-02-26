@@ -43,7 +43,7 @@ const Partners = () => {
             return (
               <div
                 key={z.name}
-                className="flex cursor-pointer border-[#F5F5F5]  border rounded-2xl gap-2 md:gap-4 sm:gap-3 p-2 sm:px-4 sm:py-2 lg:py-3 lg:px-5 items-center group"
+                className="flex cursor-pointer border-[#F5F5F5]  border rounded-2xl gap-2 md:gap-4 sm:gap-3 p-2 sm:px-4 sm:py-2 lg:py-3 lg:px-6 items-center group"
               >
                 <img
                   src={z.image}
