@@ -39,6 +39,11 @@
       "title": "Explore",
       "description": "Dive into a curated selection of DApps to revolutionize the way you manage your assets."
     },
+    "audit": {
+      "title": "Audited by Verichains",
+      "description": "This audit focused on identifying security flaws in code and the design of the UTXO Global Wallet Extension.",
+      "btnLabel": "Get Report"
+    },
     "indexer": {
       "title": "Indexer As a Service",
       "description": "API for real-time access to comprehensive Coins and NFT information.",

@@ -22,6 +22,7 @@ export const BOUNTY_CONTEST_STAGE = Number(process.env.NEXT_PUBLIC_BOUNTY_CONTES
 export const DEFAULT_NETWORK = process.env.NEXT_PUBLIC_NETWORK_DEFAULT || "nervos_testnet";
 export const UTXOSWAP_API_URL = process.env.NEXT_PUBLIC_UTXOSWAP_API_URL || "";
 export const TWA_LINK = "https://t.me/utxo_global_wallet_bot";
+export const AUDIT_REPORT_LINK = "https://github.com/verichains/public-audit-reports/blob/main/Verichains%20Public%20Audit%20Report%20-%20UTXO%20Global%20Wallet%20Extension%20-%20v1.1.pdf";
 
 export const NAVIGATIONS = [
   {

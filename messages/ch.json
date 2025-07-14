@@ -39,6 +39,11 @@
       "title": "探索",
       "description": "探索精选 DApps，革新您的资产管理方式。"
     },
+    "audit": {
+      "title": "已通过 Verichains 审计",
+      "description": "此审计专注于识别代码和 UTXO Global 钱包扩展程序的设计中的安全漏洞。",
+      "btnLabel": "获取报告"
+    },
     "indexer": {
       "title": "索引服务",
       "description": "提供实时访问代币和 NFT 全面信息的 API。",
