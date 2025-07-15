@@ -15,7 +15,8 @@
     "title02": "Wallet",
     "description": "Where UTXO Technology Meets Global Innovation",
     "chromeStore": "Download for Chrome",
-    "telegram": "Start on Telegram"
+    "telegram": "Start on Telegram",
+    "audit": "Audited by Verichains"
   },
   "feature": {
     "title01": "Explore our",
@@ -38,11 +39,6 @@
     "explore": {
       "title": "Explore",
       "description": "Dive into a curated selection of DApps to revolutionize the way you manage your assets."
-    },
-    "audit": {
-      "title": "Audited by Verichains",
-      "description": "This audit focused on identifying security flaws in code and the design of the UTXO Global Wallet Extension.",
-      "btnLabel": "Get Report"
     },
     "indexer": {
       "title": "Indexer As a Service",

@@ -15,7 +15,8 @@
     "title02": "钱包",
     "description": "UTXO 技术与全球创新的完美结合",
     "chromeStore": "下载 Chrome 版本",
-    "telegram": "从 Telegram 开始"
+    "telegram": "从 Telegram 开始",
+    "audit": "已通过 Verichains 审计"
   },
   "feature": {
     "title01": "探索我们的",
@@ -38,11 +39,6 @@
     "explore": {
       "title": "探索",
       "description": "探索精选 DApps，革新您的资产管理方式。"
-    },
-    "audit": {
-      "title": "已通过 Verichains 审计",
-      "description": "此审计专注于识别代码和 UTXO Global 钱包扩展程序的设计中的安全漏洞。",
-      "btnLabel": "获取报告"
     },
     "indexer": {
       "title": "索引服务",

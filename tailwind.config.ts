@@ -59,7 +59,6 @@ const config: Config = {
       },
       backgroundImage: {
         twa: "url('/images/telegram-bg.png')",
-        audit: "url('/images/audit-bg.png')",
       },
     },
   },
