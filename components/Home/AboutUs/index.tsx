@@ -4,8 +4,9 @@ import { useTranslation } from "next-export-i18n";
 
 import Button from "@/components/Common/Button";
 import IcnTelegram from "@/public/icons/icn-telegram.svg";
+import IcnAudit from "@/public/icons/icn-audit.svg";
 
-import { CHROME_EXTENSION_LINK, TWA_LINK } from "@/configs/common";
+import { AUDIT_REPORT_LINK, CHROME_EXTENSION_LINK, TWA_LINK } from "@/configs/common";
 
 const AboutUs = () => {
   const { t } = useTranslation();
@@ -23,7 +24,7 @@ const AboutUs = () => {
               </span>
             </p>
           </h1>
-          <div className="flex flex-col sm:flex-row md:flex-col xl:flex-row justify-center md:justify-start gap-6 mt-6 items-center sm:items-start">
+          <div className="flex flex-col flex-wrap sm:flex-row md:flex-col xl:flex-row justify-center md:justify-start gap-6 mt-6 items-center sm:items-start">
             <Link href={CHROME_EXTENSION_LINK} target="_blank" className="">
               <Button className="w-[243px]">
                 <div className="flex gap-2 items-center">
@@ -38,12 +39,23 @@ const AboutUs = () => {
             </Link>
 
             <Link href={TWA_LINK} target="_blank" className="group">
-              <Button outlined className="w-[243px] sm:w-auto md:w-[243px] xl:w-auto">
+              <Button className="w-[243px] sm:w-auto md:w-[243px] xl:w-auto">
                 <div className="flex gap-2 items-center">
-                  <div className="size-6 bg-dark-100 rounded-full flex justify-center">
-                    <IcnTelegram className="w-4 fill-white" />
+                  <div className="size-6 bg-white rounded-full flex justify-center">
+                    <IcnTelegram className="w-4 fill-black" />
                   </div>
                   <span> {t("aboutUs.telegram")}</span>
+                </div>
+              </Button>
+            </Link>
+
+            <Link href={AUDIT_REPORT_LINK} target="_blank" className="group">
+              <Button outlined className="w-[243px] sm:w-auto md:w-[243px] xl:w-auto">
+                <div className="flex gap-2 items-center">
+                  <div className="size-6">
+                    <IcnAudit />
+                  </div>
+                  <span className="font-bold text-nowrap">{t("aboutUs.audit")}</span>
                 </div>
               </Button>
             </Link>
