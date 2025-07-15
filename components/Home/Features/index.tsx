@@ -159,6 +159,7 @@ const Features = () => {
             </div>
           </div>
         </div>
+
         <div
           className="mt-4 md:mt-[60px] flex items-center justify-between pt-[30px] md:pt-[61px] pb-[17px] md:pb-[39px] pl-6 lg:pl-[127px] rounded-[24px] pr-5 md:pr-[42px] flex-col md:flex-row"
           style={{

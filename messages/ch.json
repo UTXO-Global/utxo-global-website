@@ -15,7 +15,8 @@
     "title02": "钱包",
     "description": "UTXO 技术与全球创新的完美结合",
     "chromeStore": "下载 Chrome 版本",
-    "telegram": "从 Telegram 开始"
+    "telegram": "从 Telegram 开始",
+    "audit": "已通过 Verichains 审计"
   },
   "feature": {
     "title01": "探索我们的",
